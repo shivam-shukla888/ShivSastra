@@ -12,11 +12,11 @@ export interface Message {
 }
 
 const SUGGESTED_PROMPTS = [
-  "Explain Yojna Setu.",
-  "What projects has Shivam built?",
-  "Show me the security work.",
-  "What technologies were used?",
-  "What is available in the store?",
+  "What agentic AI services do you offer?",
+  "How do Yojna Setu & RealGuard work?",
+  "What is your data security guarantee?",
+  "Which digital agent kits are in the store?",
+  "How do human approval points work?",
 ];
 
 export function ShivSastraAssistant() {

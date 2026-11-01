@@ -3,7 +3,7 @@
  * 
  * Centralized, server-controlled navigation map for the public ShivSastra website.
  * Enforces strict route-allowlisting, dynamic slug validation, URL normalization,
- * and rejects all admin (/admin*), API (/api*), protocol-relative (//*), and malformed paths.
+ * safe anchor verification, and rejects all admin (/admin*), API (/api*), protocol-relative (//*), and malformed paths.
  */
 
 import { getPublishedProjects } from "@/lib/projects";
@@ -29,6 +29,7 @@ export const STATIC_PUBLIC_ROUTES = [
   "/store/digital-products",
   "/contact",
   "/lab",
+  "/resume",
   "/privacy",
 ] as const;
 
@@ -47,12 +48,12 @@ export const PUBLIC_NAVIGATION: Record<string, NavigationDestination> = {
   home: {
     label: "Home",
     href: "/",
-    description: "Overview, ethos, and focus areas (Backend Systems, Agentic AI, AI Security)",
+    description: "Overview, ethos, and production Agentic AI systems for growing businesses",
   },
   about: {
     label: "About",
     href: "/about",
-    description: "Background, design philosophy, and verified public profiles",
+    description: "Background, AI Systems engineering philosophy, and verified public profiles",
   },
   projects: {
     label: "Projects",
@@ -62,12 +63,27 @@ export const PUBLIC_NAVIGATION: Record<string, NavigationDestination> = {
   services: {
     label: "Services",
     href: "/services",
-    description: "High-impact consulting, systems architecture, and agentic AI advisory",
+    description: "Production agent setups, business workflows, and full multi-agent architecture",
   },
   store: {
     label: "Store",
     href: "/store",
-    description: "Curated digital releases, templates, monographs, and developer licenses",
+    description: "Production agent templates, complete deployment kits, and prompt libraries",
+  },
+  storeAgentTemplates: {
+    label: "AI Agent Templates",
+    href: "/store/agent-templates",
+    description: "Production n8n and Make workflows for lead qualification and sales follow-up",
+  },
+  storeAgentKits: {
+    label: "Complete Agent Kits",
+    href: "/store/agent-kits",
+    description: "Full-stack agent licenses and messaging integration blueprints",
+  },
+  storePromptPacks: {
+    label: "Prompt Packs",
+    href: "/store/prompt-packs",
+    description: "Battle-tested system instructions, guardrails, and JSON schemas",
   },
   storeDesign: {
     label: "Design Store",
@@ -87,12 +103,17 @@ export const PUBLIC_NAVIGATION: Record<string, NavigationDestination> = {
   contact: {
     label: "Contact",
     href: "/contact",
-    description: "Inquiries, collaboration briefs, and advisory scheduling",
+    description: "Inquiries, scope outlines, and direct communication",
   },
   lab: {
     label: "Lab",
     href: "/lab",
     description: "Personal sandbox entries, research notes, and architectural experiments",
+  },
+  resume: {
+    label: "Resume",
+    href: "/resume",
+    description: "Verified engineering credentials, timeline, and resume document",
   },
   privacy: {
     label: "Privacy",
@@ -141,6 +162,7 @@ export function normalizeHref(rawHref: string): string {
 /**
  * 3. Safe Internal Link Policy & Allowlist Validation
  * Returns true ONLY if the normalized path is a verified public route.
+ * Supports safe hash anchors on valid base routes (e.g. /services#starter-agent-setup, /services#quote).
  */
 export function isValidPublicRoute(
   rawHref: string,
@@ -185,33 +207,45 @@ export function isValidPublicRoute(
     return false;
   }
 
-  // Reject directory traversal segments
-  const segments = normalized.split("/");
-  if (segments.some((s) => s === ".." || s === ".")) {
-    return false;
-  }
-
   // Strictly reject private admin and internal API routes
   if (
     normalized === "/admin" ||
     normalized.startsWith("/admin/") ||
+    normalized.startsWith("/admin#") ||
     normalized === "/api" ||
     normalized.startsWith("/api/") ||
+    normalized.startsWith("/api#") ||
     normalized.includes("/admin") ||
     normalized.includes("/api")
   ) {
     return false;
   }
 
-  // Allowlist match: Static public routes
-  if ((STATIC_PUBLIC_ROUTES as readonly string[]).includes(normalized)) {
+  // Parse path and optional hash anchor
+  const hashIndex = normalized.indexOf("#");
+  const basePath = hashIndex !== -1 ? normalized.slice(0, hashIndex) : normalized;
+  const hash = hashIndex !== -1 ? normalized.slice(hashIndex + 1) : null;
+
+  // If hash is present, must be safe alphanumeric with hyphen or underscore
+  if (hash !== null && !/^[a-zA-Z0-9_-]+$/.test(hash)) {
+    return false;
+  }
+
+  // Reject directory traversal segments
+  const segments = basePath.split("/");
+  if (segments.some((s) => s === ".." || s === ".")) {
+    return false;
+  }
+
+  // Allowlist match: Static public routes (with or without safe hash anchor)
+  if ((STATIC_PUBLIC_ROUTES as readonly string[]).includes(basePath)) {
     return true;
   }
 
-  // Allowlist match: Verified dynamic public routes
+  // Allowlist match: Verified dynamic public routes (with or without safe hash anchor)
   if (dynamicRoutes) {
     for (const route of dynamicRoutes) {
-      if (normalizeHref(route) === normalized) {
+      if (normalizeHref(route) === basePath) {
         return true;
       }
     }
