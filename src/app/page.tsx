@@ -17,16 +17,16 @@ import { SITE_URL, serializeJsonLd } from "@/lib/site";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Shivam Shukla — Web Development, Backend Systems & AI Automation",
+  title: "Shivam Shukla — Agentic AI Systems & Automation",
   description:
-    "Freelance web development, Next.js landing pages, API integrations, and practical AI automation by Shivam Shukla. Upfront starting rates with verified code.",
+    "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses by Shivam Shukla. Free-tier friendly with a risk-free 7-day free trial.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "Shivam Shukla — Web Development, Backend Systems & AI Automation",
+    title: "Shivam Shukla — Agentic AI Systems & Automation",
     description:
-      "Freelance web development, Next.js landing pages, API integrations, and practical AI automation by Shivam Shukla. Upfront starting rates with verified code.",
+      "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses by Shivam Shukla. Free-tier friendly with a risk-free 7-day free trial.",
     url: SITE_URL,
     type: "website",
     siteName: "ShivSastra",
@@ -36,15 +36,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "ShivSastra — Shivam Shukla | Web Development, Backend & AI Automation",
+        alt: "ShivSastra — Shivam Shukla | Agentic AI Systems & Automation",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shivam Shukla — Web Development, Backend Systems & AI Automation",
+    title: "Shivam Shukla — Agentic AI Systems & Automation",
     description:
-      "Freelance web development, Next.js landing pages, API integrations, and practical AI automation by Shivam Shukla.",
+      "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses by Shivam Shukla.",
     images: ["/og-image.png"],
   },
 };
@@ -86,22 +86,21 @@ export default async function HomePage() {
         "@id": `${SITE_URL}/#person`,
         name: profile.fullName || "Shivam Shukla",
         url: SITE_URL,
-        jobTitle: "Software Engineer & AI Integration Builder",
+        jobTitle: "Agentic AI Engineer & Software Builder",
         alumniOf: "SRMS College of Engineering, Technology & Research",
         knowsAbout: [
-          "Web Development",
+          "Agentic AI",
+          "Multi-Agent Systems",
+          "n8n Workflow Automation",
+          "WhatsApp Business API",
+          "API Integration",
+          "Python",
           "Next.js",
           "React",
-          "API Integration",
-          "AI Automation",
-          "Python",
-          "Java",
-          "Spring Boot",
-          "PostgreSQL",
           "Application Security",
         ],
         description:
-          "Building websites, backend integrations, and practical AI automations with transparent starting rates.",
+          "Building production Agentic AI systems for small businesses with free-tier friendly architectures and strict privacy guarantees.",
         sameAs: verifiedSameAs,
       },
       {
@@ -113,7 +112,7 @@ export default async function HomePage() {
           "@id": `${SITE_URL}/#person`,
         },
         description:
-          "Portfolio, services, and engineering case studies of Shivam Shukla.",
+          "Portfolio, agentic AI services, and engineering case studies of Shivam Shukla.",
       },
     ],
   };
@@ -127,7 +126,7 @@ export default async function HomePage() {
       />
 
       {/* =======================================================
-          1. HERO (10-Second Clarity: Who, What, Price, Next Step)
+          1. HERO (Focus on Agentic AI systems for small businesses)
           ======================================================= */}
       <section className="relative w-full border-b border-[var(--color-hairline)] pt-16 md:pt-24 pb-20 md:pb-28 overflow-hidden">
         <PageBackground
@@ -142,90 +141,90 @@ export default async function HomePage() {
           <HomeHeroMotion
             overview={
               <div className="flex flex-wrap items-baseline gap-4">
-                <SectionLabel name="Web &amp; AI Engineering" />
+                <SectionLabel name="Agentic AI Engineering" />
                 <span className="font-mono text-xs text-[var(--color-accent)] border-l border-[var(--color-hairline)] pl-4 font-semibold">
-                  Available for Select Client Projects
+                  Available for Select Client Engagements
                 </span>
               </div>
             }
             title={
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-normal tracking-tight text-[var(--color-ink-primary)] leading-[1.06]">
-                I build fast websites, reliable APIs, and practical AI automations.
+                Agentic AI systems built for small businesses.
               </h1>
             }
             positioning={
               <p className="font-mono text-xs sm:text-sm uppercase tracking-[0.14em] text-[var(--color-accent)] font-semibold">
-                Bug Fixes from ₹999 · Landing Pages from ₹2,999 · APIs &amp; AI from ₹3,000
+                Free-Tier Friendly · 7-Day Free Trial · Production-Grade Security
               </p>
             }
             narrative={
               <p className="font-sans text-base md:text-lg text-[var(--color-ink-secondary)] leading-relaxed max-w-[62ch]">
-                Practical engineering for founders, creators, and growing businesses.
-                Upfront starting rates, clear written scopes, fast turnaround, and zero agency overhead.
+                Production AI agents for lead qualification, customer support, and workflow automation.
+                Designed for small businesses with a free-tier friendly approach, human approval checkpoints, and a risk-free 7-day trial.
               </p>
             }
             ctas={
               <div className="space-y-4 pt-2">
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                  <a
-                    href="#services"
+                  <Link
+                    href="/services#starter-agent-setup"
                     className={buttonStyles({
                       variant: "primary",
                       size: "lg",
                       className: "w-full sm:w-auto font-mono text-xs uppercase tracking-wider group",
                     })}
                   >
-                    <span>Explore Services &amp; Pricing</span>
+                    <span>Start with 7-Day Free Trial</span>
                     <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none ml-1.5">
-                      ↓
+                      →
                     </span>
-                  </a>
+                  </Link>
                   <a
-                    href="#work"
+                    href="#services"
                     className={buttonStyles({
                       variant: "secondary",
                       size: "lg",
                       className: "w-full sm:w-auto font-mono text-xs uppercase tracking-wider border-[var(--color-ink-primary)] group",
                     })}
                   >
-                    <span>See Verified Work</span>
+                    <span>View Packages &amp; Pricing</span>
                     <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transform-none ml-1.5">
                       ↓
                     </span>
                   </a>
-                  <Link
-                    href="/contact"
+                  <a
+                    href="#work"
                     className="font-mono text-xs uppercase tracking-wider px-4 py-3 text-[var(--color-ink-secondary)] hover:text-[var(--color-accent)] transition-colors text-center"
                   >
-                    Request a Quote →
-                  </Link>
+                    See Case Studies ↓
+                  </a>
                 </div>
 
                 {/* 4 Value Pillars */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-secondary)]">
                   <div>
                     <strong className="text-[var(--color-ink-primary)] block font-sans text-xs">
-                      Fast Delivery
+                      7-Day Free Trial
                     </strong>
-                    <span>1–2d fixes, 3–5d pages</span>
+                    <span>For small organisations</span>
                   </div>
                   <div>
                     <strong className="text-[var(--color-ink-primary)] block font-sans text-xs">
-                      Modern Stack
+                      Free-Tier Friendly
                     </strong>
-                    <span>Next.js, Python, Java</span>
+                    <span>n8n self-hosted &amp; Make</span>
                   </div>
                   <div>
                     <strong className="text-[var(--color-ink-primary)] block font-sans text-xs">
-                      Upfront Rates
+                      Data Sovereignty
                     </strong>
-                    <span>Scope agreed before work</span>
+                    <span>Data stays in your control</span>
                   </div>
                   <div>
                     <strong className="text-[var(--color-ink-primary)] block font-sans text-xs">
-                      Full Ownership
+                      Fast Turnaround
                     </strong>
-                    <span>100% code handed over</span>
+                    <span>5–8 days starter setup</span>
                   </div>
                 </div>
               </div>
@@ -248,7 +247,7 @@ export default async function HomePage() {
                   Verified Production Work
                 </h2>
                 <p className="font-sans text-xs text-[var(--color-accent)] font-medium">
-                  Real systems built with modern web architecture, deterministic rules, and application security.
+                  Real agentic systems built with multi-step reasoning, WhatsApp pipelines, and deterministic rules.
                 </p>
               </div>
               <Link
@@ -343,7 +342,7 @@ export default async function HomePage() {
       </section>
 
       {/* =======================================================
-          3. SERVICES & STARTING RATES PREVIEW
+          3. SERVICES & STARTING RATES PREVIEW (Agentic AI Focus)
           ======================================================= */}
       <section id="services" className="w-full border-b border-[var(--color-hairline)] py-16 md:py-24 bg-[var(--color-canvas-primary)]">
         <HomeSectionReveal>
@@ -353,10 +352,10 @@ export default async function HomePage() {
                 <div className="space-y-3">
                   <SectionLabel name="Services &amp; Pricing" />
                   <h2 className="font-display text-3xl md:text-4xl font-normal tracking-tight text-[var(--color-ink-primary)]">
-                    Services &amp; Upfront Starting Rates
+                    Agent Packages &amp; Upfront Starting Rates
                   </h2>
                   <p className="font-sans text-xs text-[var(--color-accent)] font-medium">
-                    Web development, backend APIs, and AI integrations with transparent scopes.
+                    Focused agent setups, production workflows, and multi-agent systems with transparent scopes.
                   </p>
                 </div>
                 <Link
@@ -368,31 +367,54 @@ export default async function HomePage() {
                 </Link>
               </div>
 
-              {/* 4 Primary Offers Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {/* 3 Primary Offers Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {HOMEPAGE_SERVICES_PREVIEW.map((item) => (
                   <div
                     key={item.id}
                     className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-6 space-y-4 flex flex-col justify-between group hover:border-[var(--color-ink-primary)] transition-colors"
                   >
-                    <div className="space-y-2.5">
-                      <div className="font-mono text-xs font-semibold text-[var(--color-accent)]">
+                    <div className="space-y-3">
+                      <div className="font-mono text-sm font-semibold text-[var(--color-accent)]">
                         {item.startingPrice}
                       </div>
-                      <h3 className="font-display text-xl font-normal text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors leading-snug">
+                      <h3 className="font-display text-2xl font-normal text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors leading-snug">
                         {item.title}
                       </h3>
+
+                      {/* Prominent Free Trial Highlight for Starter Agent Setup */}
+                      {item.id === "starter-agent-setup" && (
+                        <div className="p-3 border-2 border-[var(--color-accent)] bg-[var(--color-accent)]/10 text-[var(--color-ink-primary)] space-y-0.5">
+                          <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-accent)] font-bold block">
+                            Risk-Free Evaluation
+                          </span>
+                          <p className="font-sans text-xs font-bold text-[var(--color-ink-primary)] leading-tight">
+                            7-Day Free Trial for Small Organisations
+                          </p>
+                        </div>
+                      )}
+
                       <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-relaxed">
                         {item.customerOutcome}
                       </p>
+
+                      {/* Short Security Promise on Every Card */}
+                      <div className="flex items-center gap-1.5 font-mono text-xs text-[var(--color-ink-primary)] pt-1">
+                        <span className="text-emerald-700 dark:text-emerald-400 font-bold select-none">🔒</span>
+                        <span className="font-medium">We prioritize security</span>
+                      </div>
                     </div>
 
                     <div className="pt-3 border-t border-[var(--color-hairline)]">
                       <Link
                         href={item.targetHref}
-                        className="font-mono text-xs uppercase tracking-wider text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-1"
+                        className="font-mono text-xs uppercase tracking-wider text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-1 font-semibold"
                       >
-                        <span>View package</span>
+                        <span>
+                          {item.id === "starter-agent-setup"
+                            ? "Start with 7-Day Free Trial"
+                            : "View package details"}
+                        </span>
                         <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">
                           →
                         </span>
@@ -402,21 +424,24 @@ export default async function HomePage() {
                 ))}
               </div>
 
-              {/* Custom Quote Banner for Security, SEO & Performance */}
-              <div className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="space-y-1">
-                  <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
-                    Security, Technical SEO &amp; Performance Review
-                  </span>
-                  <p className="font-sans text-xs text-[var(--color-ink-secondary)] max-w-2xl leading-relaxed">
-                    Need a baseline HTTP security header check, search engine crawlability inspection, or Core Web Vitals audit? Custom quotes tailored to your website.
+              {/* Main Security Banner */}
+              <div className="p-6 md:p-8 border border-[var(--color-accent)]/40 bg-[var(--color-canvas-secondary)] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-[var(--color-accent)] inline-block" />
+                    <h3 className="font-display text-xl sm:text-2xl font-normal text-[var(--color-ink-primary)]">
+                      We prioritize security
+                    </h3>
+                  </div>
+                  <p className="font-sans text-xs sm:text-sm text-[var(--color-ink-primary)] max-w-2xl leading-relaxed font-medium">
+                    Data stays in your control • Human approval points included • No customer data stored on my servers • Free-tier safe by design
                   </p>
                 </div>
                 <Link
-                  href="/services#security-seo-performance-review"
-                  className="font-mono text-xs uppercase tracking-wider px-4 py-2 border border-[var(--color-ink-primary)] text-[var(--color-ink-primary)] hover:bg-[var(--color-ink-primary)] hover:text-[var(--color-canvas-primary)] transition-colors shrink-0 self-start sm:self-auto"
+                  href="/services#starter-agent-setup"
+                  className="font-mono text-xs uppercase tracking-wider px-5 py-3 border border-[var(--color-ink-primary)] text-[var(--color-ink-primary)] hover:bg-[var(--color-ink-primary)] hover:text-[var(--color-canvas-primary)] transition-colors shrink-0 self-start sm:self-auto font-semibold"
                 >
-                  Get a Custom Quote →
+                  Start with 7-Day Free Trial →
                 </Link>
               </div>
             </div>
@@ -425,7 +450,7 @@ export default async function HomePage() {
       </section>
 
       {/* =======================================================
-          4. CREDIBILITY STRIP (Background, Education & Verified Skills)
+          4. CREDIBILITY STRIP (Background, Education & Experience)
           ======================================================= */}
       <section id="credibility" className="w-full border-b border-[var(--color-hairline)] py-16 md:py-20 bg-[var(--color-canvas-secondary)]">
         <HomeSectionReveal>
@@ -525,22 +550,22 @@ export default async function HomePage() {
                 Next Steps
               </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-white leading-tight">
-                Have a bug to fix, a landing page to launch, or an API to build?
+                Ready to deploy an agentic AI system for your business?
               </h2>
               <p className="font-sans text-sm sm:text-base text-[var(--color-dark-ink-secondary)] leading-relaxed">
-                Direct reply within 24 hours. Every engagement begins with a confirmed written scope, agreed deliverables, and exact turnaround before work starts.
+                Direct reply within 24 hours. Every engagement begins with a confirmed written scope, free-tier architecture, and data privacy guarantee.
               </p>
 
               <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Link
-                  href="/contact"
+                  href="/contact?subject=Start%20with%207-Day%20Free%20Trial"
                   className={buttonStyles({
                     variant: "accent",
                     size: "lg",
                     className: "w-full sm:w-auto font-mono text-xs uppercase tracking-wider group text-center",
                   })}
                 >
-                  <span>Request a Free Quote</span>
+                  <span>Start with 7-Day Free Trial</span>
                   <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none ml-1.5">
                     →
                   </span>

@@ -22,16 +22,16 @@ import {
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Web Development & AI Integration Services",
+  title: "Agentic AI Services & Workflow Automation — Shivam Shukla",
   description:
-    "Professional web development, website bug fixing, Next.js landing pages, API integrations, and AI workflow automation by Shivam Shukla. Transparent pricing with clear scopes.",
+    "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses by Shivam Shukla. Free-tier friendly, risk-free 7-day trial, and strict data privacy guarantees.",
   alternates: {
     canonical: absoluteUrl("/services"),
   },
   openGraph: {
-    title: "Web Development & AI Integration Services — Shivam Shukla",
+    title: "Agentic AI Services & Workflow Automation — Shivam Shukla",
     description:
-      "Professional web development, website bug fixing, Next.js landing pages, API integrations, and AI workflow automation by Shivam Shukla. Transparent pricing with clear scopes.",
+      "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses by Shivam Shukla. Free-tier friendly, risk-free 7-day trial, and strict data privacy guarantees.",
     url: absoluteUrl("/services"),
     type: "website",
     siteName: "ShivSastra",
@@ -41,15 +41,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Web Development & AI Integration Services — Shivam Shukla",
+        alt: "Agentic AI Services & Workflow Automation — Shivam Shukla",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Development & AI Integration Services — Shivam Shukla",
+    title: "Agentic AI Services & Workflow Automation — Shivam Shukla",
     description:
-      "Professional web development, website bug fixing, Next.js landing pages, API integrations, and AI workflow automation by Shivam Shukla.",
+      "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses by Shivam Shukla. Free-tier friendly, risk-free 7-day trial, and strict data privacy guarantees.",
     images: ["/og-image.png"],
   },
 };
@@ -64,9 +64,9 @@ export default async function ServicesPage() {
         "@type": "WebPage",
         "@id": absoluteUrl("/services#webpage"),
         url: absoluteUrl("/services"),
-        name: "Web Development & AI Integration Services — Shivam Shukla",
+        name: "Agentic AI Services & Workflow Automation — Shivam Shukla",
         description:
-          "Professional web development, bug fixing, Next.js landing pages, API integrations, and AI automation.",
+          "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses. Free-tier friendly with strict data boundaries.",
         breadcrumb: {
           "@type": "BreadcrumbList",
           itemListElement: [
@@ -88,7 +88,7 @@ export default async function ServicesPage() {
       {
         "@type": "ItemList",
         "@id": absoluteUrl("/services#packages"),
-        name: "Service Packages",
+        name: "Agentic AI Service Packages",
         itemListElement: SERVICE_PACKAGES.map((pkg, index) => {
           const match = pkg.startingPrice.match(/₹([\d,]+)/);
           const numericPrice = match ? parseInt(match[1].replace(/,/g, ""), 10) : null;
@@ -154,33 +154,32 @@ export default async function ServicesPage() {
       />
       <SectionContainer>
         <div className="space-y-16 md:space-y-24">
-          {/* 1. SHORT HERO: What I build, who I help, and primary CTAs */}
+          {/* 1. HERO: What I build, who I help, and primary CTAs */}
           <InnerPageEntrance delayIndex={0}>
             <div className="space-y-6 pb-10 border-b border-[var(--color-hairline)]">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-[var(--color-accent)] inline-block" />
                   <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)] font-semibold">
-                    Freelance Web &amp; AI Engineering
+                    Agentic AI Systems &amp; Automation
                   </span>
                 </div>
                 <Link
                   href="/store"
                   className="font-mono text-xs text-[var(--color-ink-secondary)] hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
                 >
-                  <span>Prefer ready-made code? Browse the Store</span>
+                  <span>Prefer ready-made agent kits? Browse the Store</span>
                   <span>→</span>
                 </Link>
               </div>
 
               <div className="space-y-3 max-w-4xl">
                 <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[var(--color-ink-primary)] leading-[1.08]">
-                  Web Development &amp; AI Integration Services
+                  Agentic AI Services &amp; Production Agent Systems
                 </h1>
                 <p className="font-sans text-base sm:text-lg md:text-xl text-[var(--color-ink-secondary)] leading-relaxed">
-                  Practical engineering for founders, creators, and growing businesses.
-                  From rapid bug fixes and high-performance landing pages to custom backend integrations
-                  and AI automations—built with clean architecture, verified code, and transparent pricing.
+                  Practical agentic AI engineering for small businesses, founders, and lean teams.
+                  From focused lead qualifiers and WhatsApp support agents to full multi-agent orchestration—built on self-hosted n8n or Make free tier with human approval checkpoints, zero customer data retention on my servers, and a 7-day free trial.
                 </p>
               </div>
 
@@ -188,34 +187,34 @@ export default async function ServicesPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-[var(--color-hairline)]">
                 <div className="space-y-1">
                   <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
+                    7-Day Free Trial
+                  </span>
+                  <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
+                    Evaluate in your real workflow before final commitment.
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
+                    Free-Tier Friendly
+                  </span>
+                  <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
+                    n8n self-hosted or Make free tier with rate-limit safety.
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
+                    Data Security
+                  </span>
+                  <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
+                    Data stays in your control; zero customer data on my servers.
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
                     Fast Turnaround
                   </span>
                   <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
-                    Bug fixes in 1–2 days, landing pages in 3–5 days.
-                  </p>
-                </div>
-                <div className="space-y-1">
-                  <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
-                    Modern Stack
-                  </span>
-                  <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
-                    Next.js 16, React 19, TypeScript, Python &amp; Java.
-                  </p>
-                </div>
-                <div className="space-y-1">
-                  <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
-                    Honest Pricing
-                  </span>
-                  <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
-                    Clear starting rates, zero hidden fees, defined scope upfront.
-                  </p>
-                </div>
-                <div className="space-y-1">
-                  <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
-                    Full Ownership
-                  </span>
-                  <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
-                    100% code ownership, clean git history, direct handover.
+                    Starter setup in 5–8 days with complete documentation.
                   </p>
                 </div>
               </div>
@@ -223,10 +222,16 @@ export default async function ServicesPage() {
               {/* Primary CTAs */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
                 <a
-                  href="#packages"
-                  className="inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider px-5 py-3 bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] hover:bg-[var(--color-accent)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ink-primary)]"
+                  href="#starter-agent-setup"
+                  className="inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider px-5 py-3 bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] hover:bg-[var(--color-accent)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ink-primary)] font-semibold"
                 >
-                  View Services &amp; Pricing ↓
+                  Start with 7-Day Free Trial ↓
+                </a>
+                <a
+                  href="#packages"
+                  className="inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider px-5 py-3 border border-[var(--color-hairline)] text-[var(--color-ink-primary)] hover:border-[var(--color-ink-primary)] hover:bg-[var(--color-canvas-secondary)] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
+                >
+                  View All Packages &amp; Pricing ↓
                 </a>
                 <a
                   href="#quote"
@@ -235,38 +240,67 @@ export default async function ServicesPage() {
                   Request a Quote ↓
                 </a>
                 <a
-                  href="#process"
+                  href="#proof"
                   className="inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider px-4 py-3 border border-transparent text-[var(--color-ink-secondary)] hover:text-[var(--color-ink-primary)] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
                 >
-                  How We Work ↓
+                  Case Studies &amp; Proof ↓
                 </a>
               </div>
             </div>
           </InnerPageEntrance>
 
-          {/* 2. FIVE COMPACT SERVICE CARDS with Progressive Disclosure */}
+          {/* MAIN SECURITY BANNER */}
           <InnerPageEntrance delayIndex={1}>
+            <div className="p-6 md:p-8 border border-[var(--color-accent)]/40 bg-[var(--color-canvas-secondary)] relative space-y-3">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-[var(--color-accent)] inline-block" />
+                <h2 className="font-display text-xl sm:text-2xl text-[var(--color-ink-primary)] font-normal">
+                  We prioritize security
+                </h2>
+              </div>
+              <p className="font-sans text-base sm:text-lg text-[var(--color-ink-primary)] leading-relaxed font-medium">
+                Data stays in your control • Human approval points included • No customer data stored on my servers • Free-tier safe by design
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-3 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-secondary)]">
+                <div>
+                  <span className="text-[var(--color-accent)] font-bold">✓</span> Data In Your Control
+                </div>
+                <div>
+                  <span className="text-[var(--color-accent)] font-bold">✓</span> Human Approval Points
+                </div>
+                <div>
+                  <span className="text-[var(--color-accent)] font-bold">✓</span> Zero Customer Data Stored
+                </div>
+                <div>
+                  <span className="text-[var(--color-accent)] font-bold">✓</span> Free-Tier Safe by Design
+                </div>
+              </div>
+            </div>
+          </InnerPageEntrance>
+
+          {/* 2. THREE AGENTIC SERVICE CARDS with Progressive Disclosure */}
+          <InnerPageEntrance delayIndex={2}>
             <section id="packages" className="space-y-8 scroll-mt-20">
               <div className="space-y-2 max-w-3xl">
                 <div className="flex items-center gap-2">
                   <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)] font-semibold">
-                    Scoped Freelance Packages
+                    Scoped Agentic Packages
                   </span>
                   <span className="text-xs font-mono text-[var(--color-ink-secondary)]">
-                    (5 Core Offers)
+                    (3 Core Offers)
                   </span>
                 </div>
                 <h2 className="font-display text-3xl sm:text-4xl font-normal tracking-tight text-[var(--color-ink-primary)]">
-                  Defined Deliverables &amp; Clear Starting Rates
+                  Defined Deliverables &amp; Transparent Pricing
                 </h2>
                 <p className="font-sans text-sm md:text-base text-[var(--color-ink-secondary)] leading-relaxed">
-                  Every service starts with a plain-English outcome and upfront pricing.
-                  Click &ldquo;View details&rdquo; on any card to inspect deliverables, technical scope, and exclusions.
+                  Every engagement starts with defined outcomes, free-tier optimization, and clear turnaround.
+                  Click &ldquo;View details&rdquo; on any card to inspect deliverables, technical scope, and boundaries.
                 </p>
               </div>
 
-              {/* 5 Compact Service Cards Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* 3 Service Cards Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {SERVICE_PACKAGES.map((pkg) => (
                   <article
                     key={pkg.id}
@@ -290,18 +324,34 @@ export default async function ServicesPage() {
                     </div>
 
                     {/* Service Name & Starting Price */}
-                    <div className="space-y-2">
-                      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-                        <h3 className="font-display text-xl sm:text-2xl font-normal text-[var(--color-ink-primary)] leading-tight">
+                    <div className="space-y-3">
+                      <div className="space-y-1">
+                        <h3 className="font-display text-2xl font-normal text-[var(--color-ink-primary)] leading-tight">
                           {pkg.title}
                         </h3>
-                        <div className="shrink-0 font-mono text-lg sm:text-xl font-semibold text-[var(--color-accent)]">
+                        <div className="font-mono text-xl font-semibold text-[var(--color-accent)]">
                           {pkg.startingPrice}
                         </div>
                       </div>
 
+                      {/* Prominent Free Trial Callout for Starter Agent Setup */}
+                      {pkg.id === "starter-agent-setup" && (
+                        <div className="p-3.5 border-2 border-[var(--color-accent)] bg-[var(--color-accent)]/10 text-[var(--color-ink-primary)] space-y-1">
+                          <div className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-[var(--color-accent)] font-bold">
+                            <span className="w-2 h-2 bg-[var(--color-accent)] inline-block" />
+                            <span>Risk-Free Evaluation</span>
+                          </div>
+                          <p className="font-sans text-sm font-bold text-[var(--color-ink-primary)] leading-snug">
+                            7-Day Free Trial for Small Organisations
+                          </p>
+                          <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-tight">
+                            Evaluate with real customer inquiries in staging/pilot risk-free before final settlement.
+                          </p>
+                        </div>
+                      )}
+
                       {/* One Plain-English Sentence */}
-                      <p className="font-sans text-sm text-[var(--color-ink-primary)] leading-relaxed font-medium">
+                      <p className="font-sans text-xs sm:text-sm text-[var(--color-ink-primary)] leading-relaxed font-medium">
                         {pkg.plainEnglishOutcome}
                       </p>
 
@@ -310,32 +360,36 @@ export default async function ServicesPage() {
                         {pkg.pricingNote}
                       </p>
 
+                      {/* Security Short Promise */}
+                      <div className="flex items-center gap-1.5 font-mono text-xs text-[var(--color-ink-primary)] pt-1">
+                        <span className="text-emerald-700 dark:text-emerald-400 font-bold select-none">🔒</span>
+                        <span className="font-medium">We prioritize security</span>
+                      </div>
+
                       {/* Key Scope Highlights on Card Face */}
-                      <div className="space-y-1 pt-1 border-t border-[var(--color-hairline)]">
+                      <div className="space-y-1.5 pt-2 border-t border-[var(--color-hairline)]">
                         <ul className="space-y-1 list-none font-sans text-xs text-[var(--color-ink-primary)]">
-                          {pkg.deliverables.slice(0, 2).map((item, dIdx) => (
+                          {pkg.deliverables.slice(0, 3).map((item, dIdx) => (
                             <li key={dIdx} className="flex items-start gap-2">
-                              <span className="text-[var(--color-accent)] font-bold select-none">✓</span>
+                              <span className="text-[var(--color-accent)] font-bold select-none shrink-0">✓</span>
                               <span>{item}</span>
                             </li>
                           ))}
                         </ul>
-                        {pkg.exclusions[0] && (
-                          <p className="font-sans text-[11px] text-[var(--color-ink-secondary)] flex items-start gap-2 pt-0.5">
-                            <span className="text-[var(--color-ink-secondary)] select-none">✕</span>
-                            <span>Excludes: {pkg.exclusions[0]}</span>
-                          </p>
-                        )}
                       </div>
                     </div>
 
-                    {/* Card Actions (Visible without clicking) */}
+                    {/* Card Actions */}
                     <div className="pt-2 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--color-hairline)]">
                       <a
                         href={`/contact?subject=${encodeURIComponent(pkg.contactSubject)}`}
-                        className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider px-4 py-2 bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] hover:bg-[var(--color-accent)] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
+                        className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider px-4 py-2 bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] hover:bg-[var(--color-accent)] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)] font-semibold"
                       >
-                        <span>Request Quote</span>
+                        <span>
+                          {pkg.id === "starter-agent-setup"
+                            ? "Start with 7-Day Free Trial"
+                            : "Request Quote"}
+                        </span>
                         <span>→</span>
                       </a>
                       <span className="font-mono text-[11px] text-[var(--color-ink-secondary)]">
@@ -347,7 +401,7 @@ export default async function ServicesPage() {
                     <details className="group border-t border-[var(--color-hairline)] pt-3 focus-within:outline-none">
                       <summary className="flex items-center justify-between cursor-pointer list-none py-1.5 text-xs font-mono uppercase tracking-wider text-[var(--color-ink-secondary)] hover:text-[var(--color-accent)] select-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]">
                         <span className="font-semibold">
-                          <span className="group-open:hidden">View details (deliverables, scope, exclusions)</span>
+                          <span className="group-open:hidden">View details (deliverables, scope)</span>
                           <span className="hidden group-open:inline">Hide details</span>
                         </span>
                         <span className="font-mono text-sm font-semibold transition-transform duration-200 group-open:rotate-180 select-none">
@@ -386,36 +440,34 @@ export default async function ServicesPage() {
                           </ul>
                         </div>
 
-                        {/* Technical Scope & Technologies */}
+                        {/* Technical Scope & Stack */}
                         <div className="space-y-1.5 pt-2 border-t border-[var(--color-hairline)]">
                           <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
-                            Technical Scope &amp; Stack
+                            Technical Scope
                           </span>
-                          <div className="flex flex-wrap gap-1.5">
+                          <ul className="space-y-1 list-none font-sans text-xs text-[var(--color-ink-secondary)]">
                             {pkg.technicalScope.map((tech, tIdx) => (
-                              <span
-                                key={tIdx}
-                                className="font-mono text-[11px] px-2 py-0.5 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)] text-[var(--color-ink-secondary)]"
-                              >
-                                {tech}
-                              </span>
+                              <li key={tIdx} className="flex items-start gap-2">
+                                <span className="text-[var(--color-accent)] select-none shrink-0">—</span>
+                                <span>{tech}</span>
+                              </li>
                             ))}
-                          </div>
+                          </ul>
                         </div>
 
-                        {/* Turnaround & Revisions Qualified */}
+                        {/* Turnaround & Support */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 border-t border-[var(--color-hairline)] text-xs font-sans">
                           <div className="p-2.5 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)]">
                             <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-ink-secondary)] block">
                               Turnaround Estimate
                             </span>
                             <span className="text-[var(--color-ink-primary)] font-medium">
-                              {pkg.turnaround} (subject to scope)
+                              {pkg.turnaround}
                             </span>
                           </div>
                           <div className="p-2.5 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)]">
                             <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-ink-secondary)] block">
-                              Revisions Included
+                              Revision / Support
                             </span>
                             <span className="text-[var(--color-ink-primary)] font-medium">
                               {pkg.revisions}
@@ -423,7 +475,7 @@ export default async function ServicesPage() {
                           </div>
                         </div>
 
-                        {/* Exclusions & Scope Boundaries */}
+                        {/* Exclusions */}
                         <div className="space-y-1.5 pt-2 border-t border-[var(--color-hairline)]">
                           <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-ink-secondary)] font-semibold block">
                             Exclusions &amp; Boundaries
@@ -443,18 +495,18 @@ export default async function ServicesPage() {
                           </ul>
                         </div>
 
-                        {/* Verified Portfolio Proof Link */}
+                        {/* Case Study Evidence Link */}
                         {pkg.proofProject && (
                           <div className="pt-2 border-t border-[var(--color-hairline)]">
                             <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-accent)] font-semibold block mb-1">
-                              Relevant Portfolio Proof
+                              Agentic Proof Case Study
                             </span>
                             <Link
                               href={`/projects/${pkg.proofProject.slug}`}
-                              className="font-sans text-xs text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-1 group"
+                              className="font-sans text-xs text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-1 group font-medium"
                             >
-                              <span className="underline underline-offset-2 font-medium">
-                                {pkg.proofProject.title}
+                              <span className="underline underline-offset-2">
+                                {pkg.proofProject.title} — See how I built similar systems
                               </span>
                               <span className="transition-transform duration-150 group-hover:translate-x-1">
                                 →
@@ -466,16 +518,16 @@ export default async function ServicesPage() {
                           </div>
                         )}
 
-                        {/* Expanded Area Direct Quote CTA */}
+                        {/* Expanded Direct CTA */}
                         <div className="pt-3 border-t border-[var(--color-hairline)] flex items-center justify-between gap-3">
                           <span className="font-mono text-[11px] text-[var(--color-ink-secondary)]">
-                            Written scope agreed before kickoff
+                            Written scope agreed upfront
                           </span>
                           <a
                             href={`/contact?subject=${encodeURIComponent(pkg.contactSubject)}`}
-                            className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider px-3.5 py-1.5 border border-[var(--color-ink-primary)] text-[var(--color-ink-primary)] hover:bg-[var(--color-ink-primary)] hover:text-[var(--color-canvas-primary)] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
+                            className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider px-3 py-1.5 border border-[var(--color-ink-primary)] text-[var(--color-ink-primary)] hover:bg-[var(--color-ink-primary)] hover:text-[var(--color-canvas-primary)] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
                           >
-                            <span>Request Quote for {pkg.code}</span>
+                            <span>Request Quote ({pkg.code})</span>
                             <span>→</span>
                           </a>
                         </div>
@@ -527,18 +579,18 @@ export default async function ServicesPage() {
             </section>
           </InnerPageEntrance>
 
-          {/* 3. SHORT, SIMPLE WORK PROCESS */}
-          <InnerPageEntrance delayIndex={2}>
+          {/* 3. WORK PROCESS */}
+          <InnerPageEntrance delayIndex={3}>
             <section id="process" className="space-y-6 scroll-mt-20">
               <div className="space-y-2 max-w-3xl">
                 <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)] font-semibold">
                   Simple 5-Step Process
                 </span>
                 <h2 className="font-display text-3xl sm:text-4xl font-normal tracking-tight text-[var(--color-ink-primary)]">
-                  How We Work: From Scope to Handover
+                  How We Deploy: From Scope to Handover
                 </h2>
                 <p className="font-sans text-sm md:text-base text-[var(--color-ink-secondary)] leading-relaxed">
-                  A predictable, structured workflow designed to eliminate scope creep, protect your budget, and deliver production-ready code.
+                  A predictable, security-first workflow designed to eliminate surprise cloud fees, protect your customer data, and deliver production-ready agents.
                 </p>
               </div>
 
@@ -574,18 +626,18 @@ export default async function ServicesPage() {
             </section>
           </InnerPageEntrance>
 
-          {/* 4. RELEVANT PROJECT PROOF */}
-          <InnerPageEntrance delayIndex={3}>
+          {/* 4. RELEVANT AGENTIC CASE STUDIES & PROOF */}
+          <InnerPageEntrance delayIndex={4}>
             <section id="proof" className="space-y-6 scroll-mt-20">
               <div className="space-y-2 max-w-3xl">
                 <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)] font-semibold">
-                  Verified Project Proof
+                  Verified Agentic Case Studies
                 </span>
                 <h2 className="font-display text-3xl sm:text-4xl font-normal tracking-tight text-[var(--color-ink-primary)]">
-                  Real Projects Built &amp; Deployed
+                  Proof of Real Agentic Work
                 </h2>
                 <p className="font-sans text-sm md:text-base text-[var(--color-ink-secondary)] leading-relaxed">
-                  Real code in production. Inspect actual architecture case studies, repositories, and live implementations.
+                  Real agentic systems in production. Inspect actual architecture case studies, conversational workflows, and deterministic rules engines.
                 </p>
               </div>
 
@@ -593,29 +645,58 @@ export default async function ServicesPage() {
                 {/* Proof 1: Yojna Setu */}
                 <Link
                   href="/projects/yojna-setu"
-                  className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] space-y-3 hover:border-[var(--color-ink-primary)] transition-colors group flex flex-col justify-between"
+                  className="p-6 border-2 border-[var(--color-accent)]/50 bg-[var(--color-canvas-secondary)] space-y-3 hover:border-[var(--color-accent)] transition-colors group flex flex-col justify-between"
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between font-mono text-xs text-[var(--color-ink-secondary)]">
                       <span className="text-[var(--color-accent)] uppercase tracking-wider font-semibold">
-                        AI Chatbot &amp; NLP Rules Engine
+                        Multi-Step Reasoning &amp; Rules Engine
                       </span>
-                      <span>Case Study</span>
+                      <span className="bg-[var(--color-accent)]/10 text-[var(--color-accent)] px-2 py-0.5 border border-[var(--color-accent)]/30">
+                        Primary Agentic Case Study
+                      </span>
                     </div>
-                    <h3 className="font-display text-xl font-normal text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors">
+                    <h3 className="font-display text-2xl font-normal text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors">
                       Yojna Setu
                     </h3>
-                    <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-relaxed">
-                      Multilingual welfare scheme discovery platform combining Groq LLM profile extraction with a deterministic Java eligibility engine.
+                    <p className="font-sans text-xs sm:text-sm text-[var(--color-ink-secondary)] leading-relaxed">
+                      Multilingual welfare scheme discovery platform combining Groq LLM profile extraction with a deterministic Java eligibility engine across 82 schemes with 42/42 automated tests.
                     </p>
                   </div>
                   <div className="pt-3 border-t border-[var(--color-hairline)] flex items-center justify-between font-mono text-xs text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)]">
-                    <span>View Architecture Proof</span>
+                    <span className="font-semibold">See how I built similar systems</span>
                     <span>→</span>
                   </div>
                 </Link>
 
-                {/* Proof 2: QuickEats */}
+                {/* Proof 2: RealGuard */}
+                <Link
+                  href="/projects/realguard"
+                  className="p-6 border-2 border-[var(--color-accent)]/50 bg-[var(--color-canvas-secondary)] space-y-3 hover:border-[var(--color-accent)] transition-colors group flex flex-col justify-between"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between font-mono text-xs text-[var(--color-ink-secondary)]">
+                      <span className="text-[var(--color-accent)] uppercase tracking-wider font-semibold">
+                        WhatsApp Agent &amp; CRM Pipeline
+                      </span>
+                      <span className="bg-[var(--color-accent)]/10 text-[var(--color-accent)] px-2 py-0.5 border border-[var(--color-accent)]/30">
+                        Primary Agentic Case Study
+                      </span>
+                    </div>
+                    <h3 className="font-display text-2xl font-normal text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors">
+                      RealGuard
+                    </h3>
+                    <p className="font-sans text-xs sm:text-sm text-[var(--color-ink-secondary)] leading-relaxed">
+                      Production conversational real estate assistant connecting WhatsApp messaging to verified business logic, deterministic EMI calculations, CRM persistence, and human takeover points.
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-[var(--color-hairline)] flex items-center justify-between font-mono text-xs text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)]">
+                    <span className="font-semibold">See how I built similar systems</span>
+                    <span>→</span>
+                  </div>
+                </Link>
+
+                {/* Proof 3: QuickEats */}
                 <Link
                   href="/projects/quickeats"
                   className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] space-y-3 hover:border-[var(--color-ink-primary)] transition-colors group flex flex-col justify-between"
@@ -631,36 +712,11 @@ export default async function ServicesPage() {
                       QuickEats
                     </h3>
                     <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-relaxed">
-                      Real-time food ordering backend engineered with Spring Boot 3.2.3, Java 17, STOMP WebSockets, authoritative server-side price recalculation, and 71 verified @Test methods.
+                      Real-time ordering backend engineered with Spring Boot 3.2.3, Java 17, STOMP WebSockets, authoritative server-side price recalculation, and 71 verified @Test methods.
                     </p>
                   </div>
                   <div className="pt-3 border-t border-[var(--color-hairline)] flex items-center justify-between font-mono text-xs text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)]">
                     <span>View Project Proof</span>
-                    <span>→</span>
-                  </div>
-                </Link>
-
-                {/* Proof 3: RealGuard */}
-                <Link
-                  href="/projects/realguard"
-                  className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] space-y-3 hover:border-[var(--color-ink-primary)] transition-colors group flex flex-col justify-between"
-                >
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between font-mono text-xs text-[var(--color-ink-secondary)]">
-                      <span className="text-[var(--color-accent)] uppercase tracking-wider font-semibold">
-                        AI Automation &amp; Messaging
-                      </span>
-                      <span>WhatsApp Workflow</span>
-                    </div>
-                    <h3 className="font-display text-xl font-normal text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors">
-                      RealGuard
-                    </h3>
-                    <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-relaxed">
-                      AI automation and conversational real estate workflow assistant connecting WhatsApp messaging to verified business logic, deterministic EMI calculations, and CRM persistence.
-                    </p>
-                  </div>
-                  <div className="pt-3 border-t border-[var(--color-hairline)] flex items-center justify-between font-mono text-xs text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)]">
-                    <span>View Workflow Proof</span>
                     <span>→</span>
                   </div>
                 </Link>
@@ -673,15 +729,15 @@ export default async function ServicesPage() {
                   <div className="space-y-2">
                     <div className="flex items-center justify-between font-mono text-xs text-[var(--color-ink-secondary)]">
                       <span className="text-[var(--color-accent)] uppercase tracking-wider font-semibold">
-                        Next.js 16 &amp; React 19
+                        Defensive Engineering &amp; SEO
                       </span>
-                      <span>Live Site</span>
+                      <span>Live Platform</span>
                     </div>
                     <h3 className="font-display text-xl font-normal text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors">
                       ShivSastra Platform
                     </h3>
                     <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-relaxed">
-                      Production Next.js 16 App Router application with Turbopack, Razorpay payment verification, Supabase Row-Level Security, and rigorous technical SEO.
+                      Production Next.js 16 App Router application with Turbopack, Razorpay payment verification, Supabase Row-Level Security, and 25-point automated security suite.
                     </p>
                   </div>
                   <div className="pt-3 border-t border-[var(--color-hairline)] flex items-center justify-between font-mono text-xs text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)]">
@@ -693,8 +749,8 @@ export default async function ServicesPage() {
             </section>
           </InnerPageEntrance>
 
-          {/* 5. COMPACT TECHNICAL CAPABILITIES & ENGINEERING STANDARDS */}
-          <InnerPageEntrance delayIndex={4}>
+          {/* 5. TECHNICAL CAPABILITIES & STANDARDS */}
+          <InnerPageEntrance delayIndex={5}>
             <section id="capabilities" className="space-y-6 scroll-mt-20">
               <div className="space-y-2 max-w-3xl">
                 <div className="flex items-center gap-2">
@@ -709,33 +765,33 @@ export default async function ServicesPage() {
                   Engineering Stack &amp; Quality Standards
                 </h2>
                 <p className="font-sans text-sm md:text-base text-[var(--color-ink-secondary)] leading-relaxed">
-                  For technical buyers and engineering leads: every technology and standard is verified against active source code, automated test suites, or live production deployments.
+                  For technical buyers and business leads: every tool, model, and workflow pattern is verified against active production code and security boundaries.
                 </p>
               </div>
 
-              {/* Scannable 2-Column Overview */}
+              {/* 2-Column Overview */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Column 1: Core Technologies */}
                 <div className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] space-y-4 flex flex-col justify-between">
                   <div className="space-y-3">
                     <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
-                      Core Technology Stack
+                      Core Agentic Stack
                     </span>
                     <h3 className="font-display text-xl font-normal text-[var(--color-ink-primary)]">
-                      Modern Web, Backend &amp; AI
+                      Orchestration, Models &amp; Integrations
                     </h3>
                     <ul className="space-y-2.5 font-sans text-xs text-[var(--color-ink-primary)] list-none">
                       <li className="flex items-start gap-2.5">
                         <span className="text-[var(--color-accent)] font-bold select-none shrink-0">—</span>
-                        <span><strong>Frontend:</strong> React 19, Next.js 16 (App Router), TypeScript, responsive typography, zero CLS.</span>
+                        <span><strong>Workflow Orchestration:</strong> Self-hosted n8n (Docker / VPS), Make free tier, and custom Node.js/Python micro-services.</span>
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="text-[var(--color-accent)] font-bold select-none shrink-0">—</span>
-                        <span><strong>Backend &amp; APIs:</strong> Java 21, Spring Boot 3, Python, PostgreSQL, Supabase RLS, REST &amp; WebSockets.</span>
+                        <span><strong>Inference Engines:</strong> Groq SDK (Llama 3.3 70B), OpenAI API (GPT-4o), Anthropic, with strict JSON schema outputs.</span>
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="text-[var(--color-accent)] font-bold select-none shrink-0">—</span>
-                        <span><strong>AI Orchestration:</strong> Groq SDK (Llama 3.3), OpenAI API, prompt schemas with deterministic fallbacks.</span>
+                        <span><strong>Data Connections:</strong> WhatsApp Cloud API, Twilio, Google Sheets API, PostgreSQL, and custom REST webhooks.</span>
                       </li>
                     </ul>
                   </div>
@@ -743,7 +799,7 @@ export default async function ServicesPage() {
                   <div className="pt-3 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-secondary)] flex items-center justify-between">
                     <span>Evidence in:</span>
                     <div className="flex gap-3">
-                      <Link href="/projects/quickeats" className="text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] underline underline-offset-2">QuickEats</Link>
+                      <Link href="/projects/realguard" className="text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] underline underline-offset-2">RealGuard</Link>
                       <Link href="/projects/yojna-setu" className="text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] underline underline-offset-2">Yojna Setu</Link>
                       <Link href="/projects/shivsastra" className="text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] underline underline-offset-2">ShivSastra</Link>
                     </div>
@@ -757,31 +813,31 @@ export default async function ServicesPage() {
                       Defensive Engineering Standards
                     </span>
                     <h3 className="font-display text-xl font-normal text-[var(--color-ink-primary)]">
-                      Security, Validation &amp; SEO
+                      Privacy, Human Oversight &amp; Limits
                     </h3>
                     <ul className="space-y-2.5 font-sans text-xs text-[var(--color-ink-primary)] list-none">
                       <li className="flex items-start gap-2.5">
                         <span className="text-[var(--color-accent)] font-bold select-none shrink-0">✓</span>
-                        <span><strong>Server-Authoritative Validation:</strong> Zero client trust; prices and payloads verified strictly on server.</span>
+                        <span><strong>Zero Customer Data Retention:</strong> Workflows deploy directly into client-controlled servers and accounts.</span>
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="text-[var(--color-accent)] font-bold select-none shrink-0">✓</span>
-                        <span><strong>Cryptographic Webhooks:</strong> Timing-safe HMAC-SHA256 signature verification and idempotency guards.</span>
+                        <span><strong>Human Approval Points:</strong> Critical workflows require staff confirmation before irreversible actions.</span>
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="text-[var(--color-accent)] font-bold select-none shrink-0">✓</span>
-                        <span><strong>Security &amp; Anti-Spam:</strong> CSP headers, Cloudflare Turnstile verification, and hidden honeypot fields.</span>
+                        <span><strong>Free-Tier Rate Limiting:</strong> Execution throttles and deduplication nodes protect your monthly cloud quotas.</span>
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="text-[var(--color-accent)] font-bold select-none shrink-0">✓</span>
-                        <span><strong>Technical SEO &amp; Discovery:</strong> Canonical URL integrity, XML sitemaps, JSON-LD graphs, and /llms.txt.</span>
+                        <span><strong>Cryptographic Webhooks:</strong> Timing-safe HMAC-SHA256 signature verification on messaging callbacks.</span>
                       </li>
                     </ul>
                   </div>
 
                   <div className="pt-3 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-secondary)] flex items-center justify-between">
-                    <span>Automated Security Suite:</span>
-                    <span className="font-semibold text-[var(--color-ink-primary)]">25/25 automated tests passing</span>
+                    <span>Privacy Guarantee:</span>
+                    <span className="font-semibold text-[var(--color-ink-primary)]">100% Client Data Sovereignty</span>
                   </div>
                 </div>
               </div>
@@ -790,7 +846,7 @@ export default async function ServicesPage() {
               <details className="group border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-5 focus-within:outline-none">
                 <summary className="flex items-center justify-between cursor-pointer list-none select-none font-mono text-xs uppercase tracking-wider text-[var(--color-ink-secondary)] hover:text-[var(--color-accent)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]">
                   <span className="font-semibold">
-                    <span className="group-open:hidden">Inspect in-depth capability breakdowns &amp; verified live proof (SEO, Security, Performance)</span>
+                    <span className="group-open:hidden">Inspect in-depth capability breakdowns &amp; defensive standards (SEO, Security, Performance)</span>
                     <span className="hidden group-open:inline">Hide in-depth engineering breakdowns</span>
                   </span>
                   <span className="font-mono text-sm font-semibold transition-transform duration-200 group-open:rotate-180 select-none">
@@ -868,10 +924,10 @@ export default async function ServicesPage() {
                     ))}
                   </div>
 
-                  {/* Website Engineering Showcase */}
+                  {/* Engineering Showcase */}
                   <div className="space-y-3 pt-4 border-t border-[var(--color-hairline)]">
                     <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
-                      Live Defensive Hygiene on ShivSastra
+                      Live Defensive Standards on ShivSastra
                     </span>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {WEBSITE_ENGINEERING_SHOWCASE.map((showcase) => (
@@ -916,8 +972,8 @@ export default async function ServicesPage() {
             </section>
           </InnerPageEntrance>
 
-          {/* 6. SHORT FAQ SECTION */}
-          <InnerPageEntrance delayIndex={5}>
+          {/* 6. FAQ SECTION */}
+          <InnerPageEntrance delayIndex={6}>
             <section id="faq" className="space-y-6 scroll-mt-20">
               <div className="space-y-2 max-w-3xl">
                 <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)] font-semibold">
@@ -927,7 +983,7 @@ export default async function ServicesPage() {
                   Clear Answers Before You Reach Out
                 </h2>
                 <p className="font-sans text-sm md:text-base text-[var(--color-ink-secondary)] leading-relaxed">
-                  Honest clarity on pricing, delivery timelines, revisions, hosting accounts, and scope expectations.
+                  Honest clarity on pricing, the 7-day trial, data security, human approval points, and free-tier optimization.
                 </p>
               </div>
 
@@ -958,7 +1014,7 @@ export default async function ServicesPage() {
           </InnerPageEntrance>
 
           {/* 7. REQUEST A QUOTE FORM & VERIFIED CONTACT LINKS */}
-          <InnerPageEntrance delayIndex={6}>
+          <InnerPageEntrance delayIndex={7}>
             <section
               id="quote"
               className="p-6 sm:p-10 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] space-y-8 scroll-mt-20"
@@ -971,11 +1027,11 @@ export default async function ServicesPage() {
                       Direct Engagement
                     </span>
                     <h2 className="font-display text-3xl sm:text-4xl font-normal tracking-tight text-[var(--color-ink-primary)]">
-                      Request a Quote
+                      Request an Agent Quote
                     </h2>
                     <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                      Have a bug to fix, a landing page to launch, or an API to integrate?
-                      Send a brief outline of what you need. I&apos;ll review the scope and reply within 24 hours with a transparent estimate.
+                      Need a Lead Qualifier, WhatsApp Support Agent, or a custom Multi-Agent system?
+                      Send a brief outline of your business workflow. I&apos;ll review your requirements and reply within 24 hours with a transparent estimate.
                     </p>
                   </div>
 
@@ -1024,10 +1080,10 @@ export default async function ServicesPage() {
                   {/* Service SLA Commitment */}
                   <div className="p-4 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)] space-y-1">
                     <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
-                      Service Commitment
+                      Data Privacy &amp; Trial Guarantee
                     </span>
                     <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
-                      No surprise invoices. Every engagement has a confirmed written scope, agreed deliverables, and clear turnaround before work starts.
+                      Zero client customer data is stored on my servers. Small organisations qualify for a 7-day free trial on the Starter Agent Setup.
                     </p>
                   </div>
                 </div>
@@ -1036,7 +1092,7 @@ export default async function ServicesPage() {
                 <div className="lg:col-span-7 bg-[var(--color-canvas-primary)] p-6 sm:p-8 border border-[var(--color-hairline)]">
                   <div className="mb-6 space-y-1">
                     <h3 className="font-display text-xl font-normal text-[var(--color-ink-primary)]">
-                      Project Scope &amp; Details
+                      Project Scope &amp; Workflow Outline
                     </h3>
                     <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
                       Fill out the form below for an itemized estimate.
@@ -1048,7 +1104,7 @@ export default async function ServicesPage() {
                     labels={{
                       name: "Your Name or Company",
                       email: "Your Work Email",
-                      brief: "Project details, website URL, bug description, or target deadline...",
+                      brief: "Agent role (Lead Qualifier, Support), channel (WhatsApp / Web), tools needed (Sheets, CRM)...",
                       submit: "Send Quote Request →",
                     }}
                   />
@@ -1058,7 +1114,7 @@ export default async function ServicesPage() {
           </InnerPageEntrance>
 
           {/* 8. FOOTER CROSS-LINKS */}
-          <InnerPageEntrance delayIndex={7}>
+          <InnerPageEntrance delayIndex={8}>
             <div className="pt-6 border-t border-[var(--color-hairline)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-xs text-[var(--color-ink-secondary)]">
               <Link
                 href="/"
@@ -1067,7 +1123,7 @@ export default async function ServicesPage() {
                 <span>← Back to Home</span>
               </Link>
               <div className="flex items-center gap-4">
-                <span>Looking for instant digital downloads?</span>
+                <span>Looking for instant digital agent kits?</span>
                 <Link
                   href="/store"
                   className="text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] transition-colors underline underline-offset-4"

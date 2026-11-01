@@ -164,9 +164,10 @@ export function ProductCheckoutAction({
     ))
   ) {
     const isCaseStudy = formattedPrice === "Case Study" || productSlug === "yojna-setu";
+    const isDiscontinued = formattedPrice === "Discontinued";
     const targetHref = isCaseStudy
       ? `/projects/${productSlug}`
-      : `/contact?subject=${encodeURIComponent(`Inquiry regarding ${productTitle}`)}`;
+      : isDiscontinued ? "/services" : `/contact?subject=${encodeURIComponent(`Inquiry regarding ${productTitle}`)}`;
 
     return (
       <div className="pt-4 flex flex-col sm:flex-row sm:items-center gap-4">
@@ -174,12 +175,12 @@ export function ProductCheckoutAction({
           href={targetHref}
           className="inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider px-5 py-3 border border-[var(--color-ink-primary)] text-[var(--color-ink-primary)] hover:bg-[var(--color-ink-primary)] hover:text-[var(--color-canvas-primary)] transition-colors min-h-[44px]"
         >
-          {isCaseStudy ? "View Architecture Case Study →" : "Inquire About Release →"}
+          {isCaseStudy ? "View Architecture Case Study →" : isDiscontinued ? "Explore Agentic AI Services →" : "Inquire About Release →"}
         </a>
         <span className="font-mono text-xs text-[var(--color-ink-secondary)]">
           {isCaseStudy
             ? "Open architectural case study and engineering showcase. Not for sale."
-            : "Resource currently in development. No payment or checkout required."}
+            : isDiscontinued ? "This product has been discontinued in favor of dedicated Agentic AI systems." : "Resource currently in development. No payment or checkout required."}
         </span>
       </div>
     );

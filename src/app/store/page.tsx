@@ -14,16 +14,16 @@ import { absoluteUrl, serializeJsonLd } from "@/lib/site";
 export const revalidate = 60;
 
 export const metadata = {
-  title: "Store — Digital Products & Architectural Blueprints",
+  title: "Store — Agentic AI Templates, Kits & Digital Tools",
   description:
-    "Browse developer tools, templates, upcoming releases, and engineering case studies by Shivam Shukla.",
+    "Browse production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and free-tier automation bundles by Shivam Shukla.",
   alternates: {
     canonical: absoluteUrl("/store"),
   },
   openGraph: {
-    title: "Store — Shivam Shukla",
+    title: "Store — Agentic AI Templates, Kits & Digital Tools | Shivam Shukla",
     description:
-      "Browse developer tools, templates, upcoming releases, and engineering case studies by Shivam Shukla.",
+      "Browse production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and free-tier automation bundles by Shivam Shukla.",
     url: absoluteUrl("/store"),
     type: "website",
     siteName: "ShivSastra",
@@ -33,15 +33,15 @@ export const metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "ShivSastra Store — Digital Releases & Architecture Blueprints",
+        alt: "ShivSastra Store — Agentic AI Templates & Kits",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Store — Shivam Shukla",
+    title: "Store — Agentic AI Templates, Kits & Digital Tools | Shivam Shukla",
     description:
-      "Browse developer tools, templates, upcoming releases, and engineering case studies by Shivam Shukla.",
+      "Browse production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and free-tier automation bundles by Shivam Shukla.",
     images: ["/og-image.png"],
   },
 };
@@ -55,9 +55,9 @@ export default async function StorePage() {
   const storeJsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "SHIVSASTRA Store",
+    name: "SHIVSASTRA Store — Agentic AI Templates & Kits",
     description:
-      "Browse developer tools, templates, upcoming releases, and engineering case studies by Shivam Shukla.",
+      "Browse production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and free-tier automation bundles by Shivam Shukla.",
     url: absoluteUrl("/store"),
     breadcrumb: {
       "@type": "BreadcrumbList",
@@ -107,7 +107,7 @@ export default async function StorePage() {
                     Store
                   </h1>
                   <p className="font-sans text-sm md:text-base text-[var(--color-ink-secondary)] leading-relaxed">
-                    Browse developer resources and engineering case studies. Availability and prices are shown on each item.
+                    Production-ready agentic AI templates, complete deployment kits, and system prompt packs. Immediate access upon checkout.
                   </p>
                 </div>
                 <div className="font-mono text-xs text-[var(--color-ink-secondary)] shrink-0">
@@ -116,12 +116,11 @@ export default async function StorePage() {
                       <span className="text-[var(--color-accent)] font-semibold">
                         {categoryCounts.purchasable}
                       </span>{" "}
-                      {categoryCounts.purchasable === 1 ? "product available" : "products available"}
-                      {categoryCounts.upcoming > 0 && ` · ${categoryCounts.upcoming} upcoming`}
+                      {categoryCounts.purchasable === 1 ? "agent product available" : "agent products available"}
                     </>
                   ) : (
                     <span className="text-[var(--color-ink-secondary)]">
-                      <span className="text-[var(--color-accent)] font-medium">0 commercial products for sale</span> · {categoryCounts.upcoming} upcoming · {categoryCounts.caseStudy} showcase
+                      {categoryCounts.total} products available
                     </span>
                   )}
                 </div>
@@ -132,95 +131,124 @@ export default async function StorePage() {
           {/* 3 Category Spotlight Cards */}
           <InnerPageEntrance delayIndex={1}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* 1. Design & Templates */}
+              {/* 1. AI Agent Templates */}
               <Link
-                href="/store/design"
+                href="/store/agent-templates"
                 className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-6 md:p-8 space-y-4 hover:border-[var(--color-ink-primary)] transition-all group flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs font-mono text-[var(--color-ink-secondary)]">
                     <span className="text-[var(--color-accent)] uppercase tracking-wider font-semibold">
-                      Templates
+                      Workflows
                     </span>
                     <span>
-                      {categoryCounts.design === 1 ? "1 upcoming template" : `${categoryCounts.design} items`}
+                      {categoryCounts.agent_templates} {categoryCounts.agent_templates === 1 ? "template" : "templates"}
                     </span>
                   </div>
                   <h2 className="font-display text-2xl text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors">
-                    Design & Templates
+                    AI Agent Templates
                   </h2>
                   <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-relaxed">
-                    Swiss-inspired portfolio kits and accessible frontend interaction systems in active development.
+                    Production n8n and Make workflows for lead qualification, sales follow-up, and free-tier execution optimization.
                   </p>
                 </div>
                 <div className="pt-4 border-t border-[var(--color-hairline)] flex items-center justify-between font-mono text-xs text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)]">
-                  <span>Browse Design</span>
+                  <span>Browse Templates</span>
                   <span>→</span>
                 </div>
               </Link>
 
-              {/* 2. AI Agents */}
+              {/* 2. Complete Agent Kits */}
               <Link
-                href="/store/ai-agents"
+                href="/store/agent-kits"
                 className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-6 md:p-8 space-y-4 hover:border-[var(--color-ink-primary)] transition-all group flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs font-mono text-[var(--color-ink-secondary)]">
                     <span className="text-[var(--color-accent)] uppercase tracking-wider font-semibold">
-                      Engineering Showcase
+                      Full Kits
                     </span>
                     <span>
-                      {categoryCounts.ai_agents === 1 ? "1 case study" : `${categoryCounts.ai_agents} items`}
+                      {categoryCounts.agent_kits} {categoryCounts.agent_kits === 1 ? "kit" : "kits"}
                     </span>
                   </div>
                   <h2 className="font-display text-2xl text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors">
-                    AI Agents
+                    Complete Agent Kits
                   </h2>
                   <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-relaxed">
-                    Decoupled conversational agents and deterministic rules engine case studies (open architecture, not for sale).
+                    End-to-end agent solutions including WhatsApp support systems and comprehensive small business bundles.
                   </p>
                 </div>
                 <div className="pt-4 border-t border-[var(--color-hairline)] flex items-center justify-between font-mono text-xs text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)]">
-                  <span>Explore Showcase</span>
+                  <span>Browse Kits</span>
                   <span>→</span>
                 </div>
               </Link>
 
-              {/* 3. Digital Products */}
+              {/* 3. Prompt + System Instruction Packs */}
               <Link
-                href="/store/digital-products"
+                href="/store/prompt-packs"
                 className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-6 md:p-8 space-y-4 hover:border-[var(--color-ink-primary)] transition-all group flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs font-mono text-[var(--color-ink-secondary)]">
                     <span className="text-[var(--color-accent)] uppercase tracking-wider font-semibold">
-                      Boilerplates
+                      Prompts &amp; Schemas
                     </span>
                     <span>
-                      {categoryCounts.digital_products === 1 ? "1 upcoming starter" : `${categoryCounts.digital_products} items`}
+                      {categoryCounts.prompt_packs} {categoryCounts.prompt_packs === 1 ? "pack" : "packs"}
                     </span>
                   </div>
                   <h2 className="font-display text-2xl text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors">
-                    Digital Products
+                    Prompt + System Instruction Packs
                   </h2>
                   <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-relaxed">
-                    Code starter repos, developer templates, and technical downloads.
+                    Battle-tested system prompts, reasoning instructions, guardrails, and JSON schemas for production agents.
                   </p>
                 </div>
                 <div className="pt-4 border-t border-[var(--color-hairline)] flex items-center justify-between font-mono text-xs text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)]">
-                  <span>Browse Products</span>
+                  <span>Browse Prompt Packs</span>
                   <span>→</span>
                 </div>
               </Link>
             </div>
           </InnerPageEntrance>
 
-          {/* Full Interactive Catalog View */}
+          {/* Main Security Banner */}
           <InnerPageEntrance delayIndex={2}>
+            <div className="p-6 md:p-8 border border-[var(--color-accent)]/40 bg-[var(--color-canvas-secondary)] space-y-3">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-[var(--color-accent)] inline-block" />
+                <h2 className="font-display text-xl sm:text-2xl text-[var(--color-ink-primary)] font-normal">
+                  We prioritize security
+                </h2>
+              </div>
+              <p className="font-sans text-sm sm:text-base text-[var(--color-ink-primary)] leading-relaxed font-medium">
+                Data stays in your control • Human approval points included • No customer data stored on my servers • Free-tier safe by design
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-3 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-secondary)]">
+                <div>
+                  <span className="text-[var(--color-accent)] font-bold">✓</span> Data In Your Control
+                </div>
+                <div>
+                  <span className="text-[var(--color-accent)] font-bold">✓</span> Human Approval Points
+                </div>
+                <div>
+                  <span className="text-[var(--color-accent)] font-bold">✓</span> Zero Customer Data Stored
+                </div>
+                <div>
+                  <span className="text-[var(--color-accent)] font-bold">✓</span> Free-Tier Safe by Design
+                </div>
+              </div>
+            </div>
+          </InnerPageEntrance>
+
+          {/* Full Interactive Catalog View */}
+          <InnerPageEntrance delayIndex={3}>
             <div className="space-y-8 pt-6">
               <div className="space-y-1">
                 <h2 className="font-display text-3xl font-normal text-[var(--color-ink-primary)]">
-                  All Products
+                  All Digital Agent Products
                 </h2>
               </div>
 
@@ -234,34 +262,34 @@ export default async function StorePage() {
           </InnerPageEntrance>
 
           {/* Custom Services Bridge Banner */}
-          <InnerPageEntrance delayIndex={3}>
+          <InnerPageEntrance delayIndex={4}>
             <div className="p-8 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="space-y-2 max-w-2xl">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-[var(--color-accent)] inline-block" />
                   <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)] font-semibold">
-                    Need Custom Client Development?
+                    Need Custom Agent Implementation?
                   </span>
                 </div>
                 <h3 className="font-display text-2xl font-normal text-[var(--color-ink-primary)]">
-                  Custom Engineering &amp; AI Integration Services
+                  Custom Agentic AI Systems &amp; Implementation
                 </h3>
                 <p className="font-sans text-xs sm:text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                  Looking for bespoke development rather than ready-made templates?
-                  I offer tailored client services including website bug fixing (starting at ₹999), Next.js landing pages, API integrations, and practical AI chatbots.
+                  Looking for bespoke agent implementation rather than ready-made templates?
+                  I offer tailored client services including Starter Agent Setup (₹22,000 – ₹35,000 with a 7-day free trial), Business Agent Packages (₹55,000 – ₹90,000), and Full Agentic Systems (₹1,10,000 – ₹1,80,000) with free-tier optimization and strict data privacy guarantees.
                 </p>
               </div>
               <Link
-                href="/services"
+                href="/services#starter-agent-setup"
                 className="inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider px-5 py-3 border border-[var(--color-ink-primary)] text-[var(--color-ink-primary)] hover:bg-[var(--color-ink-primary)] hover:text-[var(--color-canvas-primary)] transition-colors self-start md:self-auto shrink-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
               >
-                Explore Services &amp; Packages →
+                Start with 7-Day Free Trial →
               </Link>
             </div>
           </InnerPageEntrance>
 
           {/* Back Link */}
-          <InnerPageEntrance delayIndex={4}>
+          <InnerPageEntrance delayIndex={5}>
             <div className="pt-6 border-t border-[var(--color-hairline)]">
               <Link
                 href="/"

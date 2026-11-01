@@ -8,7 +8,13 @@ export type ProductType =
   | "template"
   | "monograph";
 
-export type StoreCategory = "design" | "ai_agents" | "digital_products";
+export type StoreCategory =
+  | "agent_templates"
+  | "agent_kits"
+  | "prompt_packs"
+  | "design"
+  | "ai_agents"
+  | "digital_products";
 
 export interface FaqItem {
   question: string;
@@ -76,6 +82,9 @@ export interface ProductReview {
 }
 
 export interface CategoryCounts {
+  agent_templates: number;
+  agent_kits: number;
+  prompt_packs: number;
   design: number;
   ai_agents: number;
   digital_products: number;
@@ -99,14 +108,17 @@ export function isProductPurchasable(product: ProductDisplayData): boolean {
 }
 
 /**
- * Resolves the catalog presentation type: purchasable product, engineering case study, or upcoming release.
+ * Resolves the catalog presentation type: purchasable product, engineering case study, or upcoming/discontinued release.
  */
 export function getProductCatalogType(
   product: ProductDisplayData
-): "purchasable" | "case_study" | "upcoming" {
+): "purchasable" | "case_study" | "upcoming" | "discontinued" {
   if (isProductPurchasable(product)) return "purchasable";
   if (product.slug === "yojna-setu" || product.formattedPrice === "Case Study") {
     return "case_study";
+  }
+  if (!product.isAvailable || product.formattedPrice === "Discontinued") {
+    return "discontinued";
   }
   return "upcoming";
 }
@@ -134,13 +146,13 @@ export function formatPrice(
 
   switch (curr) {
     case "INR":
-      return `â‚¹${amount}`;
+      return `₹${amount}`;
     case "USD":
       return `$${amount}`;
     case "EUR":
-      return `â‚¬${amount}`;
+      return `€${amount}`;
     case "GBP":
-      return `Â£${amount}`;
+      return `£${amount}`;
     default:
       return `${curr} ${amount}`;
   }
@@ -160,7 +172,7 @@ function mapProduct(row: ProductRow): ProductDisplayData {
     description: row.description,
     priceInCents: row.price_in_cents,
     currency: row.currency,
-    category: row.category || "digital_products",
+    category: row.category || "agent_templates",
     productType: row.product_type || "digital_download",
     features: Array.isArray(row.features) ? row.features : [],
     requirements: row.requirements,
@@ -212,22 +224,262 @@ export interface StoreProductsOptions {
   sort?: "newest" | "price_asc" | "price_desc" | "featured";
 }
 
+/* =======================================================================
+   NEW AGENTIC AI DIGITAL PRODUCTS (Authoritative Catalog)
+   ======================================================================= */
+
+export const N8N_LEAD_QUALIFIER_ITEM: ProductDisplayData = {
+  id: "847291a2-1111-4000-8000-000000000001",
+  slug: "n8n-lead-qualifier-agent-pack",
+  releaseCode: "AGT-LQP",
+  title: "n8n Lead Qualifier Agent Pack",
+  shortDescription:
+    "Ready-to-deploy n8n workflow template that autonomously engages, qualifies, and enriches incoming leads before routing them to your CRM or inbox.",
+  description:
+    "A production-tested n8n agent workflow built for self-hosted or cloud n8n setups. Features structured JSON schema extraction, scoring logic, rate-limit guardrails, and automated notifications to Google Sheets or Slack.",
+  priceInCents: 349900,
+  currency: "INR",
+  category: "agent_templates",
+  productType: "template",
+  features: [
+    "Production n8n JSON workflow ready for 1-click import",
+    "Structured criteria scoring for high-intent leads",
+    "Rate limiting and token-consumption guardrails",
+    "Google Sheets & email notification nodes included",
+    "Free-tier compatible with self-hosted n8n or Make free tier",
+  ],
+  requirements: "n8n (self-hosted v1.0+ or n8n Cloud) or Make free tier, Groq or OpenAI API key",
+  faq: [
+    {
+      question: "Can I run this on the free tier?",
+      answer:
+        "Yes. The workflow is optimized for minimal execution steps and token efficiency, running cleanly on self-hosted n8n or free-tier orchestrators.",
+    },
+    {
+      question: "What is included in the download?",
+      answer:
+        "You receive the complete n8n workflow JSON export, environment configuration guide, schema definitions, and a step-by-step setup walkthrough.",
+    },
+  ],
+  previewImageUrl: "/images/backgrounds/store.webp",
+  isAvailable: true,
+  isFeatured: true,
+  sortOrder: 1,
+  createdAt: "2026-11-01T12:00:00Z",
+  updatedAt: "2026-11-01T12:00:00Z",
+  formattedPrice: "₹3499.00",
+};
+
+export const WHATSAPP_SUPPORT_KIT_ITEM: ProductDisplayData = {
+  id: "847291a2-1111-4000-8000-000000000002",
+  slug: "whatsapp-support-agent-kit",
+  releaseCode: "AGT-WSK",
+  title: "WhatsApp Support Agent Kit",
+  shortDescription:
+    "Complete conversational support agent kit connecting WhatsApp messaging to knowledge retrieval, FAQ resolution, and live-agent escalation.",
+  description:
+    "An end-to-end kit for deploying a 24/7 customer support agent over WhatsApp. Connects directly to webhook gateways, answers recurring inquiries accurately with deterministic fallbacks, and triggers human takeover whenever required.",
+  priceInCents: 399900,
+  currency: "INR",
+  category: "agent_kits",
+  productType: "code_license",
+  features: [
+    "WhatsApp webhook integration blueprints (Meta Cloud API / Twilio)",
+    "Contextual FAQ knowledge retrieval with fallback parsing",
+    "Human-in-the-loop escalation trigger for sensitive queries",
+    "Session memory management and conversation state tracking",
+    "Zero customer data stored on third-party servers",
+  ],
+  requirements: "WhatsApp Business API or Twilio WhatsApp sandbox, Node.js 18+ or n8n v1.0+",
+  faq: [
+    {
+      question: "Does this require a paid WhatsApp Business API account?",
+      answer:
+        "You can start completely free using the Meta Cloud API free tier (1,000 free service conversations/month) or Twilio sandbox.",
+    },
+    {
+      question: "How does human escalation work?",
+      answer:
+        "When a customer requests a representative or sentiment triggers an alert, the agent halts automated replies and routes the chat directly to your team.",
+    },
+  ],
+  previewImageUrl: "/images/projects/realguard/evidence-realguard-whatsapp.png",
+  isAvailable: true,
+  isFeatured: true,
+  sortOrder: 2,
+  createdAt: "2026-11-01T12:00:00Z",
+  updatedAt: "2026-11-01T12:00:00Z",
+  formattedPrice: "₹3999.00",
+};
+
+export const SALES_FOLLOWUP_AGENT_ITEM: ProductDisplayData = {
+  id: "847291a2-1111-4000-8000-000000000003",
+  slug: "sales-followup-agent-pack",
+  releaseCode: "AGT-SFP",
+  title: "Sales Follow-up Agent Pack",
+  shortDescription:
+    "Intelligent follow-up automation system that monitors deal stages, drafts tailored check-ins, and re-engages stalled prospects automatically.",
+  description:
+    "Automate thoughtful, persistent sales follow-ups without sounding generic. This agent tracks interaction history, generates hyper-relevant check-in messages based on client objections, and schedules timed touchpoints across email or messaging.",
+  priceInCents: 449900,
+  currency: "INR",
+  category: "agent_templates",
+  productType: "template",
+  features: [
+    "Dynamic follow-up cadences with objection-handling logic",
+    "Multi-channel trigger templates for email, WhatsApp, and CRM",
+    "CRM stage sync (HubSpot, Notion, Airtable, or Google Sheets)",
+    "Anti-spam throttle ensuring safe delivery cadences",
+    "Human approval checkpoints before high-value emails dispatch",
+  ],
+  requirements: "n8n or Make, connected CRM or Google Sheet, SMTP or Resend/SendGrid credentials",
+  faq: [
+    {
+      question: "Can I review messages before they send?",
+      answer:
+        "Yes. Human approval points can be toggled on so messages are queued as drafts until you approve them.",
+    },
+  ],
+  previewImageUrl: "/images/backgrounds/store.webp",
+  isAvailable: true,
+  isFeatured: false,
+  sortOrder: 3,
+  createdAt: "2026-11-01T12:00:00Z",
+  updatedAt: "2026-11-01T12:00:00Z",
+  formattedPrice: "₹4499.00",
+};
+
+export const SMALL_BUSINESS_BUNDLE_ITEM: ProductDisplayData = {
+  id: "847291a2-1111-4000-8000-000000000004",
+  slug: "small-business-agent-bundle",
+  releaseCode: "AGT-SBB",
+  title: "Small Business Agent Bundle",
+  shortDescription:
+    "The complete agentic toolkit for small business: Lead Qualifier, WhatsApp Support Kit, Sales Follow-up Pack, and Prompt Library in one bundle.",
+  description:
+    "Comprehensive agentic AI bundle designed specifically for small businesses wanting an all-in-one automation stack. Includes the Lead Qualifier Pack, WhatsApp Support Kit, Sales Follow-up Pack, Prompt Library, and Free-Tier Survival Kit.",
+  priceInCents: 999900,
+  currency: "INR",
+  category: "agent_kits",
+  productType: "code_license",
+  features: [
+    "All 5 individual agent templates, kits, and prompt libraries included",
+    "Unified architecture blueprint connecting leads, support, and sales",
+    "Pre-configured n8n and Make workflows with step-by-step guides",
+    "Self-hosting deployment guide for 100% data ownership",
+    "Over 30% savings compared to buying individual packs",
+  ],
+  requirements: "Self-hosted server (optional Docker/VPS) or free-tier cloud accounts (n8n, Make, Groq/OpenAI)",
+  faq: [
+    {
+      question: "Is this suitable for non-technical small business owners?",
+      answer:
+        "The bundle includes detailed setup walkthroughs, pre-built JSON templates, and clear configuration checklists designed for straightforward deployment.",
+    },
+  ],
+  previewImageUrl: "/images/backgrounds/store.webp",
+  isAvailable: true,
+  isFeatured: true,
+  sortOrder: 4,
+  createdAt: "2026-11-01T12:00:00Z",
+  updatedAt: "2026-11-01T12:00:00Z",
+  formattedPrice: "₹9999.00",
+};
+
+export const AGENT_PROMPT_LIBRARY_ITEM: ProductDisplayData = {
+  id: "847291a2-1111-4000-8000-000000000005",
+  slug: "agent-system-prompt-library",
+  releaseCode: "AGT-SPL",
+  title: "Agent System Prompt Library",
+  shortDescription:
+    "Curated collection of 50+ battle-tested system instructions, guardrails, reasoning scaffolds, and schema templates for production AI agents.",
+  description:
+    "Stop wrestling with hallucinating models. This library contains battle-tested system instructions and steering prompts engineered for precision, JSON schema compliance, role adherence, and defensive prompt injection resistance.",
+  priceInCents: 249900,
+  currency: "INR",
+  category: "prompt_packs",
+  productType: "digital_download",
+  features: [
+    "50+ production-verified agent system prompts across 10 business domains",
+    "Strict JSON schema output steering prompts with fallback clauses",
+    "Defensive guardrail instructions preventing prompt injection and jailbreaks",
+    "Tested with Groq (Llama 3.3), OpenAI (GPT-4o), and Anthropic (Claude 3.5)",
+    "Markdown and JSON format for direct copy-paste into your agent pipelines",
+  ],
+  requirements: "Compatible with any LLM provider (OpenAI, Anthropic, Groq, Google Gemini, Ollama)",
+  faq: [
+    {
+      question: "How do these prompts differ from generic prompt collections?",
+      answer:
+        "These are structured engineering system instructions designed for autonomous agents that call tools and return strict JSON, not chat personas or creative writing prompts.",
+    },
+  ],
+  previewImageUrl: "/images/backgrounds/store.webp",
+  isAvailable: true,
+  isFeatured: false,
+  sortOrder: 5,
+  createdAt: "2026-11-01T12:00:00Z",
+  updatedAt: "2026-11-01T12:00:00Z",
+  formattedPrice: "₹2499.00",
+};
+
+export const N8N_FREE_TIER_KIT_ITEM: ProductDisplayData = {
+  id: "847291a2-1111-4000-8000-000000000006",
+  slug: "n8n-free-tier-survival-kit",
+  releaseCode: "AGT-FSK",
+  title: "n8n Free-Tier Survival Kit",
+  shortDescription:
+    "Essential patterns, execution-saving workflows, rate-limiting sub-workflows, and local storage adapters to run production agents on n8n free tier.",
+  description:
+    "A specialized toolkit for running powerful agents without hitting cloud tier paywalls. Includes execution batching patterns, webhook deduplication, token throttles, and local SQLite/JSON caching adapters.",
+  priceInCents: 149900,
+  currency: "INR",
+  category: "agent_templates",
+  productType: "template",
+  features: [
+    "Execution batching & queueing nodes to stay within free-tier caps",
+    "Webhook deduplication and retry handlers to prevent execution burning",
+    "Token-saving prompt compression patterns",
+    "Local SQLite and Google Sheets state management templates",
+    "Self-hosting checklist on minimal VPS (₹300/mo or free Oracle Cloud)",
+  ],
+  requirements: "n8n free cloud account or self-hosted n8n instance",
+  faq: [
+    {
+      question: "Does this help reduce OpenAI/Groq API bills?",
+      answer:
+        "Yes. The included compression and caching nodes drastically reduce redundant LLM calls, lowering inference token usage by up to 60%.",
+    },
+  ],
+  previewImageUrl: "/images/backgrounds/store.webp",
+  isAvailable: true,
+  isFeatured: false,
+  sortOrder: 6,
+  createdAt: "2026-11-01T12:00:00Z",
+  updatedAt: "2026-11-01T12:00:00Z",
+  formattedPrice: "₹1499.00",
+};
+
+/* =======================================================================
+   LEGACY / DISCONTINUED ITEMS (Preserved for tests & backward compatibility)
+   ======================================================================= */
+
 export const YOJNA_SETU_STORE_ITEM: ProductDisplayData = {
   id: "yojna-setu-agent",
   slug: "yojna-setu",
   releaseCode: "YS-V2",
   title: "Yojna Setu",
   shortDescription:
-    "A WhatsApp AI agent for welfare-scheme discovery. Users talk naturally â€” AI extracts demographic profile attributes, while deterministic Java rules evaluate eligibility over 82 normalized schemes.",
+    "A WhatsApp AI agent for welfare-scheme discovery. Users talk naturally — AI extracts demographic profile attributes, while deterministic Java rules evaluate eligibility over 82 normalized schemes.",
   description:
-    "A WhatsApp AI agent for welfare-scheme discovery. Users describe themselves in natural language in conversational Hindi or English â€” AI extracts demographic attributes, then deterministic Java rules evaluate eligibility over 82 normalized schemes.",
+    "A WhatsApp AI agent for welfare-scheme discovery. Users describe themselves in natural language in conversational Hindi or English — AI extracts demographic attributes, then deterministic Java rules evaluate eligibility over 82 normalized schemes.",
   priceInCents: null,
   currency: null,
   category: "ai_agents",
   productType: "code_license",
   features: [
     "82 normalized schemes (63 Central, 11 State, 8 Philanthropic)",
-    "42/42 automated tests passing Â· 0 Critical findings",
+    "42/42 automated tests passing · 0 Critical findings",
     "Deterministic Java eligibility engine with indexed queries",
     "Interactive product case study & architecture monograph",
   ],
@@ -240,9 +492,9 @@ export const YOJNA_SETU_STORE_ITEM: ProductDisplayData = {
     },
   ],
   previewImageUrl: "/images/projects/yojna-setu/evidence-whatsapp-discovery.png",
-  isAvailable: true,
-  isFeatured: true,
-  sortOrder: 1,
+  isAvailable: false,
+  isFeatured: false,
+  sortOrder: 10,
   createdAt: "2026-09-25T12:00:00Z",
   updatedAt: "2026-09-25T12:00:00Z",
   formattedPrice: "Case Study",
@@ -256,7 +508,7 @@ export const SPRING_BOOT_STARTER_ITEM: ProductDisplayData = {
   shortDescription:
     "Structured backend starter featuring Spring Boot 3, Spring Security 6, JWT rotation, database migrations, rate limiting, and clean MVC architecture.",
   description:
-    "A clean architectural starter kit for Java & Spring Boot developers. Includes established patterns for stateless JWT rotation, ownership checks (IDOR defenses), PostgreSQL migrations, Docker configurations, and integration test setups.",
+    "A clean architectural starter kit for Java & Spring Boot developers. Note: This item has been discontinued in favor of our dedicated Agentic AI systems.",
   priceInCents: null,
   currency: null,
   category: "digital_products",
@@ -270,18 +522,18 @@ export const SPRING_BOOT_STARTER_ITEM: ProductDisplayData = {
   requirements: "Java 17+, Maven 3.8+, Docker (optional)",
   faq: [
     {
-      question: "What is the availability status of this template?",
+      question: "What is the status of this boilerplate?",
       answer:
-        "This template is currently in active development based on the architecture refined in QuickEats and Yojna Setu. It will be released directly upon completion.",
+        "Discontinued. Focus has shifted fully to Agentic AI systems and templates.",
     },
   ],
   previewImageUrl: "/images/quickeats.svg",
-  isAvailable: true,
+  isAvailable: false,
   isFeatured: false,
-  sortOrder: 2,
+  sortOrder: 11,
   createdAt: "2026-09-26T12:00:00Z",
   updatedAt: "2026-09-26T12:00:00Z",
-  formattedPrice: "Upcoming",
+  formattedPrice: "Discontinued",
 };
 
 export const EDITORIAL_PORTFOLIO_ITEM: ProductDisplayData = {
@@ -292,7 +544,7 @@ export const EDITORIAL_PORTFOLIO_ITEM: ProductDisplayData = {
   shortDescription:
     "A typographic, Swiss-inspired Next.js portfolio template built with Tailwind CSS, micro-interactions, accessible components, and zero AI fluff.",
   description:
-    "Handcrafted portfolio template engineered with Next.js App Router, Tailwind CSS, Motion spring interactions, and zero-compromise accessibility. Includes clean project case study layouts and verified profile integrations.",
+    "Handcrafted portfolio template engineered with Next.js App Router, Tailwind CSS, Motion spring interactions, and zero-compromise accessibility. Note: This item has been discontinued in favor of our dedicated Agentic AI systems.",
   priceInCents: null,
   currency: null,
   category: "design",
@@ -306,25 +558,31 @@ export const EDITORIAL_PORTFOLIO_ITEM: ProductDisplayData = {
   requirements: "Node.js 18+, Next.js 15/16",
   faq: [
     {
-      question: "Is this template ready for download?",
+      question: "What is the status of this template?",
       answer:
-        "This template is currently being packaged into a reusable open-source starter repo. Pre-release inquiries can be submitted via the contact page.",
+        "Discontinued. Focus has shifted fully to Agentic AI systems and templates.",
     },
   ],
   previewImageUrl: "/images/backgrounds/store-design.webp",
-  isAvailable: true,
+  isAvailable: false,
   isFeatured: false,
-  sortOrder: 3,
+  sortOrder: 12,
   createdAt: "2026-09-26T12:00:00Z",
   updatedAt: "2026-09-26T12:00:00Z",
-  formattedPrice: "Upcoming",
+  formattedPrice: "Discontinued",
 };
 
 /**
  * Authoritative canonical store items.
- * Single source of truth for portfolio showcases represented inside the store.
+ * Single source of truth for products represented inside the store.
  */
 export const CANONICAL_STORE_PRODUCTS: ProductDisplayData[] = [
+  N8N_LEAD_QUALIFIER_ITEM,
+  WHATSAPP_SUPPORT_KIT_ITEM,
+  SALES_FOLLOWUP_AGENT_ITEM,
+  SMALL_BUSINESS_BUNDLE_ITEM,
+  AGENT_PROMPT_LIBRARY_ITEM,
+  N8N_FREE_TIER_KIT_ITEM,
   YOJNA_SETU_STORE_ITEM,
   SPRING_BOOT_STARTER_ITEM,
   EDITORIAL_PORTFOLIO_ITEM,
@@ -332,7 +590,7 @@ export const CANONICAL_STORE_PRODUCTS: ProductDisplayData[] = [
 
 /**
  * Fetches available products ordered deterministically.
- * Merges canonical store items (Yojna Setu) with live Supabase database products.
+ * Merges canonical store items with live Supabase database products.
  * Queries the public view or public columns strictly; never selects storage_asset_path.
  * Gracefully degrades to canonical items if Supabase is unconfigured or unreachable.
  */
@@ -370,10 +628,15 @@ export async function getPublishedStoreProducts(
   // Merge canonical store items ensuring single source of truth
   for (const canonical of CANONICAL_STORE_PRODUCTS) {
     if (
-      canonical.isAvailable &&
       !products.some((p) => p.slug === canonical.slug || p.id === canonical.id)
     ) {
-      products.push(canonical);
+      if (
+        canonical.isAvailable ||
+        canonical.formattedPrice === "Discontinued" ||
+        canonical.slug === "yojna-setu"
+      ) {
+        products.push(canonical);
+      }
     }
   }
 
@@ -437,7 +700,7 @@ export async function getPublishedStoreProducts(
 
 /**
  * Resolves a single available product by its slug.
- * Unavailable or non-existent products strictly return null.
+ * Returns canonical or database product.
  */
 export async function getPublishedStoreProductBySlug(
   slug: string
@@ -448,7 +711,7 @@ export async function getPublishedStoreProductBySlug(
 
   const trimmedSlug = slug.trim();
   const canonical = CANONICAL_STORE_PRODUCTS.find(
-    (p) => p.slug === trimmedSlug && p.isAvailable
+    (p) => p.slug === trimmedSlug
   );
   if (canonical) {
     return canonical;
@@ -498,7 +761,7 @@ export async function getPublishedStoreProductBySlug(
 
 /**
  * Resolves a single available product by its UUID or identifier.
- * Unavailable or non-existent products strictly return null.
+ * Returns canonical or database product.
  */
 export async function getPublishedStoreProductById(
   id: string
@@ -509,7 +772,7 @@ export async function getPublishedStoreProductById(
 
   const trimmedId = id.trim();
   const canonical = CANONICAL_STORE_PRODUCTS.find(
-    (p) => (p.id === trimmedId || p.slug === trimmedId) && p.isAvailable
+    (p) => p.id === trimmedId || p.slug === trimmedId
   );
   if (canonical) {
     return canonical;
@@ -571,6 +834,9 @@ export async function getStoreCategoryCounts(): Promise<CategoryCounts> {
     const upcoming = products.length - purchasable - caseStudy;
 
     return {
+      agent_templates: products.filter((p) => p.category === "agent_templates").length,
+      agent_kits: products.filter((p) => p.category === "agent_kits").length,
+      prompt_packs: products.filter((p) => p.category === "prompt_packs").length,
       design: products.filter((p) => p.category === "design").length,
       ai_agents: products.filter((p) => p.category === "ai_agents").length,
       digital_products: products.filter((p) => p.category === "digital_products").length,
@@ -582,6 +848,9 @@ export async function getStoreCategoryCounts(): Promise<CategoryCounts> {
   } catch (err) {
     console.error("[STORE COUNTS EXCEPTION]", err);
     return {
+      agent_templates: 0,
+      agent_kits: 0,
+      prompt_packs: 0,
       design: 0,
       ai_agents: 0,
       digital_products: 0,
@@ -648,7 +917,7 @@ export async function getPublishedProductReviews(
  * Requirements:
  * - Must be available (isAvailable === true).
  * - Must have an integer priceInCents of at least 100 paise and valid currency.
- * - Non-commercial showcases (e.g. Yojna Setu case study) and upcoming releases strictly
+ * - Non-commercial showcases and upcoming/discontinued releases strictly
  *   return null to prevent misleading Google rich-results warnings or false InStock claims.
  */
 export function getProductStructuredData(

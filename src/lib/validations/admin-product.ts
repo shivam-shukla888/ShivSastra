@@ -34,6 +34,9 @@ export const PRODUCT_TYPES = [
 export type ProductType = (typeof PRODUCT_TYPES)[number];
 
 export const STORE_CATEGORIES = [
+  "agent_templates",
+  "agent_kits",
+  "prompt_packs",
   "design",
   "ai_agents",
   "digital_products",
@@ -42,6 +45,9 @@ export const STORE_CATEGORIES = [
 export type StoreCategory = (typeof STORE_CATEGORIES)[number];
 
 export const RESERVED_STORE_SLUGS = [
+  "agent-templates",
+  "agent-kits",
+  "prompt-packs",
   "design",
   "ai-agents",
   "digital-products",

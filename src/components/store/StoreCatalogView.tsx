@@ -18,12 +18,18 @@ interface StoreCatalogViewProps {
 }
 
 const CATEGORY_LABELS: Record<StoreCategory, string> = {
+  agent_templates: "AI Agent Templates",
+  agent_kits: "Complete Agent Kits",
+  prompt_packs: "Prompt + System Instruction Packs",
   design: "Design & Templates",
   ai_agents: "AI Agents",
   digital_products: "Digital Products",
 };
 
 const CATEGORY_HREFS: Record<StoreCategory, string> = {
+  agent_templates: "/store/agent-templates",
+  agent_kits: "/store/agent-kits",
+  prompt_packs: "/store/prompt-packs",
   design: "/store/design",
   ai_agents: "/store/ai-agents",
   digital_products: "/store/digital-products",
@@ -114,39 +120,39 @@ export function StoreCatalogView({
             </button>
             <button
               type="button"
-              aria-pressed={selectedCategory === "design"}
-              onClick={() => setSelectedCategory("design")}
+              aria-pressed={selectedCategory === "agent_templates"}
+              onClick={() => setSelectedCategory("agent_templates")}
               className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors border ${
-                selectedCategory === "design"
+                selectedCategory === "agent_templates"
                   ? "border-[var(--color-ink-primary)] bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] font-semibold"
                   : "border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] text-[var(--color-ink-secondary)] hover:border-[var(--color-ink-primary)]"
               }`}
             >
-              Design & Templates ({categoryCounts.design})
+              AI Agent Templates ({categoryCounts.agent_templates})
             </button>
             <button
               type="button"
-              aria-pressed={selectedCategory === "ai_agents"}
-              onClick={() => setSelectedCategory("ai_agents")}
+              aria-pressed={selectedCategory === "agent_kits"}
+              onClick={() => setSelectedCategory("agent_kits")}
               className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors border ${
-                selectedCategory === "ai_agents"
+                selectedCategory === "agent_kits"
                   ? "border-[var(--color-ink-primary)] bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] font-semibold"
                   : "border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] text-[var(--color-ink-secondary)] hover:border-[var(--color-ink-primary)]"
               }`}
             >
-              AI Agents ({categoryCounts.ai_agents})
+              Complete Agent Kits ({categoryCounts.agent_kits})
             </button>
             <button
               type="button"
-              aria-pressed={selectedCategory === "digital_products"}
-              onClick={() => setSelectedCategory("digital_products")}
+              aria-pressed={selectedCategory === "prompt_packs"}
+              onClick={() => setSelectedCategory("prompt_packs")}
               className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors border ${
-                selectedCategory === "digital_products"
+                selectedCategory === "prompt_packs"
                   ? "border-[var(--color-ink-primary)] bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] font-semibold"
                   : "border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] text-[var(--color-ink-secondary)] hover:border-[var(--color-ink-primary)]"
               }`}
             >
-              Digital Products ({categoryCounts.digital_products})
+              Prompt + System Instruction Packs ({categoryCounts.prompt_packs})
             </button>
           </div>
         )}
@@ -158,7 +164,7 @@ export function StoreCatalogView({
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search products..."
+              placeholder="Search agent packs, kits..."
               aria-label="Search products"
               className="w-full px-3 py-1.5 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)] rounded-none font-mono text-xs text-[var(--color-ink-primary)] focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)] placeholder:text-[var(--color-ink-secondary)]/50"
             />
@@ -196,12 +202,12 @@ export function StoreCatalogView({
         </div>
       </div>
 
-      {/* Products Grid or Editorial Empty State */}
+      {/* Products Grid */}
       {filteredProducts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product) => {
             const categoryLabel =
-              CATEGORY_LABELS[product.category] || "Studio Release";
+              CATEGORY_LABELS[product.category] || "Agentic Tool";
             const categoryHref =
               CATEGORY_HREFS[product.category] || "/store";
 
@@ -209,8 +215,11 @@ export function StoreCatalogView({
             const isCaseStudy =
               product.slug === "yojna-setu" ||
               product.formattedPrice === "Case Study";
+            const isDiscontinued =
+              !product.isAvailable || product.formattedPrice === "Discontinued";
             const isUpcoming =
               !isCaseStudy &&
+              !isDiscontinued &&
               (!Number.isInteger(product.priceInCents) ||
                 (product.priceInCents ?? 0) < 100 ||
                 !product.currency?.trim());
@@ -263,12 +272,16 @@ export function StoreCatalogView({
                       <span className="font-mono text-xs text-[var(--color-ink-secondary)] font-medium">
                         Open Case Study
                       </span>
+                    ) : isDiscontinued ? (
+                      <span className="font-mono text-xs text-rose-600 dark:text-rose-400 font-semibold uppercase tracking-wider">
+                        Discontinued
+                      </span>
                     ) : isUpcoming ? (
                       <span className="font-mono text-xs text-amber-700 dark:text-amber-400 font-medium">
                         In Development
                       </span>
                     ) : (
-                      <span className="text-[var(--color-accent)] font-semibold">
+                      <span className="text-[var(--color-accent)] font-semibold text-sm">
                         {product.formattedPrice}
                       </span>
                     )}
@@ -281,13 +294,17 @@ export function StoreCatalogView({
                         <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] text-[var(--color-ink-secondary)]">
                           Architecture Case Study
                         </span>
+                      ) : isDiscontinued ? (
+                        <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-rose-600/30 bg-rose-500/10 text-rose-700 dark:text-rose-400 font-semibold">
+                          Discontinued
+                        </span>
                       ) : isUpcoming ? (
                         <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-amber-600/30 bg-amber-500/10 text-amber-800 dark:text-amber-300">
                           Upcoming Release
                         </span>
                       ) : (
                         <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-emerald-600/30 bg-emerald-500/10 text-emerald-800 dark:text-emerald-300">
-                          Available for Purchase
+                          Available for Download
                         </span>
                       )}
                     </div>
@@ -303,7 +320,19 @@ export function StoreCatalogView({
                       "Digital release by Shivam Shukla."}
                   </p>
 
-                  {/* Features snippets if available */}
+                  {/* Required Digital Product Value Points */}
+                  <div className="pt-2.5 pb-1 space-y-1 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-primary)]">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[var(--color-accent)] font-bold select-none">✓</span>
+                      <span>Works on free tier (n8n self-hosted + Make)</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-emerald-700 dark:text-emerald-400 font-bold select-none">🔒</span>
+                      <span className="font-medium">We prioritize security</span>
+                    </div>
+                  </div>
+
+                  {/* Features snippets */}
                   {product.features && product.features.length > 0 && (
                     <ul className="pt-2 space-y-1 border-t border-[var(--color-hairline)]">
                       {product.features.slice(0, 2).map((feat, idx) => (
@@ -324,6 +353,8 @@ export function StoreCatalogView({
                   <span className="font-mono text-[10px] text-[var(--color-ink-secondary)] uppercase tracking-wider">
                     {isCaseStudy
                       ? "Engineering Monograph"
+                      : isDiscontinued
+                      ? "Discontinued"
                       : isUpcoming
                       ? "In Development"
                       : (product.productType || "digital_download").replace(/_/g, " ")}
@@ -331,7 +362,7 @@ export function StoreCatalogView({
                   <Link
                     href={actionHref}
                     className={buttonStyles({
-                      variant: isCaseStudy ? "primary" : "secondary",
+                      variant: isCaseStudy || isDiscontinued ? "secondary" : "primary",
                       size: "sm",
                       className: "font-mono uppercase tracking-wider text-xs group/btn",
                     })}
@@ -339,6 +370,8 @@ export function StoreCatalogView({
                     <span>
                       {isCaseStudy
                         ? "Read Case Study"
+                        : isDiscontinued
+                        ? "View Details"
                         : isUpcoming
                         ? "View Release Info"
                         : "Buy Now"}
@@ -353,18 +386,18 @@ export function StoreCatalogView({
           })}
         </div>
       ) : (
-        /* Refined Editorial Empty State (Zero Fake Content) */
+        /* Refined Editorial Empty State */
         <div className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-12 md:p-16 text-center space-y-6 max-w-2xl mx-auto">
           <div className="space-y-2">
             <h3 className="font-display text-2xl md:text-3xl text-[var(--color-ink-primary)]">
               {searchQuery || selectedCategory !== "all"
                 ? "No matching products found."
-                : "New products are on the way."}
+                : "New agent packs are on the way."}
             </h3>
             <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed max-w-md mx-auto">
               {searchQuery || selectedCategory !== "all"
                 ? "No products match your current search or filter. Try clearing filters to see everything."
-                : "I'm adding new templates, tools, and digital products here as they're ready."}
+                : "I'm adding new agent templates, kits, and prompt packs here regularly."}
             </p>
           </div>
 
@@ -394,7 +427,7 @@ export function StoreCatalogView({
                 className: "font-mono text-xs uppercase tracking-wider",
               })}
             >
-              Ask About Custom Work →
+              Ask About Custom Agent Work →
             </Link>
           </div>
         </div>
