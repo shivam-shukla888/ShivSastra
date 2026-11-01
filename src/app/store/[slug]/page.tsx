@@ -56,7 +56,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const product = await getPublishedStoreProductBySlug(slug);
 
-  if (!product) {
+  if (!product || !product.isAvailable) {
     return {
       title: "Product Not Found — Store",
     };
@@ -110,7 +110,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
   const { slug } = await params;
   const product = await getPublishedStoreProductBySlug(slug);
 
-  if (!product) {
+  if (!product || !product.isAvailable) {
     notFound();
   }
 

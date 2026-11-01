@@ -628,15 +628,10 @@ export async function getPublishedStoreProducts(
   // Merge canonical store items ensuring single source of truth
   for (const canonical of CANONICAL_STORE_PRODUCTS) {
     if (
+      canonical.isAvailable &&
       !products.some((p) => p.slug === canonical.slug || p.id === canonical.id)
     ) {
-      if (
-        canonical.isAvailable ||
-        canonical.formattedPrice === "Discontinued" ||
-        canonical.slug === "yojna-setu"
-      ) {
-        products.push(canonical);
-      }
+      products.push(canonical);
     }
   }
 
