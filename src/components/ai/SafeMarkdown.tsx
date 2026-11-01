@@ -40,12 +40,17 @@ function renderInlineContent(
   text: string,
   validRoutes?: string[]
 ): React.ReactNode[] {
-  // Regex to match: **bold**, `code`, [label](url), *italic*
-  const pattern = /(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\)|\*[^*]+\*)/g;
+  // Regex to match: **bold**, `code`, [label](url), *italic*, <br>
+  const pattern = /(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\)|\*[^*]+\*|<br\s*\/?>)/gi;
   const parts = text.split(pattern);
 
   return parts.map((part, index) => {
     if (!part) return null;
+
+    // Line break: <br> or <br/>
+    if (/^<br\s*\/?>$/i.test(part)) {
+      return <br key={index} />;
+    }
 
     // Bold: **text**
     if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
@@ -232,8 +237,72 @@ export function SafeMarkdown({ content, validRoutes }: SafeMarkdownProps) {
           );
         }
 
-        // Bullet list block
+        // Table block (| col1 | col2 |)
         const lines = trimmed.split("\n");
+        const sepIndex = lines.findIndex((line) =>
+          /^\|?\s*:?-+:?\s*(\|:?-+:?\s*)+\|?$/.test(line.trim())
+        );
+
+        if (sepIndex > 0 && lines.length >= 2) {
+          const headerRow = lines[0];
+          const dataRows = lines.slice(sepIndex + 1);
+
+          const parseCells = (rowStr: string) => {
+            let t = rowStr.trim();
+            if (t.startsWith("|")) t = t.slice(1);
+            if (t.endsWith("|")) t = t.slice(0, -1);
+            return t.split("|").map((c) => c.trim());
+          };
+
+          const headers = parseCells(headerRow);
+
+          return (
+            <div
+              key={bIndex}
+              className="overflow-x-auto my-2 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] max-w-full"
+            >
+              <table className="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr className="border-b border-[var(--color-hairline)] bg-[var(--color-canvas-primary)]">
+                    {headers.map((h, i) => (
+                      <th
+                        key={i}
+                        className="p-2 font-mono text-[10px] uppercase tracking-wider font-semibold text-[var(--color-ink-primary)] whitespace-nowrap"
+                      >
+                        {renderInlineContent(h, validRoutes)}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {dataRows.map((rowStr, rIdx) => {
+                    const cells = parseCells(rowStr);
+                    if (cells.length === 0 || (cells.length === 1 && !cells[0])) {
+                      return null;
+                    }
+                    return (
+                      <tr
+                        key={rIdx}
+                        className="border-b border-[var(--color-hairline)] last:border-b-0 hover:bg-[var(--color-canvas-primary)]/40 transition-colors"
+                      >
+                        {cells.map((cell, cIdx) => (
+                          <td
+                            key={cIdx}
+                            className="p-2 text-xs text-[var(--color-ink-primary)] align-top"
+                          >
+                            {renderInlineContent(cell, validRoutes)}
+                          </td>
+                        ))}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+
+        // Bullet list block
         const isBulletList = lines.every(
           (line) => line.trim().startsWith("* ") || line.trim().startsWith("- ")
         );

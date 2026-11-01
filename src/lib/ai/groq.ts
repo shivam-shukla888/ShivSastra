@@ -5,7 +5,7 @@ if (typeof window !== "undefined") {
 import Groq from "groq-sdk";
 
 export const DEFAULT_GROQ_MODEL = "openai/gpt-oss-120b";
-export const DEFAULT_GROQ_TIMEOUT_MS = 25000;
+export const DEFAULT_GROQ_TIMEOUT_MS = 35000;
 export const MAX_OUTPUT_TOKENS = 1024;
 export const AI_TEMPERATURE = 0.2; // Low temperature for factual precision & reduced hallucination
 
