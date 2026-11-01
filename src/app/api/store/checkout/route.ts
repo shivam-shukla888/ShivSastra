@@ -3,9 +3,17 @@ import { checkoutRequestSchema } from "@/lib/validations/checkout";
 import { getPublishedStoreProductById } from "@/lib/products";
 import {
   isTestCheckoutProduct,
+  isLivePaymentTestProduct,
+  isRazorpayLiveTestEmailAllowed,
+  isRazorpayLiveTestEnvironmentEnabled,
   TEST_CHECKOUT_AMOUNT_PAISE,
 } from "@/lib/payments/test-checkout";
-import { createRazorpayOrder, isRazorpayConfigured, getRazorpayKeyId } from "@/lib/payments/razorpay";
+import {
+  createRazorpayOrder,
+  isRazorpayConfigured,
+  isRazorpayLiveMode,
+  getRazorpayKeyId,
+} from "@/lib/payments/razorpay";
 import {
   createInternalOrder,
   updateOrderRazorpayId,
@@ -42,7 +50,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: firstIssue }, { status: 400 });
     }
 
-    const { productId, email, testMode = false } = parseResult.data;
+    const { productId, email, testMode = false, liveTestMode = false } = parseResult.data;
+    if (testMode && liveTestMode) {
+      return NextResponse.json({ error: "Choose either sandbox or live payment testing" }, { status: 400 });
+    }
 
     // Rate limiting: 10 requests / 10 mins per IP, and 5 orders / hour per email
     const rateLimit = await checkCheckoutRateLimit(hashedId, email);
@@ -76,7 +87,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Test checkout is not enabled for this item" }, { status: 403 });
     }
 
-    if (!testMode && (
+    const isLiveTestProduct = isLivePaymentTestProduct(product);
+    if (liveTestMode && (!isLiveTestProduct || !isRazorpayLiveTestEnvironmentEnabled())) {
+      return NextResponse.json({ error: "Live payment testing is not enabled for this item" }, { status: 403 });
+    }
+    if (liveTestMode && !isRazorpayLiveTestEmailAllowed(email)) {
+      return NextResponse.json({ error: "Live payment testing is restricted to the configured test email" }, { status: 403 });
+    }
+    if (!testMode && !liveTestMode && (
       product.priceInCents === null ||
       product.priceInCents === undefined ||
       !Number.isInteger(product.priceInCents) ||
@@ -89,8 +107,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const trustedAmount = testMode ? TEST_CHECKOUT_AMOUNT_PAISE : product.priceInCents!;
-    const trustedCurrency = testMode ? "INR" : product.currency!.toUpperCase();
+    const paymentTestMode = testMode || liveTestMode;
+    const trustedAmount = paymentTestMode ? TEST_CHECKOUT_AMOUNT_PAISE : product.priceInCents!;
+    const trustedCurrency = paymentTestMode ? "INR" : product.currency!.toUpperCase();
 
     // 5. Check Razorpay configuration
     if (!isRazorpayConfigured()) {
@@ -98,6 +117,17 @@ export async function POST(req: NextRequest) {
         {
           error: "Payment gateway is not currently configured",
           status: "PENDING_GATEWAY_CONFIG",
+        },
+        { status: 503 }
+      );
+    }
+
+    // Live commercial checkouts strictly require Live Mode credentials (rzp_live_*)
+    if (!testMode && !isRazorpayLiveMode()) {
+      return NextResponse.json(
+        {
+          error: "Live payment gateway credentials are not configured",
+          status: "GATEWAY_LIVE_MODE_REQUIRED",
         },
         { status: 503 }
       );
@@ -111,7 +141,12 @@ export async function POST(req: NextRequest) {
     // 6. DUPLICATE ORDER PROTECTION (Server-Side Idempotency)
     // Check if an active pending order was recently created for this product + email
     const existingPendingOrder = await findRecentPendingOrder(product.id, email, 5 * 60 * 1000);
-    if (existingPendingOrder && existingPendingOrder.razorpay_order_id) {
+    if (
+      existingPendingOrder &&
+      existingPendingOrder.razorpay_order_id &&
+      existingPendingOrder.amount_cents === trustedAmount &&
+      existingPendingOrder.currency.toUpperCase() === trustedCurrency
+    ) {
       logStoreEvent("ORDER_CREATED", {
         orderId: existingPendingOrder.id,
         productId: product.id,
@@ -126,6 +161,7 @@ export async function POST(req: NextRequest) {
         amount: trustedAmount,
         currency: trustedCurrency,
         testMode,
+        liveTestMode,
         keyId: getRazorpayKeyId(),
         productTitle: product.title,
         isIdempotentReuse: true,
@@ -160,6 +196,7 @@ export async function POST(req: NextRequest) {
           orderId: internalOrder.id,
           productId: product.id,
           productSlug: product.slug,
+          ...(paymentTestMode ? { paymentTest: "true", liveTestMode: String(liveTestMode) } : {}),
         },
       });
     } catch (gatewayErr) {
@@ -187,6 +224,7 @@ export async function POST(req: NextRequest) {
       amount: trustedAmount,
       currency: trustedCurrency,
       testMode,
+      liveTestMode,
       keyId: getRazorpayKeyId(),
       productTitle: product.title,
     });

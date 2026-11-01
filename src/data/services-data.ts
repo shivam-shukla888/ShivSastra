@@ -17,6 +17,7 @@ export interface ServicePackage {
     title: string;
     slug: string;
     description: string;
+    ctaLabel?: string;
   };
   contactSubject: string;
 }
@@ -64,51 +65,114 @@ export interface HomepageServicePreview {
   targetHref: string;
 }
 
+/**
+ * Security Banner constants for all Agentic AI deployments.
+ */
+export const SECURITY_BANNER_HEADING = "We prioritize security";
+export const SECURITY_BANNER_BODY =
+  "Data stays in your control • Human approval points included • No customer data stored on my servers • Free-tier safe by design";
+export const SECURITY_SHORT = "We prioritize security";
+
+/** Backward compatibility alias */
+export const SECURITY_PROMISE = SECURITY_BANNER_BODY;
+
 export const HOMEPAGE_SERVICES_PREVIEW: HomepageServicePreview[] = [
   {
-    id: "website-bug-fixing",
-    title: "Fix Website Issues",
-    customerOutcome: "Fix layout problems, mobile display issues, broken links, and other website bugs.",
-    startingPrice: "Starting at ₹999",
-    targetHref: "/services#website-bug-fixing",
+    id: "starter-agent-setup",
+    title: "Starter Agent Setup",
+    customerOutcome: "Deploy 1 focused agent (Lead Qualifier, Support, or Enquiry Handler) connected to WhatsApp or web chat with free-tier safety.",
+    startingPrice: "₹22,000 – ₹35,000",
+    targetHref: "/services#starter-agent-setup",
   },
   {
-    id: "nextjs-landing-pages",
-    title: "Build a Landing Page",
-    customerOutcome: "Launch a clear, fast page that works on phones and helps customers take the next step.",
-    startingPrice: "Starting at ₹2,999",
-    targetHref: "/services#nextjs-landing-pages",
+    id: "business-agent-package",
+    title: "Business Agent Package",
+    customerOutcome: "1–2 production agents with multi-step reasoning, tool calling, CRM/Sheets integration, and human approval checkpoints.",
+    startingPrice: "₹55,000 – ₹90,000",
+    targetHref: "/services#business-agent-package",
   },
   {
-    id: "api-backend-development",
-    title: "Connect Your Business Tools",
-    customerOutcome: "Connect your site to payments, messaging, forms, and other tools you already use.",
-    startingPrice: "Starting at ₹3,000",
-    targetHref: "/services#api-backend-development",
-  },
-  {
-    id: "ai-chatbots-automation",
-    title: "Automate Customer Support",
-    customerOutcome: "Answer common questions, collect enquiries, and save details so you can follow up.",
-    startingPrice: "Starting at ₹3,000 (subject to scope)",
-    targetHref: "/services#ai-chatbots-automation",
+    id: "full-agentic-system",
+    title: "Full Agentic System",
+    customerOutcome: "Multi-agent system with custom tools, memory, monitoring, production self-hosted n8n setup, and 60 days of support.",
+    startingPrice: "₹1,10,000 – ₹1,80,000",
+    targetHref: "/services#full-agentic-system",
   },
 ];
 
 export const TECHNICAL_CAPABILITIES: TechnicalCapability[] = [
   {
-    id: "web-development",
-    category: "Web & Frontend Engineering",
+    id: "agentic-ai-orchestration",
+    category: "Agentic AI Orchestration & Tool Calling",
+    verificationBadge: "Built & Verified in Production",
+    technologies: ["n8n (Self-Hosted)", "Make", "Groq SDK (Llama 3.3)", "OpenAI API", "Python"],
+    summary:
+      "Production-grade agentic workflows with multi-step reasoning, deterministic tool execution, and stateful memory pipelines.",
+    capabilities: [
+      "Multi-step agent reasoning with structured tool calling and schema validation",
+      "Decoupled architecture: LLMs reason and extract intent, deterministic code executes operations",
+      "Self-hosted n8n workflow deployment on isolated client infrastructure",
+      "Human-in-the-loop checkpoints before any high-stakes or irreversible actions",
+      "Rate-limiting and token-consumption guardrails for free-tier optimization",
+    ],
+    evidence: {
+      title: "RealGuard & Yojna Setu",
+      slug: "realguard",
+      description: "Live conversational WhatsApp assistant and multilingual welfare scheme discovery engine.",
+    },
+  },
+  {
+    id: "backend-integrations",
+    category: "Backend & CRM Integrations",
+    verificationBadge: "Built & Verified in Production",
+    technologies: ["WhatsApp Cloud API", "Twilio", "PostgreSQL", "Google Sheets API", "REST APIs", "Spring Boot 3"],
+    summary:
+      "Robust data synchronization connecting conversational agents to CRMs, Google Sheets, email providers, and webhooks.",
+    capabilities: [
+      "WhatsApp Business and web chat bidirectional messaging pipelines",
+      "CRM and Google Sheets synchronization with deduplication and idempotency guards",
+      "Stateless RESTful API endpoint development following clean architecture",
+      "Webhook listeners with timing-safe HMAC signature verification",
+      "Zero client customer data stored on intermediary developer infrastructure",
+    ],
+    evidence: {
+      title: "RealGuard CRM Pipeline",
+      slug: "realguard",
+      description: "WhatsApp real estate workflow connecting lead intake to deterministic EMI calculations and CRM logging.",
+    },
+  },
+  {
+    id: "security-guardrails",
+    category: "Security, Privacy & Data Control",
+    verificationBadge: "Built & Verified in Production",
+    technologies: ["Human Approval Nodes", "Data Boundary Isolation", "HMAC-SHA256", "Rate Limiting"],
+    summary:
+      "Defensive engineering ensuring client data stays under client ownership with strict human oversight.",
+    capabilities: [
+      "Strict data boundary: Zero client customer data stored on developer servers",
+      "Mandatory human approval checkpoints for sensitive business workflows",
+      "Defensive prompt engineering preventing prompt injection and unauthorized execution",
+      "Token throttles and rate-limiting to prevent unexpected third-party API spend",
+      "Complete code and workflow handover to client-owned repositories and servers",
+    ],
+    evidence: {
+      title: "ShivSastra Security Architecture",
+      slug: "shivsastra",
+      description: "Automated test suites, server-authoritative validation, and cryptographic webhook verification.",
+    },
+  },
+  {
+    id: "web-engineering",
+    category: "Web & Interface Engineering",
     verificationBadge: "Built & Verified in Production",
     technologies: ["React 19", "Next.js 16 (App Router)", "TypeScript", "Tailwind CSS"],
     summary:
-      "Modern, responsive web applications and landing pages engineered for speed, clean typography, and zero layout shift.",
+      "Modern, responsive web applications and chat interfaces engineered for performance, clean typography, and zero layout shift.",
     capabilities: [
-      "Responsive, mobile-first user interfaces tested across viewports",
-      "High-performance landing pages with clear content hierarchy and conversion paths",
-      "Strict TypeScript type-safety across components, server actions, and validation schemas",
-      "Frontend debugging, broken layout triage, cross-browser fixes, and UI improvements",
-      "Semantic HTML5 structure and accessible ARIA attributes with visible keyboard focus rings",
+      "Responsive user interfaces tested across viewports with zero horizontal overflow",
+      "Web chat widgets embedded seamlessly into client websites",
+      "Strict TypeScript type-safety across all components, actions, and validation schemas",
+      "Semantic HTML5 structure and accessible ARIA attributes with keyboard focus rings",
     ],
     evidence: {
       title: "ShivSastra Platform",
@@ -116,101 +180,41 @@ export const TECHNICAL_CAPABILITIES: TechnicalCapability[] = [
       description: "Production Next.js 16 App Router application with sub-second load times and zero layout shift.",
     },
   },
-  {
-    id: "backend-engineering",
-    category: "Backend & API Engineering",
-    verificationBadge: "Built & Verified in Production",
-    technologies: ["Java 21", "Spring Boot 3", "Python", "PostgreSQL", "Supabase", "REST APIs"],
-    summary:
-      "Stateless RESTful APIs, database integrations, and webhook handlers designed with strict server-side validation.",
-    capabilities: [
-      "Stateless RESTful API endpoint development following clean MVC architecture",
-      "Server-side payload validation with Zod / Hibernate Validator (zero reliance on client inputs)",
-      "Server-authoritative business logic where prices and asset paths are derived strictly on the server",
-      "Database schema modeling with PostgreSQL and Supabase Row Level Security (RLS) policies",
-      "Webhook listeners with timing-safe HMAC-SHA256 signature verification and idempotency guards",
-    ],
-    evidence: {
-      title: "QuickEats & Store Backend",
-      slug: "quickeats",
-      description: "Server-side price recalculation, STOMP WebSockets, and 25-point automated store security audit.",
-    },
-  },
-  {
-    id: "ai-automation",
-    category: "AI Integration & Automation",
-    verificationBadge: "Architecture Prototype",
-    technologies: ["Groq SDK (Llama 3.3)", "OpenAI API", "Anthropic", "Python", "Twilio Webhooks"],
-    summary:
-      "Conversational assistants and automated workflows that extract structured data from natural language while keeping actions in deterministic code.",
-    capabilities: [
-      "Conversational FAQ bots and structured lead-intake workflows",
-      "Prompt orchestration with strict JSON schema outputs and fallback parsing",
-      "Decoupled AI architecture: language models interpret intent while deterministic application code executes actions",
-      "Multilingual natural language extraction for localized users (Hindi, English)",
-      "Transparent external LLM token estimation and operational costing",
-    ],
-    evidence: {
-      title: "Yojna Setu Platform",
-      slug: "yojna-setu",
-      description: "Bilingual natural-language profile extraction coupled with a deterministic Java eligibility engine.",
-    },
-  },
-  {
-    id: "security-reliability",
-    category: "Security, SEO & Site Reliability",
-    verificationBadge: "Built & Verified in Production",
-    technologies: ["Content Security Policy", "Cloudflare Turnstile", "HMAC-SHA256", "XML Sitemaps", "JSON-LD"],
-    summary:
-      "Defensive web hygiene covering security headers, anti-spam protections, technical SEO discovery, and automated security test suites.",
-    capabilities: [
-      "Review of HTTP security headers (CSP, HSTS, X-Frame-Options, MIME sniffing defense)",
-      "Technical SEO hygiene (dynamic XML sitemap, canonical URLs, robots.txt, llms.txt discovery manifest)",
-      "Structured data / JSON-LD schema implementation (WebPage, Service, CollectionPage, FAQPage)",
-      "Contact form anti-spam protection combining Cloudflare Turnstile and hidden honeypots",
-      "Automated test suites (25 automated checkout and access control test cases in test-store-security.ts)",
-    ],
-    evidence: {
-      title: "ShivSastra Platform Architecture",
-      slug: "shivsastra",
-      description: "Production Next.js 16 App Router platform with defensive security headers, Supabase RLS, and 25-point automated security suite.",
-    },
-  },
 ];
 
 export const WEBSITE_ENGINEERING_SHOWCASE: WebsiteEngineeringArea[] = [
+  {
+    id: "security-hygiene",
+    title: "Application Security & Data Boundaries",
+    badge: "Verified in Test Suite",
+    summary:
+      "Security is engineered defensively at the architectural level: zero client data storage on external servers, strict schema validation, and human approval checkpoints.",
+    highlights: [
+      "Data Sovereignty: Client customer data stays strictly on client-owned accounts (n8n, Google Sheets, CRM)",
+      "Human-in-the-Loop: Critical workflows pause for human approval before sending external messages or executing updates",
+      "Rate Limiting & Safety: Built-in guards prevent runaway API calls and protect free-tier quotas",
+      "Cryptographic Verification: Timing-safe HMAC-SHA256 verification on incoming webhooks",
+      "Automated Security Suite: 25-point automated test suite verifying access controls and tamper rejection",
+    ],
+    transparencyNote:
+      "Note: These measures represent defensive engineering best practices ensuring strict data boundaries and operational reliability.",
+  },
   {
     id: "technical-seo",
     title: "SEO & Search Engine Discoverability",
     badge: "Verified in Code",
     summary:
-      "This website implements production-grade technical SEO to ensure clean crawlability and structured discovery by search engines and LLMs.",
+      "This platform implements production-grade technical SEO to ensure clean crawlability and structured discovery by search engines and LLMs.",
     highlights: [
-      "Dynamic XML Sitemap: Auto-generated at /sitemap.xml with accurate change frequencies and priorities",
-      "Search Engine Directives: Configured robots.txt with explicit sitemap declarations and crawler rules",
+      "Dynamic XML Sitemap: Auto-generated at /sitemap.xml with accurate change frequencies",
+      "Search Engine Directives: Configured robots.txt with crawler directives",
       "Canonical URL Integrity: Absolute self-referencing canonical URLs on every public route",
       "Social Sharing Metadata: Dynamic Open Graph 1200x630 cards and Twitter Summary Large Cards",
       "Structured Data / JSON-LD: Schema.org graphs for WebPage, Service packages, and FAQPage",
       "AI Discoverability: Curated /llms.txt manifest providing clear context for modern AI search assistants",
     ],
     transparencyNote:
-      "Note: Sitemap accessibility and metadata correctness provide discovery pathways, but do not guarantee immediate search indexing or top rankings.",
-  },
-  {
-    id: "security-hygiene",
-    title: "Application Security & Data Boundaries",
-    badge: "Verified in Test Suite",
-    summary:
-      "Security is engineered defensively at the architectural level: zero client trust for sensitive operations, server-side validation, and automated test coverage.",
-    highlights: [
-      "HTTP Security Headers: Content Security Policy, strict X-Frame-Options, and nosniff MIME protection",
-      "Server-Authoritative Pricing: Client amounts, currencies, and asset paths are completely stripped by server validation schemas",
-      "Payment Verification: Timing-safe HMAC-SHA256 signature verification on Razorpay payment callbacks",
-      "Anti-Spam Form Controls: Server actions protected with Cloudflare Turnstile cryptographic challenges and hidden honeypot fields",
-      "Automated Security Suite: 25-point automated test suite (scripts/test-store-security.ts) verifying tamper rejection and download guards",
-    ],
-    transparencyNote:
-      "Note: These measures represent defensive engineering best practices, not a certified penetration test or warranty against security incidents.",
+      "Note: Sitemap accessibility and metadata correctness provide discovery pathways for search engines.",
   },
   {
     id: "performance-accessibility",
@@ -231,265 +235,207 @@ export const WEBSITE_ENGINEERING_SHOWCASE: WebsiteEngineeringArea[] = [
 
 export const SERVICE_PACKAGES: ServicePackage[] = [
   {
-    id: "website-bug-fixing",
-    code: "PKG-01",
-    title: "Website Bug Fixing & Basic Audit",
-    category: "Maintenance & Diagnostics",
-    startingPrice: "Starting at ₹999 – ₹1,999",
-    pricingNote: "Introductory price for small, clearly scoped issues. Final quote confirmed after initial inspection.",
-    idealFor: "Websites with mobile layout glitches, broken CSS/styling, dead links, or console errors.",
-    turnaround: "1–2 business days (estimate)",
-    revisions: "1 round of verification on resolved issues",
+    id: "starter-agent-setup",
+    code: "AGT-01",
+    title: "Starter Agent Setup",
+    category: "Agentic AI Setup",
+    startingPrice: "₹22,000 – ₹35,000",
+    pricingNote: "Fixed-scope engagement based on channel and simple tools. Includes 7-Day Free Trial for Small Organisations.",
+    idealFor: "Small businesses, clinics, agencies, and lean teams wanting an automated lead qualifier, enquiry handler, or basic support agent.",
+    turnaround: "5–8 days",
+    revisions: "1 round of workflow tuning & prompt refinement",
     summary:
-      "Rapid triage and resolution for layout breaks, mobile responsiveness errors, broken links, and front-end quirks.",
+      "1 focused agent (Lead Qualifier or Basic Support or Enquiry Handler) connected to WhatsApp or website chat with simple tools and free-tier safety.",
     plainEnglishOutcome:
-      "Fix visual layout glitches, mobile responsiveness breaks, broken links, and browser console errors so your site looks polished and works reliably.",
+      "Deploy 1 focused agent that qualifies incoming leads or answers routine enquiries 24/7 over WhatsApp or web chat, logging data straight to Google Sheets or email.",
     technicalScope: [
-      "CSS Grid & Flexbox alignment fixes",
-      "Mobile viewport and media query corrections",
-      "JavaScript console error and uncaught exception remediation",
-      "Internal 404 broken-link checks",
+      "1 focused agent (Lead Qualifier or Basic Support or Enquiry Handler)",
+      "WhatsApp or website chat connection",
+      "Simple tools (Google Sheet / Email)",
+      "Rate limiting for free-tier safety",
+      "Setup on n8n self-hosted or Make free tier",
+      "Complete documentation + 7-Day Free Trial for Small Organisations",
     ],
     deliverables: [
-      "Small, clearly scoped UI and layout fixes",
-      "Mobile responsiveness and viewport corrections",
-      "Basic broken-link and functionality checks",
-      "Basic performance observations and console error remediation",
+      "1 focused agent (Lead Qualifier or Basic Support or Enquiry Handler)",
+      "WhatsApp or website chat connection",
+      "Simple tools (Google Sheet / Email)",
+      "Rate limiting for free-tier safety",
+      "Setup on n8n self-hosted or Make free tier",
+      "Documentation + 7-Day Free Trial for Small Organisations",
     ],
     exclusions: [
-      "Large-scale codebase refactoring or full-site redesigns",
-      "Backend database schema overhauls or migrations",
+      "Multi-agent collaboration or autonomous complex decision-making (available in Business / Full)",
+      "Third-party messaging/LLM token fees (paid directly to Meta, Twilio, OpenAI, or Groq)",
     ],
     proofProject: {
-      title: "ShivSastra Digital HQ",
-      slug: "shivsastra",
-      description: "Rigorous responsive layout audit, zero layout shift, and clean cross-browser styling.",
+      title: "RealGuard",
+      slug: "realguard",
+      description: "WhatsApp conversational workflow connecting customer chat to deterministic calculations and CRM logging.",
+      ctaLabel: "See how I built similar systems",
     },
-    contactSubject: "Website Bug Fixing & Basic Audit Quote",
+    contactSubject: "Start with 7-Day Free Trial (Starter Agent Setup)",
   },
   {
-    id: "nextjs-landing-pages",
-    code: "PKG-02",
-    title: "Next.js / React Landing Pages",
-    category: "Web Development",
-    startingPrice: "Starting at ₹2,999 – ₹5,999",
-    pricingNote: "Introductory price for single-page conversion marketing or business landing pages.",
-    idealFor: "Founders, creators, freelancers, and businesses launching a new service, product, or portfolio.",
-    turnaround: "3–5 business days (estimate)",
-    revisions: "2 rounds of layout and copy adjustments",
+    id: "business-agent-package",
+    code: "AGT-02",
+    title: "Business Agent Package",
+    category: "Production Agentic Systems",
+    startingPrice: "₹55,000 – ₹90,000",
+    pricingNote: "Scope-based pricing covering 1–2 production agents, CRM/Sheets integration, human approval points, and 30 days support.",
+    idealFor: "Growing businesses wanting multi-step reasoning, external tool calling, CRM synchronization, and human approval checkpoints.",
+    turnaround: "10–15 days",
+    revisions: "2 rounds of prompt refinement & integration reviews",
     summary:
-      "Fast, responsive, and conversion-focused landing pages built with modern Next.js App Router, Tailwind CSS, and clean typography.",
+      "1–2 production agents (Lead Qualifier + Support/Follow-up) with multi-step reasoning, tool calling, human approval points, and 30 days support.",
     plainEnglishOutcome:
-      "Launch a clean, professional, and mobile-friendly single-page website that introduces your business, showcases your value, and converts visitors into leads.",
+      "Deploy 1–2 production agents that reason through multi-step customer inquiries, call external tools, sync with your CRM or Sheets, and pause for human approval on high-value actions.",
     technicalScope: [
-      "Next.js 16 App Router & React 19 component hierarchy",
-      "Tailwind CSS responsive styling & dark/light theme alignment",
-      "Technical SEO: Title tags, meta descriptions, Open Graph cards, semantic HTML5",
-      "Asset optimization: Next.js Image component with zero layout shift",
+      "1–2 production agents (Lead Qualifier + Support/Follow-up)",
+      "Multi-step reasoning + tool calling",
+      "WhatsApp + CRM/Sheet integration",
+      "Human approval points",
+      "Error handling + logging",
+      "Free-tier optimised architecture",
+      "30 days support",
     ],
     deliverables: [
-      "High-performance responsive landing page built with React & Next.js",
-      "Clear business narrative sections, value propositions, and contact CTA",
-      "Core technical SEO (meta tags, Open Graph social cards, and semantic HTML)",
-      "Clean integration of client-supplied brand assets, images, and content copy",
+      "1–2 production agents (Lead Qualifier + Support/Follow-up)",
+      "Multi-step reasoning + tool calling",
+      "WhatsApp + CRM/Sheet integration",
+      "Human approval points",
+      "Error handling + logging",
+      "Free-tier optimised",
+      "30 days support",
     ],
     exclusions: [
-      "Custom multi-page CMS dashboards or multi-tenant authentication (quoted separately)",
-      "Copywriting from scratch (requires client-provided copy and assets)",
+      "Irreversible autonomous financial transactions without human sign-off",
+      "Third-party provider API fees (billed directly to client-owned accounts)",
     ],
     proofProject: {
-      title: "ShivSastra Platform",
-      slug: "shivsastra",
-      description: "High-contrast editorial typography, sub-second load times, and structured SEO signals.",
-    },
-    contactSubject: "Next.js / React Landing Page Quote",
-  },
-  {
-    id: "api-backend-development",
-    code: "PKG-03",
-    title: "API Integration & Backend Development",
-    category: "Backend & Systems",
-    startingPrice: "Starting at ₹3,000+",
-    pricingNote: "Final price confirmed after scope review based on endpoint complexity and integration requirements.",
-    idealFor: "Teams connecting apps to third-party services (payment gateways, messaging, CRM) or building custom REST APIs.",
-    turnaround: "3–7 business days (estimate)",
-    revisions: "2 rounds of integration test reviews",
-    summary:
-      "Reliable backend endpoint development, webhook listeners, third-party API integrations, and safe data synchronization.",
-    plainEnglishOutcome:
-      "Connect your website or app to third-party services like payment gateways, messaging tools, databases, and CRMs, or create reliable custom endpoints.",
-    technicalScope: [
-      "RESTful API endpoint engineering in Python, Java (Spring Boot), or Next.js Route Handlers",
-      "Server-side payload validation using Zod / Hibernate Validator",
-      "Webhook receiver implementation with timing-safe HMAC signature verification",
-      "Database read/write synchronization with PostgreSQL / Supabase",
-    ],
-    deliverables: [
-      "Integration with a suitable third-party API (payment, messaging, CRM, email, or database)",
-      "Custom backend endpoint development or webhook handler implementation",
-      "Defensive error handling, payload schema validation, and basic automated testing",
-      "Clear technical documentation of endpoints and configuration environment variables",
-    ],
-    exclusions: [
-      "Third-party API subscription costs (paid directly to Twilio, Stripe, Resend, etc.)",
-      "Legacy mainframe or unverified undocumented proprietary protocol integrations",
-    ],
-    proofProject: {
-      title: "QuickEats Backend Engineering",
-      slug: "quickeats",
-      description: "Server-side price recalculation, JWT token rotation, STOMP WebSockets, and defensive error handling.",
-    },
-    contactSubject: "API Integration & Backend Development Quote",
-  },
-  {
-    id: "ai-chatbots-automation",
-    code: "PKG-04",
-    title: "AI Chatbots & Workflow Automation",
-    category: "AI & Workflow Engineering",
-    startingPrice: "Starting at ₹3,000 – ₹7,000+",
-    pricingNote: "Priced after scope review depending on workflow triggers, tools, and message volume.",
-    idealFor: "Businesses wanting automated customer FAQ responder bots, WhatsApp lead intake, or webhook workflows.",
-    turnaround: "4–8 business days (estimate)",
-    revisions: "2 rounds of prompt and workflow tuning",
-    summary:
-      "Practical AI workflows and conversational bots that extract structured data, answer FAQs, and automate repetitive tasks reliably.",
-    plainEnglishOutcome:
-      "Automate repetitive customer inquiries, lead capture, and notifications using conversational AI that extracts key details and saves them directly to your email or database.",
-    technicalScope: [
-      "Groq API / OpenAI / Anthropic prompt engineering with structured JSON schema outputs",
-      "Decoupled architecture: LLM extracts intent, deterministic backend code executes business logic",
-      "Messaging webhook integration (e.g. WhatsApp via Twilio, or web chat widget)",
-      "Automated lead notification pipelines via email or database insertion",
-    ],
-    deliverables: [
-      "Basic FAQ conversational chatbot or AI API integration (Groq, OpenAI, or Anthropic)",
-      "Simple workflow automation (e.g. conversational lead capture to database or email notifications)",
-      "Validation testing scenarios and reproducible setup documentation",
-      "Transparent disclosure and estimation of external LLM token and hosting costs",
-    ],
-    exclusions: [
-      "Unbounded multi-agent autonomous actions with live financial authority",
-      "Third-party LLM token fees (billed directly by Groq, OpenAI, or Anthropic)",
-    ],
-    proofProject: {
-      title: "Yojna Setu Welfare Discovery",
+      title: "Yojna Setu",
       slug: "yojna-setu",
-      description: "Multilingual natural-language profile extraction coupled with deterministic Java eligibility rules.",
+      description: "Conversational Groq LLM profile extraction coupled with a deterministic eligibility evaluation engine.",
+      ctaLabel: "See how I built similar systems",
     },
-    contactSubject: "AI Chatbots & Workflow Automation Quote",
+    contactSubject: "Business Agent Package Quote",
   },
   {
-    id: "security-seo-performance-review",
-    code: "PKG-05",
-    title: "Basic Security, SEO & Performance Review",
-    category: "Audits & Hygiene",
-    startingPrice: "Quote after scope review",
-    pricingNote: "Custom scope tailored to your application's architecture and public footprint.",
-    idealFor: "Founders and developers wanting an independent baseline check on security headers, SEO setup, and performance bottlenecks.",
-    turnaround: "2–4 business days (estimate)",
-    revisions: "1 follow-up verification review after fixes",
+    id: "full-agentic-system",
+    code: "AGT-03",
+    title: "Full Agentic System",
+    category: "Enterprise Multi-Agent Architecture",
+    startingPrice: "₹1,10,000 – ₹1,80,000",
+    pricingNote: "Comprehensive architecture covering multi-agent orchestration, custom tools, memory, monitoring, and 60 days support.",
+    idealFor: "Organizations requiring multi-agent systems with custom tools, long-term memory, observability, and robust security controls.",
+    turnaround: "18–25 days",
+    revisions: "Staged integration testing & end-to-end acceptance review",
     summary:
-      "A systematic inspection of HTTP security headers, technical SEO hygiene (sitemaps, canonicals, JSON-LD), and Core Web Vitals performance bottlenecks.",
+      "Multi-agent system with custom tools, memory, monitoring, self-hosted n8n production setup, advanced security controls, and 60 days support.",
     plainEnglishOutcome:
-      "Get a clear, independent audit of your website's search engine setup, browser security headers, and loading speed with prioritized steps to fix issues.",
+      "Deploy an end-to-end multi-agent system on self-hosted n8n with custom tools, memory, live monitoring, strict security controls, and 60 days of active support.",
     technicalScope: [
-      "HTTP response headers: Content-Security-Policy, HSTS, X-Frame-Options, X-Content-Type-Options",
-      "Technical SEO: XML sitemap discovery, robots.txt directives, canonical tag self-referencing, JSON-LD schema",
-      "Data boundary check: Identification of unintended client-side data exposure or secret leaks",
-      "Page speed & Core Web Vitals observations with prioritized remediation notes",
+      "Multi-agent system architecture",
+      "Custom tools + memory",
+      "Monitoring and operational observability",
+      "Self-hosted n8n production setup",
+      "Advanced security controls",
+      "60 days support",
     ],
     deliverables: [
-      "Review of HTTP security headers (CSP, HSTS, X-Frame-Options) and basic configuration",
-      "Technical SEO inspection (sitemap.xml, robots.txt, canonical URLs, metadata & JSON-LD)",
-      "Inspection of client-versus-server data boundaries and public exposure risks",
-      "PageSpeed & Core Web Vitals observations with prioritized remediation notes",
-      "Written summary report detailing observations and prioritized action items",
+      "Multi-agent system",
+      "Custom tools + memory",
+      "Monitoring",
+      "Self-hosted n8n production setup",
+      "Advanced security controls",
+      "60 days support",
     ],
     exclusions: [
-      "Does NOT constitute a certified penetration test, guaranteed exploit immunity, or enterprise compliance audit",
-      "Does NOT guarantee search engine rankings or specific search placement (which depends on search engine algorithms and domain authority)",
+      "Client cloud hosting infrastructure costs (AWS/GCP/DigitalOcean/Hetzner)",
+      "Unsanctioned autonomous credential delegation",
     ],
     proofProject: {
-      title: "ShivSastra Platform Architecture",
-      slug: "shivsastra",
-      description: "Production Next.js 16 App Router platform with defensive security headers, Supabase RLS, and 25-point automated store security suite.",
+      title: "Yojna Setu & RealGuard",
+      slug: "yojna-setu",
+      description: "Multi-agent reasoning, natural language profile extraction, and deterministic rules-engine workflows.",
+      ctaLabel: "See how I built similar systems",
     },
-    contactSubject: "Basic Security, SEO & Performance Review Quote",
+    contactSubject: "Full Agentic System Quote",
   },
 ];
 
 export const SERVICE_PROCESS_STEPS: ProcessStep[] = [
   {
     step: "01",
-    title: "Discuss Scope",
+    title: "Scope & Agent Definition",
     description:
-      "Share your website, bug description, or feature requirements via our form or email. We review the scope and clarify technical expectations.",
-    deliverable: "Clear requirements outline",
+      "We define the exact role of your agent (Lead Qualifier, Support, or Multi-Agent System), target channels (WhatsApp or web), and required tool connections.",
+    deliverable: "Agent architecture specification & fixed quote",
   },
   {
     step: "02",
-    title: "Confirm Quote",
+    title: "Free-Tier & Security Setup",
     description:
-      "You receive a transparent proposal with a defined deliverables checklist, fixed turnaround timeline, and exact starting price before work begins.",
-    deliverable: "Written scope & pricing agreement",
+      "We configure your environment on self-hosted n8n or Make free tier. All credentials remain in your control; zero client customer data is stored on developer servers.",
+    deliverable: "Isolated workflow environment + security boundaries",
   },
   {
     step: "03",
-    title: "Build & Implement",
+    title: "Workflow Build & Tool Calling",
     description:
-      "Development proceeds directly using modern, maintainable code (Next.js, TypeScript, Tailwind, Python, or Java) with regular progress check-ins.",
-    deliverable: "Working implementation branch or staging link",
+      "We build multi-step reasoning workflows, connect tools (Google Sheets, CRM, Email), and insert mandatory human approval points for high-stakes actions.",
+    deliverable: "Working agent workflows with error handling",
   },
   {
     step: "04",
-    title: "Review & Revise",
+    title: "Testing & 7-Day Free Trial",
     description:
-      "We test the implementation together across mobile and desktop. Included revision rounds ensure styling, responsiveness, and functionality match expectations.",
-    deliverable: "Fine-tuned, verified build",
+      "We test conversational edge cases and rate limits together. Small organisations activate their 7-day free trial to evaluate real customer interactions risk-free.",
+    deliverable: "Verified agent running in staging/trial",
   },
   {
     step: "05",
-    title: "Deliver & Handoff",
+    title: "Production Handover & Support",
     description:
-      "Final code delivery, clean merge to your repository, deployment to your hosting, and concise documentation for environment setup and ongoing maintenance.",
-    deliverable: "Production code + documentation",
+      "Full handover of workflows, documentation, and credentials to your team, backed by 30 to 60 days of post-launch operational support.",
+    deliverable: "Production deployment + support coverage",
   },
 ];
 
 export const SERVICE_FAQS: ServiceFaq[] = [
   {
-    question: "How does pricing work? Are these prices fixed?",
+    question: "What is your Security Promise regarding customer data?",
     answer:
-      "The listed rates are proposed introductory starting prices for clearly defined, small scopes. Because every codebase and integration has unique factors, we review your requirements first and provide a transparent, fixed quote before any work starts. You will never encounter unexpected fees.",
+      "We prioritize security. Data stays in your control • Human approval points included • No customer data stored on my servers • Free-tier safe by design. All workflows run on your own self-hosted n8n instance or your own accounts.",
   },
   {
-    question: "What are typical delivery timelines?",
+    question: "How does the 7-day free trial work for small organisations?",
     answer:
-      "Website bug fixes and basic audits are typically delivered within 1–2 business days. Next.js landing pages take 3–5 business days. API integrations and AI workflow bots typically take 4–8 business days depending on API complexity.",
+      "For small organisations opting for the Starter Agent Setup, we deploy the agent in your staging or pilot environment for 7 days at zero upfront risk. You test it with real inquiries and verify its accuracy before final settlement.",
   },
   {
-    question: "How do revisions work?",
+    question: "What does 'free-tier optimised' mean?",
     answer:
-      "Each package includes 1 to 2 rounds of revisions on the agreed deliverables. During review, we test the build together and adjust styling, copy placement, or functionality so you receive exactly what was promised.",
+      "Third-party AI costs can add up if workflows are poorly designed. We optimize prompt sizes, implement execution batching, configure webhook deduplication, and enforce rate limits so you can operate comfortably within n8n and Make free tiers without surprise cloud bills.",
   },
   {
-    question: "Who pays for hosting, domains, and third-party API fees?",
+    question: "How do human approval points work?",
     answer:
-      "You retain full ownership of your accounts. Hosting (such as Vercel or Supabase), custom domains, and external APIs (such as Twilio, Groq, or OpenAI) are billed directly to you by the providers. We guide you through setup and help ensure you choose cost-effective tiers.",
+      "For sensitive actions—such as sending follow-up quotes, updating CRM deal stages, or handling complex customer complaints—the agent drafts the action and pauses for a human team member to review and approve via WhatsApp, Slack, or email before execution.",
   },
   {
-    question: "What is the difference between your Services and the Store?",
+    question: "Who owns the agent code, workflows, and prompts?",
     answer:
-      "The Store offers ready-to-use digital products, starter templates, and architecture boilerplates available for instant download. Services are bespoke, hands-on client development and consulting engagements tailored specifically to your project requirements.",
+      "You retain 100% ownership of all workflows, prompt libraries, and configuration files. They are deployed directly into your own infrastructure or accounts with zero vendor lock-in.",
   },
   {
-    question: "What technologies do you specialize in?",
+    question: "What real-world proof do you have of agentic implementations?",
     answer:
-      "Modern web and backend stacks: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, Python, Java 21, Spring Boot 3, PostgreSQL, Supabase, Groq SDK, REST APIs, and webhook architectures.",
+      "See our active case studies: Yojna Setu (multilingual conversational scheme extraction combined with deterministic rules) and RealGuard (WhatsApp real-estate automation assistant connecting chat to deterministic EMI calculations and CRM logging).",
   },
   {
     question: "How do we get started?",
     answer:
-      "Use the Request a Quote form below, email directly at theshivamshukla.4uu@gmail.com, or connect via Contra or LinkedIn. We typically review enquiries and reply within 24 hours.",
+      "Use the Request a Quote form below, email directly at theshivamshukla.4uu@gmail.com, or reach out on Contra or LinkedIn. We review your requirements and provide an itemized proposal within 24 hours.",
   },
 ];

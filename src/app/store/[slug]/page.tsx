@@ -17,7 +17,7 @@ import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { ProductFaqAccordion } from "@/components/store/ProductFaqAccordion";
 import { ProductCheckoutAction } from "@/components/store/ProductCheckoutAction";
-import { isTestCheckoutProduct } from "@/lib/payments/test-checkout";
+import { isLivePaymentTestProduct, isTestCheckoutProduct } from "@/lib/payments/test-checkout";
 
 export const revalidate = 60;
 
@@ -33,12 +33,18 @@ interface ProductPageProps {
 }
 
 const CATEGORY_NAMES: Record<StoreCategory, string> = {
+  agent_templates: "AI Agent Templates",
+  agent_kits: "Complete Agent Kits",
+  prompt_packs: "Prompt + System Instruction Packs",
   design: "Design & Templates",
   ai_agents: "AI Agents",
   digital_products: "Digital Products",
 };
 
 const CATEGORY_HREFS: Record<StoreCategory, string> = {
+  agent_templates: "/store/agent-templates",
+  agent_kits: "/store/agent-kits",
+  prompt_packs: "/store/prompt-packs",
   design: "/store/design",
   ai_agents: "/store/ai-agents",
   digital_products: "/store/digital-products",
@@ -104,7 +110,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
   const { slug } = await params;
   const product = await getPublishedStoreProductBySlug(slug);
 
-  if (!product || !product.isAvailable) {
+  if (!product) {
     notFound();
   }
 
@@ -261,6 +267,38 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                   </div>
                 )}
 
+                {product.formattedPrice === "Discontinued" && (
+                  <div className="p-4 border border-rose-600/30 bg-rose-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="space-y-1">
+                      <span className="font-mono text-xs uppercase tracking-wider text-rose-700 dark:text-rose-400 font-semibold">
+                        Discontinued Product
+                      </span>
+                      <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
+                        This product has been discontinued in favor of dedicated Agentic AI systems and templates.
+                      </p>
+                    </div>
+                    <Link
+                      href="/services"
+                      className="font-mono text-xs uppercase tracking-wider text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] shrink-0 flex items-center gap-1.5 transition-colors font-medium"
+                    >
+                      <span>Explore Agentic AI Services</span>
+                      <span>→</span>
+                    </Link>
+                  </div>
+                )}
+
+                {/* Free Tier & Security Guarantees */}
+                <div className="p-4 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+                  <div className="flex items-center gap-2 text-[var(--color-ink-primary)]">
+                    <span className="text-[var(--color-accent)] font-bold">✓</span>
+                    <span>Works on free tier (n8n self-hosted + Make)</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-[var(--color-ink-primary)]">
+                    <span className="text-emerald-700 dark:text-emerald-400 font-bold">🔒</span>
+                    <span className="font-semibold">We prioritize security</span>
+                  </div>
+                </div>
+
                 {/* Commercial Action Bar */}
                 <ProductCheckoutAction
                   productId={product.id}
@@ -272,6 +310,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                   priceInCents={product.priceInCents}
                   currency={product.currency}
                   testCheckoutEnabled={isTestCheckoutProduct(product)}
+                  livePaymentTestEnabled={isLivePaymentTestProduct(product)}
                 />
               </div>
             </div>
@@ -283,135 +322,135 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               {/* Visual Frame */}
               {product.previewImageUrl && (
                 <div className="w-full aspect-[16/10] border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] overflow-hidden relative">
-              <Image
-                src={product.previewImageUrl}
-                alt={product.title}
-                fill
-                unoptimized
-                className="object-cover"
-                sizes="(max-width: 896px) 100vw, 896px"
-              />
-            </div>
-          )}
-
-          {/* Overview & Description */}
-          {product.description && (
-            <section className="space-y-4">
-              <div className="space-y-1">
-                <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)]">
-                  Overview
-                </span>
-                <h2 className="font-display text-2xl text-[var(--color-ink-primary)]">
-                  Overview
-                </h2>
-              </div>
-              <div className="font-sans text-base text-[var(--color-ink-secondary)] leading-relaxed space-y-4 whitespace-pre-line">
-                {product.description}
-              </div>
-            </section>
-          )}
-
-          {/* What is Included (Features) */}
-          {product.features && product.features.length > 0 && (
-            <section className="space-y-6 pt-6 border-t border-[var(--color-hairline)]">
-              <div className="space-y-1">
-                <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)]">
-                  Features
-                </span>
-                <h2 className="font-display text-2xl text-[var(--color-ink-primary)]">
-                  What is Included
-                </h2>
-              </div>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {product.features.map((feature, idx) => (
-                  <li
-                    key={idx}
-                    className="p-4 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] flex items-start gap-3"
-                  >
-                    <span className="text-[var(--color-accent)] font-mono text-sm leading-none mt-0.5">
-                      ✓
-                    </span>
-                    <span className="font-sans text-sm text-[var(--color-ink-primary)] leading-normal">
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-
-          {/* System Requirements */}
-          {product.requirements && (
-            <section className="space-y-4 pt-6 border-t border-[var(--color-hairline)]">
-              <div className="space-y-1">
-                <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)]">
-                  Requirements
-                </span>
-                <h2 className="font-display text-2xl text-[var(--color-ink-primary)]">
-                  System Requirements
-                </h2>
-              </div>
-              <div className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] font-mono text-xs text-[var(--color-ink-secondary)] whitespace-pre-line leading-relaxed">
-                {product.requirements}
-              </div>
-            </section>
-          )}
-
-          {/* Expandable FAQ Section */}
-          <ProductFaqAccordion faq={product.faq} />
-
-          {/* Attestations & Product Reviews (only for purchasable products or when reviews exist) */}
-          {(reviews.length > 0 || product.priceInCents !== null) && (
-            <section className="space-y-6 pt-6 border-t border-[var(--color-hairline)]">
-              <div className="space-y-1">
-                <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)]">
-                  Feedback
-                </span>
-                <h2 className="font-display text-2xl text-[var(--color-ink-primary)]">
-                  Reviews
-                </h2>
-              </div>
-
-              {reviews.length > 0 ? (
-                <div className="space-y-4">
-                  {reviews.map((rev) => (
-                    <div
-                      key={rev.id}
-                      className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] space-y-3"
-                    >
-                      <div className="flex items-center justify-between text-xs font-mono">
-                        <div>
-                          <span className="text-[var(--color-ink-primary)] font-semibold">
-                            {rev.authorName}
-                          </span>
-                          {rev.authorTitle && (
-                            <span className="text-[var(--color-ink-secondary)] ml-2">
-                              — {rev.authorTitle}
-                            </span>
-                          )}
-                        </div>
-                        <span className="text-[var(--color-accent)]">
-                          {"★".repeat(rev.rating)}
-                        </span>
-                      </div>
-                      <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                        &ldquo;{rev.content}&rdquo;
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="p-8 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] text-center space-y-2">
-                  <p className="font-mono text-xs text-[var(--color-ink-secondary)]">
-                    No reviews yet for this product.
-                  </p>
-                  <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
-                    Feedback from verified buyers will appear here as reviews are submitted.
-                  </p>
+                  <Image
+                    src={product.previewImageUrl}
+                    alt={product.title}
+                    fill
+                    unoptimized
+                    className="object-cover"
+                    sizes="(max-width: 896px) 100vw, 896px"
+                  />
                 </div>
               )}
-            </section>
-          )}
+
+              {/* Overview & Description */}
+              {product.description && (
+                <section className="space-y-4">
+                  <div className="space-y-1">
+                    <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)]">
+                      Overview
+                    </span>
+                    <h2 className="font-display text-2xl text-[var(--color-ink-primary)]">
+                      Overview
+                    </h2>
+                  </div>
+                  <div className="font-sans text-base text-[var(--color-ink-secondary)] leading-relaxed space-y-4 whitespace-pre-line">
+                    {product.description}
+                  </div>
+                </section>
+              )}
+
+              {/* What is Included (Features) */}
+              {product.features && product.features.length > 0 && (
+                <section className="space-y-6 pt-6 border-t border-[var(--color-hairline)]">
+                  <div className="space-y-1">
+                    <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)]">
+                      Features
+                    </span>
+                    <h2 className="font-display text-2xl text-[var(--color-ink-primary)]">
+                      What is Included
+                    </h2>
+                  </div>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {product.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="p-4 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] flex items-start gap-3"
+                      >
+                        <span className="text-[var(--color-accent)] font-mono text-sm leading-none mt-0.5">
+                          ✓
+                        </span>
+                        <span className="font-sans text-sm text-[var(--color-ink-primary)] leading-normal">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+
+              {/* System Requirements */}
+              {product.requirements && (
+                <section className="space-y-4 pt-6 border-t border-[var(--color-hairline)]">
+                  <div className="space-y-1">
+                    <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)]">
+                      Requirements
+                    </span>
+                    <h2 className="font-display text-2xl text-[var(--color-ink-primary)]">
+                      System Requirements
+                    </h2>
+                  </div>
+                  <div className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] font-mono text-xs text-[var(--color-ink-secondary)] whitespace-pre-line leading-relaxed">
+                    {product.requirements}
+                  </div>
+                </section>
+              )}
+
+              {/* Expandable FAQ Section */}
+              <ProductFaqAccordion faq={product.faq} />
+
+              {/* Attestations & Product Reviews */}
+              {(reviews.length > 0 || product.priceInCents !== null) && (
+                <section className="space-y-6 pt-6 border-t border-[var(--color-hairline)]">
+                  <div className="space-y-1">
+                    <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)]">
+                      Feedback
+                    </span>
+                    <h2 className="font-display text-2xl text-[var(--color-ink-primary)]">
+                      Reviews
+                    </h2>
+                  </div>
+
+                  {reviews.length > 0 ? (
+                    <div className="space-y-4">
+                      {reviews.map((rev) => (
+                        <div
+                          key={rev.id}
+                          className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] space-y-3"
+                        >
+                          <div className="flex items-center justify-between text-xs font-mono">
+                            <div>
+                              <span className="text-[var(--color-ink-primary)] font-semibold">
+                                {rev.authorName}
+                              </span>
+                              {rev.authorTitle && (
+                                <span className="text-[var(--color-ink-secondary)] ml-2">
+                                  — {rev.authorTitle}
+                                </span>
+                              )}
+                            </div>
+                            <span className="text-[var(--color-accent)]">
+                              {"★".repeat(rev.rating)}
+                            </span>
+                          </div>
+                          <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
+                            &ldquo;{rev.content}&rdquo;
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="p-8 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] text-center space-y-2">
+                      <p className="font-mono text-xs text-[var(--color-ink-secondary)]">
+                        No reviews yet for this product.
+                      </p>
+                      <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
+                        Feedback from verified buyers will appear here as reviews are submitted.
+                      </p>
+                    </div>
+                  )}
+                </section>
+              )}
             </div>
           </InnerPageEntrance>
 
