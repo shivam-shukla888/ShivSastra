@@ -18,14 +18,14 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Shivam Shukla — Agentic AI Systems & Automation",
   description:
-    "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses by Shivam Shukla. Free-tier friendly with a risk-free 7-day free trial.",
+    "Production Agentic AI systems, custom workflows, and multi-agent architectures for growing businesses by Shivam Shukla. Built with deterministic safeguards and complete data sovereignty.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     title: "Shivam Shukla — Agentic AI Systems & Automation",
     description:
-      "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses by Shivam Shukla. Free-tier friendly with a risk-free 7-day free trial.",
+      "Production Agentic AI systems, custom workflows, and multi-agent architectures for growing businesses by Shivam Shukla. Built with deterministic safeguards and complete data sovereignty.",
     url: SITE_URL,
     type: "website",
     siteName: "ShivSastra",
@@ -88,7 +88,7 @@ export default async function HomePage() {
           "Application Security",
         ],
         description:
-          "Building production Agentic AI systems for small businesses with free-tier friendly architectures and strict privacy guarantees.",
+          "Building production Agentic AI systems for growing businesses with deterministic safeguards and strict privacy guarantees.",
         sameAs: verifiedSameAs,
       },
       {
@@ -137,32 +137,31 @@ export default async function HomePage() {
             }
             title={
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-normal tracking-tight text-[var(--color-ink-primary)] leading-[1.06]">
-                Agentic AI systems built for small businesses.
+                Production Agentic AI systems for growing businesses.
               </h1>
             }
             positioning={
               <p className="font-mono text-xs sm:text-sm uppercase tracking-[0.14em] text-[var(--color-accent)] font-semibold">
-                Free-Tier Friendly · 7-Day Free Trial · Production-Grade Security
+                Autonomous Workflows · Production-Grade Security · 100% Data Ownership
               </p>
             }
             narrative={
               <p className="font-sans text-base md:text-lg text-[var(--color-ink-secondary)] leading-relaxed max-w-[62ch]">
-                Production AI agents for lead qualification, customer support, and workflow automation.
-                Designed for small businesses with a free-tier friendly approach, human approval checkpoints, and a risk-free 7-day trial.
+                Purpose-built AI agents for lead qualification, customer support, and workflow automation. Engineered with deterministic guardrails, human approval checkpoints, and complete data sovereignty for growing businesses.
               </p>
             }
             ctas={
               <div className="space-y-4 pt-2">
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <Link
-                    href="/services#starter-agent-setup"
+                    href="/contact?subject=Discuss%20Your%20Agent%20System"
                     className={buttonStyles({
                       variant: "primary",
                       size: "lg",
                       className: "w-full sm:w-auto font-mono text-xs uppercase tracking-wider group",
                     })}
                   >
-                    <span>Start with 7-Day Free Trial</span>
+                    <span>Discuss Your Agent System</span>
                     <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none ml-1.5">
                       →
                     </span>
@@ -192,15 +191,9 @@ export default async function HomePage() {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-secondary)]">
                   <div>
                     <strong className="text-[var(--color-ink-primary)] block font-sans text-xs">
-                      7-Day Free Trial
+                      Production Reliability
                     </strong>
-                    <span>For small organisations</span>
-                  </div>
-                  <div>
-                    <strong className="text-[var(--color-ink-primary)] block font-sans text-xs">
-                      Free-Tier Friendly
-                    </strong>
-                    <span>n8n self-hosted &amp; Make</span>
+                    <span>Deterministic safeguards</span>
                   </div>
                   <div>
                     <strong className="text-[var(--color-ink-primary)] block font-sans text-xs">
@@ -210,9 +203,15 @@ export default async function HomePage() {
                   </div>
                   <div>
                     <strong className="text-[var(--color-ink-primary)] block font-sans text-xs">
+                      Human-in-the-Loop
+                    </strong>
+                    <span>Approval checkpoints</span>
+                  </div>
+                  <div>
+                    <strong className="text-[var(--color-ink-primary)] block font-sans text-xs">
                       Fast Turnaround
                     </strong>
-                    <span>5–8 days starter setup</span>
+                    <span>5–15 days deployment</span>
                   </div>
                 </div>
               </div>
@@ -234,7 +233,7 @@ export default async function HomePage() {
                     {profile.fullName}
                   </span>
                   <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-ink-secondary)]">
-                    Web &amp; AI Developer
+                    AI &amp; Systems Engineer
                   </span>
                 </figcaption>
               </figure>
@@ -391,14 +390,14 @@ export default async function HomePage() {
                         {item.title}
                       </h3>
 
-                      {/* Prominent Free Trial Highlight for Starter Agent Setup */}
+                      {/* Evaluation Period Note for Starter Agent Setup */}
                       {item.id === "starter-agent-setup" && (
-                        <div className="p-3 border-2 border-[var(--color-accent)] bg-[var(--color-accent)]/10 text-[var(--color-ink-primary)] space-y-0.5">
-                          <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-accent)] font-bold block">
-                            Risk-Free Evaluation
+                        <div className="p-2.5 border border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] text-[var(--color-ink-primary)]">
+                          <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
+                            Evaluation Period
                           </span>
-                          <p className="font-sans text-xs font-bold text-[var(--color-ink-primary)] leading-tight">
-                            7-Day Free Trial for Small Organisations
+                          <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-tight pt-0.5">
+                            7-day evaluation period available for small organisations
                           </p>
                         </div>
                       )}
@@ -419,11 +418,7 @@ export default async function HomePage() {
                         href={item.targetHref}
                         className="font-mono text-xs uppercase tracking-wider text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-1 font-semibold"
                       >
-                        <span>
-                          {item.id === "starter-agent-setup"
-                            ? "Start with 7-Day Free Trial"
-                            : "View package details"}
-                        </span>
+                        <span>View package details</span>
                         <span className="inline-block transition-transform duration-150 group-hover:translate-x-1">
                           →
                         </span>
@@ -443,14 +438,14 @@ export default async function HomePage() {
                     </h3>
                   </div>
                   <p className="font-sans text-xs sm:text-sm text-[var(--color-ink-primary)] max-w-2xl leading-relaxed font-medium">
-                    Data stays in your control • Human approval points included • No customer data stored on my servers • Free-tier safe by design
+                    Data stays in your control • Human approval points included • No customer data stored on my servers • Built for production reliability
                   </p>
                 </div>
                 <Link
-                  href="/services#starter-agent-setup"
+                  href="/contact?subject=Discuss%20Your%20Requirements"
                   className="font-mono text-xs uppercase tracking-wider px-5 py-3 border border-[var(--color-ink-primary)] text-[var(--color-ink-primary)] hover:bg-[var(--color-ink-primary)] hover:text-[var(--color-canvas-primary)] transition-colors shrink-0 self-start sm:self-auto font-semibold"
                 >
-                  Start with 7-Day Free Trial →
+                  Discuss Your Requirements →
                 </Link>
               </div>
             </div>
@@ -562,19 +557,19 @@ export default async function HomePage() {
                 Ready to deploy an agentic AI system for your business?
               </h2>
               <p className="font-sans text-sm sm:text-base text-[var(--color-dark-ink-secondary)] leading-relaxed">
-                Direct reply within 24 hours. Every engagement begins with a confirmed written scope, free-tier architecture, and data privacy guarantee.
+                Direct reply within 24 hours. Every engagement begins with a confirmed written scope, production architecture, and strict data privacy guarantee.
               </p>
 
               <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Link
-                  href="/contact?subject=Start%20with%207-Day%20Free%20Trial"
+                  href="/contact?subject=Discuss%20Your%20Requirements"
                   className={buttonStyles({
                     variant: "accent",
                     size: "lg",
                     className: "w-full sm:w-auto font-mono text-xs uppercase tracking-wider group text-center",
                   })}
                 >
-                  <span>Start with 7-Day Free Trial</span>
+                  <span>Discuss Your Requirements</span>
                   <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none ml-1.5">
                     →
                   </span>

@@ -24,14 +24,14 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Agentic AI Services & Workflow Automation — Shivam Shukla",
   description:
-    "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses by Shivam Shukla. Free-tier friendly, risk-free 7-day trial, and strict data privacy guarantees.",
+    "Production Agentic AI systems, custom workflows, and multi-agent architectures for growing businesses by Shivam Shukla. Built with deterministic safeguards and complete data sovereignty.",
   alternates: {
     canonical: absoluteUrl("/services"),
   },
   openGraph: {
     title: "Agentic AI Services & Workflow Automation — Shivam Shukla",
     description:
-      "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses by Shivam Shukla. Free-tier friendly, risk-free 7-day trial, and strict data privacy guarantees.",
+      "Production Agentic AI systems, custom workflows, and multi-agent architectures for growing businesses by Shivam Shukla. Built with deterministic safeguards and complete data sovereignty.",
     url: absoluteUrl("/services"),
     type: "website",
     siteName: "ShivSastra",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Agentic AI Services & Workflow Automation — Shivam Shukla",
     description:
-      "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses by Shivam Shukla. Free-tier friendly, risk-free 7-day trial, and strict data privacy guarantees.",
+      "Production Agentic AI systems, custom workflows, and multi-agent architectures for growing businesses by Shivam Shukla. Built with deterministic safeguards and complete data sovereignty.",
     images: ["/og-image.png"],
   },
 };
@@ -66,7 +66,7 @@ export default async function ServicesPage() {
         url: absoluteUrl("/services"),
         name: "Agentic AI Services & Workflow Automation — Shivam Shukla",
         description:
-          "Production Agentic AI systems, starter agents, and multi-agent workflows for small businesses. Free-tier friendly with strict data boundaries.",
+          "Production Agentic AI systems, custom workflows, and multi-agent architectures for growing businesses. Built with strict data sovereignty and defensive engineering.",
         breadcrumb: {
           "@type": "BreadcrumbList",
           itemListElement: [
@@ -178,8 +178,7 @@ export default async function ServicesPage() {
                   Agentic AI Services &amp; Production Agent Systems
                 </h1>
                 <p className="font-sans text-base sm:text-lg md:text-xl text-[var(--color-ink-secondary)] leading-relaxed">
-                  Practical agentic AI engineering for small businesses, founders, and lean teams.
-                  From focused lead qualifiers and WhatsApp support agents to full multi-agent orchestration—built on self-hosted n8n or Make free tier with human approval checkpoints, zero customer data retention on my servers, and a 7-day free trial.
+                  Practical agentic AI engineering for growing businesses, founders, and lean teams. From focused lead qualifiers and WhatsApp support agents to full multi-agent orchestration—built on client-controlled infrastructure with human approval checkpoints, zero customer data retention on my servers, and verified business outcomes.
                 </p>
               </div>
 
@@ -187,18 +186,18 @@ export default async function ServicesPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-[var(--color-hairline)]">
                 <div className="space-y-1">
                   <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
-                    7-Day Free Trial
+                    Evaluation Period
                   </span>
                   <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
-                    Evaluate in your real workflow before final commitment.
+                    Evaluate in your real workflow before final settlement.
                   </p>
                 </div>
                 <div className="space-y-1">
                   <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
-                    Free-Tier Friendly
+                    Production Reliability
                   </span>
                   <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
-                    n8n self-hosted or Make free tier with rate-limit safety.
+                    Engineered with rate limiting, error handling, and fail-safes.
                   </p>
                 </div>
                 <div className="space-y-1">
@@ -225,7 +224,7 @@ export default async function ServicesPage() {
                   href="#starter-agent-setup"
                   className="inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider px-5 py-3 bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] hover:bg-[var(--color-accent)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ink-primary)] font-semibold"
                 >
-                  Start with 7-Day Free Trial ↓
+                  Discuss Your Requirements ↓
                 </a>
                 <a
                   href="#packages"
@@ -259,7 +258,7 @@ export default async function ServicesPage() {
                 </h2>
               </div>
               <p className="font-sans text-base sm:text-lg text-[var(--color-ink-primary)] leading-relaxed font-medium">
-                Data stays in your control • Human approval points included • No customer data stored on my servers • Free-tier safe by design
+                Data stays in your control • Human approval points included • No customer data stored on my servers • Built for production reliability
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-3 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-secondary)]">
                 <div>
@@ -272,7 +271,7 @@ export default async function ServicesPage() {
                   <span className="text-[var(--color-accent)] font-bold">✓</span> Zero Customer Data Stored
                 </div>
                 <div>
-                  <span className="text-[var(--color-accent)] font-bold">✓</span> Free-Tier Safe by Design
+                  <span className="text-[var(--color-accent)] font-bold">✓</span> Production-Grade Safeguards
                 </div>
               </div>
             </div>
@@ -294,7 +293,7 @@ export default async function ServicesPage() {
                   Defined Deliverables &amp; Transparent Pricing
                 </h2>
                 <p className="font-sans text-sm md:text-base text-[var(--color-ink-secondary)] leading-relaxed">
-                  Every engagement starts with defined outcomes, free-tier optimization, and clear turnaround.
+                  Every engagement starts with defined outcomes, production safeguards, and clear turnaround.
                   Click &ldquo;View details&rdquo; on any card to inspect deliverables, technical scope, and boundaries.
                 </p>
               </div>
@@ -334,18 +333,18 @@ export default async function ServicesPage() {
                         </div>
                       </div>
 
-                      {/* Prominent Free Trial Callout for Starter Agent Setup */}
+                      {/* Evaluation Period Note for Starter Agent Setup */}
                       {pkg.id === "starter-agent-setup" && (
-                        <div className="p-3.5 border-2 border-[var(--color-accent)] bg-[var(--color-accent)]/10 text-[var(--color-ink-primary)] space-y-1">
-                          <div className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-[var(--color-accent)] font-bold">
-                            <span className="w-2 h-2 bg-[var(--color-accent)] inline-block" />
-                            <span>Risk-Free Evaluation</span>
+                        <div className="p-3 border border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] text-[var(--color-ink-primary)] space-y-1">
+                          <div className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-[var(--color-accent)] font-semibold">
+                            <span className="w-1.5 h-1.5 bg-[var(--color-accent)] inline-block" />
+                            <span>Evaluation Period</span>
                           </div>
-                          <p className="font-sans text-sm font-bold text-[var(--color-ink-primary)] leading-snug">
-                            7-Day Free Trial for Small Organisations
+                          <p className="font-sans text-xs font-semibold text-[var(--color-ink-primary)] leading-snug">
+                            7-Day Evaluation Period for Small Organisations
                           </p>
-                          <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-tight">
-                            Evaluate with real customer inquiries in staging/pilot risk-free before final settlement.
+                          <p className="font-sans text-[11px] text-[var(--color-ink-secondary)] leading-tight">
+                            Evaluate with real customer inquiries in staging/pilot before final settlement.
                           </p>
                         </div>
                       )}
@@ -385,11 +384,7 @@ export default async function ServicesPage() {
                         href={`/contact?subject=${encodeURIComponent(pkg.contactSubject)}`}
                         className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider px-4 py-2 bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] hover:bg-[var(--color-accent)] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)] font-semibold"
                       >
-                        <span>
-                          {pkg.id === "starter-agent-setup"
-                            ? "Start with 7-Day Free Trial"
-                            : "Request Quote"}
-                        </span>
+                        <span>{pkg.id === "starter-agent-setup" ? "Request Proposal" : "Request Quote"}</span>
                         <span>→</span>
                       </a>
                       <span className="font-mono text-[11px] text-[var(--color-ink-secondary)]">
@@ -783,7 +778,7 @@ export default async function ServicesPage() {
                     <ul className="space-y-2.5 font-sans text-xs text-[var(--color-ink-primary)] list-none">
                       <li className="flex items-start gap-2.5">
                         <span className="text-[var(--color-accent)] font-bold select-none shrink-0">—</span>
-                        <span><strong>Workflow Orchestration:</strong> Self-hosted n8n (Docker / VPS), Make free tier, and custom Node.js/Python micro-services.</span>
+                        <span><strong>Workflow Orchestration:</strong> Self-hosted n8n (Docker / VPS), cloud orchestrators, and custom Node.js/Python micro-services.</span>
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="text-[var(--color-accent)] font-bold select-none shrink-0">—</span>
@@ -826,7 +821,7 @@ export default async function ServicesPage() {
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="text-[var(--color-accent)] font-bold select-none shrink-0">✓</span>
-                        <span><strong>Free-Tier Rate Limiting:</strong> Execution throttles and deduplication nodes protect your monthly cloud quotas.</span>
+                        <span><strong>Rate Limiting & Safety:</strong> Execution throttles and deduplication nodes prevent runaway API spend and protect infrastructure.</span>
                       </li>
                       <li className="flex items-start gap-2.5">
                         <span className="text-[var(--color-accent)] font-bold select-none shrink-0">✓</span>
@@ -983,7 +978,7 @@ export default async function ServicesPage() {
                   Clear Answers Before You Reach Out
                 </h2>
                 <p className="font-sans text-sm md:text-base text-[var(--color-ink-secondary)] leading-relaxed">
-                  Honest clarity on pricing, the 7-day trial, data security, human approval points, and free-tier optimization.
+                  Honest clarity on pricing, evaluation terms, data security, human approval points, and operational safeguards.
                 </p>
               </div>
 
@@ -1083,7 +1078,7 @@ export default async function ServicesPage() {
                       Data Privacy &amp; Trial Guarantee
                     </span>
                     <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
-                      Zero client customer data is stored on my servers. Small organisations qualify for a 7-day free trial on the Starter Agent Setup.
+                      Zero client customer data is stored on my servers. Small organisations qualify for a 7-day evaluation period on the Starter Agent Setup.
                     </p>
                   </div>
                 </div>

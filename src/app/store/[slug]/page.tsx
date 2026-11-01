@@ -287,12 +287,8 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                   </div>
                 )}
 
-                {/* Free Tier & Security Guarantees */}
+                {/* Production Reliability & Security Guarantees */}
                 <div className="p-4 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
-                  <div className="flex items-center gap-2 text-[var(--color-ink-primary)]">
-                    <span className="text-[var(--color-accent)] font-bold">✓</span>
-                    <span>Works on free tier (n8n self-hosted + Make)</span>
-                  </div>
                   <div className="flex items-center gap-2 text-[var(--color-ink-primary)]">
                     <span className="text-emerald-700 dark:text-emerald-400 font-bold">🔒</span>
                     <span className="font-semibold">We prioritize security</span>

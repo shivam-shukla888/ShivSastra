@@ -70,7 +70,7 @@ export interface HomepageServicePreview {
  */
 export const SECURITY_BANNER_HEADING = "We prioritize security";
 export const SECURITY_BANNER_BODY =
-  "Data stays in your control • Human approval points included • No customer data stored on my servers • Free-tier safe by design";
+  "Data stays in your control • Human approval points included • No customer data stored on my servers • Built for production reliability";
 export const SECURITY_SHORT = "We prioritize security";
 
 /** Backward compatibility alias */
@@ -80,21 +80,21 @@ export const HOMEPAGE_SERVICES_PREVIEW: HomepageServicePreview[] = [
   {
     id: "starter-agent-setup",
     title: "Starter Agent Setup",
-    customerOutcome: "Deploy 1 focused agent (Lead Qualifier, Support, or Enquiry Handler) connected to WhatsApp or web chat with free-tier safety.",
+    customerOutcome: "Deploy 1 focused agent (Lead Qualifier, Support, or Enquiry Handler) connected to WhatsApp or web chat with verified integrations.",
     startingPrice: "₹22,000 – ₹35,000",
     targetHref: "/services#starter-agent-setup",
   },
   {
     id: "business-agent-package",
     title: "Business Agent Package",
-    customerOutcome: "1–2 production agents with multi-step reasoning, tool calling, CRM/Sheets integration, and human approval checkpoints.",
+    customerOutcome: "1–2 production agents with multi-step reasoning, tool calling, CRM/Sheets synchronization, and human approval checkpoints.",
     startingPrice: "₹55,000 – ₹90,000",
     targetHref: "/services#business-agent-package",
   },
   {
     id: "full-agentic-system",
     title: "Full Agentic System",
-    customerOutcome: "Multi-agent system with custom tools, memory, monitoring, production self-hosted n8n setup, and 60 days of support.",
+    customerOutcome: "Multi-agent system with custom tools, persistent memory, monitoring, production self-hosted n8n setup, and 60 days of support.",
     startingPrice: "₹1,10,000 – ₹1,80,000",
     targetHref: "/services#full-agentic-system",
   },
@@ -105,7 +105,7 @@ export const TECHNICAL_CAPABILITIES: TechnicalCapability[] = [
     id: "agentic-ai-orchestration",
     category: "Agentic AI Orchestration & Tool Calling",
     verificationBadge: "Built & Verified in Production",
-    technologies: ["n8n (Self-Hosted)", "Make", "Groq SDK (Llama 3.3)", "OpenAI API", "Python"],
+    technologies: ["n8n (Self-Hosted)", "Docker", "Groq SDK (Llama 3.3)", "OpenAI API", "Python"],
     summary:
       "Production-grade agentic workflows with multi-step reasoning, deterministic tool execution, and stateful memory pipelines.",
     capabilities: [
@@ -113,7 +113,7 @@ export const TECHNICAL_CAPABILITIES: TechnicalCapability[] = [
       "Decoupled architecture: LLMs reason and extract intent, deterministic code executes operations",
       "Self-hosted n8n workflow deployment on isolated client infrastructure",
       "Human-in-the-loop checkpoints before any high-stakes or irreversible actions",
-      "Rate-limiting and token-consumption guardrails for free-tier optimization",
+      "Rate-limiting and token-consumption guardrails to prevent runaway API spend",
     ],
     evidence: {
       title: "RealGuard & Yojna Setu",
@@ -192,7 +192,7 @@ export const WEBSITE_ENGINEERING_SHOWCASE: WebsiteEngineeringArea[] = [
     highlights: [
       "Data Sovereignty: Client customer data stays strictly on client-owned accounts (n8n, Google Sheets, CRM)",
       "Human-in-the-Loop: Critical workflows pause for human approval before sending external messages or executing updates",
-      "Rate Limiting & Safety: Built-in guards prevent runaway API calls and protect free-tier quotas",
+      "Rate Limiting & Safety: Built-in guards prevent runaway API calls and manage token consumption",
       "Cryptographic Verification: Timing-safe HMAC-SHA256 verification on incoming webhooks",
       "Automated Security Suite: 25-point automated test suite verifying access controls and tamper rejection",
     ],
@@ -240,29 +240,29 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     title: "Starter Agent Setup",
     category: "Agentic AI Setup",
     startingPrice: "₹22,000 – ₹35,000",
-    pricingNote: "Fixed-scope engagement based on channel and simple tools. Includes 7-Day Free Trial for Small Organisations.",
-    idealFor: "Small businesses, clinics, agencies, and lean teams wanting an automated lead qualifier, enquiry handler, or basic support agent.",
+    pricingNote: "Fixed-scope engagement based on channel and simple tools. Includes 7-day evaluation period for small organisations.",
+    idealFor: "Growing businesses, clinics, agencies, and lean teams wanting an automated lead qualifier, enquiry handler, or front-line support agent to respond instantly to customer inquiries.",
     turnaround: "5–8 days",
     revisions: "1 round of workflow tuning & prompt refinement",
     summary:
-      "1 focused agent (Lead Qualifier or Basic Support or Enquiry Handler) connected to WhatsApp or website chat with simple tools and free-tier safety.",
+      "1 focused agent (Lead Qualifier or Basic Support or Enquiry Handler) connected to WhatsApp or website chat with verified integrations and data sovereignty.",
     plainEnglishOutcome:
-      "Deploy 1 focused agent that qualifies incoming leads or answers routine enquiries 24/7 over WhatsApp or web chat, logging data straight to Google Sheets or email.",
+      "Eliminate slow response times. Deploy 1 focused agent that qualifies inbound leads or answers routine inquiries 24/7 over WhatsApp or web chat, routing structured data directly to Google Sheets, CRM, or your team.",
     technicalScope: [
       "1 focused agent (Lead Qualifier or Basic Support or Enquiry Handler)",
       "WhatsApp or website chat connection",
-      "Simple tools (Google Sheet / Email)",
-      "Rate limiting for free-tier safety",
-      "Setup on n8n self-hosted or Make free tier",
-      "Complete documentation + 7-Day Free Trial for Small Organisations",
+      "Tool integrations (Google Sheets, CRM, or Email notifications)",
+      "Execution rate limiting and anomaly protection",
+      "Deployment on client-owned n8n or cloud infrastructure",
+      "Complete documentation + 7-day evaluation period for small organisations",
     ],
     deliverables: [
       "1 focused agent (Lead Qualifier or Basic Support or Enquiry Handler)",
       "WhatsApp or website chat connection",
-      "Simple tools (Google Sheet / Email)",
-      "Rate limiting for free-tier safety",
-      "Setup on n8n self-hosted or Make free tier",
-      "Documentation + 7-Day Free Trial for Small Organisations",
+      "Google Sheets / CRM synchronization",
+      "Defensive error handling and alert notifications",
+      "Deployment walkthrough and configuration guide",
+      "Documentation + 7-day evaluation period for small organisations",
     ],
     exclusions: [
       "Multi-agent collaboration or autonomous complex decision-making (available in Business / Full)",
@@ -274,7 +274,7 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
       description: "WhatsApp conversational workflow connecting customer chat to deterministic calculations and CRM logging.",
       ctaLabel: "See how I built similar systems",
     },
-    contactSubject: "Start with 7-Day Free Trial (Starter Agent Setup)",
+    contactSubject: "Starter Agent Setup Inquiry",
   },
   {
     id: "business-agent-package",
@@ -282,21 +282,21 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     title: "Business Agent Package",
     category: "Production Agentic Systems",
     startingPrice: "₹55,000 – ₹90,000",
-    pricingNote: "Scope-based pricing covering 1–2 production agents, CRM/Sheets integration, human approval points, and 30 days support.",
-    idealFor: "Growing businesses wanting multi-step reasoning, external tool calling, CRM synchronization, and human approval checkpoints.",
+    pricingNote: "Scope-based pricing covering 1–2 production agents, CRM/Sheets synchronization, human approval checkpoints, and 30 days active support.",
+    idealFor: "Growing businesses requiring multi-step reasoning, external tool execution, CRM synchronization, and human approval checkpoints to automate routine operations without losing control.",
     turnaround: "10–15 days",
     revisions: "2 rounds of prompt refinement & integration reviews",
     summary:
       "1–2 production agents (Lead Qualifier + Support/Follow-up) with multi-step reasoning, tool calling, human approval points, and 30 days support.",
     plainEnglishOutcome:
-      "Deploy 1–2 production agents that reason through multi-step customer inquiries, call external tools, sync with your CRM or Sheets, and pause for human approval on high-value actions.",
+      "Reclaim 15–20 hours of manual follow-up per week. Deploy 1–2 production agents that handle multi-step customer inquiries, call external APIs, update CRM records, and pause for human approval on high-value actions.",
     technicalScope: [
       "1–2 production agents (Lead Qualifier + Support/Follow-up)",
       "Multi-step reasoning + tool calling",
       "WhatsApp + CRM/Sheet integration",
       "Human approval points",
       "Error handling + logging",
-      "Free-tier optimised architecture",
+      "Production-grade execution safeguards and monitoring",
       "30 days support",
     ],
     deliverables: [
@@ -305,7 +305,7 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
       "WhatsApp + CRM/Sheet integration",
       "Human approval points",
       "Error handling + logging",
-      "Free-tier optimised",
+      "Production-grade execution safeguards",
       "30 days support",
     ],
     exclusions: [
@@ -318,7 +318,7 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
       description: "Conversational Groq LLM profile extraction coupled with a deterministic eligibility evaluation engine.",
       ctaLabel: "See how I built similar systems",
     },
-    contactSubject: "Business Agent Package Quote",
+    contactSubject: "Business Agent Package Inquiry",
   },
   {
     id: "full-agentic-system",
@@ -360,7 +360,7 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
       description: "Multi-agent reasoning, natural language profile extraction, and deterministic rules-engine workflows.",
       ctaLabel: "See how I built similar systems",
     },
-    contactSubject: "Full Agentic System Quote",
+    contactSubject: "Full Agentic System Inquiry",
   },
 ];
 
@@ -374,10 +374,10 @@ export const SERVICE_PROCESS_STEPS: ProcessStep[] = [
   },
   {
     step: "02",
-    title: "Free-Tier & Security Setup",
+    title: "Environment & Security Setup",
     description:
-      "We configure your environment on self-hosted n8n or Make free tier. All credentials remain in your control; zero client customer data is stored on developer servers.",
-    deliverable: "Isolated workflow environment + security boundaries",
+      "We configure your dedicated execution environment on client-owned n8n or cloud infrastructure. All credentials remain under your control; zero customer data is stored on developer servers.",
+    deliverable: "Isolated execution environment + security boundaries",
   },
   {
     step: "03",
@@ -388,10 +388,10 @@ export const SERVICE_PROCESS_STEPS: ProcessStep[] = [
   },
   {
     step: "04",
-    title: "Testing & 7-Day Free Trial",
+    title: "Testing & Evaluation",
     description:
-      "We test conversational edge cases and rate limits together. Small organisations activate their 7-day free trial to evaluate real customer interactions risk-free.",
-    deliverable: "Verified agent running in staging/trial",
+      "We test conversational edge cases, schema validation, and rate limits together to ensure reliable performance before going live.",
+    deliverable: "Verified agent running in staging",
   },
   {
     step: "05",
@@ -406,17 +406,17 @@ export const SERVICE_FAQS: ServiceFaq[] = [
   {
     question: "What is your Security Promise regarding customer data?",
     answer:
-      "We prioritize security. Data stays in your control • Human approval points included • No customer data stored on my servers • Free-tier safe by design. All workflows run on your own self-hosted n8n instance or your own accounts.",
+      "We prioritize security. Data stays in your control • Human approval points included • No customer data stored on my servers • Built for production reliability. All workflows run on your own self-hosted n8n instance or your own accounts.",
   },
   {
-    question: "How does the 7-day free trial work for small organisations?",
+    question: "How does the evaluation period work for small organisations?",
     answer:
-      "For small organisations opting for the Starter Agent Setup, we deploy the agent in your staging or pilot environment for 7 days at zero upfront risk. You test it with real inquiries and verify its accuracy before final settlement.",
+      "For small organisations opting for the Starter Agent Setup, we deploy the agent in your staging or pilot environment for 7 days. You test it with real customer inquiries and verify its accuracy and performance before final settlement.",
   },
   {
-    question: "What does 'free-tier optimised' mean?",
+    question: "How do you prevent unexpected API spend and runaway executions?",
     answer:
-      "Third-party AI costs can add up if workflows are poorly designed. We optimize prompt sizes, implement execution batching, configure webhook deduplication, and enforce rate limits so you can operate comfortably within n8n and Make free tiers without surprise cloud bills.",
+      "We engineer defensive execution safeguards: prompt compression, token-consumption limits, execution batching, webhook deduplication, and execution rate limiters so your operational costs remain predictable and controlled.",
   },
   {
     question: "How do human approval points work?",
@@ -436,6 +436,6 @@ export const SERVICE_FAQS: ServiceFaq[] = [
   {
     question: "How do we get started?",
     answer:
-      "Use the Request a Quote form below, email directly at theshivamshukla.4uu@gmail.com, or reach out on Contra or LinkedIn. We review your requirements and provide an itemized proposal within 24 hours.",
+      "Use the Request an Agent Quote form below, email directly at theshivamshukla.4uu@gmail.com, or reach out on Contra or LinkedIn. We review your requirements and provide an itemized proposal within 24 hours.",
   },
 ];

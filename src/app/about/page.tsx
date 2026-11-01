@@ -115,7 +115,7 @@ export default async function AboutPage() {
                     &ldquo;I build software products, AI agents, and automation systems — prioritizing AI security and deterministic application logic over flashy demos.&rdquo;
                   </p>
                   <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                    I&apos;m an AI Engineer and Backend Developer (2026 Computer Science Engineering graduate). I specialize in building reliable AI agents and backend systems with Python, Java, Spring Boot, REST APIs, PostgreSQL, Docker, and Supabase—prioritizing deterministic application boundaries over brittle prompt chains.
+                    I&apos;m an AI Systems &amp; Backend Engineer. I specialize in architecting reliable, autonomous AI agents and resilient backend systems with Python, Java, Spring Boot, REST APIs, PostgreSQL, Docker, and Supabase—prioritizing deterministic application boundaries over brittle prompt chains.
                   </p>
                   <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
                     My engineering foundation is built on clean architectures: Java and Spring Boot deliver predictable data flow and strict server-side validation, while Python handles AI agent orchestration, tool-calling pipelines, and multimodal data extraction. Whenever I solve recurring architecture challenges, I document them as open case studies and developer starter templates.
@@ -204,7 +204,7 @@ export default async function AboutPage() {
                 <div className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-6 md:p-8 space-y-3">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="font-display text-xl text-[var(--color-ink-primary)]">
-                      B.Tech in Computer Science &amp; Engineering (70%)
+                      B.Tech in Computer Science &amp; Engineering
                     </h3>
                     <span className="font-mono text-xs text-[var(--color-accent)] font-semibold">
                       2022 – 2026
@@ -217,7 +217,7 @@ export default async function AboutPage() {
                     Affiliated to Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow
                   </p>
                   <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                    Completed Computer Science Engineering (2026) with 70% aggregate. Specialized in backend engineering, agentic AI, LLM pipelines, and application security. Built three production-grade systems (Yojna Setu, ShivSastra, and QuickEats) during undergraduate studies.
+                    Computer Science Engineering specializing in backend systems, distributed architectures, agentic AI, and application security. Architected and deployed three production systems—Yojna Setu (multilingual welfare-scheme agent, 42 passing tests), RealGuard (WhatsApp real-estate automation engine), and QuickEats (transactional backend with 71 automated tests).
                   </p>
                 </div>
 
@@ -225,7 +225,7 @@ export default async function AboutPage() {
                 <div className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-6 md:p-8 space-y-3">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="font-display text-xl text-[var(--color-ink-primary)]">
-                      Senior Secondary, CBSE (70%)
+                      Senior Secondary (CBSE) — Science &amp; Mathematics
                     </h3>
                     <span className="font-mono text-xs text-[var(--color-accent)] font-semibold">
                       2021
@@ -235,7 +235,7 @@ export default async function AboutPage() {
                     Nav Jeevan Mission School, Kushinagar, India
                   </p>
                   <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                    Completed Senior Secondary education with a 70% score, establishing strong analytical foundations in science and mathematics.
+                    Focused study in physics, chemistry, and mathematics, establishing the foundation for computational reasoning, algorithms, and analytical problem-solving.
                   </p>
                 </div>
               </div>

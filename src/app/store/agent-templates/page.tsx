@@ -15,14 +15,14 @@ export const revalidate = 60;
 export const metadata = {
   title: "AI Agent Templates — Store",
   description:
-    "Pre-built n8n and Make workflow templates for lead qualification, sales follow-up, and free-tier automation by Shivam Shukla.",
+    "Pre-built n8n and Make workflow templates for lead qualification, sales follow-up, and production automation by Shivam Shukla.",
   alternates: {
     canonical: absoluteUrl("/store/agent-templates"),
   },
   openGraph: {
     title: "AI Agent Templates — Store | Shivam Shukla",
     description:
-      "Pre-built n8n and Make workflow templates for lead qualification, sales follow-up, and free-tier automation by Shivam Shukla.",
+      "Pre-built n8n and Make workflow templates for lead qualification, sales follow-up, and production automation by Shivam Shukla.",
     url: absoluteUrl("/store/agent-templates"),
     type: "website",
     siteName: "ShivSastra",
@@ -40,7 +40,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "AI Agent Templates — Store | Shivam Shukla",
     description:
-      "Pre-built n8n and Make workflow templates for lead qualification, sales follow-up, and free-tier automation by Shivam Shukla.",
+      "Pre-built n8n and Make workflow templates for lead qualification, sales follow-up, and production automation by Shivam Shukla.",
     images: ["/og-image.png"],
   },
 };
@@ -76,7 +76,7 @@ export default async function AgentTemplatesStorePage() {
                     AI Agent Templates
                   </h1>
                   <p className="font-sans text-sm md:text-base text-[var(--color-ink-secondary)] leading-relaxed">
-                    Production n8n and Make workflow templates for lead qualification, sales follow-up, and free-tier execution optimization.
+                    Production n8n and Make workflow templates for lead qualification, sales follow-up, and execution reliability.
                   </p>
                 </div>
                 <div className="font-mono text-xs text-[var(--color-ink-secondary)] shrink-0">

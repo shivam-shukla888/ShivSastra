@@ -246,14 +246,14 @@ export const N8N_LEAD_QUALIFIER_ITEM: ProductDisplayData = {
     "Structured criteria scoring for high-intent leads",
     "Rate limiting and token-consumption guardrails",
     "Google Sheets & email notification nodes included",
-    "Free-tier compatible with self-hosted n8n or Make free tier",
+    "Production-ready for self-hosted n8n or cloud orchestration",
   ],
-  requirements: "n8n (self-hosted v1.0+ or n8n Cloud) or Make free tier, Groq or OpenAI API key",
+  requirements: "n8n (self-hosted v1.0+ or n8n Cloud), Groq or OpenAI API key",
   faq: [
     {
-      question: "Can I run this on the free tier?",
+      question: "Can I run this on self-hosted infrastructure?",
       answer:
-        "Yes. The workflow is optimized for minimal execution steps and token efficiency, running cleanly on self-hosted n8n or free-tier orchestrators.",
+        "Yes. The workflow is optimized for minimal execution overhead and high token efficiency, running reliably on self-hosted Docker n8n or cloud environments.",
     },
     {
       question: "What is included in the download?",
@@ -293,9 +293,9 @@ export const WHATSAPP_SUPPORT_KIT_ITEM: ProductDisplayData = {
   requirements: "WhatsApp Business API or Twilio WhatsApp sandbox, Node.js 18+ or n8n v1.0+",
   faq: [
     {
-      question: "Does this require a paid WhatsApp Business API account?",
+      question: "Which WhatsApp messaging gateways are supported?",
       answer:
-        "You can start completely free using the Meta Cloud API free tier (1,000 free service conversations/month) or Twilio sandbox.",
+        "You can connect either official Meta Cloud API or Twilio WhatsApp messaging pipelines with standard webhook endpoints.",
     },
     {
       question: "How does human escalation work?",
@@ -357,7 +357,7 @@ export const SMALL_BUSINESS_BUNDLE_ITEM: ProductDisplayData = {
   shortDescription:
     "The complete agentic toolkit for small business: Lead Qualifier, WhatsApp Support Kit, Sales Follow-up Pack, and Prompt Library in one bundle.",
   description:
-    "Comprehensive agentic AI bundle designed specifically for small businesses wanting an all-in-one automation stack. Includes the Lead Qualifier Pack, WhatsApp Support Kit, Sales Follow-up Pack, Prompt Library, and Free-Tier Survival Kit.",
+    "Comprehensive agentic AI bundle designed specifically for small businesses wanting an all-in-one automation stack. Includes the Lead Qualifier Pack, WhatsApp Support Kit, Sales Follow-up Pack, Prompt Library, and Production Reliability Kit.",
   priceInCents: 999900,
   currency: "INR",
   category: "agent_kits",
@@ -369,7 +369,7 @@ export const SMALL_BUSINESS_BUNDLE_ITEM: ProductDisplayData = {
     "Self-hosting deployment guide for 100% data ownership",
     "Over 30% savings compared to buying individual packs",
   ],
-  requirements: "Self-hosted server (optional Docker/VPS) or free-tier cloud accounts (n8n, Make, Groq/OpenAI)",
+  requirements: "Self-hosted server (Docker/VPS) or cloud accounts (n8n, Make, Groq/OpenAI)",
   faq: [
     {
       question: "Is this suitable for non-technical small business owners?",
@@ -426,24 +426,24 @@ export const AGENT_PROMPT_LIBRARY_ITEM: ProductDisplayData = {
 export const N8N_FREE_TIER_KIT_ITEM: ProductDisplayData = {
   id: "847291a2-1111-4000-8000-000000000006",
   slug: "n8n-free-tier-survival-kit",
-  releaseCode: "AGT-FSK",
-  title: "n8n Free-Tier Survival Kit",
+  releaseCode: "AGT-PRK",
+  title: "n8n Production Reliability Kit",
   shortDescription:
-    "Essential patterns, execution-saving workflows, rate-limiting sub-workflows, and local storage adapters to run production agents on n8n free tier.",
+    "Essential reliability patterns, execution-saving sub-workflows, rate-limiting handlers, and local storage adapters for production n8n agents.",
   description:
-    "A specialized toolkit for running powerful agents without hitting cloud tier paywalls. Includes execution batching patterns, webhook deduplication, token throttles, and local SQLite/JSON caching adapters.",
+    "A specialized engineering toolkit for deploying resilient AI agents on n8n. Includes execution batching patterns, webhook deduplication, token throttles, retry handlers, and local caching adapters to ensure uninterrupted uptime and predictable operating costs.",
   priceInCents: 149900,
   currency: "INR",
   category: "agent_templates",
   productType: "template",
   features: [
-    "Execution batching & queueing nodes to stay within free-tier caps",
+    "Execution batching & queueing nodes for high-throughput stability",
     "Webhook deduplication and retry handlers to prevent execution burning",
     "Token-saving prompt compression patterns",
     "Local SQLite and Google Sheets state management templates",
-    "Self-hosting checklist on minimal VPS (₹300/mo or free Oracle Cloud)",
+    "Production self-hosting checklist and environment hardening guide",
   ],
-  requirements: "n8n free cloud account or self-hosted n8n instance",
+  requirements: "n8n (self-hosted or n8n Cloud), Node.js / Docker",
   faq: [
     {
       question: "Does this help reduce OpenAI/Groq API bills?",

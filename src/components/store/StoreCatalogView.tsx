@@ -323,10 +323,6 @@ export function StoreCatalogView({
                   {/* Required Digital Product Value Points */}
                   <div className="pt-2.5 pb-1 space-y-1 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-primary)]">
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[var(--color-accent)] font-bold select-none">✓</span>
-                      <span>Works on free tier (n8n self-hosted + Make)</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
                       <span className="text-emerald-700 dark:text-emerald-400 font-bold select-none">🔒</span>
                       <span className="font-medium">We prioritize security</span>
                     </div>

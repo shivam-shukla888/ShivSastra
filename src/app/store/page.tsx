@@ -16,14 +16,14 @@ export const revalidate = 60;
 export const metadata = {
   title: "Store — Agentic AI Templates, Kits & Digital Tools",
   description:
-    "Browse production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and free-tier automation bundles by Shivam Shukla.",
+    "Browse production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and automation kits by Shivam Shukla.",
   alternates: {
     canonical: absoluteUrl("/store"),
   },
   openGraph: {
     title: "Store — Agentic AI Templates, Kits & Digital Tools | Shivam Shukla",
     description:
-      "Browse production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and free-tier automation bundles by Shivam Shukla.",
+      "Browse production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and automation kits by Shivam Shukla.",
     url: absoluteUrl("/store"),
     type: "website",
     siteName: "ShivSastra",
@@ -41,7 +41,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Store — Agentic AI Templates, Kits & Digital Tools | Shivam Shukla",
     description:
-      "Browse production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and free-tier automation bundles by Shivam Shukla.",
+      "Browse production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and automation kits by Shivam Shukla.",
     images: ["/og-image.png"],
   },
 };
@@ -57,7 +57,7 @@ export default async function StorePage() {
     "@type": "CollectionPage",
     name: "SHIVSASTRA Store — Agentic AI Templates & Kits",
     description:
-      "Browse production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and free-tier automation bundles by Shivam Shukla.",
+      "Browse production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and automation kits by Shivam Shukla.",
     url: absoluteUrl("/store"),
     breadcrumb: {
       "@type": "BreadcrumbList",
@@ -149,7 +149,7 @@ export default async function StorePage() {
                     AI Agent Templates
                   </h2>
                   <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-relaxed">
-                    Production n8n and Make workflows for lead qualification, sales follow-up, and free-tier execution optimization.
+                    Production n8n and Make workflows for lead qualification, sales follow-up, and execution reliability.
                   </p>
                 </div>
                 <div className="pt-4 border-t border-[var(--color-hairline)] flex items-center justify-between font-mono text-xs text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)]">
@@ -224,7 +224,7 @@ export default async function StorePage() {
                 </h2>
               </div>
               <p className="font-sans text-sm sm:text-base text-[var(--color-ink-primary)] leading-relaxed font-medium">
-                Data stays in your control • Human approval points included • No customer data stored on my servers • Free-tier safe by design
+                Data stays in your control • Human approval points included • No customer data stored on my servers • Built for production reliability
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-3 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-secondary)]">
                 <div>
@@ -237,7 +237,7 @@ export default async function StorePage() {
                   <span className="text-[var(--color-accent)] font-bold">✓</span> Zero Customer Data Stored
                 </div>
                 <div>
-                  <span className="text-[var(--color-accent)] font-bold">✓</span> Free-Tier Safe by Design
+                  <span className="text-[var(--color-accent)] font-bold">✓</span> Production-Grade Safeguards
                 </div>
               </div>
             </div>
@@ -276,14 +276,14 @@ export default async function StorePage() {
                 </h3>
                 <p className="font-sans text-xs sm:text-sm text-[var(--color-ink-secondary)] leading-relaxed">
                   Looking for bespoke agent implementation rather than ready-made templates?
-                  I offer tailored client services including Starter Agent Setup (₹22,000 – ₹35,000 with a 7-day free trial), Business Agent Packages (₹55,000 – ₹90,000), and Full Agentic Systems (₹1,10,000 – ₹1,80,000) with free-tier optimization and strict data privacy guarantees.
+                  I offer tailored client services including Starter Agent Setup (₹22,000 – ₹35,000 with a 7-day evaluation period), Business Agent Packages (₹55,000 – ₹90,000), and Full Agentic Systems (₹1,10,000 – ₹1,80,000) with production safeguards and strict data privacy guarantees.
                 </p>
               </div>
               <Link
-                href="/services#starter-agent-setup"
+                href="/services"
                 className="inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider px-5 py-3 border border-[var(--color-ink-primary)] text-[var(--color-ink-primary)] hover:bg-[var(--color-ink-primary)] hover:text-[var(--color-canvas-primary)] transition-colors self-start md:self-auto shrink-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
               >
-                Start with 7-Day Free Trial →
+                Explore Service Packages →
               </Link>
             </div>
           </InnerPageEntrance>
