@@ -3,7 +3,9 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { SectionContainer } from "@/components/layout/SectionContainer";
+import { Badge } from "@/components/ui/Badge";
 import { Button, buttonStyles } from "@/components/ui/Button";
+import { RefreshCw, Home, Mail } from "lucide-react";
 
 interface ErrorProps {
   error: Error & { digest?: string };
@@ -12,65 +14,77 @@ interface ErrorProps {
 
 export default function ErrorBoundary({ error, reset }: ErrorProps) {
   useEffect(() => {
-    // Log non-sensitive reference or digest in development
     if (process.env.NODE_ENV === "development") {
       console.error("Runtime exception captured:", error);
     }
   }, [error]);
 
   return (
-    <div className="w-full min-h-[70vh] flex items-center py-20 md:py-32">
+    <div className="w-full min-h-[80vh] flex items-center py-24 md:py-36 bg-slate-50">
       <SectionContainer>
-        <div className="max-w-2xl mx-auto space-y-8 text-center sm:text-left">
+        <div className="max-w-2xl mx-auto space-y-8 text-center sm:text-left bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-xl shadow-slate-900/5">
           {/* Status Flag */}
           <div className="flex items-center justify-center sm:justify-start gap-2.5">
-            <span className="w-2 h-2 bg-[var(--color-accent)] inline-block shrink-0" />
-            <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)] font-semibold">
-              500
+            <Badge variant="warning" dot size="sm">
+              500 ERROR
+            </Badge>
+            <span className="font-mono text-xs text-slate-400">
+              RUNTIME_FAULT_RECOVERABLE
             </span>
           </div>
 
           {/* Heading */}
-          <div className="space-y-4">
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[var(--color-ink-primary)] leading-[1.08]">
-              Something went wrong.
+          <div className="space-y-3">
+            <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+              An unexpected error occurred.
             </h1>
-            <p className="font-sans text-sm sm:text-base text-[var(--color-ink-secondary)] leading-relaxed max-w-xl">
-              An unexpected error occurred while loading this page. You can try refreshing or returning home.
+            <p className="font-sans text-base text-slate-600 leading-relaxed">
+              Our defensive error boundary caught a runtime fault. No customer data or sensitive records were compromised.
             </p>
           </div>
 
           {/* Action Controls */}
-          <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <div className="pt-2 flex flex-wrap items-center gap-3">
             <Button
               variant="primary"
-              size="lg"
+              size="md"
               onClick={() => reset()}
-              className="font-mono text-xs uppercase tracking-wider"
+              className="shadow-md shadow-indigo-500/15"
             >
-              Try again ↺
+              <RefreshCw className="w-4 h-4 mr-1.5" />
+              <span>Retry Request</span>
             </Button>
+
             <Link
               href="/"
               className={buttonStyles({
                 variant: "secondary",
-                size: "lg",
-                className: "font-mono text-xs uppercase tracking-wider",
+                size: "md",
               })}
             >
-              Back home →
+              <Home className="w-4 h-4 mr-1.5" />
+              <span>Back Home</span>
+            </Link>
+
+            <Link
+              href="/contact"
+              className={buttonStyles({
+                variant: "outline",
+                size: "md",
+              })}
+            >
+              <Mail className="w-4 h-4 mr-1.5" />
+              <span>Report Issue</span>
             </Link>
           </div>
 
           {/* Reference Colophon */}
-          <div className="pt-8 border-t border-[var(--color-hairline)] flex items-center justify-between text-xs font-mono text-[var(--color-ink-secondary)]">
+          <div className="pt-8 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-500">
             <span>
-              500 — Application error
-              {error.digest ? ` [REF: ${error.digest.slice(0, 8)}]` : ""}
+              Status: 500
+              {error.digest ? ` • Ref: ${error.digest.slice(0, 8)}` : ""}
             </span>
-            <Link href="/contact" className="hover:text-[var(--color-accent)] transition-colors underline">
-              Get in touch →
-            </Link>
+            <span className="text-slate-400">JIOSI Platform Resilience</span>
           </div>
         </div>
       </SectionContainer>

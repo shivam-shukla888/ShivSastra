@@ -20,6 +20,9 @@ export const STATIC_PUBLIC_ROUTES = [
   "/about",
   "/projects",
   "/services",
+  "/products",
+  "/products/inbox",
+  "/pricing",
   "/store",
   "/store/agent-templates",
   "/store/agent-kits",
@@ -64,6 +67,21 @@ export const PUBLIC_NAVIGATION: Record<string, NavigationDestination> = {
     label: "Services",
     href: "/services",
     description: "Production agent setups, business workflows, and full multi-agent architecture",
+  },
+  products: {
+    label: "Products",
+    href: "/products",
+    description: "Digital software products, JIOSI Inbox, and ready-to-deploy agent toolkits",
+  },
+  inbox: {
+    label: "JIOSI Inbox",
+    href: "/products/inbox",
+    description: "High-performance keyboard-first email client application for power users",
+  },
+  pricing: {
+    label: "Pricing",
+    href: "/pricing",
+    description: "Predictable transparent pricing for custom AI agents, digital toolkits, and Inbox",
   },
   store: {
     label: "Store",

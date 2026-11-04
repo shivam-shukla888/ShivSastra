@@ -13,30 +13,30 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Refund Policy",
-  description: "Refund and cancellation policy for digital products and custom engineering engagements on SHIVSASTRA.",
+  description: "Refund and cancellation policy for digital products and custom engineering engagements on JIOSI.",
   alternates: {
     canonical: absoluteUrl("/refunds"),
   },
   openGraph: {
     title: "Refund Policy — Shivam Shukla",
-    description: "Refund and cancellation policy for digital products and custom engineering engagements on SHIVSASTRA.",
+    description: "Refund and cancellation policy for digital products and custom engineering engagements on JIOSI.",
     url: absoluteUrl("/refunds"),
     type: "website",
-    siteName: "ShivSastra",
+    siteName: "JIOSI",
     locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Refund Policy — ShivSastra",
+        alt: "Refund Policy — JIOSI",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Refund Policy — Shivam Shukla",
-    description: "Refund and cancellation policy for digital products and custom engineering engagements on SHIVSASTRA.",
+    description: "Refund and cancellation policy for digital products and custom engineering engagements on JIOSI.",
     images: ["/og-image.png"],
   },
 };
@@ -66,7 +66,7 @@ export default function RefundsPage() {
                 Refund & Cancellation Policy
               </h1>
               <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                Last updated: September 2026 · Operator: Shivam Shukla / SHIVSASTRA
+                Last updated: September 2026 · Operator: Shivam Shukla / JIOSI
               </p>
             </div>
           </InnerPageEntrance>
@@ -80,7 +80,7 @@ export default function RefundsPage() {
                   1. Nature of Digital Products
                 </h2>
                 <p>
-                  Products sold on the SHIVSASTRA Store are intangible, digital software assets (including code templates, agent workflows, monographs, and design files). Once payment is cryptographically verified by our payment gateway, access tokens and download links are delivered immediately.
+                  Products sold on the JIOSI Store are intangible, digital software assets (including code templates, agent workflows, monographs, and design files). Once payment is cryptographically verified by our payment gateway, access tokens and download links are delivered immediately.
                 </p>
               </section>
 

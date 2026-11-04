@@ -11,30 +11,30 @@ import { absoluteUrl, CANONICAL_ORIGIN } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy policy and security practices for SHIVSASTRA, operated by Shivam Shukla.",
+  description: "Privacy policy and security practices for JIOSI, operated by Shivam Shukla.",
   alternates: {
     canonical: absoluteUrl("/privacy"),
   },
   openGraph: {
     title: "Privacy Policy — Shivam Shukla",
-    description: "Privacy policy and security practices for SHIVSASTRA, operated by Shivam Shukla.",
+    description: "Privacy policy and security practices for JIOSI, operated by Shivam Shukla.",
     url: absoluteUrl("/privacy"),
     type: "website",
-    siteName: "ShivSastra",
+    siteName: "JIOSI",
     locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Privacy Policy — ShivSastra",
+        alt: "Privacy Policy — JIOSI",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Privacy Policy — Shivam Shukla",
-    description: "Privacy policy and security practices for SHIVSASTRA, operated by Shivam Shukla.",
+    description: "Privacy policy and security practices for JIOSI, operated by Shivam Shukla.",
     images: ["/og-image.png"],
   },
 };
@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
                 Privacy Policy
               </h1>
               <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                Last updated: September 24, 2026 · Operator: Shivam Shukla / SHIVSASTRA
+                Last updated: September 24, 2026 · Operator: Shivam Shukla / JIOSI
               </p>
             </div>
           </InnerPageEntrance>
@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
                   1. Scope and Operator Identity
                 </h2>
                 <p>
-                  SHIVSASTRA is the personal portfolio, services, and digital product website operated by Shivam Shukla.
+                  JIOSI is the personal portfolio, services, and digital product website operated by Shivam Shukla.
                 </p>
                 <p>
                   The website is accessible at the canonical production domain{" "}
@@ -204,10 +204,10 @@ export default function PrivacyPolicyPage() {
                   6. Digital Product Orders & Payment Processing
                 </h2>
                 <p>
-                  When you purchase a digital product from the SHIVSASTRA Store, we collect your direct email address to generate your order record, issue a purchase receipt, and deliver your secure download token.
+                  When you purchase a digital product from the JIOSI Store, we collect your direct email address to generate your order record, issue a purchase receipt, and deliver your secure download token.
                 </p>
                 <p>
-                  Payments are processed directly by our payment gateway partner, Razorpay. Sensitive card numbers, CVVs, and banking credentials are handled exclusively by Razorpay under industry payment standards; SHIVSASTRA servers never receive, store, or process raw payment instruments.
+                  Payments are processed directly by our payment gateway partner, Razorpay. Sensitive card numbers, CVVs, and banking credentials are handled exclusively by Razorpay under industry payment standards; JIOSI servers never receive, store, or process raw payment instruments.
                 </p>
                 <p>
                   Digital delivery links are protected by single-use signed tokens and download attempt limits stored securely in our database.

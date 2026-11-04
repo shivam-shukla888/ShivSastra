@@ -1,41 +1,56 @@
 @import "tailwindcss";
 
 @theme {
-  --color-canvas-primary: #FAF9F6;
-  --color-canvas-secondary: #F4F2EC;
-  --color-ink-primary: #111112;
-  --color-ink-secondary: #6E6D68;
-  --color-hairline: #E6E3DC;
-  --color-accent: #B8481D;
-  --color-accent-hover: #9C3B14;
-  --color-accent-decorative: #D45A2A;
-  --color-surface-dark: #121214;
-  --color-dark-hairline: #252528;
-  --color-dark-ink-primary: #FFFFFF;
-  --color-dark-ink-secondary: #9E9D98;
+  /* Brand Colour Tokens */
+  --color-midnight: #0B1020;
+  --color-deep-navy: #111A2E;
+  --color-indigo: #6366F1;
+  --color-violet: #8B5CF6;
+  --color-cyan: #22D3EE;
+  --color-cloud: #F8FAFC;
+  --color-pure-white: #FFFFFF;
+  --color-slate: #64748B;
+  --color-border-slate: #E2E8F0;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #F43F5E;
 
-  --font-display: var(--font-newsreader), "Newsreader", Georgia, serif;
+  /* Theme surface aliases */
+  --color-canvas-primary: #F8FAFC;
+  --color-canvas-secondary: #FFFFFF;
+  --color-ink-primary: #0B1020;
+  --color-ink-secondary: #64748B;
+  --color-hairline: #E2E8F0;
+  --color-accent: #6366F1;
+  --color-accent-hover: #4F46E5;
+  --color-accent-decorative: #8B5CF6;
+  --color-surface-dark: #0B1020;
+  --color-dark-hairline: #1E293B;
+  --color-dark-ink-primary: #FFFFFF;
+  --color-dark-ink-secondary: #94A3B8;
+
+  /* Typography Hierarchy */
+  --font-display: var(--font-manrope), "Manrope", sans-serif;
   --font-sans: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+  --font-mono: var(--font-geist-mono), "Geist Mono", monospace;
 
-  --radius-none: 0px;
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
-  --radius-full: 0px;
+  /* Modern Radius Tokens */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
 }
 
 :root {
-  --background: #FAF9F6;
-  --foreground: #111112;
-}
-
-/* Force architectural 0px geometry */
-*,
-*::before,
-*::after {
-  border-radius: 0px !important;
+  --background: #F8FAFC;
+  --foreground: #0B1020;
+  --font-manrope: "Manrope", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
 }
 
 html {
@@ -59,14 +74,63 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-accent);
-  color: #FAF9F6;
+  background-color: #6366F1;
+  color: #FFFFFF;
 }
 
 /* Accessible visible focus states */
 *:focus-visible {
-  outline: 2px solid var(--color-ink-primary);
+  outline: 2px solid #6366F1;
   outline-offset: 3px;
+}
+
+/* Glassmorphism & Modern Surface Utilities */
+.glass-nav {
+  background: rgba(11, 16, 32, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-nav-light {
+  background: rgba(248, 250, 252, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(17, 26, 46, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.gradient-hero-glow {
+  background: radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.22), rgba(139, 92, 246, 0.12) 35%, transparent 70%);
+}
+
+.gradient-card-border {
+  position: relative;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.gradient-card-border::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(139, 92, 246, 0.1), rgba(34, 211, 238, 0.2));
 }
 
 /* Accessible skip-link utilities */
@@ -92,6 +156,9 @@ body {
   overflow: visible;
   clip: auto;
   white-space: normal;
+  z-index: 100;
+  background: #6366F1;
+  color: #FFFFFF;
 }
 
 /* Reduced motion preference override */
@@ -106,17 +173,16 @@ body {
   }
 }
 
-/* Production-Quality Print Stylesheet */
-/* Desktop Companion Mascot - Subtle Bounded Idle Animation */
+/* Interactive Mascot Subtle Idle Physics */
 @keyframes mascot-idle-wander {
   0%, 100% {
     transform: translate(0px, 0px);
   }
   20% {
-    transform: translate(6px, -3px);
+    transform: translate(4px, -3px);
   }
   40% {
-    transform: translate(6px, 1px);
+    transform: translate(2px, 1px);
   }
   60% {
     transform: translate(-5px, -2px);
@@ -159,7 +225,6 @@ body {
     line-height: 1.5 !important;
   }
 
-  /* Hide interactive-only elements, navigation, assistants, and floating widgets */
   header,
   #mobile-navigation-menu,
   #shivsastra-ai-dialog,
@@ -171,7 +236,6 @@ body {
     display: none !important;
   }
 
-  /* Preserve structure and ensure clean typography */
   h1, h2, h3, h4 {
     page-break-after: avoid;
     break-after: avoid;
@@ -186,8 +250,7 @@ body {
     break-inside: avoid;
   }
 
-  /* Show URLs for external citations */
-  a[href^="http"]:not([href*="jiosi.online"]):not([href*="shivsastra.com"])::after {
+  a[href^="http"]:not([href*="jiosi.online"])::after {
     content: " (" attr(href) ")";
     font-size: 0.85em;
     font-family: var(--font-mono);

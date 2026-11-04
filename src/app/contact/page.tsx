@@ -1,196 +1,201 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import type { Metadata } from "next";
 import { SectionContainer } from "@/components/layout/SectionContainer";
-import { PageBackground } from "@/components/ui/PageBackground";
-import { InnerPageEntrance } from "@/components/layout/InnerPageEntrance";
+import { Badge } from "@/components/ui/Badge";
+import { Card } from "@/components/ui/Card";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { getProfileSettings } from "@/lib/profile";
 import { absoluteUrl } from "@/lib/site";
+import {
+  Mail,
+  Clock,
+  ShieldCheck,
+  ExternalLink,
+} from "lucide-react";
 
 export const revalidate = 60;
 
-export const metadata = {
-  title: "Contact — Engineering Inquiries & Advisory",
-  description: "Have a project in mind? Tell me what you're building.",
+export const metadata: Metadata = {
+  title: "Contact JIOSI — Project Inquiries & Architecture Advisory",
+  description:
+    "Direct engineering inquiry channel for JIOSI systems, JIOSI Inbox enterprise deployments, and custom Agentic AI workflows.",
   alternates: {
     canonical: absoluteUrl("/contact"),
   },
   openGraph: {
-    title: "Contact — Shivam Shukla",
-    description: "Have a project in mind? Tell me what you're building.",
+    title: "Contact JIOSI — Project Inquiries & Architecture Advisory",
+    description:
+      "Direct engineering inquiry channel for JIOSI systems, JIOSI Inbox enterprise deployments, and custom Agentic AI workflows.",
     url: absoluteUrl("/contact"),
     type: "website",
-    siteName: "ShivSastra",
+    siteName: "JIOSI",
     locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Contact Shivam Shukla — ShivSastra",
+        alt: "Contact JIOSI",
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact — Shivam Shukla",
-    description: "Have a project in mind? Tell me what you're building.",
-    images: ["/og-image.png"],
   },
 };
 
 export default async function ContactPage() {
   const profile = await getProfileSettings();
 
-  const socialLinks = [
-    { label: "Contra", url: profile.contraUrl },
-    { label: "LinkedIn", url: profile.linkedinUrl },
-    { label: "GitHub", url: profile.githubUrl },
-    { label: "Instagram", url: profile.instagramUrl },
-    { label: "X", url: profile.xUrl },
-  ].filter((link): link is { label: string; url: string } => Boolean(link.url));
-
   return (
-    <div className="relative w-full pt-16 md:pt-24 pb-20 md:pb-28 overflow-hidden">
-      <PageBackground
-        src="/images/backgrounds/contact.webp"
-        opacity={0.24}
-        position="top"
-      />
-      <SectionContainer>
-        <div className="max-w-5xl space-y-12">
-          {/* Header Block */}
-          <InnerPageEntrance delayIndex={0}>
-            <div className="space-y-3 max-w-2xl">
-              <h1 className="font-display text-4xl sm:text-5xl font-normal tracking-tight text-[var(--color-ink-primary)]">
-                Get in Touch
-              </h1>
-              <p className="font-sans text-xs text-[var(--color-accent)] font-medium">
-                Have a project in mind? Tell me what you&apos;re building.
-              </p>
-              <p className="font-sans text-base text-[var(--color-ink-secondary)] pt-2 leading-relaxed whitespace-pre-wrap">
-                {profile.contactInstructions ||
-                  "Send a message using the form or reach out directly by email. I'll review the details and get back to you."}
-              </p>
-            </div>
-          </InnerPageEntrance>
-
-          {/* Direct Channels & Contact Form */}
-          <InnerPageEntrance delayIndex={1}>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            {/* Left Column: Direct Channels & Profiles */}
-            <div className="lg:col-span-5 space-y-8">
-              {/* Direct Channels */}
-              <div className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] space-y-5">
-                {/* Identity with Portrait */}
-                <div className="flex items-center gap-4 pb-4 border-b border-[var(--color-hairline)]">
-                  <div className="relative w-14 h-14 border border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] overflow-hidden shrink-0">
-                    <Image
-                      src="/images/shivam-shukla.jpg"
-                      alt={profile.fullName}
-                      fill
-                      className="object-cover"
-                      sizes="56px"
-                    />
-                  </div>
-                  <div className="space-y-0.5">
-                    <h2 className="font-display text-lg font-normal text-[var(--color-ink-primary)]">
-                      {profile.fullName}
-                    </h2>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  {profile.email && (
-                    <div className="space-y-1">
-                      <span className="font-sans text-xs uppercase tracking-[0.06em] text-[var(--color-ink-secondary)] block font-medium">
-                        Email Address
-                      </span>
-                      <a
-                        href={`mailto:${profile.email}`}
-                        aria-label={`Send email to ${profile.fullName} at ${profile.email}`}
-                        className="font-mono text-xs text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] transition-colors underline focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)] break-all"
-                      >
-                        {profile.email}
-                      </a>
-                    </div>
-                  )}
-
-                  {profile.phone && (
-                    <div className="space-y-1 pt-2 border-t border-[var(--color-hairline)]">
-                      <span className="font-sans text-xs uppercase tracking-[0.06em] text-[var(--color-ink-secondary)] block font-medium">
-                        Direct Phone
-                      </span>
-                      <a
-                        href={`tel:${profile.phone}`}
-                        aria-label={`Call ${profile.fullName} at ${profile.phone}`}
-                        className="font-mono text-xs text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] transition-colors underline focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
-                      >
-                        {profile.phone}
-                      </a>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Profiles */}
-              {socialLinks.length > 0 && (
-                <div className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] space-y-4">
-                  <span className="font-sans text-xs uppercase tracking-[0.08em] text-[var(--color-ink-secondary)] block font-medium">
-                    Profiles
-                  </span>
-
-                  <ul className="space-y-2.5">
-                    {socialLinks.map((link) => (
-                      <li key={link.label}>
-                        <a
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${link.label} profile of ${profile.fullName}`}
-                          className="flex items-center justify-between font-sans text-xs text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] transition-colors py-1.5 border-b border-[var(--color-hairline)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
-                        >
-                          <span>{link.label}</span>
-                          <span className="text-[11px] text-[var(--color-ink-secondary)]">↗</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-
-            {/* Right Column: Contact Form */}
-            <div className="lg:col-span-7">
-              <div className="p-8 md:p-10 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)]">
-                <ContactForm
-                  variant="light"
-                  labels={{
-                    name: "Your Name",
-                    email: "Email Address",
-                    brief: "Message or Project Details",
-                    submit: "Send Message →",
-                  }}
-                />
-              </div>
-            </div>
-            </div>
-          </InnerPageEntrance>
-
-          {/* Navigation Return */}
-          <InnerPageEntrance delayIndex={2}>
-            <div className="pt-2">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-1.5 font-sans text-xs text-[var(--color-ink-secondary)] hover:text-[var(--color-ink-primary)] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
-              >
-                <span>← Back to Home</span>
-              </Link>
-            </div>
-          </InnerPageEntrance>
+    <div className="flex flex-col w-full bg-slate-50 text-slate-900">
+      {/* =======================================================
+          1. DARK NAVY HERO BANNER
+          ======================================================= */}
+      <section className="relative w-full bg-[#0B1020] text-white pt-16 md:pt-24 pb-20 md:pb-28 overflow-hidden border-b border-white/10">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] pointer-events-none opacity-30">
+          <div className="w-full h-full bg-gradient-to-b from-indigo-500/20 via-cyan-500/10 to-transparent blur-3xl" />
         </div>
-      </SectionContainer>
+
+        <SectionContainer className="relative z-10">
+          <div className="max-w-3xl space-y-6">
+            <div className="flex items-center gap-2">
+              <Link href="/" className="text-xs font-mono text-slate-400 hover:text-white transition-colors">
+                Home
+              </Link>
+              <span className="text-slate-600 text-xs font-mono">/</span>
+              <span className="text-xs font-mono text-cyan-300 font-semibold">Contact</span>
+            </div>
+
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Start an engineering conversation.
+            </h1>
+
+            <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed">
+              Whether you need to automate incoming leads, deploy custom multi-agent reasoning pipelines, or inquire about JIOSI Inbox enterprise licensing — we respond within 24 hours.
+            </p>
+          </div>
+        </SectionContainer>
+      </section>
+
+      {/* =======================================================
+          2. CONTACT FORM & DIRECT CHANNELS
+          ======================================================= */}
+      <section className="w-full py-20 md:py-28 bg-white border-b border-slate-200">
+        <SectionContainer>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Left Column: Direct Info & Guarantees */}
+            <div className="lg:col-span-5 space-y-8">
+              <div className="space-y-4">
+                <Badge variant="primary" size="sm">
+                  Direct Channel
+                </Badge>
+                <h2 className="font-display text-3xl font-bold text-slate-900">
+                  Let&apos;s Discuss Your System
+                </h2>
+                <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                  Every project starts with a direct, written architecture review. Tell us what you are building, your timeline, and your stack.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <Card className="p-6 space-y-2">
+                  <div className="flex items-center gap-2.5 text-indigo-600 font-mono text-xs uppercase tracking-wider font-semibold">
+                    <Clock className="w-4 h-4" />
+                    <span>Response Time Guarantee</span>
+                  </div>
+                  <p className="font-sans text-sm text-slate-700 leading-relaxed">
+                    Direct reply from our engineering team within 24 hours.
+                  </p>
+                </Card>
+
+                <Card className="p-6 space-y-2">
+                  <div className="flex items-center gap-2.5 text-emerald-600 font-mono text-xs uppercase tracking-wider font-semibold">
+                    <ShieldCheck className="w-4 h-4" />
+                    <span>Strict Data Sovereignty</span>
+                  </div>
+                  <p className="font-sans text-sm text-slate-700 leading-relaxed">
+                    Inquiries are transmitted directly over encrypted TLS. We never sell, share, or disclose client contact data.
+                  </p>
+                </Card>
+
+                {profile.email && (
+                  <Card className="p-6 space-y-2">
+                    <div className="flex items-center gap-2.5 text-indigo-600 font-mono text-xs uppercase tracking-wider font-semibold">
+                      <Mail className="w-4 h-4" />
+                      <span>Direct Email</span>
+                    </div>
+                    <a
+                      href={`mailto:${profile.email}`}
+                      className="font-mono text-sm text-slate-900 hover:text-indigo-600 transition-colors font-medium block"
+                    >
+                      {profile.email}
+                    </a>
+                  </Card>
+                )}
+              </div>
+
+              {/* Verified External Profiles */}
+              <div className="pt-2 border-t border-slate-100 space-y-3">
+                <span className="font-mono text-xs uppercase tracking-wider text-slate-500 font-semibold block">
+                  Verified Engineering Profiles
+                </span>
+                <div className="flex flex-wrap gap-4 text-xs font-mono">
+                  {profile.githubUrl && (
+                    <a
+                      href={profile.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-700 hover:text-indigo-600 transition-colors inline-flex items-center gap-1 font-semibold"
+                    >
+                      <span>GitHub</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                  {profile.linkedinUrl && (
+                    <a
+                      href={profile.linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-700 hover:text-indigo-600 transition-colors inline-flex items-center gap-1 font-semibold"
+                    >
+                      <span>LinkedIn</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                  {profile.contraUrl && (
+                    <a
+                      href={profile.contraUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-700 hover:text-indigo-600 transition-colors inline-flex items-center gap-1 font-semibold"
+                    >
+                      <span>Contra</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Interactive Form */}
+            <div className="lg:col-span-7">
+              <Card className="p-8 sm:p-10 shadow-lg border-slate-200 bg-white">
+                <div className="space-y-6">
+                  <div className="space-y-1 pb-4 border-b border-slate-100">
+                    <h3 className="font-display text-2xl font-bold text-slate-900">
+                      Send a Message
+                    </h3>
+                    <p className="font-sans text-xs text-slate-500">
+                      Protected by Cloudflare Turnstile bot defense. Zero spam.
+                    </p>
+                  </div>
+
+                  <ContactForm variant="light" />
+                </div>
+              </Card>
+            </div>
+          </div>
+        </SectionContainer>
+      </section>
     </div>
   );
 }

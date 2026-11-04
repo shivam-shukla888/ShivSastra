@@ -243,8 +243,9 @@ export function SafeMarkdown({ content, validRoutes }: SafeMarkdownProps) {
           /^\|?\s*:?-+:?\s*(\|:?-+:?\s*)+\|?$/.test(line.trim())
         );
 
-        if (sepIndex > 0 && lines.length >= 2) {
-          const headerRow = lines[0];
+        if (sepIndex > 0) {
+          const headerRow = lines[sepIndex - 1];
+          const preLines = lines.slice(0, sepIndex - 1);
           const dataRows = lines.slice(sepIndex + 1);
 
           const parseCells = (rowStr: string) => {
@@ -257,11 +258,14 @@ export function SafeMarkdown({ content, validRoutes }: SafeMarkdownProps) {
           const headers = parseCells(headerRow);
 
           return (
-            <div
-              key={bIndex}
-              className="overflow-x-auto my-2 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] max-w-full"
-            >
-              <table className="w-full text-left border-collapse text-xs">
+            <div key={bIndex} className="space-y-2 my-2.5">
+              {preLines.length > 0 && (
+                <p className="font-sans text-xs font-semibold text-[var(--color-ink-primary)]">
+                  {renderInlineContent(preLines.join(" "), validRoutes)}
+                </p>
+              )}
+              <div className="overflow-x-auto rounded-lg border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] max-w-full shadow-xs">
+                <table className="w-full text-left border-collapse text-xs">
                 <thead>
                   <tr className="border-b border-[var(--color-hairline)] bg-[var(--color-canvas-primary)]">
                     {headers.map((h, i) => (
@@ -298,6 +302,7 @@ export function SafeMarkdown({ content, validRoutes }: SafeMarkdownProps) {
                   })}
                 </tbody>
               </table>
+              </div>
             </div>
           );
         }

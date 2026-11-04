@@ -1,23 +1,27 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 
-const NAV_LINKS = [
-  { label: "Work", href: "/projects" },
-  { label: "About", href: "/about" },
+const NAV_ITEMS = [
+  { label: "Products", href: "/products" },
+  { label: "JIOSI Inbox", href: "/products/inbox", badge: "Live" },
   { label: "Services", href: "/services" },
-  { label: "Store", href: "/store" },
-  { label: "Resume", href: "/resume" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Case Studies", href: "/projects" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleButtonRef = React.useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Close on Escape key and return focus to toggle button; prevent background scroll
+  // Close mobile menu on Escape key and prevent background scroll
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -38,60 +42,67 @@ export function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[var(--color-canvas-primary)]/90 backdrop-blur-md border-b border-[var(--color-hairline)]">
-      <div className="w-full max-w-[1360px] mx-auto px-5 md:px-8 lg:px-16 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 w-full bg-[#0B1020]/90 backdrop-blur-md border-b border-white/10 transition-colors">
+      <div className="w-full max-w-[1360px] mx-auto px-5 md:px-8 lg:px-12 h-16 sm:h-18 flex items-center justify-between">
         {/* Brand Anchor */}
         <Link
           href="/"
-          className="flex items-center gap-3 font-sans text-sm tracking-tight text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
+          className="flex items-center gap-2.5 font-display text-xl font-bold tracking-tight text-white hover:text-indigo-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-lg py-1"
         >
-          <span className="font-semibold tracking-[0.02em]">SHIVSASTRA</span>
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 flex items-center justify-center text-white shadow-sm shadow-indigo-500/30">
+            <Sparkles className="w-4 h-4 text-white" />
+          </div>
+          <span className="tracking-[0.04em] font-extrabold text-white">JIOSI</span>
+          <span className="hidden sm:inline-block font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-white/10 text-cyan-300 border border-white/15">
+            Systems
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-7 text-xs font-sans tracking-normal">
-          {NAV_LINKS.map((link) => {
-            const isStore = link.label === "Store";
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-sans">
+          {NAV_ITEMS.map((item) => {
+            const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
             return (
               <Link
-                key={link.label}
-                href={link.href}
+                key={item.href}
+                href={item.href}
                 className={cn(
-                  "relative group py-1 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)] flex items-center gap-1.5",
-                  isStore
-                    ? "text-[var(--color-ink-primary)] font-medium hover:text-[var(--color-accent)]"
-                    : "text-[var(--color-ink-secondary)] hover:text-[var(--color-ink-primary)]"
+                  "px-3.5 py-1.5 rounded-lg font-medium transition-all duration-150 flex items-center gap-2",
+                  isActive
+                    ? "text-white bg-white/10 shadow-sm"
+                    : "text-slate-300 hover:text-white hover:bg-white/5"
                 )}
               >
-                <span className="relative">
-                  {link.label}
-                  <span
-                    className={cn(
-                      "absolute -bottom-0.5 left-0 w-0 h-[1px] transition-[width] duration-200 ease-out group-hover:w-full motion-reduce:transition-none",
-                      isStore
-                        ? "bg-[var(--color-accent)]"
-                        : "bg-[var(--color-ink-primary)]"
-                    )}
-                  />
-                </span>
-                {isStore && (
-                  <span
-                    className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] inline-block shrink-0 transition-transform duration-200 group-hover:scale-125 motion-reduce:group-hover:scale-100"
-                    aria-label="Store"
-                  />
+                <span>{item.label}</span>
+                {item.badge && (
+                  <span className="font-mono text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded-full bg-indigo-500/20 text-cyan-300 border border-indigo-400/30">
+                    {item.badge}
+                  </span>
                 )}
               </Link>
             );
           })}
-
-          {/* Discrete Secondary Lab Link */}
-          <Link
-            href="/lab"
-            className="text-xs font-sans px-2.5 py-1 border border-[var(--color-hairline)] text-[var(--color-ink-secondary)] hover:border-[var(--color-ink-primary)] hover:text-[var(--color-ink-primary)] transition-[border-color,color,transform] duration-150 active:scale-[0.98] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
-          >
-            Lab
-          </Link>
         </nav>
+
+        {/* Right Action Buttons */}
+        <div className="hidden sm:flex items-center gap-3">
+          <a
+            href="https://inbox.jiosi.online"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-150 shadow-sm"
+          >
+            <span>Launch Inbox</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-cyan-400" />
+          </a>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-4 py-1.5 text-xs font-semibold rounded-lg text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 shadow-sm shadow-indigo-500/20 border border-indigo-400/30 transition-all duration-150"
+          >
+            Get in Touch
+          </Link>
+        </div>
 
         {/* Mobile Menu Toggle Button */}
         <button
@@ -100,67 +111,83 @@ export function Navbar() {
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-controls="mobile-navigation-menu"
-          aria-label={isOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
-          className="md:hidden flex flex-col justify-center items-center w-11 h-11 border border-[var(--color-hairline)] text-[var(--color-ink-primary)] hover:border-[var(--color-ink-primary)] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
+          aria-label={isOpen ? "Close main menu" : "Open main menu"}
+          className="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-slate-200 hover:text-white hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
         >
-          <span
-            className={cn(
-              "w-5 h-[1.5px] bg-[var(--color-ink-primary)] transition-transform duration-150",
-              isOpen && "rotate-45 translate-y-[3px]"
-            )}
-          />
-          <span
-            className={cn(
-              "w-5 h-[1.5px] bg-[var(--color-ink-primary)] mt-1.5 transition-transform duration-150",
-              isOpen && "-rotate-45 -translate-y-[4px]"
-            )}
-          />
+          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
-      {/* Mobile Backdrop & Drawer */}
+      {/* Mobile Drawer / Slide-Over Menu */}
       {isOpen && (
-        <>
-          <div
-            className="fixed inset-0 top-16 bg-black/20 z-40 md:hidden"
-            aria-hidden="true"
-            onClick={() => setIsOpen(false)}
-          />
-          <nav
-            id="mobile-navigation-menu"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Mobile Navigation"
-            className="relative z-50 md:hidden border-t border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] px-5 py-6 flex flex-col gap-4 shadow-sm"
+        <div
+          id="mobile-navigation-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation Menu"
+          className="lg:hidden fixed inset-x-0 top-16 sm:top-18 bottom-0 bg-[#0B1020]/95 backdrop-blur-xl border-t border-white/10 z-50 flex flex-col justify-between p-6 overflow-y-auto"
         >
-          {NAV_LINKS.map((link) => {
-            const isStore = link.label === "Store";
-            return (
-              <Link
-                key={link.label}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  "text-sm font-sans font-medium transition-colors py-2 min-h-[44px] border-b border-[var(--color-hairline)] flex items-center justify-between",
-                  isStore
-                    ? "text-[var(--color-ink-primary)] font-semibold"
-                    : "text-[var(--color-ink-primary)] hover:text-[var(--color-accent)]"
-                )}
+          <div className="space-y-6">
+            <div className="space-y-1">
+              <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400">
+                Menu
+              </span>
+              <nav className="flex flex-col space-y-1 pt-2">
+                {NAV_ITEMS.map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className={cn(
+                        "px-4 py-3 rounded-xl font-medium text-base transition-colors flex items-center justify-between",
+                        isActive
+                          ? "bg-indigo-600/20 text-white border border-indigo-500/30 font-semibold"
+                          : "text-slate-200 hover:bg-white/5 hover:text-white"
+                      )}
+                    >
+                      <span>{item.label}</span>
+                      {item.badge ? (
+                        <span className="font-mono text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-cyan-400/20 text-cyan-300 border border-cyan-400/30">
+                          {item.badge}
+                        </span>
+                      ) : (
+                        <span className="text-slate-500 text-sm">→</span>
+                      )}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </div>
+
+            <div className="pt-4 border-t border-white/10 space-y-3">
+              <a
+                href="https://inbox.jiosi.online"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-white/10 hover:bg-white/15 border border-white/15 transition-all"
               >
-                <span>{link.label}</span>
+                <span>Launch JIOSI Inbox Application</span>
+                <ArrowUpRight className="w-4 h-4 text-cyan-400" />
+              </a>
+
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-indigo-500 shadow-md shadow-indigo-600/25"
+              >
+                Discuss an Engineering System →
               </Link>
-            );
-          })}
-          <Link
-            href="/lab"
-            onClick={() => setIsOpen(false)}
-            className="text-xs font-sans text-[var(--color-accent)] font-medium py-2 min-h-[44px] flex items-center justify-between"
-          >
-            <span>Lab</span>
-            <span>→</span>
-          </Link>
-        </nav>
-        </>
+            </div>
+          </div>
+
+          <div className="pt-8 text-center">
+            <p className="font-mono text-xs text-slate-400">
+              JIOSI · Modern Digital Systems & AI
+            </p>
+          </div>
+        </div>
       )}
     </header>
   );

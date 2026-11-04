@@ -3,9 +3,9 @@
 import React, { useActionState, useState, useRef, useEffect, useCallback } from "react";
 import Script from "next/script";
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
 import { submitContactInquiry } from "@/app/actions/contact";
 import { initialContactState } from "@/lib/validations/contact";
+import { CheckCircle2, Send, AlertCircle, RefreshCw } from "lucide-react";
 
 declare global {
   interface Window {
@@ -30,6 +30,7 @@ declare global {
 
 interface ContactFormProps {
   variant?: "dark" | "light";
+  defaultSubject?: string;
   labels?: {
     name?: string;
     email?: string;
@@ -40,12 +41,13 @@ interface ContactFormProps {
 }
 
 export function ContactForm({
-  variant = "dark",
+  variant = "light",
+  defaultSubject,
   labels = {
     name: "Your Name",
     email: "Email Address",
-    brief: "Message or Project Details",
-    submit: "Send Message →",
+    brief: "Project Brief or System Requirements",
+    submit: "Send Inquiry",
   },
   className,
 }: ContactFormProps) {
@@ -139,43 +141,44 @@ export function ContactForm({
     };
   }, []);
 
-  // If successfully submitted, present a dignified, editorial confirmation
+  // Successful submission state
   if (state.status === "success") {
     return (
       <div
         role="status"
         aria-live="polite"
-        className={`p-8 border ${
+        className={`p-8 md:p-10 rounded-2xl border ${
           isDark
-            ? "border-[var(--color-dark-hairline)] bg-[var(--color-surface-dark)] text-white"
-            : "border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] text-[var(--color-ink-primary)]"
+            ? "border-emerald-500/30 bg-[#111A2E]/90 text-white"
+            : "border-emerald-200 bg-emerald-50/60 text-slate-900"
         } space-y-4`}
       >
         <div className="flex items-center gap-3">
-          <span className="w-1.5 h-1.5 bg-[var(--color-accent)] inline-block" />
-          <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)]">
-            Message Sent
-          </span>
+          <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-500 flex items-center justify-center">
+            <CheckCircle2 className="w-6 h-6" />
+          </div>
+          <div>
+            <span className="font-mono text-xs uppercase tracking-wider text-emerald-600 font-bold block">
+              Inquiry Dispatched
+            </span>
+            <p className="font-display text-2xl font-bold">
+              {state.message || "Thank you for getting in touch. Your message has been received."}
+            </p>
+          </div>
         </div>
-        <p className="font-display text-2xl font-normal tracking-tight">
-          {state.message || "Thank you for getting in touch. Your message has been received."}
+
+        <p className="font-sans text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          We&apos;ll review your requirements and respond within 24 hours with an architecture scope and timeline.
         </p>
-        <p
-          className={`font-sans text-sm leading-relaxed ${
-            isDark
-              ? "text-[var(--color-dark-ink-secondary)]"
-              : "text-[var(--color-ink-secondary)]"
-          }`}
-        >
-          Thanks for reaching out. I&apos;ll review the details and get back to you.
-        </p>
+
         <div className="pt-2">
           <button
             type="button"
             onClick={() => window.location.reload()}
-            className="font-mono text-xs uppercase tracking-[0.08em] underline hover:text-[var(--color-accent)] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition-colors cursor-pointer"
           >
-            Send Another Message →
+            <span>Send Another Inquiry</span>
+            <span>→</span>
           </button>
         </div>
       </div>
@@ -183,22 +186,28 @@ export function ContactForm({
   }
 
   return (
-    <form action={formAction} className={`space-y-5 ${className || ""}`}>
-      {/* Global Status Banner for rate limits, verification errors, or server errors */}
+    <form action={formAction} className={`space-y-6 ${className || ""}`}>
+      {defaultSubject && (
+        <input type="hidden" name="subject" value={defaultSubject} />
+      )}
+      {/* Global Status Banner */}
       {(state.status === "rate_limited" ||
         state.status === "server_error" ||
         state.status === "verification_error") && (
         <div
           role="alert"
           aria-live="assertive"
-          className="p-4 border border-[var(--color-accent)] bg-[var(--color-accent)]/10 font-mono text-xs text-[var(--color-accent)] space-y-1"
+          className="p-4 rounded-xl border border-rose-300 bg-rose-50 text-rose-800 text-sm space-y-1 flex items-start gap-2.5"
         >
-          <span className="font-semibold uppercase tracking-wider">[Notice]</span>
-          <p>{state.message}</p>
+          <AlertCircle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
+          <div>
+            <span className="font-semibold uppercase tracking-wider text-xs block">[Notice]</span>
+            <p>{state.message}</p>
+          </div>
         </div>
       )}
 
-      {/* Honeypot field (hidden from visual users and screen readers, attracts automated bots) */}
+      {/* Honeypot field */}
       <div
         aria-hidden="true"
         style={{
@@ -229,8 +238,8 @@ export function ContactForm({
             htmlFor="contact-name"
             className={
               isDark
-                ? "block font-sans text-xs font-medium text-white/90"
-                : "block font-sans text-xs font-medium text-[var(--color-ink-primary)]"
+                ? "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-300"
+                : "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-700"
             }
           >
             {labels.name}
@@ -246,12 +255,12 @@ export function ContactForm({
             aria-describedby={state.errors?.name ? "name-error" : undefined}
             className={
               isDark
-                ? "w-full px-4 py-3.5 bg-[var(--color-surface-dark)] border border-[var(--color-dark-hairline)] text-white placeholder-[var(--color-dark-ink-secondary)] text-sm rounded-none focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] disabled:opacity-50"
-                : "w-full px-4 py-3 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)] text-[var(--color-ink-primary)] text-sm rounded-none focus:outline-none focus:border-[var(--color-ink-primary)] focus:ring-1 focus:ring-[var(--color-ink-primary)] disabled:opacity-50"
+                ? "w-full px-4 py-3 bg-[#111A2E]/90 border border-white/15 text-white placeholder-slate-500 text-sm rounded-xl focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 disabled:opacity-50 transition-all"
+                : "w-full px-4 py-3 bg-white border border-slate-200 text-slate-900 placeholder-slate-400 text-sm rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/15 disabled:opacity-50 transition-all shadow-sm"
             }
           />
           {state.errors?.name && (
-            <p id="name-error" role="alert" className="font-mono text-xs text-[var(--color-accent)] pt-1">
+            <p id="name-error" role="alert" className="font-mono text-xs text-rose-600 pt-1">
               {state.errors.name[0]}
             </p>
           )}
@@ -263,8 +272,8 @@ export function ContactForm({
             htmlFor="contact-email"
             className={
               isDark
-                ? "block font-sans text-xs font-medium text-white/90"
-                : "block font-sans text-xs font-medium text-[var(--color-ink-primary)]"
+                ? "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-300"
+                : "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-700"
             }
           >
             {labels.email}
@@ -275,17 +284,17 @@ export function ContactForm({
             type="email"
             required
             disabled={isPending}
-            placeholder="your.email@domain.com"
+            placeholder="your.email@company.com"
             aria-invalid={!!state.errors?.email}
             aria-describedby={state.errors?.email ? "email-error" : undefined}
             className={
               isDark
-                ? "w-full px-4 py-3.5 bg-[var(--color-surface-dark)] border border-[var(--color-dark-hairline)] text-white placeholder-[var(--color-dark-ink-secondary)] text-sm rounded-none focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] disabled:opacity-50"
-                : "w-full px-4 py-3 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)] text-[var(--color-ink-primary)] text-sm rounded-none focus:outline-none focus:border-[var(--color-ink-primary)] focus:ring-1 focus:ring-[var(--color-ink-primary)] disabled:opacity-50"
+                ? "w-full px-4 py-3 bg-[#111A2E]/90 border border-white/15 text-white placeholder-slate-500 text-sm rounded-xl focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 disabled:opacity-50 transition-all"
+                : "w-full px-4 py-3 bg-white border border-slate-200 text-slate-900 placeholder-slate-400 text-sm rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/15 disabled:opacity-50 transition-all shadow-sm"
             }
           />
           {state.errors?.email && (
-            <p id="email-error" role="alert" className="font-mono text-xs text-[var(--color-accent)] pt-1">
+            <p id="email-error" role="alert" className="font-mono text-xs text-rose-600 pt-1">
               {state.errors.email[0]}
             </p>
           )}
@@ -298,8 +307,8 @@ export function ContactForm({
           htmlFor="contact-brief"
           className={
             isDark
-              ? "block font-sans text-xs font-medium text-white/90"
-              : "block font-sans text-xs font-medium text-[var(--color-ink-primary)]"
+              ? "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-300"
+              : "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-700"
           }
         >
           {labels.brief}
@@ -307,78 +316,85 @@ export function ContactForm({
         <textarea
           id="contact-brief"
           name="brief"
-          rows={isDark ? 4 : 5}
           required
+          rows={5}
           disabled={isPending}
-          placeholder="Tell me what you're building..."
+          placeholder="Briefly describe your workflow automation needs, timeline, or product inquiry..."
           aria-invalid={!!state.errors?.brief}
           aria-describedby={state.errors?.brief ? "brief-error" : undefined}
           className={
             isDark
-              ? "w-full px-4 py-3.5 bg-[var(--color-surface-dark)] border border-[var(--color-dark-hairline)] text-white placeholder-[var(--color-dark-ink-secondary)] text-sm rounded-none focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] resize-none disabled:opacity-50"
-              : "w-full px-4 py-3 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)] text-[var(--color-ink-primary)] text-sm rounded-none focus:outline-none focus:border-[var(--color-ink-primary)] focus:ring-1 focus:ring-[var(--color-ink-primary)] resize-none disabled:opacity-50"
+              ? "w-full px-4 py-3 bg-[#111A2E]/90 border border-white/15 text-white placeholder-slate-500 text-sm rounded-xl focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 disabled:opacity-50 resize-y transition-all"
+              : "w-full px-4 py-3 bg-white border border-slate-200 text-slate-900 placeholder-slate-400 text-sm rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/15 disabled:opacity-50 resize-y transition-all shadow-sm"
           }
         />
         {state.errors?.brief && (
-          <p id="brief-error" role="alert" className="font-mono text-xs text-[var(--color-accent)] pt-1">
+          <p id="brief-error" role="alert" className="font-mono text-xs text-rose-600 pt-1">
             {state.errors.brief[0]}
           </p>
         )}
       </div>
 
-      {/* Cloudflare Turnstile Challenge Container */}
-      {siteKey && (
-        <div className="space-y-2 pt-1">
-          <div
-            ref={turnstileContainerRef}
-            className="min-h-[65px] flex items-center"
-            aria-label="Security verification challenge"
-          />
-          <input
-            type="hidden"
-            name="cf-turnstile-response"
-            value={turnstileToken}
-          />
-          {state.errors?.turnstile && (
-            <p id="turnstile-error" role="alert" className="font-mono text-xs text-[var(--color-accent)]">
-              {state.errors.turnstile[0]}
-            </p>
-          )}
-        </div>
-      )}
-
-      {/* Submit Button & Privacy Note */}
-      <div className="space-y-3">
-        <Button
-          variant={isDark ? "accent" : "primary"}
-          size="lg"
-          type="submit"
-          disabled={isPending}
-          className={isDark ? "w-full sm:w-auto" : "w-full"}
-        >
-          {isPending ? "Sending..." : labels.submit}
-        </Button>
-        <p className={`font-sans text-xs leading-relaxed ${isDark ? "text-white/60" : "text-[var(--color-ink-secondary)]"}`}>
-          Replies within 24 hours. Your details are never sold or shared for marketing; processed solely by our infrastructure to answer your inquiry under our{" "}
-          <Link
-            href="/privacy"
-            className={`underline underline-offset-2 hover:text-[var(--color-accent)] transition-colors ${
-              isDark ? "text-white/80" : "text-[var(--color-ink-primary)]"
-            }`}
-          >
-            Privacy Policy
-          </Link>
-          .
-        </p>
+      {/* Cloudflare Turnstile CAPTCHA container */}
+      <div className="space-y-1.5">
+        {siteKey ? (
+          <>
+            <Script
+              src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+              strategy="lazyOnload"
+              onLoad={renderTurnstile}
+            />
+            <div
+              ref={turnstileContainerRef}
+              className="min-h-[65px] flex items-center"
+              aria-label="Human verification widget"
+            />
+            <input type="hidden" name="cf-turnstile-response" value={turnstileToken} />
+            {state.errors?.turnstile && (
+              <p role="alert" className="font-mono text-xs text-rose-600 pt-1">
+                {state.errors.turnstile[0]}
+              </p>
+            )}
+          </>
+        ) : (
+          <p className="font-mono text-xs text-slate-400">
+            [Dev mode: Turnstile key not configured]
+          </p>
+        )}
       </div>
 
-      {siteKey && (
-        <Script
-          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-          strategy="afterInteractive"
-          onLoad={renderTurnstile}
-        />
-      )}
+      {/* Submit Button & Privacy Statement */}
+      <div className="pt-2 space-y-4">
+        <button
+          type="submit"
+          disabled={isPending || (Boolean(siteKey) && !turnstileToken)}
+          className={
+            isDark
+              ? "w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-indigo-600/30 transition-all cursor-pointer flex items-center justify-center gap-2"
+              : "w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-indigo-600/20 transition-all cursor-pointer flex items-center justify-center gap-2"
+          }
+        >
+          {isPending ? (
+            <>
+              <RefreshCw className="w-4 h-4 animate-spin" />
+              <span>Transmitting Inquiry...</span>
+            </>
+          ) : (
+            <>
+              <span>{labels.submit}</span>
+              <Send className="w-4 h-4 ml-1" />
+            </>
+          )}
+        </button>
+
+        <p className="text-xs font-sans text-slate-500 leading-relaxed">
+          By submitting this form, you agree to our{" "}
+          <Link href="/privacy" className="text-indigo-600 underline hover:text-indigo-800">
+            Privacy Policy
+          </Link>
+          . No customer data is shared with third parties or stored on intermediary servers.
+        </p>
+      </div>
     </form>
   );
 }

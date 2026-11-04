@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Newsreader, Inter, JetBrains_Mono } from "next/font/google";
+import { Manrope, Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/Navbar";
@@ -14,70 +14,69 @@ const ShivSastraAssistant = dynamic(() =>
   )
 );
 
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Shivam Shukla",
-    default: "Shivam Shukla — Backend Systems, Agentic AI & AI Security",
+    template: "%s | JIOSI",
+    default: "JIOSI — Intelligent Software Systems & AI Innovation",
   },
   description:
-    "Backend systems, agentic AI workflows, and software security by Shivam Shukla — with digital products and tools via the SHIVSASTRA Store.",
+    "JIOSI builds intelligent software systems, email productivity platforms including JIOSI Inbox, and production agentic AI automation for modern teams.",
   keywords: [
-    "Shivam Shukla",
-    "ShivSastra",
-    "Backend Systems",
+    "JIOSI",
+    "JIOSI Inbox",
     "Agentic AI",
-    "AI Security",
-    "AI Agents",
-    "Digital Products",
+    "Email Productivity",
     "Software Architecture",
+    "Workflow Automation",
+    "Next.js",
+    "Spring Boot",
   ],
-  authors: [{ name: "Shivam Shukla" }],
-  creator: "Shivam Shukla",
+  authors: [{ name: "JIOSI" }],
+  creator: "JIOSI",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
     locale: "en_US",
     url: SITE_URL,
-    siteName: "ShivSastra",
-    title: "Shivam Shukla — Backend Systems, Agentic AI & AI Security",
+    siteName: "JIOSI",
+    title: "JIOSI — Intelligent Software Systems & AI Innovation",
     description:
-      "Backend systems, agentic AI workflows, and software security by Shivam Shukla — with digital products and tools via the SHIVSASTRA Store.",
+      "JIOSI builds intelligent software systems, email productivity platforms including JIOSI Inbox, and production agentic AI automation for modern teams.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "ShivSastra — Shivam Shukla | Backend Systems, Agentic AI & AI Security",
+        alt: "JIOSI — Intelligent Software Systems & AI Innovation",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shivam Shukla — Backend Systems, Agentic AI & AI Security",
+    title: "JIOSI — Intelligent Software Systems & AI Innovation",
     description:
-      "Backend systems, agentic AI workflows, and software security by Shivam Shukla — with digital products and tools via the SHIVSASTRA Store.",
+      "JIOSI builds intelligent software systems, email productivity platforms including JIOSI Inbox, and production agentic AI automation for modern teams.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -92,8 +91,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FAF9F6",
-  colorScheme: "light",
+  themeColor: "#0B1020",
+  colorScheme: "dark light",
   width: "device-width",
   initialScale: 1,
 };
@@ -107,13 +106,13 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${newsreader.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${manrope.variable} ${inter.variable} ${geistMono.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-[var(--color-canvas-primary)] text-[var(--color-ink-primary)] font-body">
         {/* Accessible Keyboard Skip Link */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2.5 focus:bg-[var(--color-surface-dark)] focus:text-[var(--color-dark-ink-primary)] focus:font-mono focus:text-xs focus:uppercase focus:tracking-wider focus:border focus:border-[var(--color-accent)] focus:outline-none focus:shadow-md"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2.5 focus:bg-[#0B1020] focus:text-white focus:font-mono focus:text-xs focus:uppercase focus:tracking-wider focus:border focus:border-indigo-500 focus:outline-none focus:shadow-lg focus:rounded-md"
         >
           Skip to content
         </a>

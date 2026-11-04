@@ -1,48 +1,47 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { SectionContainer } from "@/components/layout/SectionContainer";
-import { PageBackground } from "@/components/ui/PageBackground";
-import { InnerPageEntrance } from "@/components/layout/InnerPageEntrance";
-import { getProfileSettings } from "@/lib/profile";
-import { ScrollProgress } from "@/components/ui/ScrollProgress";
-import { BackToTop } from "@/components/ui/BackToTop";
-import { CERTIFICATIONS } from "@/data/portfolio-data";
+import { Card } from "@/components/ui/Card";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { buttonStyles } from "@/components/ui/Button";
+import { getProfileSettings } from "@/lib/profile";
 import { absoluteUrl } from "@/lib/site";
+import {
+  Target,
+  Compass,
+  ArrowRight,
+  ExternalLink,
+  GraduationCap,
+  Briefcase,
+} from "lucide-react";
 
 export const revalidate = 60;
 
-export const metadata = {
-  title: "About — Engineering Philosophy & Background",
+export const metadata: Metadata = {
+  title: "About JIOSI — Mission, Engineering Values & Architecture",
   description:
-    "Background, technical approach, and direction of Shivam Shukla — AI agents, AI security, automation, and digital products.",
+    "Learn about JIOSI's mission, engineering approach, and standards. Building high-velocity productivity software and secure Agentic AI systems.",
   alternates: {
     canonical: absoluteUrl("/about"),
   },
   openGraph: {
-    title: "About — Shivam Shukla",
+    title: "About JIOSI — Mission, Engineering Values & Architecture",
     description:
-      "Background, technical approach, and direction of Shivam Shukla — AI agents, AI security, automation, and digital products.",
+      "Learn about JIOSI's mission, engineering approach, and standards. Building high-velocity productivity software and secure Agentic AI systems.",
     url: absoluteUrl("/about"),
-    type: "profile",
-    siteName: "ShivSastra",
+    type: "website",
+    siteName: "JIOSI",
     locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "About Shivam Shukla — ShivSastra",
+        alt: "About JIOSI",
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About — Shivam Shukla",
-    description:
-      "Background, technical approach, and direction of Shivam Shukla — AI agents, AI security, automation, and digital products.",
-    images: ["/og-image.png"],
   },
 };
 
@@ -50,299 +49,320 @@ export default async function AboutPage() {
   const profile = await getProfileSettings();
 
   return (
-    <div className="relative w-full pt-16 md:pt-24 pb-20 md:pb-28 overflow-hidden">
-      <ScrollProgress />
-      <BackToTop />
-      <PageBackground
-        src="/images/backgrounds/about.webp"
-        opacity={0.25}
-        position="top"
-      />
-      <SectionContainer>
-        <div className="max-w-4xl space-y-16">
-          {/* Header Block */}
-          <InnerPageEntrance delayIndex={0}>
-            <div className="space-y-3 pb-6 border-b border-[var(--color-hairline)]">
-              <div className="flex items-center gap-2 font-mono text-xs text-[var(--color-ink-secondary)]">
-                <Link href="/" className="hover:text-[var(--color-ink-primary)]">
-                  Home
-                </Link>
-                <span>/</span>
-                <span className="text-[var(--color-accent)] font-medium">About</span>
+    <div className="flex flex-col w-full bg-slate-50 text-slate-900">
+      {/* =======================================================
+          1. DARK NAVY HERO BANNER
+          ======================================================= */}
+      <section className="relative w-full bg-[#0B1020] text-white pt-16 md:pt-24 pb-20 md:pb-28 overflow-hidden border-b border-white/10">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] pointer-events-none opacity-30">
+          <div className="w-full h-full bg-gradient-to-b from-indigo-500/20 via-violet-500/10 to-transparent blur-3xl" />
+        </div>
+
+        <SectionContainer className="relative z-10">
+          <div className="max-w-3xl space-y-6">
+            <div className="flex items-center gap-2">
+              <Link href="/" className="text-xs font-mono text-slate-400 hover:text-white transition-colors">
+                Home
+              </Link>
+              <span className="text-slate-600 text-xs font-mono">/</span>
+              <span className="text-xs font-mono text-cyan-300 font-semibold">About JIOSI</span>
+            </div>
+
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Engineering clarity into modern digital systems.
+            </h1>
+
+            <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed">
+              JIOSI is an independent technology company dedicated to creating focused productivity platforms and reliable Agentic AI systems that eliminate operational drag.
+            </p>
+          </div>
+        </SectionContainer>
+      </section>
+
+      {/* =======================================================
+          2. MISSION & VISION
+          ======================================================= */}
+      <section className="w-full py-20 md:py-28 bg-white border-b border-slate-200">
+        <SectionContainer>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <Card className="p-8 md:p-10 space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
+                <Target className="w-6 h-6" />
               </div>
-              <h1 className="font-display text-4xl sm:text-5xl font-normal tracking-tight text-[var(--color-ink-primary)]">
-                About Me
-              </h1>
-              <p className="font-sans text-xs text-[var(--color-accent)] font-medium">
-                AI Agents · AI Security · Automation · Digital Products
+              <h2 className="font-display text-2xl font-bold text-slate-900">
+                Our Mission
+              </h2>
+              <p className="font-sans text-base text-slate-600 leading-relaxed">
+                To build high-velocity software tools and automated AI systems that free knowledge workers and growing businesses from repetitive communication overload — with zero compromise on privacy or system transparency.
               </p>
-            </div>
-          </InnerPageEntrance>
+            </Card>
 
-          {/* Main Content: Portrait & Narrative */}
-          <InnerPageEntrance delayIndex={1}>
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
-              {/* Portrait */}
-              <div className="md:col-span-5 space-y-4">
-                <div className="relative aspect-[4/5] border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] overflow-hidden">
-                  <Image
-                    src="/images/shivam-shukla.jpg"
-                    alt={`${profile.fullName} — Portrait`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 360px"
-                    priority
-                  />
-                </div>
-                <div className="pt-2">
-                  <Link
-                    href="/resume"
-                    className={buttonStyles({
-                      variant: "primary",
-                      size: "md",
-                      className: "w-full font-mono text-xs uppercase tracking-wider justify-center",
-                    })}
-                  >
-                    View Resume →
-                  </Link>
-                </div>
+            <Card className="p-8 md:p-10 space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-violet-50 border border-violet-100 flex items-center justify-center text-violet-600">
+                <Compass className="w-6 h-6" />
               </div>
+              <h2 className="font-display text-2xl font-bold text-slate-900">
+                Our Vision
+              </h2>
+              <p className="font-sans text-base text-slate-600 leading-relaxed">
+                A software ecosystem where applications are distraction-free, keyboard-first, and respect user autonomy. We believe AI should quietly augment human workflow rather than creating chaotic hallucinations.
+              </p>
+            </Card>
+          </div>
+        </SectionContainer>
+      </section>
 
-              {/* Narrative Content */}
-              <div className="md:col-span-7 space-y-6">
-                <div className="p-8 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] space-y-4">
-                  <p className="font-display text-xl sm:text-2xl text-[var(--color-ink-primary)] leading-relaxed italic">
-                    &ldquo;I build software products, AI agents, and automation systems — prioritizing AI security and deterministic application logic over flashy demos.&rdquo;
-                  </p>
-                  <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                    I&apos;m an AI Systems &amp; Backend Engineer. I specialize in architecting reliable, autonomous AI agents and resilient backend systems with Python, Java, Spring Boot, REST APIs, PostgreSQL, Docker, and Supabase—prioritizing deterministic application boundaries over brittle prompt chains.
-                  </p>
-                  <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                    My engineering foundation is built on clean architectures: Java and Spring Boot deliver predictable data flow and strict server-side validation, while Python handles AI agent orchestration, tool-calling pipelines, and multimodal data extraction. Whenever I solve recurring architecture challenges, I document them as open case studies and developer starter templates.
-                  </p>
-                </div>
+      {/* =======================================================
+          3. ENGINEERING VALUES & THE JIOSI ETHOS
+          ======================================================= */}
+      <section className="w-full py-20 md:py-28 bg-slate-50 border-b border-slate-200">
+        <SectionContainer>
+          <div className="space-y-16">
+            <SectionHeader
+              badge="Engineering Principles"
+              badgeVariant="primary"
+              title="How We Architect Software"
+              description="Four strict operational rules govern every line of code, SaaS platform, and workflow automation we ship."
+            />
 
-                <div className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] space-y-3 font-sans text-xs text-[var(--color-ink-secondary)]">
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--color-accent)] font-semibold block">
-                    HOW I WORK
-                  </span>
-                  <p className="leading-relaxed">
-                    1. <strong className="text-[var(--color-ink-primary)]">AI Extracts. Code Decides:</strong> LLMs are valuable for interpreting messy, natural-language human intent, but business logic, compliance rules, and financial calculations belong strictly in deterministic code.
-                  </p>
-                  <p className="leading-relaxed">
-                    2. <strong className="text-[var(--color-ink-primary)]">AI Security &amp; Defensive Boundaries:</strong> From prompt-injection defense and schema validation to server-side price recalculation and IDOR checks, applications must enforce server-side authority rather than trusting client or prompt state.
-                  </p>
-                  <p className="leading-relaxed">
-                    3. <strong className="text-[var(--color-ink-primary)]">Practical Products Over AI Demos:</strong> I focus on building systems that solve concrete problems — from citizens discovering welfare schemes via WhatsApp to brokers qualifying leads.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </InnerPageEntrance>
-
-          {/* Education & Experience Timeline */}
-          <InnerPageEntrance delayIndex={2}>
-            <div className="space-y-8 pt-4">
-              <div className="space-y-2 pb-4 border-b border-[var(--color-hairline)]">
-                <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold">
-                  CAREER &amp; EDUCATION
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="p-6 md:p-8 space-y-4">
+                <span className="font-mono text-xs font-bold text-indigo-600 uppercase tracking-wider block">
+                  Principle 01
                 </span>
-                <h2 className="font-display text-3xl font-normal text-[var(--color-ink-primary)]">
-                  Timeline
-                </h2>
-              </div>
+                <h3 className="font-display text-xl font-bold text-slate-900">
+                  AI Extracts. Code Decides.
+                </h3>
+                <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                  Probabilistic models extract user intent and parameters; deterministic backend logic executes business rules, financial math, and database mutations.
+                </p>
+              </Card>
 
-              <div className="space-y-6">
-                {/* Oct 2026 - Present: Nexvia Technologies */}
-                <div className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-6 md:p-8 space-y-3">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="font-display text-xl text-[var(--color-ink-primary)]">
-                      AI/ML Intern
-                    </h3>
-                    <span className="font-mono text-xs text-[var(--color-accent)] font-semibold">
-                      Oct 2026 – Present
-                    </span>
-                  </div>
-                  <p className="font-mono text-xs text-[var(--color-ink-secondary)]">
-                    Nexvia Technologies · Remote
-                  </p>
-                  <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                    Contributing to real-world AI and Machine Learning projects; involved in engineering workflows, tools, collaboration, documentation, and professional software practices.
-                  </p>
-                </div>
+              <Card className="p-6 md:p-8 space-y-4">
+                <span className="font-mono text-xs font-bold text-indigo-600 uppercase tracking-wider block">
+                  Principle 02
+                </span>
+                <h3 className="font-display text-xl font-bold text-slate-900">
+                  Total Data Sovereignty
+                </h3>
+                <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                  Client customer records belong to the client. Workflows run in client-owned infrastructure (isolated PostgreSQL, self-hosted n8n). No intermediary storage.
+                </p>
+              </Card>
 
-                {/* Jul 2025 - Sep 2025: Soft Pro */}
-                <div className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-6 md:p-8 space-y-3">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="font-display text-xl text-[var(--color-ink-primary)]">
-                      Software Engineer Intern
-                    </h3>
-                    <span className="font-mono text-xs text-[var(--color-accent)] font-semibold">
-                      Jul 2025 – Sep 2025
-                    </span>
+              <Card className="p-6 md:p-8 space-y-4">
+                <span className="font-mono text-xs font-bold text-indigo-600 uppercase tracking-wider block">
+                  Principle 03
+                </span>
+                <h3 className="font-display text-xl font-bold text-slate-900">
+                  Keyboard-First Velocity
+                </h3>
+                <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                  Inspired by Superhuman and Linear, our interfaces prioritize rapid keyboard navigation, sub-second latency, and zero unnecessary visual clutter.
+                </p>
+              </Card>
+
+              <Card className="p-6 md:p-8 space-y-4">
+                <span className="font-mono text-xs font-bold text-indigo-600 uppercase tracking-wider block">
+                  Principle 04
+                </span>
+                <h3 className="font-display text-xl font-bold text-slate-900">
+                  Truthful Architecture
+                </h3>
+                <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                  Zero fake counters, honest empty states (&ldquo;Inbox Zero&rdquo;), and transparent offline modes. We build software that respects user trust.
+                </p>
+              </Card>
+            </div>
+          </div>
+        </SectionContainer>
+      </section>
+
+      {/* =======================================================
+          4. LEADERSHIP & VERIFIED CREDENTIALS
+          ======================================================= */}
+      <section className="w-full py-20 md:py-28 bg-white border-b border-slate-200">
+        <SectionContainer>
+          <div className="space-y-16">
+            <SectionHeader
+              badge="Leadership & Engineering"
+              badgeVariant="primary"
+              title="Built on Proven Software Engineering"
+              description="Founded and engineered by Shivam Shukla, specializing in distributed backend systems, Spring Boot architectures, and production agentic workflows."
+            />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              {/* Founder Profile Card */}
+              <div className="lg:col-span-5">
+                <Card className="p-6 sm:p-8 space-y-6">
+                  <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-slate-200 bg-slate-100">
+                    <Image
+                      src="/images/shivam-shukla.jpg"
+                      alt="Shivam Shukla — Founder & AI Systems Architect at JIOSI"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 400px"
+                      priority
+                    />
                   </div>
-                  <p className="font-mono text-xs text-[var(--color-ink-secondary)]">
-                    Soft Pro · Noida, India
+
+                  <div className="space-y-1">
+                    <h3 className="font-display text-2xl font-bold text-slate-900">
+                      Shivam Shukla
+                    </h3>
+                    <p className="font-mono text-xs text-indigo-600 uppercase tracking-wider font-semibold">
+                      Founder &amp; Principal AI Systems Engineer
+                    </p>
+                  </div>
+
+                  <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                    Background spanning Spring Boot enterprise backends, PostgreSQL concurrency tuning, real-time WebSockets, and production LLM orchestration.
                   </p>
-                  <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                    Developed backend REST APIs using Java 17, Spring Boot 3, MVC, OOP, MySQL, and Hibernate ORM; optimized API workflows contributing to approximately 20% lower response time. Implemented global exception handling, tested APIs with Postman, and resolved 15+ backend defects.
-                  </p>
-                  <div className="pt-2">
-                    <a
-                      href="https://drive.google.com/file/d/1KmW_xZv7xv9pjj2SH0k3hvzHvs_ZrNS9/view"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-mono text-xs uppercase tracking-wider text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-1"
+
+                  <div className="pt-2 flex flex-wrap gap-2">
+                    <Link
+                      href="/resume"
+                      className={buttonStyles({
+                        variant: "secondary",
+                        size: "sm",
+                        className: "font-mono text-xs",
+                      })}
                     >
-                      <span>View Completion Certificate</span>
-                      <span>↗</span>
-                    </a>
-                  </div>
-                </div>
+                      <span>View Verified Resume</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
 
-                {/* 2022 - 2026: B.Tech CSE */}
-                <div className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-6 md:p-8 space-y-3">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="font-display text-xl text-[var(--color-ink-primary)]">
-                      B.Tech in Computer Science &amp; Engineering
-                    </h3>
-                    <span className="font-mono text-xs text-[var(--color-accent)] font-semibold">
-                      2022 – 2026
-                    </span>
-                  </div>
-                  <p className="font-mono text-xs text-[var(--color-ink-secondary)]">
-                    Shri Ram Murti Smarak College of Engineering, Technology &amp; Research, Bareilly, India
-                  </p>
-                  <p className="font-sans text-xs text-[var(--color-accent)] font-medium">
-                    Affiliated to Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow
-                  </p>
-                  <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                    Computer Science Engineering specializing in backend systems, distributed architectures, agentic AI, and application security. Architected and deployed three production systems—Yojna Setu (multilingual welfare-scheme agent, 42 passing tests), RealGuard (WhatsApp real-estate automation engine), and QuickEats (transactional backend with 71 automated tests).
-                  </p>
-                </div>
-
-                {/* 2021: Senior Secondary */}
-                <div className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-6 md:p-8 space-y-3">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="font-display text-xl text-[var(--color-ink-primary)]">
-                      Senior Secondary (CBSE) — Science &amp; Mathematics
-                    </h3>
-                    <span className="font-mono text-xs text-[var(--color-accent)] font-semibold">
-                      2021
-                    </span>
-                  </div>
-                  <p className="font-mono text-xs text-[var(--color-ink-secondary)]">
-                    Nav Jeevan Mission School, Kushinagar, India
-                  </p>
-                  <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                    Focused study in physics, chemistry, and mathematics, establishing the foundation for computational reasoning, algorithms, and analytical problem-solving.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </InnerPageEntrance>
-
-          {/* Certifications Block */}
-          <InnerPageEntrance delayIndex={3}>
-            <div className="space-y-6 pt-4">
-              <div className="space-y-2 pb-4 border-b border-[var(--color-hairline)]">
-                <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold">
-                  VERIFIED CREDENTIALS
-                </span>
-                <h2 className="font-display text-3xl font-normal text-[var(--color-ink-primary)]">
-                  Certifications
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {CERTIFICATIONS.map((cert) => (
-                  <div
-                    key={cert.id}
-                    className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-6 space-y-4 flex flex-col justify-between"
-                  >
-                    <div className="space-y-2">
-                      <span className="font-mono text-[10px] text-[var(--color-accent)] uppercase tracking-wider font-semibold block">
-                        VERIFIED
-                      </span>
-                      <h3 className="font-display text-lg text-[var(--color-ink-primary)]">
-                        {cert.title}
-                      </h3>
-                      <p className="font-mono text-xs text-[var(--color-ink-secondary)]">
-                        {cert.issuer}
-                      </p>
-                      <p className="font-sans text-xs text-[var(--color-ink-secondary)] leading-relaxed pt-1">
-                        {cert.description}
-                      </p>
-                    </div>
-
-                    <div className="pt-3 border-t border-[var(--color-hairline)]">
+                    {profile.githubUrl && (
                       <a
-                        href={cert.certificateUrl}
+                        href={profile.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-mono text-xs uppercase tracking-wider text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-1"
+                        className={buttonStyles({
+                          variant: "ghost",
+                          size: "sm",
+                          className: "font-mono text-xs",
+                        })}
                       >
-                        <span>View Certificate</span>
-                        <span>↗</span>
+                        <span>GitHub</span>
+                        <ExternalLink className="w-3 h-3" />
                       </a>
-                    </div>
+                    )}
                   </div>
-                ))}
+                </Card>
+              </div>
+
+              {/* Verified Education & Experience Timeline */}
+              <div className="lg:col-span-7 space-y-8">
+                <div className="space-y-4">
+                  <h3 className="font-display text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <Briefcase className="w-5 h-5 text-indigo-600" />
+                    <span>Verified Industry Experience</span>
+                  </h3>
+
+                  <div className="space-y-4">
+                    <Card className="p-6 space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="font-display text-base font-bold text-slate-900">
+                          AI/ML Intern
+                        </span>
+                        <span className="font-mono text-xs text-slate-500">
+                          Oct 2026 – Present
+                        </span>
+                      </div>
+                      <p className="font-mono text-xs text-indigo-600 font-medium">
+                        Nexvia Technologies · Remote
+                      </p>
+                      <p className="font-sans text-sm text-slate-600 leading-relaxed pt-1">
+                        Production AI/ML pipelines, agent orchestration, and automated enterprise software workflows.
+                      </p>
+                    </Card>
+
+                    <Card className="p-6 space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="font-display text-base font-bold text-slate-900">
+                          Software Engineer Intern
+                        </span>
+                        <span className="font-mono text-xs text-slate-500">
+                          Jul 2025 – Sep 2025
+                        </span>
+                      </div>
+                      <p className="font-mono text-xs text-indigo-600 font-medium">
+                        Soft Pro · Noida, India
+                      </p>
+                      <p className="font-sans text-sm text-slate-600 leading-relaxed pt-1">
+                        Engineered stateless RESTful backend services with Java 17, Spring Boot 3, and MySQL. Decreased API response times by ~20% through indexed query optimizations and connection pool tuning.
+                      </p>
+                    </Card>
+                  </div>
+                </div>
+
+                <div className="space-y-4 pt-4 border-t border-slate-200">
+                  <h3 className="font-display text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <GraduationCap className="w-5 h-5 text-indigo-600" />
+                    <span>Education &amp; Academic Honors</span>
+                  </h3>
+
+                  <Card className="p-6 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="font-display text-base font-bold text-slate-900">
+                        B.Tech in Computer Science and Engineering
+                      </span>
+                      <span className="font-mono text-xs text-slate-500">
+                        2022 – 2026
+                      </span>
+                    </div>
+                    <p className="font-mono text-xs text-indigo-600 font-medium">
+                      SRMS CETR (Dr. A.P.J. Abdul Kalam Technical University)
+                    </p>
+                    <p className="font-sans text-sm text-slate-600 leading-relaxed pt-1">
+                      Focused on backend architectures, distributed computing, database management, and application security.
+                    </p>
+                  </Card>
+                </div>
               </div>
             </div>
-          </InnerPageEntrance>
+          </div>
+        </SectionContainer>
+      </section>
 
-          {/* Contextual Contact CTA */}
-          <InnerPageEntrance delayIndex={4}>
-            <div className="p-8 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-              <div className="space-y-1">
-                <span className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--color-accent)] font-semibold">
-                  Get in Touch
-                </span>
-                <p className="font-display text-xl text-[var(--color-ink-primary)]">
-                  Have an engineering opportunity or want to talk?
-                </p>
-              </div>
-              <div className="flex flex-wrap items-center gap-3">
-                <Link
-                  href="/resume"
-                  className="font-mono text-xs uppercase tracking-wider px-4 py-2.5 border border-[var(--color-hairline)] text-[var(--color-ink-primary)] hover:border-[var(--color-ink-primary)] transition-colors"
-                >
-                  Resume →
-                </Link>
-                <Link
-                  href="/contact"
-                  className={buttonStyles({
-                    variant: "primary",
-                    size: "md",
-                    className: "font-mono text-xs uppercase tracking-wider",
-                  })}
-                >
-                  Send a Message →
-                </Link>
-              </div>
-            </div>
-          </InnerPageEntrance>
-
-          {/* Navigation Action */}
-          <InnerPageEntrance delayIndex={5}>
-            <div className="pt-4 border-t border-[var(--color-hairline)] flex items-center justify-between font-mono text-xs text-[var(--color-ink-secondary)]">
+      {/* =======================================================
+          5. CTA BANNER
+          ======================================================= */}
+      <section className="w-full bg-[#0B1020] text-white py-20 border-t border-white/10">
+        <SectionContainer>
+          <div className="max-w-2xl mx-auto text-center space-y-6">
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+              Interested in collaborating with JIOSI?
+            </h2>
+            <p className="font-sans text-base text-slate-300 leading-relaxed">
+              Whether you need a custom agent system, an architecture audit, or want to explore our enterprise product licenses, we’d love to connect.
+            </p>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/"
-                className="inline-flex items-center gap-1.5 hover:text-[var(--color-ink-primary)] transition-colors"
+                href="/contact"
+                className={buttonStyles({
+                  variant: "primary",
+                  size: "lg",
+                  className: "font-semibold shadow-xl shadow-indigo-600/30",
+                })}
               >
-                <span>← Back to Home</span>
+                <span>Initiate a Conversation</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/projects"
-                className="hover:text-[var(--color-ink-primary)] transition-colors"
+                className={buttonStyles({
+                  variant: "glass",
+                  size: "lg",
+                  className: "text-slate-200 hover:text-white border-white/20",
+                })}
               >
-                View Selected Work →
+                <span>View Case Studies</span>
               </Link>
             </div>
-          </InnerPageEntrance>
-        </div>
-      </SectionContainer>
+          </div>
+        </SectionContainer>
+      </section>
     </div>
   );
 }

@@ -13,30 +13,30 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of service, digital licensing, and usage conditions for SHIVSASTRA by Shivam Shukla.",
+  description: "Terms of service, digital licensing, and usage conditions for JIOSI by Shivam Shukla.",
   alternates: {
     canonical: absoluteUrl("/terms"),
   },
   openGraph: {
     title: "Terms of Service — Shivam Shukla",
-    description: "Terms of service, digital licensing, and usage conditions for SHIVSASTRA by Shivam Shukla.",
+    description: "Terms of service, digital licensing, and usage conditions for JIOSI by Shivam Shukla.",
     url: absoluteUrl("/terms"),
     type: "website",
-    siteName: "ShivSastra",
+    siteName: "JIOSI",
     locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Terms of Service — ShivSastra",
+        alt: "Terms of Service — JIOSI",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Terms of Service — Shivam Shukla",
-    description: "Terms of service, digital licensing, and usage conditions for SHIVSASTRA by Shivam Shukla.",
+    description: "Terms of service, digital licensing, and usage conditions for JIOSI by Shivam Shukla.",
     images: ["/og-image.png"],
   },
 };
@@ -66,7 +66,7 @@ export default function TermsPage() {
                 Terms of Service
               </h1>
               <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
-                Last updated: September 2026 · Operator: Shivam Shukla / SHIVSASTRA
+                Last updated: September 2026 · Operator: Shivam Shukla / JIOSI
               </p>
             </div>
           </InnerPageEntrance>
@@ -80,7 +80,7 @@ export default function TermsPage() {
                   1. Scope and Agreement
                 </h2>
                 <p>
-                  These Terms of Service govern your access to and use of SHIVSASTRA (
+                  These Terms of Service govern your access to and use of JIOSI (
                   <span className="font-mono text-xs text-[var(--color-ink-primary)]">
                     https://www.jiosi.online
                   </span>
@@ -97,7 +97,7 @@ export default function TermsPage() {
                   2. Digital Products and Licenses
                 </h2>
                 <p>
-                  Digital products sold through the SHIVSASTRA Store (including code repositories, agent templates, UI component kits, and monographs) are distributed under non-exclusive software licenses:
+                  Digital products sold through the JIOSI Store (including code repositories, agent templates, UI component kits, and monographs) are distributed under non-exclusive software licenses:
                 </p>
                 <ul className="list-disc pl-5 space-y-1.5 font-sans">
                   <li>

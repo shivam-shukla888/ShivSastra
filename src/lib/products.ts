@@ -635,6 +635,15 @@ export async function getPublishedStoreProducts(
     }
   }
 
+  // Strictly exclude legacy discontinued templates and case studies from the public store catalog
+  products = products.filter(
+    (p) =>
+      p.slug !== "yojna-setu" &&
+      p.slug !== "spring-boot-starter" &&
+      p.slug !== "editorial-portfolio" &&
+      p.id !== "editorial-portfolio-template"
+  );
+
   // Filter by category
   if (options?.category) {
     products = products.filter((p) => p.category === options.category);

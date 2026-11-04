@@ -20,7 +20,7 @@ export const ALLOWED_PRODUCTION_HOSTS = [
   "jiosi.online",
 ] as const;
 
-export const BRAND_NAME = "ShivSastra";
+export const BRAND_NAME = "JIOSI";
 export const OWNER_NAME = "Shivam Shukla";
 export const VERIFIED_CONTACT_EMAIL = "theshivamshukla.4uu@gmail.com";
 
