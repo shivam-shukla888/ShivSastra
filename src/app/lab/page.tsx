@@ -4,6 +4,7 @@ import { SectionContainer } from "@/components/layout/SectionContainer";
 import { PageBackground } from "@/components/ui/PageBackground";
 import { InnerPageEntrance } from "@/components/layout/InnerPageEntrance";
 import { getPublishedLabEntries } from "@/lib/lab";
+import { FlaskConical, ArrowRight, ArrowLeft } from "lucide-react";
 
 import { absoluteUrl } from "@/lib/site";
 
@@ -54,9 +55,14 @@ export default async function LabPage() {
           {/* Header Block */}
           <InnerPageEntrance delayIndex={0}>
             <div className="space-y-4">
-              <h1 className="font-display text-4xl sm:text-5xl font-normal tracking-tight text-[var(--color-ink-primary)]">
-                Lab
-              </h1>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-white/10 flex items-center justify-center text-indigo-600 dark:text-cyan-400 border border-indigo-200/50 dark:border-white/10">
+                  <FlaskConical className="w-5 h-5" />
+                </div>
+                <h1 className="font-display text-4xl sm:text-5xl font-normal tracking-tight text-[var(--color-ink-primary)]">
+                  Architecture Lab
+                </h1>
+              </div>
 
               <div className="p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] space-y-2">
                 <p className="font-sans text-sm text-[var(--color-ink-primary)] font-medium">
@@ -90,7 +96,7 @@ export default async function LabPage() {
                       href="/projects"
                       className="text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] underline underline-offset-4"
                     >
-                      Explore Shipped Case Studies →
+                      Explore Shipped Case Studies
                     </Link>
                     <Link
                       href="/projects/yojna-setu"
@@ -159,7 +165,7 @@ export default async function LabPage() {
                           className="inline-flex items-center gap-1.5 font-sans font-medium text-xs text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
                         >
                           <span>Read Entry</span>
-                          <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-1" />
                         </Link>
                       </div>
                     </article>
@@ -176,7 +182,8 @@ export default async function LabPage() {
                 href="/"
                 className="inline-flex items-center gap-1.5 font-sans text-xs text-[var(--color-ink-secondary)] hover:text-[var(--color-ink-primary)] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
               >
-                <span>← Back to Home</span>
+                <ArrowLeft className="w-3.5 h-3.5" />
+                <span>Back to Home</span>
               </Link>
             </div>
           </InnerPageEntrance>

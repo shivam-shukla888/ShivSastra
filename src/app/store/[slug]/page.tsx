@@ -18,6 +18,7 @@ import { BackToTop } from "@/components/ui/BackToTop";
 import { ProductFaqAccordion } from "@/components/store/ProductFaqAccordion";
 import { ProductCheckoutAction } from "@/components/store/ProductCheckoutAction";
 import { isLivePaymentTestProduct, isTestCheckoutProduct } from "@/lib/payments/test-checkout";
+import { ArrowLeft, ArrowRight, Lock } from "lucide-react";
 
 export const revalidate = 60;
 
@@ -184,6 +185,17 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
           {/* Header Metadata Block */}
           <InnerPageEntrance delayIndex={0}>
             <div className="space-y-6">
+              {/* Back Navigation Button */}
+              <div>
+                <Link
+                  href="/store"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-[var(--color-ink-secondary)] hover:text-[var(--color-ink-primary)] transition-colors min-h-[44px] py-2"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  <span>Return to Store</span>
+                </Link>
+              </div>
+
               {/* Breadcrumb Navigation */}
               <nav
                 aria-label="Breadcrumb"
@@ -262,7 +274,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                       className="font-mono text-xs uppercase tracking-wider text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] shrink-0 flex items-center gap-1.5 transition-colors"
                     >
                       <span>Read Case Study</span>
-                      <span>→</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 )}
@@ -282,7 +294,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                       className="font-mono text-xs uppercase tracking-wider text-[var(--color-ink-primary)] hover:text-[var(--color-accent)] shrink-0 flex items-center gap-1.5 transition-colors font-medium"
                     >
                       <span>Explore Agentic AI Services</span>
-                      <span>→</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 )}
@@ -290,7 +302,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 {/* Production Reliability & Security Guarantees */}
                 <div className="p-4 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
                   <div className="flex items-center gap-2 text-[var(--color-ink-primary)]">
-                    <span className="text-emerald-700 dark:text-emerald-400 font-bold">🔒</span>
+                    <Lock className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                     <span className="font-semibold">We prioritize security</span>
                   </div>
                 </div>

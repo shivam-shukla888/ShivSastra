@@ -124,7 +124,7 @@ export default async function HomePage() {
                 <span>Next-Generation Software Systems</span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.08]">
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12]">
                 Intelligent software systems for modern teams.
               </h1>
 

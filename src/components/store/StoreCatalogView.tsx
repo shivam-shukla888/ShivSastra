@@ -9,6 +9,16 @@ import type {
   StoreCategory,
 } from "@/lib/products";
 import { buttonStyles } from "@/components/ui/Button";
+import {
+  Search,
+  X,
+  SlidersHorizontal,
+  ArrowUpDown,
+  Lock,
+  Check,
+  ShoppingBag,
+  ArrowRight,
+} from "lucide-react";
 
 interface StoreCatalogViewProps {
   initialProducts: ProductDisplayData[];
@@ -105,7 +115,7 @@ export function StoreCatalogView({
       {/* Controls Bar: Category Filter Pills + Search + Sort */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-[var(--color-hairline)]">
         {showCategoryTabs && (
-          <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Filter products by category">
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 -mb-2 no-scrollbar flex-nowrap sm:flex-wrap" role="group" aria-label="Filter products by category">
             <button
               type="button"
               aria-pressed={selectedCategory === "all"}
@@ -116,7 +126,8 @@ export function StoreCatalogView({
                   : "border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] text-[var(--color-ink-secondary)] hover:border-[var(--color-ink-primary)]"
               }`}
             >
-              All ({categoryCounts.total})
+              <SlidersHorizontal className="w-3 h-3 inline-block mr-1.5 shrink-0" />
+              <span>All ({categoryCounts.total})</span>
             </button>
             <button
               type="button"
@@ -157,48 +168,53 @@ export function StoreCatalogView({
           </div>
         )}
 
-        <div className="flex flex-wrap items-center gap-3">
-          {/* Search Input */}
-          <div className="relative min-w-[200px]">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
+          {/* Search Input with Verified Lucide Search Icon */}
+          <div className="relative flex-1 sm:min-w-[240px]">
+            <Search className="w-4 h-4 text-[var(--color-ink-secondary)] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search agent packs, kits..."
               aria-label="Search products"
-              className="w-full px-3 py-1.5 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)] rounded-none font-mono text-xs text-[var(--color-ink-primary)] focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)] placeholder:text-[var(--color-ink-secondary)]/50"
+              className="w-full pl-10 pr-10 py-2.5 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)] rounded-none font-mono text-xs text-[var(--color-ink-primary)] focus:outline-none focus:border-[var(--color-accent)] focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] placeholder:text-[var(--color-ink-secondary)]/50 min-h-[44px]"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 font-mono text-xs text-[var(--color-ink-secondary)] hover:text-[var(--color-ink-primary)]"
+                aria-label="Clear search query"
+                className="w-10 h-10 flex items-center justify-center absolute right-1 top-1/2 -translate-y-1/2 text-[var(--color-ink-secondary)] hover:text-[var(--color-ink-primary)]"
               >
-                ✕
+                <X className="w-4 h-4" />
               </button>
             )}
           </div>
 
-          {/* Sort Selector */}
-          <select
-            value={selectedSort}
-            onChange={(e) =>
-              setSelectedSort(
-                e.target.value as "newest" | "price_asc" | "price_desc" | "featured"
-              )
-            }
-            aria-label="Sort products"
-            className="px-3 py-1.5 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)] rounded-none font-mono text-xs text-[var(--color-ink-primary)] focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
-          >
-            <option value="newest">Sort: Newest First</option>
-            <option value="featured">Sort: Featured Items</option>
-            {categoryCounts.purchasable > 0 && (
-              <>
-                <option value="price_asc">Price: Low to High</option>
-                <option value="price_desc">Price: High to Low</option>
-              </>
-            )}
-          </select>
+          {/* Sort Selector with Verified Lucide Sort Icon */}
+          <div className="relative sm:min-w-[190px]">
+            <ArrowUpDown className="w-3.5 h-3.5 text-[var(--color-ink-secondary)] pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <select
+              value={selectedSort}
+              onChange={(e) =>
+                setSelectedSort(
+                  e.target.value as "newest" | "price_asc" | "price_desc" | "featured"
+                )
+              }
+              aria-label="Sort products"
+              className="w-full pl-9 pr-8 py-2.5 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)] rounded-none font-mono text-xs text-[var(--color-ink-primary)] focus:outline-none focus:border-[var(--color-accent)] focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] min-h-[44px] appearance-none"
+            >
+              <option value="newest">Sort: Newest First</option>
+              <option value="featured">Sort: Featured Items</option>
+              {categoryCounts.purchasable > 0 && (
+                <>
+                  <option value="price_asc">Price: Low to High</option>
+                  <option value="price_desc">Price: High to Low</option>
+                </>
+              )}
+            </select>
+          </div>
         </div>
       </div>
 
@@ -322,8 +338,8 @@ export function StoreCatalogView({
 
                   {/* Required Digital Product Value Points */}
                   <div className="pt-2.5 pb-1 space-y-1 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-primary)]">
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-emerald-700 dark:text-emerald-400 font-bold select-none">🔒</span>
+                    <div className="flex items-center gap-2">
+                      <Lock className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                       <span className="font-medium">We prioritize security</span>
                     </div>
                   </div>
@@ -336,7 +352,7 @@ export function StoreCatalogView({
                           key={idx}
                           className="font-sans text-xs text-[var(--color-ink-secondary)] flex items-center gap-1.5"
                         >
-                          <span className="text-[var(--color-accent)]">✓</span>
+                          <Check className="w-3.5 h-3.5 text-[var(--color-accent)] shrink-0" />
                           <span className="truncate">{feat}</span>
                         </li>
                       ))}
@@ -360,9 +376,12 @@ export function StoreCatalogView({
                     className={buttonStyles({
                       variant: isCaseStudy || isDiscontinued ? "secondary" : "primary",
                       size: "sm",
-                      className: "font-mono uppercase tracking-wider text-xs group/btn",
+                      className: "font-mono uppercase tracking-wider text-xs group/btn min-h-[44px] flex items-center gap-1.5",
                     })}
                   >
+                    {!isCaseStudy && !isDiscontinued && !isUpcoming && (
+                      <ShoppingBag className="w-3.5 h-3.5 shrink-0" />
+                    )}
                     <span>
                       {isCaseStudy
                         ? "Read Case Study"
@@ -372,9 +391,7 @@ export function StoreCatalogView({
                         ? "View Release Info"
                         : "Buy Now"}
                     </span>
-                    <span className="inline-block transition-transform duration-200 group-hover/btn:translate-x-1 motion-reduce:transform-none ml-1">
-                      →
-                    </span>
+                    <ArrowRight className="w-3.5 h-3.5 shrink-0 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
                   </Link>
                 </div>
               </article>

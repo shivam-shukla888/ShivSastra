@@ -45,6 +45,13 @@ export function ShivSastraAssistant() {
     }
   }, [messages, status, isOpen, scrollToBottom]);
 
+  // Listen for open-ai-assistant custom event (from mobile header Sparkles icon)
+  useEffect(() => {
+    const handleOpenAi = () => setIsOpen(true);
+    window.addEventListener("open-ai-assistant", handleOpenAi);
+    return () => window.removeEventListener("open-ai-assistant", handleOpenAi);
+  }, []);
+
   const wasOpenRef = useRef(false);
 
   // Focus management and Escape key handling
@@ -183,7 +190,7 @@ export function ShivSastraAssistant() {
     <>
       {/* Global "Ask SHIVSASTRA" Companion Trigger */}
       {/* Desktop Mascot Trigger: Subtle bounded wander near bottom-right */}
-      <div className="fixed bottom-6 right-6 z-40 hidden sm:block">
+      <div className="fixed bottom-6 right-6 z-40 hidden lg:block">
         <button
           ref={triggerButtonRef}
           type="button"
@@ -229,7 +236,7 @@ export function ShivSastraAssistant() {
       </div>
 
       {/* Mobile Mascot Trigger: Compact, unobtrusive floating pill */}
-      <div className="fixed bottom-4 right-4 z-40 sm:hidden">
+      <div className="fixed bottom-20 right-4 z-40 lg:hidden">
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}

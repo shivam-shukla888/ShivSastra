@@ -138,6 +138,20 @@ body {
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(139, 92, 246, 0.1), rgba(34, 211, 238, 0.2));
 }
 
+/* Mobile Safe Area & No-Scrollbar Utilities */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Luxury Editorial Utilities */
 .bg-warm-ivory {
   background-color: #F5F2ED;

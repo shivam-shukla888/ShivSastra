@@ -5,7 +5,7 @@ import Script from "next/script";
 import Link from "next/link";
 import { submitContactInquiry } from "@/app/actions/contact";
 import { initialContactState } from "@/lib/validations/contact";
-import { CheckCircle2, Send, AlertCircle, RefreshCw } from "lucide-react";
+import { CheckCircle2, Send, AlertCircle, RefreshCw, User, Mail, MessageSquare } from "lucide-react";
 
 declare global {
   interface Window {
@@ -242,7 +242,7 @@ export function ContactForm({
                 : "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-700"
             }
           >
-            {labels.name}
+            <span className="inline-flex items-center gap-1.5"><User className="w-3.5 h-3.5 text-indigo-500" /><span>{labels.name}</span></span>
           </label>
           <input
             id="contact-name"
@@ -276,7 +276,7 @@ export function ContactForm({
                 : "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-700"
             }
           >
-            {labels.email}
+            <span className="inline-flex items-center gap-1.5"><Mail className="w-3.5 h-3.5 text-indigo-500" /><span>{labels.email}</span></span>
           </label>
           <input
             id="contact-email"
@@ -311,7 +311,7 @@ export function ContactForm({
               : "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-700"
           }
         >
-          {labels.brief}
+          <span className="inline-flex items-center gap-1.5"><MessageSquare className="w-3.5 h-3.5 text-indigo-500" /><span>{labels.brief}</span></span>
         </label>
         <textarea
           id="contact-brief"
