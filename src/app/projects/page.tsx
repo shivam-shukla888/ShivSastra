@@ -16,7 +16,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Engineering Portfolio & Case Studies — JIOSI",
   description:
-    "Verified software systems, Agentic AI architectures, and production case studies by JIOSI. Featuring Yojna Setu, RealGuard, QuickEats, and JIOSI Inbox.",
+    "Verified software systems, Agentic AI architectures, and production case studies by JIOSI. Featuring JIOSI Inbox, Shivsastra, Yojna Setu, and QuickEats.",
   alternates: {
     canonical: absoluteUrl("/projects"),
   },
@@ -72,7 +72,7 @@ export default async function ProjectsPage() {
               </h1>
 
               <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed">
-                Explore our full technical case studies across multi-agent welfare discovery, automated real estate compliance, high-concurrency order processing, and keyboard-first productivity software.
+                Explore our full technical case studies across multi-agent welfare discovery, high-concurrency order processing, full-stack digital publishing, and keyboard-first productivity software.
               </p>
 
               <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono text-slate-400">
@@ -94,7 +94,7 @@ export default async function ProjectsPage() {
       </section>
 
       {/* 2. CASE STUDY CARDS LIST */}
-      <section className="py-20 md:py-28 bg-slate-50">
+      <section className="py-20 md:py-28 bg-[#F5F2ED] border-b border-[#E2E8F0]">
         <SectionContainer>
           <div className="space-y-16">
             <div className="space-y-12">
@@ -173,14 +173,16 @@ export default async function ProjectsPage() {
                         {/* Actions */}
                         <div className="pt-4 flex flex-wrap items-center gap-4">
                           <Link
-                            href={`/projects/${project.slug}`}
+                            href={project.slug === "inbox" ? "/products/inbox" : `/projects/${project.slug}`}
                             className={buttonStyles({
                               variant: "primary",
                               size: "md",
                               className: "text-xs font-bold uppercase tracking-wider",
                             })}
                           >
-                            <span>Read Architectural Case Study</span>
+                            <span>
+                              {project.slug === "inbox" ? "View Product Specs" : "Read Architectural Case Study"}
+                            </span>
                             <ArrowRight className="w-4 h-4 ml-1.5" />
                           </Link>
 

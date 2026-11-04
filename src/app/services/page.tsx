@@ -525,48 +525,48 @@ export default function ServicesPage() {
                 </div>
               </Card>
 
-              {/* Case Study 2: RealGuard */}
+              {/* Case Study 2: Shivsastra Digital Platform */}
               <Card variant="standard" className="p-8 space-y-6 flex flex-col justify-between">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <Badge variant="primary" size="sm">
-                      PROPTECH COMPLIANCE
+                      FULL-STACK SYSTEMS
                     </Badge>
                     <span className="text-xs font-mono text-slate-500">
-                      Verification Pipeline
+                      Payment &amp; CMS Architecture
                     </span>
                   </div>
 
                   <h3 className="font-display text-2xl font-bold text-slate-900">
-                    RealGuard: Real Estate Valuation &amp; Verification
+                    Shivsastra: Full-Stack Digital Platform &amp; CMS
                   </h3>
 
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    An automated property due-diligence system. Ingests legal documents and ownership deeds via OCR, performs RERA registry lookup, and cross-references bank valuation heuristics to detect fraudulent title transfers before settlement.
+                    A production-grade web application featuring server-side rendered showcases, dynamic project CMS, authenticated admin control, Razorpay payment processing with HMAC-SHA256 signature verification, and contextual AI integration with prompt injection defenses.
                   </p>
 
                   <div className="grid grid-cols-2 gap-3 pt-3 border-t border-slate-100 font-mono text-xs">
                     <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
-                      <span className="text-indigo-600 font-bold block text-base">RERA Cross-Check</span>
-                      <span className="text-slate-500 text-[11px]">Deterministic Query</span>
+                      <span className="text-indigo-600 font-bold block text-base">HMAC-SHA256</span>
+                      <span className="text-slate-500 text-[11px]">Server Verification</span>
                     </div>
                     <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
-                      <span className="text-emerald-600 font-bold block text-base">&lt; 3.2s</span>
-                      <span className="text-slate-500 text-[11px]">Audit Report Gen</span>
+                      <span className="text-emerald-600 font-bold block text-base">25/25 Tests</span>
+                      <span className="text-slate-500 text-[11px]">Security Checks Passing</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="pt-4 border-t border-slate-100">
                   <Link
-                    href="/projects/realguard"
+                    href="/projects/shivsastra"
                     className={buttonStyles({
                       variant: "outline",
                       size: "md",
                       className: "w-full justify-center text-xs font-semibold",
                     })}
                   >
-                    <span>Inspect RealGuard Architecture (Case Study)</span>
+                    <span>Inspect Shivsastra Architecture (Case Study)</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                   </Link>
                 </div>

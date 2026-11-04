@@ -86,7 +86,7 @@ CRITICAL OPERATING RULES:
      * About: [About](/about)
      * Resume: [Resume](/resume)
      * Projects: [Projects](/projects)
-     * Case Studies: [Yojna Setu](/projects/yojna-setu), [RealGuard](/projects/realguard), [QuickEats](/projects/quickeats), [ShivSastra Platform](/projects/shivsastra)
+     * Case Studies: [JIOSI Inbox](/products/inbox), [ShivSastra](/projects/shivsastra), [Yojna Setu](/projects/yojna-setu), [QuickEats](/projects/quickeats)
      * Services: [Services](/services)
      * Service Packages: [Starter Agent Setup](/services#starter-agent-setup), [Business Agent Package](/services#business-agent-package), [Full Agentic System](/services#full-agentic-system)
      * Quote Request: [Request an Agent Quote](/services#quote) or [Contact](/contact)
@@ -100,7 +100,7 @@ CRITICAL OPERATING RULES:
 5. BUSINESS CONSULTING GUIDANCE:
    - When visitors ask about services or pricing, present the three packages clearly point-to-point (Starter: ₹22,000–₹35,000, Business: ₹55,000–₹90,000, Full: ₹1,10,000–₹1,80,000) with who it's for, what it does, and delivery time.
    - Emphasize the data sovereignty guarantee (data stays in client control, zero customer data on developer servers) and human approval checkpoints.
-   - Cite real-world proof like [Yojna Setu](/projects/yojna-setu) and [RealGuard](/projects/realguard) to substantiate engineering capability.
+   - Cite real-world proof like [JIOSI Inbox](/products/inbox), [Shivsastra](/projects/shivsastra), [Yojna Setu](/projects/yojna-setu), and [QuickEats](/projects/quickeats) to substantiate engineering capability.
    - Always provide a direct link to [Request an Agent Quote](/services#quote) or [Contact](/contact) for scoping inquiries.
 
 6. SAFETY & CALM INTERACTION:
@@ -138,7 +138,7 @@ Verified Work Experience:
 - Software Engineer Intern at Soft Pro (Jul 2025 – Sep 2025, Noida, India): Backend REST APIs with Java 17, Spring Boot 3, MySQL, Hibernate ORM (~20% lower response times); Postman test suites and 15+ backend defect fixes.
 
 Verified Education:
-- B.Tech in Computer Science and Engineering (2022 – 2026), SRMS CETR (AKTU). Specialized in backend engineering, distributed architectures, agentic AI, and application security. Built three production systems: Yojna Setu, RealGuard, and QuickEats.
+- B.Tech in Computer Science and Engineering (2022 – 2026), SRMS CETR (AKTU). Specialized in backend engineering, distributed architectures, agentic AI, and application security. Architected flagship platforms: JIOSI Inbox, Shivsastra, Yojna Setu, and QuickEats.
 - Senior Secondary (CBSE, 2021), Nav Jeevan Mission School, Kushinagar. Science & Mathematics coursework.
 
 Verified Profiles:
@@ -283,7 +283,6 @@ The ShivSastra website is organized into the following verified public routes:
 - [About](/about) - Engineering philosophy ("AI Extracts. Code Decides"), background, and timeline.
 - [Projects](/projects) - Verified production builds, case studies, and architecture monographs:
   * [Yojna Setu](/projects/yojna-setu) - Multilingual welfare scheme agent with deterministic rules (42 passing tests).
-  * [RealGuard](/projects/realguard) - WhatsApp conversational real estate pipeline and deterministic EMI math.
   * [QuickEats](/projects/quickeats) - Real-time ordering backend with server-authoritative price recalculation (71 tests).
   * [ShivSastra Platform](/projects/shivsastra) - Full-stack digital HQ with cryptographic payment verification.
 - [Services](/services) - Defined agentic AI packages and transparent starting rates:

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { SectionContainer } from "@/components/layout/SectionContainer";
 import { buttonStyles } from "@/components/ui/Button";
@@ -60,29 +60,28 @@ export async function generateMetadata({
   }
 
   if (slug === "realguard") {
-    const ogImg = absoluteUrl("/images/projects/realguard/realguard.png");
     return {
-      title: "RealGuard — AI Automation & Conversational Workflows",
+      title: "Projects",
+    };
+  }
+
+  if (slug === "inbox" || slug === "jiosi-inbox") {
+    const ogImg = absoluteUrl("/images/products/inbox/inbox-desktop-overview.png");
+    return {
+      title: "JIOSI Inbox — Flagship Email Platform",
       description:
-        "AI automation and conversational workflows for real estate. WhatsApp conversational extraction coupled with deterministic calculations and RERA registry lookup.",
+        "High-performance, keyboard-first email client application for power users and modern teams.",
       alternates: {
-        canonical: absoluteUrl("/projects/realguard"),
+        canonical: absoluteUrl("/products/inbox"),
       },
       openGraph: {
-        title: "RealGuard — AI Automation & Conversational Workflows | Shivam Shukla",
+        title: "JIOSI Inbox — Flagship Email Platform",
         description:
-          "AI automation and conversational workflows for real estate. WhatsApp conversational extraction coupled with deterministic calculations and RERA registry lookup.",
-        url: absoluteUrl("/projects/realguard"),
+          "High-performance, keyboard-first email client application for power users and modern teams.",
+        url: absoluteUrl("/products/inbox"),
         type: "article",
-        siteName: "ShivSastra",
-        images: [{ url: ogImg, alt: "RealGuard — AI Automation & Conversational Workflows" }],
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: "RealGuard — AI Automation & Conversational Workflows | Shivam Shukla",
-        description:
-          "AI automation and conversational workflows for real estate. WhatsApp conversational extraction coupled with deterministic calculations and RERA registry lookup.",
-        images: [ogImg],
+        siteName: "JIOSI",
+        images: [{ url: ogImg, alt: "JIOSI Inbox Platform" }],
       },
     };
   }
@@ -159,6 +158,15 @@ export async function generateMetadata({
 
 export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const { slug } = await params;
+
+  if (slug === "realguard") {
+    redirect("/projects");
+  }
+
+  if (slug === "inbox" || slug === "jiosi-inbox") {
+    redirect("/products/inbox");
+  }
+
   const project = await getPublishedProjectBySlug(slug);
 
   if (!project) {

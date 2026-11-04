@@ -32,6 +32,6 @@ function checkFile(slug) {
   });
 }
 
-checkFile('yojna-setu');
-checkFile('spring-boot-starter');
-checkFile('editorial-portfolio');
+checkFile('n8n-lead-qualifier-agent-pack');
+checkFile('whatsapp-support-agent-kit');
+checkFile('n8n-production-reliability-kit');

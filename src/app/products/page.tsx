@@ -149,7 +149,7 @@ const DIGITAL_PRODUCTS = [
       "Token usage monitoring and spend caps",
       "Self-hosted Docker Compose deployment recipe",
     ],
-    slug: "n8n-free-tier-kit",
+    slug: "n8n-production-reliability-kit",
     image: "/images/backgrounds/store.webp",
   },
 ];

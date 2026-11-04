@@ -183,7 +183,7 @@ export function ProjectForm({ initialData, mode }: ProjectFormProps) {
                 URL Slug <span className="text-[var(--color-accent)]">*</span>
               </label>
               <p className="font-sans text-xs text-[var(--color-ink-secondary)]">
-                URL-safe identifier (e.g. yojna-setu, realguard, quickeats).
+                URL-safe identifier (e.g. yojna-setu, shivsastra, quickeats).
               </p>
               <input
                 id="project-slug"

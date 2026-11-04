@@ -110,61 +110,55 @@ export const YOJNA_SETU_PROJECT: Project = {
   liveUrl: null,
   githubUrl: "https://github.com/shivam-shukla888/Yojna-Setu",
   isFeatured: true,
-  sortOrder: 1,
+  sortOrder: 3,
   publishedAt: "2026-09-25T12:00:00Z",
 };
 
-export const REALGUARD_PROJECT: Project = {
-  id: "realguard",
-  slug: "realguard",
-  title: "RealGuard",
-  editionCode: "RG-AI",
+export const JIOSI_INBOX_PROJECT: Project = {
+  id: "jiosi-inbox",
+  slug: "inbox",
+  title: "JIOSI Inbox",
+  editionCode: "JIO-INBOX",
   summary:
-    "AI automation and conversational workflows for real estate. WhatsApp conversational input → Groq parameter extraction → Java business logic → RERA lookup → in-app EMI calculation → CRM persistence → broker workflow. The LLM extracts parameters while application logic handles authoritative calculations.",
+    "Flagship SaaS platform and high-performance, keyboard-first email client engineered for power users and modern teams. Built with Spring Boot 3.3.5, React 18, Neon Serverless PostgreSQL, sub-50ms thread triage, command palette (⌘K), and local credential encryption.",
   caseStudyMarkdown: `### Executive Summary
-RealGuard is a conversational AI automation prototype engineered to qualify real estate leads over WhatsApp while preventing AI calculation errors through deterministic backend boundaries.
+JIOSI Inbox is a production-grade, keyboard-first email client and productivity platform engineered for founders, operators, and engineers who process high email volumes.
 
 ### Project Context & Core Attributes
-- **Problem**: Real estate brokers lose prospective buyers due to slow manual response times, while generic AI chatbots frequently hallucinate property prices, interest rates, and loan amortization numbers.
-- **Intended User**: Real estate brokers, property consultants, and agencies managing inbound buyer inquiries via WhatsApp.
-- **My Role**: End-to-end architecture and backend implementation (conversational intake pipeline, Groq LLM extraction, deterministic calculation engine, and CRM lead persistence).
-- **Solution**: A decoupled workflow where Groq LLM extracts unstructured buyer criteria into strict JSON, while Spring Boot deterministically calculates loan EMIs, queries RERA registrations, and pushes clean lead records to CRM.
-- **Verified Status**: Working architecture prototype with verified Twilio webhook parsing, deterministic calculation logic, and open-source GitHub repository.
-- **Evidence**: Open-source repository at github.com/shivam-shukla888/RealGuard.
+- **Problem**: Traditional email clients are sluggish, bloated with non-essential widgets, and force excessive mouse clicks that fragment executive focus.
+- **Intended User**: Founders, executives, technical leads, and operations teams managing high-stakes communications.
+- **My Role**: Full-stack architect, backend engineer, and frontend systems designer (Spring Boot 3.3.5 backend, React 18 UI, Neon Serverless PostgreSQL persistence, sub-50ms triage pipelines, Playwright test suite).
+- **Solution**: High-performance, keyboard-centric email platform with instant search, multi-tenant isolation, command palette (⌘K), thread grouping, and deterministic privacy safeguards.
+- **Verified Status**: Fully functional web client live at https://inbox.jiosi.online with automated Playwright end-to-end verification passing.
+- **Evidence**: Production web deployment at inbox.jiosi.online and tested backend repositories.
 
-### Architecture & Conversational Flow
-The system enforces strict separation between conversational interpretation and authoritative domain calculations:
-
-1. **WhatsApp Webhook Intake**: Prospective buyers message through WhatsApp via Twilio webhooks.
-2. **Conversational Parameter Extraction**: Groq API (Llama 3) parses unstructured chat to extract budget, preferred locality, BHK requirements, and timeframe into structured JSON parameters.
-3. **Java Business Logic Routing**: Spring Boot services validate incoming parameters against application boundaries and route to specific sub-modules.
-4. **RERA Registry Lookup**: Queries registered project records to cross-reference developer legitimacy against official regulatory records.
-5. **Deterministic EMI Calculation**: Computes loan interest, tenure amortization, and monthly EMI figures strictly within deterministic application code — the LLM never performs financial calculations.
-6. **CRM Persistence & Broker Notification**: Stores buyer records and interaction history in MySQL via Hibernate ORM and dispatches structured lead summaries to real estate brokers.
-
-### Key Engineering Lessons & Defensive Boundaries
-- **AI for Extraction, Code for Math**: Language models interpret conversational nuance, but authoritative financial calculations and compliance rules belong strictly in verified application code.
-- **Webhook Integrity**: Spring Boot verifies Twilio webhook signatures before processing messages to prevent forged broker dispatch events.
-- **Structured Lead Qualification**: Normalizes free-form text conversations into standardized relational CRM records without requiring rigid UI forms.
+### Key Architecture Highlights
+- **Sub-50ms Thread Triage**: Optimized indexed PostgreSQL queries on Neon Serverless deliver sub-50ms thread retrieval and state updates.
+- **Keyboard-First Velocity**: Complete keyboard accessibility with single-key triage hotkeys (E to archive, S to star, / to search, ⌘K command palette).
+- **Zero-Trust Credential Security**: User credentials and tokens are encrypted with AES-256-GCM. No unauthorized host access or credential storage.
+- **Spring Boot 3.3.5 Core**: High-throughput backend with clean layered domain architecture, JPA/Hibernate mappings, and rate-limited endpoints.
 
 ### Implementation Stack
-Engineered with Java 17, Spring Boot, MySQL, Hibernate ORM, Twilio WhatsApp API, and Groq API.`,
-  coverImageUrl: "/images/projects/realguard/realguard.png",
-  category: "AI Automation · Conversational Workflows",
+- **Frontend**: React 18, Vite, Tailwind CSS, Lucide React
+- **Backend**: Java 21, Spring Boot 3.3.5, Spring Security 6
+- **Database**: PostgreSQL 17, Neon Serverless
+- **Testing**: Playwright End-to-End Automation, JUnit 5`,
+  coverImageUrl: "/images/products/inbox/inbox-desktop-overview.png",
+  category: "Flagship SaaS · Productivity Platform",
   techStack: [
-    "AI Automation",
-    "Twilio WhatsApp API",
-    "Groq LLM",
-    "Spring Boot",
-    "MySQL",
-    "Hibernate ORM",
+    "Spring Boot 3.3.5",
+    "React 18",
+    "PostgreSQL",
+    "Neon Serverless",
+    "Java 21",
+    "Playwright",
   ],
-  projectYear: 2025,
-  liveUrl: null,
-  githubUrl: "https://github.com/shivam-shukla888/RealGuard",
+  projectYear: 2026,
+  liveUrl: "https://inbox.jiosi.online",
+  githubUrl: "https://github.com/shivam-shukla888/Inbox-jiosi.online",
   isFeatured: true,
-  sortOrder: 2,
-  publishedAt: "2025-11-15T12:00:00Z",
+  sortOrder: 1,
+  publishedAt: "2026-11-01T12:00:00Z",
 };
 
 export const QUICKEATS_PROJECT: Project = {
@@ -266,9 +260,9 @@ ShivSastra is the production digital platform and personal engineering HQ operat
 };
 
 export const CANONICAL_PROJECTS: Project[] = [
-  YOJNA_SETU_PROJECT,
+  JIOSI_INBOX_PROJECT,
   SHIVSASTRA_PROJECT,
-  REALGUARD_PROJECT,
+  YOJNA_SETU_PROJECT,
   QUICKEATS_PROJECT,
 ];
 
@@ -277,7 +271,7 @@ const PUBLIC_PROJECT_COLUMNS =
 
 /**
  * Fetches all published projects ordered deterministically by sort_order ASC, then created_at DESC.
- * Integrates canonical featured projects (Yojna Setu, RealGuard, QuickEats) with database storage.
+ * Integrates canonical featured projects (JIOSI Inbox, Shivsastra, Yojna Setu, QuickEats) with database storage.
  */
 export async function getPublishedProjects(options?: {
   featuredOnly?: boolean;
@@ -309,7 +303,7 @@ export async function getPublishedProjects(options?: {
     console.error(`[PROJECTS EXCEPTION] ${message}`);
   }
 
-  // Ensure canonical projects (Yojna Setu, RealGuard, QuickEats) are present
+  // Ensure canonical projects (JIOSI Inbox, Shivsastra, Yojna Setu, QuickEats) are present
   for (const canonical of CANONICAL_PROJECTS) {
     const exists = projects.some((p) => p.slug === canonical.slug);
     if (!exists) {
@@ -318,6 +312,16 @@ export async function getPublishedProjects(options?: {
       }
     }
   }
+
+  // Strictly exclude RealGuard from all public project listings
+  projects = projects.filter(
+    (p) => p.slug !== "realguard" && p.id !== "realguard"
+  );
+
+  // Strictly exclude RealGuard from all public project listings
+  projects = projects.filter(
+    (p) => p.slug !== "realguard" && p.id !== "realguard"
+  );
 
   // Deterministic sort by sortOrder ASC
   projects.sort((a, b) => a.sortOrder - b.sortOrder);
@@ -332,7 +336,7 @@ export async function getPublishedProjects(options?: {
 /**
  * Resolves a single published project by its slug.
  * Excludes unpublished projects strictly (returns null).
- * Guarantees resolution for canonical projects (yojna-setu, realguard, quickeats).
+ * Guarantees resolution for canonical projects (inbox, shivsastra, yojna-setu, quickeats).
  */
 export async function getPublishedProjectBySlug(
   slug: string
@@ -342,6 +346,16 @@ export async function getPublishedProjectBySlug(
   }
 
   const normalizedSlug = slug.trim().toLowerCase();
+
+  // RealGuard is strictly removed from public website
+  if (normalizedSlug === "realguard") {
+    return null;
+  }
+
+  // RealGuard is strictly removed from public website
+  if (normalizedSlug === "realguard") {
+    return null;
+  }
 
   try {
     const client = getProjectsQueryClient();

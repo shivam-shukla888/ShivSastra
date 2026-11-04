@@ -49,7 +49,7 @@ export default async function AboutPage() {
   const profile = await getProfileSettings();
 
   return (
-    <div className="flex flex-col w-full bg-slate-50 text-slate-900">
+    <div className="flex flex-col w-full bg-[#F5F2ED] text-slate-900">
       {/* =======================================================
           1. DARK NAVY HERO BANNER
           ======================================================= */}
@@ -115,7 +115,7 @@ export default async function AboutPage() {
       {/* =======================================================
           3. ENGINEERING VALUES & THE JIOSI ETHOS
           ======================================================= */}
-      <section className="w-full py-20 md:py-28 bg-slate-50 border-b border-slate-200">
+      <section className="w-full py-20 md:py-28 bg-[#F5F2ED] border-b border-[#E2E8F0]">
         <SectionContainer>
           <div className="space-y-16">
             <SectionHeader

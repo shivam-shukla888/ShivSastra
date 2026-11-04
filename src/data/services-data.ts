@@ -116,9 +116,9 @@ export const TECHNICAL_CAPABILITIES: TechnicalCapability[] = [
       "Rate-limiting and token-consumption guardrails to prevent runaway API spend",
     ],
     evidence: {
-      title: "RealGuard & Yojna Setu",
-      slug: "realguard",
-      description: "Live conversational WhatsApp assistant and multilingual welfare scheme discovery engine.",
+      title: "Yojna Setu & Shivsastra",
+      slug: "yojna-setu",
+      description: "Live multilingual welfare scheme discovery engine and full-stack digital platform.",
     },
   },
   {
@@ -136,9 +136,9 @@ export const TECHNICAL_CAPABILITIES: TechnicalCapability[] = [
       "Zero client customer data stored on intermediary developer infrastructure",
     ],
     evidence: {
-      title: "RealGuard CRM Pipeline",
-      slug: "realguard",
-      description: "WhatsApp real estate workflow connecting lead intake to deterministic EMI calculations and CRM logging.",
+      title: "Shivsastra Platform & CMS",
+      slug: "shivsastra",
+      description: "Full-stack digital platform connecting client intake to cryptographic HMAC payment verification and PostgreSQL RLS.",
     },
   },
   {
@@ -269,10 +269,10 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
       "Third-party messaging/LLM token fees (paid directly to Meta, Twilio, OpenAI, or Groq)",
     ],
     proofProject: {
-      title: "RealGuard",
-      slug: "realguard",
-      description: "WhatsApp conversational workflow connecting customer chat to deterministic calculations and CRM logging.",
-      ctaLabel: "See how I built similar systems",
+      title: "Shivsastra",
+      slug: "shivsastra",
+      description: "Full-stack digital platform featuring secure intake workflows, server-side validation, and deterministic data routing.",
+      ctaLabel: "See how we built similar systems",
     },
     contactSubject: "Starter Agent Setup Inquiry",
   },
@@ -355,7 +355,7 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
       "Unsanctioned autonomous credential delegation",
     ],
     proofProject: {
-      title: "Yojna Setu & RealGuard",
+      title: "Yojna Setu & JIOSI Inbox",
       slug: "yojna-setu",
       description: "Multi-agent reasoning, natural language profile extraction, and deterministic rules-engine workflows.",
       ctaLabel: "See how I built similar systems",
@@ -431,7 +431,7 @@ export const SERVICE_FAQS: ServiceFaq[] = [
   {
     question: "What real-world proof do you have of agentic implementations?",
     answer:
-      "See our active case studies: Yojna Setu (multilingual conversational scheme extraction combined with deterministic rules) and RealGuard (WhatsApp real-estate automation assistant connecting chat to deterministic EMI calculations and CRM logging).",
+      "See our active case studies: Yojna Setu (multilingual conversational scheme extraction combined with deterministic rules) and Shivsastra (production digital platform with cryptographic payment verification and zero customer data retention).",
   },
   {
     question: "How do we get started?",

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Inter, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Manrope, Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/Navbar";
@@ -13,6 +13,13 @@ const ShivSastraAssistant = dynamic(() =>
     (mod) => mod.ShivSastraAssistant
   )
 );
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -106,7 +113,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${manrope.variable} ${inter.variable} ${geistMono.variable} antialiased`}
+      className={`${playfair.variable} ${manrope.variable} ${inter.variable} ${geistMono.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-[var(--color-canvas-primary)] text-[var(--color-ink-primary)] font-body">
         {/* Accessible Keyboard Skip Link */}

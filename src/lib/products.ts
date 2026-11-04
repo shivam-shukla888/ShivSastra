@@ -303,7 +303,7 @@ export const WHATSAPP_SUPPORT_KIT_ITEM: ProductDisplayData = {
         "When a customer requests a representative or sentiment triggers an alert, the agent halts automated replies and routes the chat directly to your team.",
     },
   ],
-  previewImageUrl: "/images/projects/realguard/evidence-realguard-whatsapp.png",
+  previewImageUrl: "/images/backgrounds/store.webp",
   isAvailable: true,
   isFeatured: true,
   sortOrder: 2,
@@ -423,9 +423,9 @@ export const AGENT_PROMPT_LIBRARY_ITEM: ProductDisplayData = {
   formattedPrice: "₹2499.00",
 };
 
-export const N8N_FREE_TIER_KIT_ITEM: ProductDisplayData = {
+export const N8N_PRODUCTION_RELIABILITY_KIT_ITEM: ProductDisplayData = {
   id: "847291a2-1111-4000-8000-000000000006",
-  slug: "n8n-free-tier-survival-kit",
+  slug: "n8n-production-reliability-kit",
   releaseCode: "AGT-PRK",
   title: "n8n Production Reliability Kit",
   shortDescription:
@@ -459,6 +459,8 @@ export const N8N_FREE_TIER_KIT_ITEM: ProductDisplayData = {
   updatedAt: "2026-11-01T12:00:00Z",
   formattedPrice: "₹1499.00",
 };
+
+export const N8N_FREE_TIER_KIT_ITEM = N8N_PRODUCTION_RELIABILITY_KIT_ITEM;
 
 /* =======================================================================
    LEGACY / DISCONTINUED ITEMS (Preserved for tests & backward compatibility)
@@ -582,10 +584,7 @@ export const CANONICAL_STORE_PRODUCTS: ProductDisplayData[] = [
   SALES_FOLLOWUP_AGENT_ITEM,
   SMALL_BUSINESS_BUNDLE_ITEM,
   AGENT_PROMPT_LIBRARY_ITEM,
-  N8N_FREE_TIER_KIT_ITEM,
-  YOJNA_SETU_STORE_ITEM,
-  SPRING_BOOT_STARTER_ITEM,
-  EDITORIAL_PORTFOLIO_ITEM,
+  N8N_PRODUCTION_RELIABILITY_KIT_ITEM,
 ];
 
 /**
@@ -714,6 +713,9 @@ export async function getPublishedStoreProductBySlug(
   }
 
   const trimmedSlug = slug.trim();
+  if (trimmedSlug === "n8n-free-tier-survival-kit" || trimmedSlug === "n8n-free-tier-kit") {
+    return N8N_PRODUCTION_RELIABILITY_KIT_ITEM;
+  }
   const canonical = CANONICAL_STORE_PRODUCTS.find(
     (p) => p.slug === trimmedSlug
   );

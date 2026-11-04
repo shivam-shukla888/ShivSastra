@@ -13,7 +13,7 @@ export interface Message {
 
 const SUGGESTED_PROMPTS = [
   "What agentic AI services do you offer?",
-  "How do Yojna Setu & RealGuard work?",
+  "How do JIOSI Inbox & Yojna Setu work?",
   "What is your data security guarantee?",
   "Which digital agent kits are in the store?",
   "How do human approval points work?",

@@ -22,6 +22,9 @@ import {
   ExternalLink,
   Check,
   ChevronRight,
+  GraduationCap,
+  Briefcase,
+  Code2,
 } from "lucide-react";
 
 export const revalidate = 60;
@@ -97,17 +100,17 @@ export default async function HomePage() {
   };
 
   return (
-    <div className="flex flex-col w-full bg-slate-50 text-slate-900">
+    <div className="flex flex-col w-full bg-[#F5F2ED] text-slate-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       {/* =======================================================
-          1. DARK NAVY HERO SECTION WITH PRODUCT SPOTLIGHT
+          SECTION 2: DARK CINEMATIC HERO
           ======================================================= */}
       <section className="relative w-full bg-[#0B1020] text-white pt-16 sm:pt-20 md:pt-24 pb-20 md:pb-28 overflow-hidden border-b border-white/10">
-        {/* Subtle Ambient Indigo/Violet Glow */}
+        {/* Ambient Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[550px] pointer-events-none opacity-40">
           <div className="w-full h-full bg-gradient-to-b from-indigo-500/25 via-violet-500/10 to-transparent blur-3xl" />
         </div>
@@ -121,7 +124,7 @@ export default async function HomePage() {
                 <span>Next-Generation Software Systems</span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.08]">
                 Intelligent software systems for modern teams.
               </h1>
 
@@ -129,7 +132,7 @@ export default async function HomePage() {
                 From our flagship email productivity platform <strong className="text-white font-semibold">JIOSI Inbox</strong> to custom production <strong className="text-white font-semibold">Agentic AI systems</strong> for growing businesses — engineered with deterministic safeguards, speed, and strict data sovereignty.
               </p>
 
-              {/* CTAs */}
+              {/* Primary CTAs */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Link
                   href="/products/inbox"
@@ -140,19 +143,19 @@ export default async function HomePage() {
                   })}
                 >
                   <Inbox className="w-4 h-4 text-cyan-300" />
-                  <span>Discover JIOSI Inbox</span>
+                  <span>Explore JIOSI Inbox</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
 
                 <Link
-                  href="/contact"
+                  href="/services"
                   className={buttonStyles({
                     variant: "glass",
                     size: "lg",
                     className: "text-slate-200 hover:text-white border-white/20",
                   })}
                 >
-                  <span>Discuss an AI System</span>
+                  <span>Our Services</span>
                   <ChevronRight className="w-4 h-4 text-slate-400" />
                 </Link>
 
@@ -193,10 +196,9 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Interactive Product Showcase Card (JIOSI Inbox) */}
+            {/* Right Column: Featured Product Spotlight Card (JIOSI Inbox) */}
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl p-2 bg-gradient-to-b from-white/15 to-white/5 border border-white/15 backdrop-blur-xl shadow-2xl shadow-indigo-950/50 group">
-                {/* Floating Top Pill */}
                 <div className="p-3 bg-[#111A2E]/90 rounded-xl border border-white/10 mb-2 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
@@ -212,7 +214,6 @@ export default async function HomePage() {
                   </span>
                 </div>
 
-                {/* Real Application Screenshot */}
                 <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden border border-white/10 bg-slate-900">
                   <Image
                     src="/images/products/inbox/inbox-desktop-overview.png"
@@ -224,7 +225,6 @@ export default async function HomePage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1020]/80 via-transparent to-transparent pointer-events-none" />
 
-                  {/* Floating Action Overlay on Screenshot */}
                   <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                     <span className="font-mono text-xs text-white bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10">
                       AI Summaries · Instant Search
@@ -239,7 +239,6 @@ export default async function HomePage() {
                   </div>
                 </div>
 
-                {/* Keyboard Shortcuts Strip */}
                 <div className="mt-2 p-2.5 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between text-xs font-mono text-slate-400">
                   <div className="flex items-center gap-2">
                     <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-white text-[10px] border border-white/15">
@@ -267,56 +266,68 @@ export default async function HomePage() {
       </section>
 
       {/* =======================================================
-          2. CORE VALUE PILLARS (Clean Cloud White Section)
+          SECTION 3: ENGINEERING PILLARS (Warm Ivory)
           ======================================================= */}
-      <section className="w-full py-16 md:py-20 bg-slate-50 border-b border-slate-200">
+      <section className="w-full py-16 md:py-24 bg-[#F5F2ED] border-b border-[#E2E8F0]">
         <SectionContainer>
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <span className="font-mono text-xs uppercase tracking-wider font-semibold text-indigo-600">
+              Core Principles
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#252A35]">
+              Engineered for Production Rigour
+            </h2>
+            <p className="font-sans text-sm sm:text-base text-[#788292]">
+              Strict architectural standards ensure deterministic reliability, safety, and business-grade autonomy.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card variant="default" className="p-6 space-y-3">
+            <Card variant="default" className="p-6 space-y-3 bg-white border-[#E2E8F0] shadow-xs">
               <div className="w-10 h-10 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="font-display text-lg font-bold text-slate-900">
-                Production Reliability
+              <h3 className="font-display text-lg font-bold text-[#252A35]">
+                Production Ready
               </h3>
-              <p className="font-sans text-sm text-slate-600 leading-relaxed">
+              <p className="font-sans text-sm text-[#788292] leading-relaxed">
                 Deterministic business logic handles math and actions, keeping probabilistic LLMs strictly constrained to parameter extraction.
               </p>
             </Card>
 
-            <Card variant="default" className="p-6 space-y-3">
+            <Card variant="default" className="p-6 space-y-3 bg-white border-[#E2E8F0] shadow-xs">
               <div className="w-10 h-10 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600">
                 <Lock className="w-5 h-5" />
               </div>
-              <h3 className="font-display text-lg font-bold text-slate-900">
-                100% Data Sovereignty
+              <h3 className="font-display text-lg font-bold text-[#252A35]">
+                Data Sovereignty
               </h3>
-              <p className="font-sans text-sm text-slate-600 leading-relaxed">
-                Customer data stays inside client infrastructure (self-hosted n8n, isolated PostgreSQL). No client records stored on our servers.
+              <p className="font-sans text-sm text-[#788292] leading-relaxed">
+                Customer records stay inside client infrastructure (self-hosted n8n, isolated PostgreSQL). Zero client records stored on our servers.
               </p>
             </Card>
 
-            <Card variant="default" className="p-6 space-y-3">
+            <Card variant="default" className="p-6 space-y-3 bg-white border-[#E2E8F0] shadow-xs">
               <div className="w-10 h-10 rounded-lg bg-violet-50 border border-violet-100 flex items-center justify-center text-violet-600">
-                <CheckCircle2 className="w-5 h-5" />
-              </div>
-              <h3 className="font-display text-lg font-bold text-slate-900">
-                Human-in-the-Loop
-              </h3>
-              <p className="font-sans text-sm text-slate-600 leading-relaxed">
-                High-value financial actions, outbound messages, and contract dispatches pause for human verification before release.
-              </p>
-            </Card>
-
-            <Card variant="default" className="p-6 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-600">
                 <Zap className="w-5 h-5" />
               </div>
-              <h3 className="font-display text-lg font-bold text-slate-900">
-                Fast Turnaround
+              <h3 className="font-display text-lg font-bold text-[#252A35]">
+                Agentic AI
               </h3>
-              <p className="font-sans text-sm text-slate-600 leading-relaxed">
-                Engineered for rapid deployment: Starter workflows ready in 5–8 days, full multi-agent platforms in 18–25 days.
+              <p className="font-sans text-sm text-[#788292] leading-relaxed">
+                Autonomous workflows with structured JSON schemas, multi-step tool calling, stateful memory, and API spend caps.
+              </p>
+            </Card>
+
+            <Card variant="default" className="p-6 space-y-3 bg-white border-[#E2E8F0] shadow-xs">
+              <div className="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-600">
+                <CheckCircle2 className="w-5 h-5" />
+              </div>
+              <h3 className="font-display text-lg font-bold text-[#252A35]">
+                Human-in-the-Loop
+              </h3>
+              <p className="font-sans text-sm text-[#788292] leading-relaxed">
+                High-value financial actions, outbound messages, and contract dispatches pause for human verification before release.
               </p>
             </Card>
           </div>
@@ -324,19 +335,19 @@ export default async function HomePage() {
       </section>
 
       {/* =======================================================
-          3. PRODUCT ECOSYSTEM SHOWCASE (JIOSI Products)
+          SECTION 4: PRODUCT ECOSYSTEM (Clean White Surface)
           ======================================================= */}
-      <section id="products" className="w-full py-20 md:py-28 bg-white border-b border-slate-200">
+      <section id="products" className="w-full py-20 md:py-28 bg-white border-b border-[#E2E8F0]">
         <SectionContainer>
           <div className="space-y-16">
             <SectionHeader
               badge="Product Ecosystem"
               badgeVariant="primary"
-              title="Modern Software & AI Products"
-              description="Explore our standalone SaaS platforms, automated agent toolkits, and production blueprints engineered for high-velocity teams."
+              title="Products Built for Real Work"
+              description="Standalone productivity platforms, automated agent toolkits, and production blueprints engineered for high-velocity teams."
             />
 
-            {/* Featured Product 1: JIOSI Inbox Banner Card */}
+            {/* Asymmetric Product Showcase: JIOSI Inbox */}
             <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-900 via-[#111A2E] to-[#0B1020] text-white p-8 md:p-12 overflow-hidden relative shadow-xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 <div className="lg:col-span-6 space-y-6">
@@ -381,7 +392,7 @@ export default async function HomePage() {
                         className: "font-semibold shadow-md shadow-indigo-600/30",
                       })}
                     >
-                      <span>Product Overview &amp; Specs</span>
+                      <span>Explore Inbox</span>
                       <ArrowRight className="w-4 h-4" />
                     </Link>
 
@@ -415,124 +426,139 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Product Grid: Agent Toolkits & Store Packs */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="p-6 md:p-8 space-y-5 flex flex-col justify-between">
-                <div className="space-y-4">
-                  <Badge variant="primary" size="sm">
-                    n8n Template
-                  </Badge>
-                  <h4 className="font-display text-2xl font-bold text-slate-900">
-                    Lead Qualifier Agent Pack
-                  </h4>
-                  <p className="font-sans text-sm text-slate-600 leading-relaxed">
-                    Autonomously engage incoming web and WhatsApp enquiries, score budget and timeline, and sync structured leads into Google Sheets or CRM.
+            {/* SECTION 5: AGENTIC SYSTEMS TOOLKITS */}
+            <div className="space-y-8 pt-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-display text-2xl font-bold text-[#252A35]">
+                    Production Agent Toolkits
+                  </h3>
+                  <p className="font-sans text-sm text-[#788292]">
+                    Pre-built blueprints, schemas, and automation packages ready to import.
                   </p>
-                  <ul className="space-y-2 text-xs font-mono text-slate-500 pt-2 border-t border-slate-100">
-                    <li className="flex items-center gap-1.5">✓ Self-hosted n8n JSON blueprint</li>
-                    <li className="flex items-center gap-1.5">✓ Zero cloud vendor lock-in</li>
-                  </ul>
                 </div>
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="font-mono text-sm font-bold text-indigo-600">₹3,499</span>
-                  <Link
-                    href="/store/n8n-lead-qualifier-agent-pack"
-                    className="font-sans text-xs font-semibold text-slate-900 hover:text-indigo-600 transition-colors inline-flex items-center gap-1"
-                  >
-                    <span>View Template</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </Card>
+                <Link
+                  href="/products"
+                  className="font-mono text-xs uppercase tracking-wider font-semibold text-indigo-600 hover:text-indigo-800 transition-colors inline-flex items-center gap-1"
+                >
+                  <span>Explore Toolkits</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
 
-              <Card className="p-6 md:p-8 space-y-5 flex flex-col justify-between">
-                <div className="space-y-4">
-                  <Badge variant="cyan" size="sm">
-                    Complete Kit
-                  </Badge>
-                  <h4 className="font-display text-2xl font-bold text-slate-900">
-                    WhatsApp Support Agent Kit
-                  </h4>
-                  <p className="font-sans text-sm text-slate-600 leading-relaxed">
-                    Full-stack conversational agent with knowledge lookup, human escalation triggers, and Twilio/Cloud API integration.
-                  </p>
-                  <ul className="space-y-2 text-xs font-mono text-slate-500 pt-2 border-t border-slate-100">
-                    <li className="flex items-center gap-1.5">✓ 24/7 Multi-language support</li>
-                    <li className="flex items-center gap-1.5">✓ Human takeover checkpoint</li>
-                  </ul>
-                </div>
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="font-mono text-sm font-bold text-indigo-600">₹3,999</span>
-                  <Link
-                    href="/store/whatsapp-support-agent-kit"
-                    className="font-sans text-xs font-semibold text-slate-900 hover:text-indigo-600 transition-colors inline-flex items-center gap-1"
-                  >
-                    <span>View Kit</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </Card>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <Card className="p-6 md:p-8 space-y-5 flex flex-col justify-between bg-white border-[#E2E8F0]">
+                  <div className="space-y-4">
+                    <Badge variant="primary" size="sm">
+                      n8n Template
+                    </Badge>
+                    <h4 className="font-display text-2xl font-bold text-[#252A35]">
+                      Lead Qualifier Agent Pack
+                    </h4>
+                    <p className="font-sans text-sm text-[#788292] leading-relaxed">
+                      Autonomously engage incoming web and WhatsApp enquiries, score budget and timeline, and sync structured leads into Google Sheets or CRM.
+                    </p>
+                    <ul className="space-y-2 text-xs font-mono text-slate-500 pt-2 border-t border-slate-100">
+                      <li className="flex items-center gap-1.5">✓ Self-hosted n8n JSON blueprint</li>
+                      <li className="flex items-center gap-1.5">✓ Zero cloud vendor lock-in</li>
+                    </ul>
+                  </div>
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <span className="font-mono text-sm font-bold text-indigo-600">₹3,499</span>
+                    <Link
+                      href="/store/n8n-lead-qualifier-agent-pack"
+                      className="font-sans text-xs font-semibold text-slate-900 hover:text-indigo-600 transition-colors inline-flex items-center gap-1"
+                    >
+                      <span>View Template</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </Card>
 
-              <Card className="p-6 md:p-8 space-y-5 flex flex-col justify-between">
-                <div className="space-y-4">
-                  <Badge variant="warning" size="sm">
-                    Bundle Edition
-                  </Badge>
-                  <h4 className="font-display text-2xl font-bold text-slate-900">
-                    Small Business Agent Bundle
-                  </h4>
-                  <p className="font-sans text-sm text-slate-600 leading-relaxed">
-                    Complete suite combining lead qualification, WhatsApp triage, automated CRM follow-up, and prompt guardrail libraries.
-                  </p>
-                  <ul className="space-y-2 text-xs font-mono text-slate-500 pt-2 border-t border-slate-100">
-                    <li className="flex items-center gap-1.5">✓ All 5 agent blueprints included</li>
-                    <li className="flex items-center gap-1.5">✓ Setup guide &amp; video walkthrough</li>
-                  </ul>
-                </div>
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="font-mono text-sm font-bold text-indigo-600">₹9,999</span>
-                  <Link
-                    href="/store/small-business-agent-bundle"
-                    className="font-sans text-xs font-semibold text-slate-900 hover:text-indigo-600 transition-colors inline-flex items-center gap-1"
-                  >
-                    <span>View Bundle</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </Card>
-            </div>
+                <Card className="p-6 md:p-8 space-y-5 flex flex-col justify-between bg-white border-[#E2E8F0]">
+                  <div className="space-y-4">
+                    <Badge variant="cyan" size="sm">
+                      Complete Kit
+                    </Badge>
+                    <h4 className="font-display text-2xl font-bold text-[#252A35]">
+                      WhatsApp Support Agent Kit
+                    </h4>
+                    <p className="font-sans text-sm text-[#788292] leading-relaxed">
+                      Full-stack conversational agent with knowledge lookup, human escalation triggers, and Twilio/Cloud API integration.
+                    </p>
+                    <ul className="space-y-2 text-xs font-mono text-slate-500 pt-2 border-t border-slate-100">
+                      <li className="flex items-center gap-1.5">✓ 24/7 Multi-language support</li>
+                      <li className="flex items-center gap-1.5">✓ Human takeover checkpoint</li>
+                    </ul>
+                  </div>
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <span className="font-mono text-sm font-bold text-indigo-600">₹3,999</span>
+                    <Link
+                      href="/store/whatsapp-support-agent-kit"
+                      className="font-sans text-xs font-semibold text-slate-900 hover:text-indigo-600 transition-colors inline-flex items-center gap-1"
+                    >
+                      <span>View Kit</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </Card>
 
-            <div className="text-center pt-2">
-              <Link
-                href="/products"
-                className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider font-semibold text-indigo-600 hover:text-indigo-800 transition-colors"
-              >
-                <span>Browse Entire Product &amp; Toolkit Directory</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+                <Card className="p-6 md:p-8 space-y-5 flex flex-col justify-between bg-white border-[#E2E8F0]">
+                  <div className="space-y-4">
+                    <Badge variant="warning" size="sm">
+                      Bundle Edition
+                    </Badge>
+                    <h4 className="font-display text-2xl font-bold text-[#252A35]">
+                      Small Business Agent Bundle
+                    </h4>
+                    <p className="font-sans text-sm text-[#788292] leading-relaxed">
+                      Complete suite combining lead qualification, WhatsApp triage, automated CRM follow-up, and prompt guardrail libraries.
+                    </p>
+                    <ul className="space-y-2 text-xs font-mono text-slate-500 pt-2 border-t border-slate-100">
+                      <li className="flex items-center gap-1.5">✓ All 5 agent blueprints included</li>
+                      <li className="flex items-center gap-1.5">✓ Setup guide &amp; video walkthrough</li>
+                    </ul>
+                  </div>
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <span className="font-mono text-sm font-bold text-indigo-600">₹9,999</span>
+                    <Link
+                      href="/store/small-business-agent-bundle"
+                      className="font-sans text-xs font-semibold text-slate-900 hover:text-indigo-600 transition-colors inline-flex items-center gap-1"
+                    >
+                      <span>View Bundle</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </Card>
+              </div>
             </div>
           </div>
         </SectionContainer>
       </section>
 
       {/* =======================================================
-          4. VERIFIED ENGINEERING CASE STUDIES (Proof of Work)
+          SECTION 6: PROJECT SHOWCASE (Warm Ivory)
           ======================================================= */}
-      <section id="work" className="w-full py-20 md:py-28 bg-slate-50 border-b border-slate-200">
+      <section id="work" className="w-full py-20 md:py-28 bg-[#F5F2ED] border-b border-[#E2E8F0]">
         <SectionContainer>
           <div className="space-y-14">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200">
-              <SectionHeader
-                badge="Verified Architecture"
-                badgeVariant="success"
-                title="Engineering Case Studies"
-                description="Real-world production builds demonstrating our core ethos: AI Extracts. Code Decides."
-              />
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#E2E8F0]">
+              <div>
+                <span className="font-mono text-xs uppercase tracking-wider font-semibold text-indigo-600 block mb-2">
+                  Verified Engineering
+                </span>
+                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#252A35]">
+                  Real systems. Measurable impact.
+                </h2>
+                <p className="font-sans text-sm sm:text-base text-[#788292] mt-2 max-w-2xl">
+                  Production systems demonstrating our core ethos: AI Extracts. Code Decides.
+                </p>
+              </div>
               <Link
                 href="/projects"
-                className="font-mono text-xs uppercase tracking-wider font-semibold text-slate-900 hover:text-indigo-600 transition-colors inline-flex items-center gap-1.5 self-start md:self-auto shrink-0"
+                className="font-mono text-xs uppercase tracking-wider font-semibold text-[#252A35] hover:text-indigo-600 transition-colors inline-flex items-center gap-1.5 self-start md:self-auto shrink-0"
               >
-                <span>Explore All Builds</span>
+                <span>Explore All Projects</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -541,10 +567,9 @@ export default async function HomePage() {
               {selectedProjects.map((project) => (
                 <Card
                   key={project.id}
-                  className="p-6 sm:p-8 space-y-5 flex flex-col justify-between group overflow-hidden"
+                  className="p-6 sm:p-8 space-y-5 flex flex-col justify-between group overflow-hidden bg-white border-[#E2E8F0] shadow-xs"
                 >
                   <div className="space-y-4">
-                    {/* Visual Preview */}
                     {project.coverImageUrl && (
                       <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden border border-slate-200 bg-slate-100">
                         <Image
@@ -564,21 +589,22 @@ export default async function HomePage() {
                       {project.projectYear && <span>{project.projectYear}</span>}
                     </div>
 
-                    <h3 className="font-display text-2xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
-                      <Link href={`/projects/${project.slug}`}>{project.title}</Link>
+                    <h3 className="font-display text-2xl font-bold text-[#252A35] group-hover:text-indigo-600 transition-colors">
+                      <Link href={project.slug === "inbox" ? "/products/inbox" : `/projects/${project.slug}`}>
+                        {project.title}
+                      </Link>
                     </h3>
 
-                    <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                    <p className="font-sans text-sm text-[#788292] leading-relaxed">
                       {project.summary}
                     </p>
 
-                    {/* Tech Stack Pills */}
                     {project.techStack && project.techStack.length > 0 && (
                       <div className="flex flex-wrap gap-1.5 pt-1">
                         {project.techStack.slice(0, 4).map((tech, idx) => (
                           <span
                             key={idx}
-                            className="font-mono text-xs px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 border border-slate-200"
+                            className="font-mono text-xs px-2.5 py-1 rounded-md bg-[#F5F2ED] text-[#252A35] border border-[#E2E8F0]"
                           >
                             {tech}
                           </span>
@@ -589,8 +615,8 @@ export default async function HomePage() {
 
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                     <Link
-                      href={`/projects/${project.slug}`}
-                      className="font-mono text-xs uppercase tracking-wider font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors inline-flex items-center gap-1.5"
+                      href={project.slug === "inbox" ? "/products/inbox" : `/projects/${project.slug}`}
+                      className="font-mono text-xs uppercase tracking-wider font-semibold text-[#252A35] group-hover:text-indigo-600 transition-colors inline-flex items-center gap-1.5"
                     >
                       <span>Read Technical Monograph</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -616,12 +642,12 @@ export default async function HomePage() {
       </section>
 
       {/* =======================================================
-          5. CLIENT SERVICES & PACKAGES SECTION
+          SECTION 7: SERVICES & TRANSPARENT PACKAGES (Clean White)
           ======================================================= */}
-      <section id="services" className="w-full py-20 md:py-28 bg-white border-b border-slate-200">
+      <section id="services" className="w-full py-20 md:py-28 bg-white border-b border-[#E2E8F0]">
         <SectionContainer>
           <div className="space-y-16">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#E2E8F0]">
               <SectionHeader
                 badge="Client Engineering"
                 badgeVariant="primary"
@@ -642,7 +668,7 @@ export default async function HomePage() {
               {HOMEPAGE_SERVICES_PREVIEW.map((item) => (
                 <Card
                   key={item.id}
-                  className="p-6 md:p-8 space-y-6 flex flex-col justify-between relative"
+                  className="p-6 md:p-8 space-y-6 flex flex-col justify-between relative bg-white border-[#E2E8F0] shadow-xs"
                 >
                   <div className="space-y-4">
                     <div className="font-mono text-xs uppercase tracking-wider font-semibold text-indigo-600">
@@ -651,11 +677,11 @@ export default async function HomePage() {
                       {item.id === "full-agentic-system" && "Enterprise Grade"}
                     </div>
 
-                    <h3 className="font-display text-2xl font-bold text-slate-900 leading-snug">
+                    <h3 className="font-display text-2xl font-bold text-[#252A35] leading-snug">
                       {item.title}
                     </h3>
 
-                    <div className="font-display text-3xl font-extrabold text-slate-900">
+                    <div className="font-display text-3xl font-extrabold text-[#252A35]">
                       {item.startingPrice}
                     </div>
 
@@ -668,7 +694,7 @@ export default async function HomePage() {
                       </div>
                     )}
 
-                    <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                    <p className="font-sans text-sm text-[#788292] leading-relaxed">
                       {item.customerOutcome}
                     </p>
 
@@ -726,76 +752,115 @@ export default async function HomePage() {
       </section>
 
       {/* =======================================================
-          6. CREDIBILITY & FOUNDER VERIFICATION
+          SECTION 8: FOUNDER & VERIFIED CREDENTIALS (Warm Ivory)
           ======================================================= */}
-      <section id="credibility" className="w-full py-20 md:py-24 bg-slate-50 border-b border-slate-200">
+      <section id="credibility" className="w-full py-20 md:py-28 bg-[#F5F2ED] border-b border-[#E2E8F0]">
         <SectionContainer>
           <div className="space-y-12">
             <SectionHeader
-              badge="Engineering Foundation"
+              badge="Engineering Leadership"
               badgeVariant="primary"
-              title="Verified Background & Standards"
-              description="Backed by academic rigour, verified software engineering internships, and open-source contributions."
+              title="Built on Proven Software Engineering"
+              description="Founded and led by Shivam Shukla, specializing in distributed backend systems, Spring Boot architectures, and production agentic workflows."
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="p-6 md:p-8 space-y-3">
-                <span className="font-mono text-xs uppercase tracking-wider font-semibold text-indigo-600 block">
-                  Education
-                </span>
-                <h4 className="font-display text-xl font-bold text-slate-900">
-                  B.Tech in Computer Science
-                </h4>
-                <p className="font-sans text-sm text-slate-600 leading-relaxed">
-                  SRMS College of Engineering, Technology &amp; Research (2022–2026). Specialised in distributed backend architectures, REST API security, and AI orchestration.
-                </p>
-              </Card>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              {/* Left Column: Authentic Founder Photograph */}
+              <div className="lg:col-span-5">
+                <div className="relative rounded-2xl overflow-hidden border border-[#E2E8F0] bg-white p-3 shadow-lg">
+                  <div className="relative aspect-[4/5] w-full rounded-xl overflow-hidden bg-slate-900">
+                    <Image
+                      src="/images/shivam-shukla.jpg"
+                      alt="Shivam Shukla — Founder & AI Systems Architect at JIOSI"
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 1024px) 100vw, 450px"
+                    />
+                  </div>
+                  <div className="p-4 space-y-1">
+                    <h3 className="font-display text-2xl font-bold text-[#252A35]">
+                      Shivam Shukla
+                    </h3>
+                    <p className="font-mono text-xs text-indigo-600 uppercase tracking-wider font-semibold">
+                      Founder &amp; Principal AI Systems Engineer
+                    </p>
+                    <p className="font-sans text-xs text-[#788292] pt-1">
+                      Bareilly, Uttar Pradesh, India
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-              <Card className="p-6 md:p-8 space-y-3">
-                <span className="font-mono text-xs uppercase tracking-wider font-semibold text-indigo-600 block">
-                  Industry Experience
-                </span>
-                <h4 className="font-display text-xl font-bold text-slate-900">
-                  Production Engineering
-                </h4>
-                <p className="font-sans text-sm text-slate-600 leading-relaxed">
-                  AI/ML Intern at Nexvia Technologies; Software Engineer Intern at Soft Pro (Java 17, Spring Boot 3, Hibernate ORM, MySQL performance tuning).
-                </p>
-              </Card>
-
-              <Card className="p-6 md:p-8 space-y-3 flex flex-col justify-between">
-                <div className="space-y-3">
-                  <span className="font-mono text-xs uppercase tracking-wider font-semibold text-indigo-600 block">
-                    Source Code
-                  </span>
-                  <h4 className="font-display text-xl font-bold text-slate-900">
-                    Open Source Repositories
+              {/* Right Column: Verified Credentials & Track Record */}
+              <div className="lg:col-span-7 space-y-6">
+                <Card className="p-6 md:p-8 space-y-3 bg-white border-[#E2E8F0] shadow-xs">
+                  <div className="flex items-center gap-2 text-indigo-600 font-mono text-xs uppercase tracking-wider font-semibold">
+                    <GraduationCap className="w-4 h-4" />
+                    <span>Education</span>
+                  </div>
+                  <h4 className="font-display text-xl font-bold text-[#252A35]">
+                    B.Tech in Computer Science &amp; Engineering
                   </h4>
-                  <p className="font-sans text-sm text-slate-600 leading-relaxed">
-                    Explore clean architecture, test automation suites, and system monographs on GitHub (@shivam-shukla888).
+                  <p className="font-sans text-sm text-[#788292] leading-relaxed">
+                    SRMS College of Engineering, Technology &amp; Research (2022–2026). Focused coursework in distributed backend architectures, relational data modeling, REST API security, and AI orchestration.
                   </p>
-                </div>
-                <div className="pt-2">
-                  <a
-                    href="https://github.com/shivam-shukla888"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-mono text-xs uppercase tracking-wider font-semibold text-indigo-600 hover:text-indigo-800 transition-colors inline-flex items-center gap-1"
-                  >
-                    <span>Visit GitHub Profile</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-              </Card>
+                </Card>
+
+                <Card className="p-6 md:p-8 space-y-3 bg-white border-[#E2E8F0] shadow-xs">
+                  <div className="flex items-center gap-2 text-indigo-600 font-mono text-xs uppercase tracking-wider font-semibold">
+                    <Briefcase className="w-4 h-4" />
+                    <span>Production Experience</span>
+                  </div>
+                  <h4 className="font-display text-xl font-bold text-[#252A35]">
+                    Enterprise Backend &amp; Machine Learning
+                  </h4>
+                  <p className="font-sans text-sm text-[#788292] leading-relaxed">
+                    AI/ML Intern at Nexvia Technologies; Software Engineer Intern at Soft Pro (Java 17, Spring Boot 3, Hibernate ORM, PostgreSQL connection pooling, and JWT rotation).
+                  </p>
+                </Card>
+
+                <Card className="p-6 md:p-8 space-y-3 bg-white border-[#E2E8F0] shadow-xs flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-indigo-600 font-mono text-xs uppercase tracking-wider font-semibold">
+                      <Code2 className="w-4 h-4" />
+                      <span>Open Source Architecture</span>
+                    </div>
+                    <h4 className="font-display text-xl font-bold text-[#252A35]">
+                      Public Monograph &amp; Code Repositories
+                    </h4>
+                    <p className="font-sans text-sm text-[#788292] leading-relaxed">
+                      Explore clean architecture implementations, automated testing suites, and system monographs directly on GitHub (@shivam-shukla888).
+                    </p>
+                  </div>
+                  <div className="pt-2 flex items-center gap-4">
+                    <a
+                      href="https://github.com/shivam-shukla888"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-xs uppercase tracking-wider font-semibold text-indigo-600 hover:text-indigo-800 transition-colors inline-flex items-center gap-1"
+                    >
+                      <span>Visit GitHub</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                    <Link
+                      href="/about"
+                      className="font-mono text-xs uppercase tracking-wider font-semibold text-[#252A35] hover:text-indigo-600 transition-colors inline-flex items-center gap-1"
+                    >
+                      <span>Full Bio &amp; Story</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </Card>
+              </div>
             </div>
           </div>
         </SectionContainer>
       </section>
 
       {/* =======================================================
-          7. HIGH-CONVERSION CTA BANNER
+          SECTION 9: FINAL CINEMATIC CTA
           ======================================================= */}
-      <section className="w-full bg-[#0B1020] text-white py-20 md:py-28 relative overflow-hidden">
+      <section className="w-full bg-[#0B1020] text-white py-20 md:py-28 relative overflow-hidden border-t border-white/10">
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/20 via-violet-900/20 to-cyan-900/10 pointer-events-none" />
 
         <SectionContainer className="relative z-10">
@@ -804,8 +869,8 @@ export default async function HomePage() {
               Start Building
             </Badge>
 
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Ready to deploy intelligent software for your organization?
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+              Let&rsquo;s build your next system.
             </h2>
 
             <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed">
@@ -814,26 +879,26 @@ export default async function HomePage() {
 
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
-                href="/contact"
+                href="/contact?subject=Request%20a%20Quote"
                 className={buttonStyles({
                   variant: "primary",
                   size: "lg",
                   className: "font-semibold shadow-xl shadow-indigo-600/30 text-center",
                 })}
               >
-                <span>Request a Project Proposal</span>
+                <span>Get a Quote</span>
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
 
               <Link
-                href="/products/inbox"
+                href="/contact"
                 className={buttonStyles({
                   variant: "glass",
                   size: "lg",
                   className: "text-slate-200 hover:text-white border-white/20 text-center",
                 })}
               >
-                <span>Explore JIOSI Inbox</span>
+                <span>Contact Us</span>
                 <ChevronRight className="w-4 h-4 text-slate-400 ml-1" />
               </Link>
             </div>

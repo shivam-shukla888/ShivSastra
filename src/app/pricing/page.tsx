@@ -70,7 +70,7 @@ const DIGITAL_PRODUCTS = [
   {
     title: "n8n Production Reliability Kit",
     price: "₹1,499",
-    slug: "n8n-free-tier-survival-kit",
+    slug: "n8n-production-reliability-kit",
     tag: "Architecture",
     desc: "Essential reliability nodes: webhook deduplication, token throttles, retry queues, and local state adapters.",
   },

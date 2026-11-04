@@ -1,35 +1,34 @@
-# ShivSastra — Shivam Shukla
+# JIOSI — Intelligent Software Systems & AI Innovation
 
-> ShivSastra is the personal engineering portfolio, studio, and digital product platform of Shivam Shukla, focused on backend systems, agentic AI workflows, and software security.
+> JIOSI is the technology company and engineering studio founded by Shivam Shukla, building productivity software platforms (including JIOSI Inbox), production Agentic AI systems, and secure backend architectures.
 
-Shivam Shukla is an AI engineer and backend developer specializing in deterministic systems, agentic workflows, and defensive application architecture. The platform documents production-grade software engineering projects, technical case studies, practical consulting services, and curated developer resources.
+Shivam Shukla is an AI engineer and backend architect specializing in deterministic systems, agentic workflows, and defensive software engineering. JIOSI delivers intelligent productivity platforms, technical case studies, bespoke agent engineering packages, and curated developer toolkits.
 
 ## Core Pages
 
-- [Home](https://www.jiosi.online/): Overview of engineering focus areas across Backend Systems, Agentic AI, and AI Security.
-- [About](https://www.jiosi.online/about): Background, technical philosophy, verified experience at Nexvia Technologies and Soft Pro, education, and credentials of Shivam Shukla.
-- [Projects](https://www.jiosi.online/projects): Portfolio of client case studies, engineering builds, and open-source systems.
-- [Services](https://www.jiosi.online/services): Professional web development and AI integration services, including website bug fixing, Next.js landing pages, API integrations, AI chatbots & workflow automation, and security reviews.
-- [Contact](https://www.jiosi.online/contact): Direct contact channel for project inquiries, architecture reviews, and consulting engagements.
+- [Home](https://www.jiosi.online/): Overview of JIOSI software systems, JIOSI Inbox flagship SaaS, Agentic AI packages, and engineering proof.
+- [About](https://www.jiosi.online/about): Company mission, engineering principles, data sovereignty ethos, verified background at Nexvia Technologies and Soft Pro, and credentials of Shivam Shukla.
+- [Products](https://www.jiosi.online/products): Complete directory of software products, SaaS platforms, and production agent blueprints.
+- [JIOSI Inbox](https://www.jiosi.online/products/inbox): Flagship keyboard-first email productivity client with AI thread summaries, instant search, and PostgreSQL workspace isolation.
+- [Projects](https://www.jiosi.online/projects): Portfolio of production case studies, engineering builds, and open-source systems.
+- [Services](https://www.jiosi.online/services): Production Agentic AI engineering packages (Starter Agent Setup, Business Agent Package, Full Agentic System) with transparent pricing and data sovereignty guarantees.
+- [Pricing](https://www.jiosi.online/pricing): Transparent pricing for client engineering services, digital toolkits, and software licenses.
+- [Contact](https://www.jiosi.online/contact): Direct channel for project proposals, security audits, and agent development inquiries.
 - [Resume](https://www.jiosi.online/resume): Verified curriculum vitae detailing software engineering background, technical stack, and education.
 
-## Featured Projects
+## Featured Engineering Projects
 
-- [Yojna Setu](https://www.jiosi.online/projects/yojna-setu): AI + deterministic rules engine evaluated across 82 welfare schemes, decoupling natural-language intake from deterministic Java business logic.
-- [ShivSastra Digital HQ](https://www.jiosi.online/projects/shivsastra): Full-stack platform built with Next.js App Router, Supabase PostgreSQL with Row-Level Security, Razorpay integration, and a sandboxed AI assistant.
-- [RealGuard](https://www.jiosi.online/projects/realguard): AI automation and conversational real estate workflow connecting WhatsApp intake to RERA verification, deterministic EMI calculations, and CRM persistence.
+- [JIOSI Inbox](https://www.jiosi.online/products/inbox): Opinionated, keyboard-first email client built with Spring Boot 3.3.5 and React 18, featuring AI summaries, instant triage, and multi-tenant workspace isolation.
+- [Shivsastra](https://www.jiosi.online/projects/shivsastra): Full-stack digital platform built with Next.js App Router, Supabase PostgreSQL with Row-Level Security, Razorpay webhook HMAC verification, and a sandboxed AI assistant.
+- [Yojna Setu](https://www.jiosi.online/projects/yojna-setu): Multilingual WhatsApp AI agent + deterministic rules engine evaluating eligibility over 82 welfare schemes.
 - [QuickEats](https://www.jiosi.online/projects/quickeats): Real-time food ordering and delivery system engineered with Spring Boot 3, server-side price recalculation, IDOR defenses, and STOMP WebSockets.
 
-## Store & Developer Releases
+## Store & Digital Releases
 
-- [Store](https://www.jiosi.online/store): Curated developer releases and upcoming architecture boilerplates. Features active upcoming templates in development and architectural showcases; no paid products are currently open for commercial purchase.
-- [AI Agents Showcase](https://www.jiosi.online/store/ai-agents): Production-tested agent architectures and engineering showcases. Currently features the Yojna Setu architecture case study (not for commercial sale).
-- [Design & Templates](https://www.jiosi.online/store/design): Upcoming editorial templates including the Swiss-inspired Editorial Portfolio Kit (in active development).
-- [Digital Products](https://www.jiosi.online/store/digital-products): Upcoming developer boilerplates including the Spring Boot 3 API Boilerplate (in active development).
-
-## Research & Personal Lab
-
-- [Personal Lab](https://www.jiosi.online/lab): Sandbox explorations, architectural experiments, and research notes. Currently in active development without public notes published.
+- [Store](https://www.jiosi.online/store): Production-tested n8n agent templates, WhatsApp support kits, system prompt libraries, and reliability blueprints.
+- [AI Agent Templates](https://www.jiosi.online/store/agent-templates): Ready-to-deploy n8n agent templates including Lead Qualifier and Sales Follow-up packs.
+- [Complete Agent Kits](https://www.jiosi.online/store/agent-kits): Full-stack kits such as WhatsApp Support Agent Kit and Small Business Agent Bundle.
+- [Prompt Packs](https://www.jiosi.online/store/prompt-packs): Battle-tested system instruction libraries and JSON schema steering templates.
 
 ## Policies & Governance
 
