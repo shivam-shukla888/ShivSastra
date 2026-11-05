@@ -47,12 +47,17 @@ export const metadata: Metadata = {
 };
 
 export default async function ProjectsPage() {
-  const projects = await getPublishedProjects();
+  const allProjects = await getPublishedProjects();
+  // Strictly showcase exactly three client projects: JIOSI Inbox, Yojna Setu, and QuickEats
+  const clientProjectSlugs = ["inbox", "yojna-setu", "quickeats"];
+  const projects = allProjects
+    .filter((p) => clientProjectSlugs.includes(p.slug))
+    .sort((a, b) => clientProjectSlugs.indexOf(a.slug) - clientProjectSlugs.indexOf(b.slug));
 
   return (
-    <div className="relative w-full overflow-hidden bg-white text-slate-900">
+    <div className="relative w-full overflow-hidden bg-[var(--color-canvas-primary)] text-[var(--color-ink-primary)]">
       {/* 1. DARK HERO SECTION */}
-      <section className="relative w-full bg-[#0B1020] text-white pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden">
+      <section className="relative w-full bg-[#1A1D20] text-[#F5F2ED] pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden border-b border-[#C09F80]/30">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-96 bg-radial from-indigo-500/20 via-violet-600/10 to-transparent blur-3xl pointer-events-none" />
 
         <SectionContainer className="relative z-10">

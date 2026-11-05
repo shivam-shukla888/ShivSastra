@@ -68,7 +68,11 @@ export default async function HomePage() {
     getPublishedProjects(),
   ]);
 
-  const selectedProjects = allProjects.slice(0, 4);
+  // Client project showcase: strictly showcase exactly 3 projects (JIOSI Inbox, Yojna Setu, QuickEats)
+  const clientProjectSlugs = ["inbox", "yojna-setu", "quickeats"];
+  const selectedProjects = allProjects
+    .filter((p) => clientProjectSlugs.includes(p.slug))
+    .sort((a, b) => clientProjectSlugs.indexOf(a.slug) - clientProjectSlugs.indexOf(b.slug));
 
   const jsonLd = {
     "@context": "https://schema.org",

@@ -205,24 +205,24 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-[#0B1020]/95 backdrop-blur-md border-b border-white/10 transition-colors">
+      <header className="sticky top-0 z-50 w-full bg-[#1A1D20]/95 backdrop-blur-md border-b border-[#C09F80]/30 transition-colors">
         <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 h-16 sm:h-18 flex items-center justify-between">
           {/* Brand Anchor */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 font-display text-xl font-bold tracking-tight text-white hover:text-indigo-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-lg py-1 shrink-0"
+            className="flex items-center gap-3 font-display text-xl font-normal tracking-tight text-[#F5F2ED] hover:text-[#C09F80] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F] py-1 shrink-0"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 flex items-center justify-center text-white shadow-sm shadow-indigo-500/30 shrink-0">
-              <Sparkles className="w-4 h-4 text-white" />
+            <div className="w-8 h-8 rounded-none bg-[#76323F] border border-[#C09F80] flex items-center justify-center text-[#F5F2ED] shrink-0 font-display text-sm font-bold">
+              ⚡
             </div>
-            <span className="tracking-[0.04em] font-extrabold text-white">JIOSI</span>
-            <span className="hidden sm:inline-block font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-white/10 text-cyan-300 border border-white/15">
-              Systems
+            <span className="tracking-[0.06em] font-normal text-[#F5F2ED] uppercase text-lg">SHIVSASTRA</span>
+            <span className="hidden sm:inline-block font-mono text-[9px] tracking-wider uppercase px-2 py-0.5 rounded-none bg-[#FAF8F5]/10 text-[#C09F80] border border-[#C09F80]/40">
+              SPEC // v2.4.0
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 text-sm font-sans" aria-label="Desktop primary navigation">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-sans" aria-label="Desktop primary navigation">
             {DESKTOP_NAV_ITEMS.map((item) => {
               const isActive =
                 item.href === "/"
@@ -233,15 +233,15 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "px-3 py-1.5 rounded-lg font-medium text-xs xl:text-sm transition-all duration-150 flex items-center gap-1.5",
+                    "px-3 py-1.5 rounded-none font-sans text-xs xl:text-sm transition-all duration-150 flex items-center gap-1.5",
                     isActive
-                      ? "text-white bg-white/10 shadow-sm"
-                      : "text-slate-300 hover:text-white hover:bg-white/5"
+                      ? "text-[#F5F2ED] bg-[#FAF8F5]/10 border-b border-[#76323F]"
+                      : "text-[#D7CEC7] hover:text-[#F5F2ED] hover:bg-[#FAF8F5]/5"
                   )}
                 >
                   <span>{item.label}</span>
                   {item.badge && (
-                    <span className="font-mono text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.2 rounded-full bg-indigo-500/20 text-cyan-300 border border-indigo-400/30">
+                    <span className="font-mono text-[9px] uppercase font-medium tracking-wider px-1.5 py-0.2 rounded-none bg-[#76323F]/30 text-[#F5F2ED] border border-[#76323F]/50">
                       {item.badge}
                     </span>
                   )}
@@ -256,21 +256,20 @@ export function Navbar() {
               href="https://inbox.jiosi.online"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-150 shadow-sm"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono rounded-none text-[#F5F2ED] bg-transparent hover:bg-[#FAF8F5]/5 border border-[#C09F80]/60 hover:border-[#C09F80] transition-all duration-150"
             >
               <span>Launch Inbox</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-cyan-400" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#C09F80]" />
             </a>
 
             <Link
               href="/contact"
               className={cn(
-                "inline-flex items-center justify-center px-4 py-1.5 text-xs font-semibold rounded-lg text-white",
-                "bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400",
-                "shadow-sm shadow-indigo-500/20 border border-indigo-400/30 transition-all duration-150"
+                "inline-flex items-center justify-center px-4 py-1.5 text-xs font-mono uppercase tracking-wider font-semibold rounded-none text-[#F5F2ED]",
+                "bg-[#76323F] hover:bg-[#5A1C29] border border-[#76323F] hover:border-[#C09F80] transition-all duration-150"
               )}
             >
-              Get in Touch
+              Book Consult
             </Link>
           </div>
 

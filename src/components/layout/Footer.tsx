@@ -1,33 +1,35 @@
 import React from "react";
 import Link from "next/link";
 import { SectionContainer } from "./SectionContainer";
-import { Sparkles, ArrowUpRight, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, ShieldCheck } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="w-full bg-[#0B1020] text-slate-300 border-t border-white/10 pt-16 md:pt-20 pb-12">
+    <footer className="w-full bg-[#1A1D20] text-[#D7CEC7] border-t border-[#C09F80]/30 pt-16 md:pt-20 pb-12">
       <SectionContainer as="div">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-14 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-14 border-b border-[#C09F80]/20">
           {/* Brand & Mission Statement */}
           <div className="lg:col-span-4 space-y-4">
             <Link
               href="/"
-              className="inline-flex items-center gap-2.5 font-display text-2xl font-bold tracking-tight text-white group"
+              className="inline-flex items-center gap-2.5 font-display text-2xl font-normal tracking-tight text-[#F5F2ED] group"
             >
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 flex items-center justify-center text-white shadow-sm shadow-indigo-500/30">
-                <Sparkles className="w-3.5 h-3.5 text-white" />
+              <div className="w-7 h-7 rounded-none bg-[#76323F] border border-[#C09F80] flex items-center justify-center text-[#F5F2ED] font-display text-xs font-bold">
+                ⚡
               </div>
-              <span className="tracking-[0.04em] font-extrabold text-white">JIOSI</span>
+              <span className="tracking-[0.06em] font-normal text-[#F5F2ED]">SHIVSASTRA</span>
             </Link>
 
-            <p className="text-sm text-slate-400 leading-relaxed max-w-sm font-sans">
+            <p className="text-sm text-[#D7CEC7] leading-relaxed max-w-sm font-sans">
               Intelligent software systems, email productivity platforms, and production-grade Agentic AI for forward-thinking businesses.
             </p>
 
-            <div className="flex items-center gap-2 pt-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                All Systems Operational
+            <div className="flex flex-col gap-1 pt-2 font-mono text-[11px] text-[#C09F80]">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-none bg-[#FAF8F5]/5 border border-[#C09F80]/40 w-fit">
+                [ SPEC // v2.4.0 • PRODUCTION ATELIER ]
+              </span>
+              <span className="text-[#565656] text-[10px] pt-1">
+                Bengaluru (12.9716° N, 77.5946° E) · San Francisco
               </span>
             </div>
           </div>
@@ -189,24 +191,24 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar: Legal & Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
-          <p>© 2026 JIOSI. All rights reserved.</p>
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#D7CEC7]/80">
+          <p>© 2026 SHIVSASTRA / JIOSI. All rights reserved.</p>
 
           <div className="flex flex-wrap items-center gap-6">
-            <Link href="/privacy" className="hover:text-slate-200 transition-colors">
+            <Link href="/privacy" className="hover:text-[#F5F2ED] transition-colors underline underline-offset-4 decoration-[#C09F80]/40">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-slate-200 transition-colors">
+            <Link href="/terms" className="hover:text-[#F5F2ED] transition-colors underline underline-offset-4 decoration-[#C09F80]/40">
               Terms of Service
             </Link>
-            <Link href="/refunds" className="hover:text-slate-200 transition-colors">
+            <Link href="/refunds" className="hover:text-[#F5F2ED] transition-colors underline underline-offset-4 decoration-[#C09F80]/40">
               Refunds Policy
             </Link>
             <a
               href="https://inbox.jiosi.online"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cyan-400 hover:text-cyan-300 transition-colors inline-flex items-center gap-1"
+              className="text-[#C09F80] hover:text-[#F5F2ED] transition-colors inline-flex items-center gap-1"
             >
               <span>Launch JIOSI Inbox</span>
               <ArrowUpRight className="w-3 h-3" />

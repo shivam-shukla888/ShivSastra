@@ -146,13 +146,13 @@ export function formatPrice(
 
   switch (curr) {
     case "INR":
-      return `â‚¹${amount}`;
+      return `₹${amount}`;
     case "USD":
       return `$${amount}`;
     case "EUR":
-      return `â‚¬${amount}`;
+      return `€${amount}`;
     case "GBP":
-      return `Â£${amount}`;
+      return `£${amount}`;
     default:
       return `${curr} ${amount}`;
   }

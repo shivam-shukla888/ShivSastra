@@ -19,25 +19,25 @@ export function buttonStyles({
   className,
 }: ButtonStylesProps = {}) {
   const baseStyles =
-    "inline-flex items-center justify-center font-sans font-medium transition-all duration-200 ease-out cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 active:scale-[0.98] motion-reduce:active:scale-100 rounded-lg gap-2";
+    "inline-flex items-center justify-center font-sans font-medium transition-all duration-150 ease-out cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed select-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F] focus-visible:ring-offset-1 active:scale-[0.99] motion-reduce:active:scale-100 rounded-none gap-2";
 
   const variantStyles = {
     primary:
-      "bg-gradient-to-r from-indigo-600 via-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white shadow-sm shadow-indigo-500/25 border border-indigo-500/30",
+      "bg-[#76323F] hover:bg-[#1A1D20] text-[#F5F2ED] border border-[#76323F] hover:border-[#C09F80] font-mono text-xs uppercase tracking-wider font-semibold shadow-none",
     secondary:
-      "bg-white text-slate-800 border border-slate-200 hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900 shadow-sm",
+      "bg-[#FAF8F5] text-[#1A1D20] border border-[#C09F80] hover:bg-[#F5F2ED] hover:border-[#76323F] shadow-none",
     accent:
-      "bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white shadow-sm shadow-violet-500/25 border border-violet-500/30",
+      "bg-[#76323F] hover:bg-[#5A1C29] text-[#F5F2ED] border border-[#76323F] font-mono text-xs uppercase tracking-wider shadow-none",
     dark:
-      "bg-[#0B1020] text-white hover:bg-[#111A2E] border border-white/10 shadow-sm",
+      "bg-[#1A1D20] text-[#F5F2ED] hover:bg-[#252A35] border border-[#565656]/60 shadow-none",
     "dark-inverse":
-      "bg-white text-slate-950 hover:bg-slate-100 border border-transparent shadow-sm",
+      "bg-[#F5F2ED] text-[#1A1D20] hover:bg-[#FAF8F5] border border-[#C09F80] shadow-none",
     glass:
-      "bg-white/10 backdrop-blur-md text-white hover:bg-white/15 border border-white/15 shadow-sm",
+      "bg-[#1A1D20]/90 backdrop-blur-md text-[#F5F2ED] hover:bg-[#1A1D20] border border-[#C09F80]/40 shadow-none",
     ghost:
-      "bg-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 border border-transparent",
+      "bg-transparent text-[#565656] hover:text-[#1A1D20] hover:bg-[#FAF8F5] border border-transparent",
     outline:
-      "bg-transparent text-indigo-600 border border-indigo-200 hover:bg-indigo-50/60 hover:border-indigo-300",
+      "bg-transparent text-[#1A1D20] border border-[#C09F80] hover:bg-[#FAF8F5] hover:border-[#76323F]",
   };
 
   const sizeStyles = {

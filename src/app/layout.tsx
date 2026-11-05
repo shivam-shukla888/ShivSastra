@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Manrope, Inter, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/Navbar";
@@ -21,22 +21,15 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   display: "swap",
@@ -113,13 +106,13 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${playfair.variable} ${manrope.variable} ${inter.variable} ${geistMono.variable} antialiased`}
+      className={`${playfair.variable} ${plusJakarta.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-[var(--color-canvas-primary)] text-[var(--color-ink-primary)] font-body">
         {/* Accessible Keyboard Skip Link */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2.5 focus:bg-[#0B1020] focus:text-white focus:font-mono focus:text-xs focus:uppercase focus:tracking-wider focus:border focus:border-indigo-500 focus:outline-none focus:shadow-lg focus:rounded-md"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#1A1D20] focus:text-[#F5F2ED] focus:font-mono focus:text-xs focus:uppercase focus:tracking-wider focus:border focus:border-[#C09F80] focus:outline-none focus:shadow-md"
         >
           Skip to content
         </a>
