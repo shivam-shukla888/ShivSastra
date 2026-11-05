@@ -8,19 +8,22 @@
 
 ## 1. Consolidated Prototype Register (Stitch MCP Project `14131554366220672556`)
 
-| # | Page / Scope | Viewport | Stitch Screen ID | Status | Key Features & Invariants |
-|:---:|:---|:---:|:---:|:---:|:---|
-| **00** | **Brandmark** | Vector / SVG | `fea1fbd42cb64e148b7425a37dffddaa` | [x] Ready | Minimal geometric Trishul 'S' monogram in Oxblood (`#76323F`) & Tan (`#C09F80`). |
-| **01** | **Homepage (`/`)** | Desktop | `2017524d6ca74abd991d89f082573f68` | [x] Ready | JIOSI Inbox hero flagship, 3 curated projects, services overview, store preview, inverted colophon. |
-| **02** | **Homepage (`/`)** | Mobile | `13593cf682cf457f86a06d040a457ce7` | [x] Ready | 4-column responsive reflow, mobile sticky action bar, touch targets ≥ 48px, zero horizontal overflow. |
-| **03** | **Homepage (`/`)** | Tablet | `a4f100dde7c04d1ea4eac02d0fef05fe` | [x] Ready | 8-column balanced grid, architectural telemetry annotations, touch-friendly project cards. |
-| **04** | **Projects Hub (`/projects`)** | Desktop | `dc522f2f83ce4128a1dcb266150dd878` | [x] Ready | 3 client projects (JIOSI Inbox, Yojna Setu, QuickEats), filter tags, zero fake metrics or RealGuard. |
-| **05** | **Flagship Case Study (`/projects/jiosi-inbox`)** | Desktop | `2c8e30b72300496586f97eab92903a58` | [x] Ready | Deep architectural breakdown, interactive triage mock, IMAP→Pydantic→vLLM ASCII flow, telemetry SLA. |
-| **06** | **Services & Pricing (`/services`, `/pricing`)** | Desktop | `3c6112b4101b48d88a5d2de3005dd32b` | [x] Ready | Transparent INR packages (Starter ₹22k–35k, Business ₹55k–90k, Bespoke ₹1.2L+), scope cards, SLA. |
-| **07** | **Digital Store (`/store`, `/store/[slug]`)** | Desktop | `a0aa14ae0cdc4c4d9b92f07d04c4818e` | [x] Ready | Production agent blueprints, Razorpay modal integration points, license terms, instant checkout. |
-| **08** | **Engineering Lab (`/lab`, `/lab/[slug]`)** | Desktop | `d11a9498bd004db1b4f769abec616d61` | [x] Ready | Interactive research monographs, benchmark telemetry, sandbox demos, reproducible specs. |
-| **09** | **About & Philosophy (`/about`, `/resume`)** | Desktop | `4bf98ba2813741658ce73e0af360f0ef` | [x] Ready | Atelier thesis, founder engineering trajectory (Shivam Shukla), tech stack matrix, verifiable credentials. |
-| **10** | **Contact & Advisory (`/contact`)** | Desktop | `508b9740500544aa9dad486c1ab0dd86` | [x] Ready | Architectural intake terminal, scope selector, timeline/budget chips, 12-hr SLA, Turnstile token bar. |
+| # | Page / Scope | Viewport | Stitch Screen ID | Direct Preview Link | Key Features & Invariants |
+|:---:|:---|:---:|:---:|:---|:---|
+| **00** | **Brandmark** | Vector / SVG | `fea1fbd42cb64e148b7425a37dffddaa` | [View Brandmark](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/128a88b6f6c74b768e8daca3a7727178:download) | Minimal geometric Trishul 'S' monogram in Oxblood (`#76323F`) & Tan (`#C09F80`). |
+| **01** | **Homepage (`/`)** | Desktop | `2017524d6ca74abd991d89f082573f68` | [View Desktop Home](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/a3c2f938a1f5423ba057d577e84124a2:download) | JIOSI Inbox hero flagship, 3 curated projects, services overview, store preview, inverted colophon. |
+| **02** | **Homepage (`/`)** | Mobile | `13593cf682cf457f86a06d040a457ce7` | [View Mobile Home](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/028021ace6ca4fe085b4f8bedc020b5a:download) | 4-column reflow, clean top navigation bar, 48px touch targets, zero horizontal scroll. |
+| **03** | **Homepage (`/`)** | Tablet | `a4f100dde7c04d1ea4eac02d0fef05fe` | [View Tablet Home](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/d113ecbba0b0444d83fe38eccd59779f:download) | 8-column architectural layout, telemetry headers, touch-friendly project cards. |
+| **04** | **Projects Hub (`/projects`)** | Desktop | `dc522f2f83ce4128a1dcb266150dd878` | [View Projects Hub](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/8e57085758944363b98fbf9a81f73075:download) | Exactly 3 client projects (JIOSI Inbox, Yojna Setu, QuickEats), category filtering, zero fake metrics. |
+| **05** | **Flagship Case Study (`/projects/jiosi-inbox`)** | Desktop | `2c8e30b72300496586f97eab92903a58` | [View Case Study](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/1b93cbc660d14cc6b28e12a06fddf11e:download) | Deep technical brief, IMAP→Pydantic→vLLM ASCII flow, authentic software screenshots, zero synthetic claims. |
+| **06** | **Services & Pricing (`/services`, `/pricing`)** | Desktop | `3c6112b4101b48d88a5d2de3005dd32b` | [View Services Hub](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/ead0c41026e14bfe96169ed9e2b71f23:download) | Transparent INR packages (Starter ₹22k–35k, Business ₹55k–90k, Full ₹1.1L–1.8L), deliverables, scope notes. |
+| **07** | **Digital Store Catalog (`/store`)** | Desktop | `a0aa14ae0cdc4c4d9b92f07d04c4818e` | [View Store Catalog](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/17086bd204a140ef8e5cad8e0c9e8a77:download) | Production agent toolkits, category filters, license terms, code previews. |
+| **08** | **Store Product Detail (`/store/[slug]`)** | Desktop | `375f66c37d2b4e9696d477bd993564b3` | [View Product Detail](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/fda486f615524b34bb488def1be42324:download) | n8n Lead Qualifier dossier, JSON node inspector, fixed pricing (₹4,999), instant Razorpay download wiring. |
+| **09** | **Engineering Lab Sandbox (`/lab`)** | Desktop | `d11a9498bd004db1b4f769abec616d61` | [View Lab Sandbox](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/6dcc55fa3c96476a88687607a75d1743:download) | Interactive research monographs, benchmark telemetry, sandbox demos, reproducible specs. |
+| **10** | **Lab Monograph Detail (`/lab/[slug]`)** | Desktop | `66587184d47140ef9f17c82dd757a3e8` | [View Monograph Detail](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/f8a1ff0cebff49299fc560b7aaf1f065:download) | Dual-Phase evaluation paper, Python/Rust code block, trade-off matrix, verifiable staging harness. |
+| **11** | **About Studio & Philosophy (`/about`, `/resume`)** | Desktop | `4bf98ba2813741658ce73e0af360f0ef` | [View About Studio](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/1ec94e102f6646f889f541d8e59d766b:download) | Atelier thesis, founder trajectory (Shivam Shukla), verified stack matrix, engineering credentials. |
+| **12** | **Consultation & Advisory (`/contact`)** | Desktop | `508b9740500544aa9dad486c1ab0dd86` | [View Contact Page](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/5b22a38749c5403592fa9dc777b97d7e:download) | Architectural intake console, scope chips, budget tiers, Turnstile verification indicator. |
+| **13** | **Legal Documents (`/privacy`, `/terms`, `/refunds`)** | Desktop | `290442e350694669b60a2fc15c35f613` | [View Legal Template](https://stitch.googleapis.com/v1/projects/14131554366220672556/files/18033106f59d4adb95076a96fa1e6de1:download) | Sticky chapter navigation, data boundaries, client account isolation, Razorpay terms, zero synthetic claims. |
 
 ---
 
@@ -31,7 +34,7 @@
 - **Inks**: Blackboard Ink (`#565656`) for reading comfort, Deep Charcoal (`#1A1D20`) for titles.
 - **Accents**: Oxblood (`#76323F`) for primary CTA buttons, Tan (`#C09F80`) and Grain (`#D7CEC7`) for 1px hairline rules.
 - **Geometry**: Sharp unrounded corners (`0px` / `rounded-none`).
-- **Data Invariant**: Zero fabricated metrics, zero stock photographs, zero unreviewed client projects. Flagship project is JIOSI Inbox.
+- **Data Invariant**: Zero fabricated metrics, zero stock photographs, zero unreviewed client projects. Flagship project is JIOSI Inbox. Exactly 3 client projects (JIOSI Inbox, Yojna Setu, QuickEats).
 
 ---
 
@@ -42,38 +45,44 @@
             │
             ▼
 ┌────────────────────────────────────────────────────────┐
-│ BATCH 1: Global Theme, Design Tokens, Header & Footer  │
-│ - globals.css tokens, Playfair font, Trishul 'S' logo  │
-│ - Shared Navbar.tsx & Footer.tsx with mobile drawer    │
+│ BATCH 1: Global Tokens, Font System, Header & Footer   │
+│ • globals.css variables, Playfair Display integration  │
+│ • Trishul 'S' SVG monogram, clean responsive Navbar    │
 └────────────────────────────────────────────────────────┘
             │
             ▼
 ┌────────────────────────────────────────────────────────┐
-│ BATCH 2: Homepage (`/`) Overhaul                       │
-│ - Hero with JIOSI Inbox preview, 3-project grid, SLA   │
+│ BATCH 2: Homepage (`/`) Transformation                 │
+│ • JIOSI Inbox hero showcase & real UI screenshots      │
+│ • 3-project showcase, services cards, store preview    │
 └────────────────────────────────────────────────────────┘
             │
             ▼
 ┌────────────────────────────────────────────────────────┐
-│ BATCH 3: Projects Hub & Detail (`/projects/[slug]`)    │
-│ - 3 Client projects, authentic screenshots, schematics │
+│ BATCH 3: Projects Hub & Flagship Case Study            │
+│ • /projects catalog with 3 projects & filter system    │
+│ • /projects/jiosi-inbox with ASCII architecture flow   │
 └────────────────────────────────────────────────────────┘
             │
             ▼
 ┌────────────────────────────────────────────────────────┐
 │ BATCH 4: Services & Store Pages                        │
-│ - /services matrix, /store catalog & Razorpay modal    │
+│ • /services INR pricing matrix, scope cards, and SLA   │
+│ • /store catalog, product cards, Razorpay modal wiring │
+│ • /store/[slug] product detail & license spec          │
 └────────────────────────────────────────────────────────┘
             │
             ▼
 ┌────────────────────────────────────────────────────────┐
 │ BATCH 5: About, Lab, Contact & Legal Pages             │
-│ - /about, /resume, /lab, /contact, /privacy, /terms    │
+│ • /about, /resume, /lab, /lab/[slug] monograph         │
+│ • /contact, /privacy, /terms, /refunds                 │
 └────────────────────────────────────────────────────────┘
             │
             ▼
 ┌────────────────────────────────────────────────────────┐
-│ BATCH 6: Comprehensive QA, Playwright & Production Rel │
-│ - 320px–1920px responsive tests, build verification    │
+│ BATCH 6: Site-Wide QA, Playwright Suite & Deployment   │
+│ • 320px–1920px responsive tests, build verification    │
+│ • Git commit, production push, and live verification   │
 └────────────────────────────────────────────────────────┘
 ```
