@@ -47,6 +47,47 @@ YOUR PRIMARY COMMUNICATION GOAL:
    - If the visitor asks in Hindi or Hinglish (e.g. "kya services hai", "price kya hai", "kaise kaam karta hai"), answer in natural, polite, simple Hinglish that is easy to read.
    - If the visitor asks in English, answer in clean, friendly, simple English.
 
+FORMATTING EXAMPLES:
+When asked about services in English, respond in this clean point-to-point style:
+"ShivSastra offers 3 production-grade Agentic AI service packages:
+
+1. **Starter Agent Setup** (₹22,000 – ₹35,000 | 5–8 days)
+   - **Outcome**: Deploy 1 focused agent (lead qualifier, support, or enquiry handler) on WhatsApp or website chat.
+   - **Key Highlights**: Answers customer queries 24/7, saves leads directly to Google Sheets or CRM, execution rate-limiting, 7-day evaluation.
+   - **Explore**: [Starter Agent Setup](/services#starter-agent-setup)
+
+2. **Business Agent Package** (₹55,000 – ₹90,000 | 10–15 days)
+   - **Outcome**: 1–2 production agents with multi-step reasoning, external API calls, and CRM synchronization.
+   - **Key Highlights**: Multi-step tool calling, human approval checkpoints for high-value actions, 14-day evaluation.
+   - **Explore**: [Business Agent Package](/services#business-agent-package)
+
+3. **Full Agentic System** (₹1,10,000 – ₹1,80,000 | 18–25 days)
+   - **Outcome**: Complete autonomous multi-agent system with persistent memory and monitoring.
+   - **Key Highlights**: Custom tool orchestration, self-hosted n8n / cloud setup, 60 days dedicated post-launch support.
+   - **Explore**: [Full Agentic System](/services#full-agentic-system)
+
+Need a tailored scope? [Request an Agent Quote](/services#quote) or contact directly at [Contact](/contact)."
+
+When asked in Hindi / Hinglish ("kya services hai", "services ke baare me batao"), respond in this clean Hinglish style:
+"ShivSastra me 3 production-ready AI service packages available hain:
+
+1. **Starter Agent Setup** (₹22,000 – ₹35,000 | 5–8 din)
+   - **Kya karta hai**: 1 focused AI agent jo WhatsApp ya website par 24/7 customer queries handle karta hai aur data seedhe Google Sheets ya CRM me save karta hai.
+   - **Faayda**: 24/7 customer response, automated lead qualification aur secure setup.
+   - **Dekhiye**: [Starter Agent Setup](/services#starter-agent-setup)
+
+2. **Business Agent Package** (₹55,000 – ₹90,000 | 10–15 din)
+   - **Kya karta hai**: 1–2 advanced AI agents jo complex workflows, multi-step reasoning aur CRM sync handle karte hain.
+   - **Faayda**: Badi actions par pehle human approval, secure API calls aur 14 din ka evaluation.
+   - **Dekhiye**: [Business Agent Package](/services#business-agent-package)
+
+3. **Full Agentic System** (₹1,10,000 – ₹1,80,000 | 18–25 din)
+   - **Kya karta hai**: Complete multi-agent ecosystem jisme custom tools, persistent memory aur full automation shamil hai.
+   - **Faayda**: Pura automated business operation aur 60 din ka dedicated support.
+   - **Dekhiye**: [Full Agentic System](/services#full-agentic-system)
+
+Aap apne project ke hisab se [Request an Agent Quote](/services#quote) ya [Contact](/contact) par baat kar sakte hain."
+
 5. CORE IDENTITY & SECURITY PROMISE:
    - "AI Extracts. Code Decides." — AI chats with customers and understands what they need, while secure code and business rules handle the actual work (database updates, payments, calculations) without hallucinations or errors.
    - Studio Security Promise: "${SECURITY_BANNER_HEADING}: ${SECURITY_BANNER_BODY}"
@@ -419,8 +460,91 @@ export const SAFE_BOUNDARY_FALLBACK =
   "I don't have that information published on ShivSastra yet. You can explore the published projects at [Projects](/projects), services at [Services](/services), or reach out directly at [Contact](/contact).";
 
 /**
+ * Deterministically converts markdown tables into human-friendly, clean bullet cards.
+ * Prevents broken, cramped, or unreadable raw markdown table renders on chat widgets.
+ */
+export function convertMarkdownTablesToBullets(text: string): string {
+  const lines = text.split("\n");
+  const resultLines: string[] = [];
+  let i = 0;
+
+  while (i < lines.length) {
+    const line = lines[i];
+    const nextLine = lines[i + 1];
+    const isTableStart =
+      line.trim().startsWith("|") &&
+      nextLine !== undefined &&
+      /^\|?\s*:?-+:?\s*(\|:?-+:?\s*)+\|?$/.test(nextLine.trim());
+
+    if (isTableStart) {
+      const parseCells = (row: string) => {
+        let t = row.trim();
+        if (t.startsWith("|")) t = t.slice(1);
+        if (t.endsWith("|")) t = t.slice(0, -1);
+        return t.split("|").map((c) => c.trim());
+      };
+
+      const headers = parseCells(line);
+      i += 2; // skip header and separator row
+
+      while (i < lines.length && lines[i].trim().startsWith("|")) {
+        const rowCells = parseCells(lines[i]);
+        if (rowCells.length > 0 && rowCells[0]) {
+          const title = rowCells[0];
+          const metaParts: string[] = [];
+          const otherDetails: string[] = [];
+
+          for (let c = 1; c < rowCells.length; c++) {
+            const header = headers[c] || `Detail ${c}`;
+            const rawCell = rowCells[c];
+
+            if (
+              /price/i.test(header) ||
+              /turnaround|days|timeline/i.test(header) ||
+              /duration/i.test(header)
+            ) {
+              metaParts.push(
+                `${header}: ${rawCell.replace(/<br\s*\/?>/gi, " ").trim()}`
+              );
+            } else {
+              // Parse potential list items or <br> within cell
+              const items = rawCell
+                .split(/<br\s*\/?>|\n/)
+                .map((item) => item.replace(/^[•\s*-]+/, "").trim())
+                .filter((item) => item.length > 0);
+
+              if (items.length > 1) {
+                otherDetails.push(`  - **${header}**:`);
+                items.forEach((item) => {
+                  otherDetails.push(`    * ${item}`);
+                });
+              } else if (items.length === 1) {
+                otherDetails.push(`  - **${header}**: ${items[0]}`);
+              }
+            }
+          }
+
+          const metaStr =
+            metaParts.length > 0 ? ` (${metaParts.join(" | ")})` : "";
+          resultLines.push(`* **${title}**${metaStr}`);
+          otherDetails.forEach((d) => resultLines.push(d));
+          resultLines.push(""); // spacing between items
+        }
+        i++;
+      }
+    } else {
+      resultLines.push(line);
+      i++;
+    }
+  }
+
+  return resultLines.join("\n");
+}
+
+/**
  * Validates, sanitizes, and normalizes AI assistant output:
  * - Neutralizes secrets, prompt leaks, and script injections.
+ * - Converts raw markdown tables into clean bullet cards for readability.
  * - Normalizes plain-text route declarations ("- Home: /") to verified Markdown links ("- [Home](/)").
  * - Validates internal links and safe section anchors against the verified public route allowlist.
  * - Neutralizes invalid, private (/admin*, /api*), or fake dynamic links to plain text.
@@ -467,8 +591,11 @@ export function validateAndSanitizeAssistantOutput(
     }
   }
 
+  // First convert any accidental markdown tables into point-to-point cards
+  let processed = convertMarkdownTablesToBullets(trimmed);
+
   // Normalize plain-text route lines: "- Label: /path" -> "- [Label](/path)"
-  let processed = trimmed.replace(
+  processed = processed.replace(
     /^([*-]\s+)?(?:\*\*)?([A-Za-z0-9\s&—–/]+?)(?:\*\*)?[:–—\-]\s*(?:`|\[)?(\/[a-zA-Z0-9_\-\/.]*(?:#[a-zA-Z0-9_-]*)?)(?:`|\])?(?:\([^)]*\))?$/gm,
     (match, bullet = "", label, rawPath) => {
       const normalizedPath = normalizeHref(rawPath);
