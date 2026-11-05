@@ -41,3 +41,4 @@
 
 - **Client Data Isolation**: "AI Extracts. Code Decides." — Visitor conversation logs are not stored in permanent public databases.
 - **Security Headers**: Production responses enforce `X-Content-Type-Options: nosniff`, `Cache-Control: no-store, max-age=0` on sensitive routes, and frame-guard protections.
+
