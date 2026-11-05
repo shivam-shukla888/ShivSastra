@@ -4,9 +4,8 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { SectionContainer } from "@/components/layout/SectionContainer";
 import { Badge } from "@/components/ui/Badge";
-import { Card } from "@/components/ui/Card";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 import { buttonStyles } from "@/components/ui/Button";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { absoluteUrl } from "@/lib/site";
 import {
   ArrowRight,
@@ -18,26 +17,26 @@ import {
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Products & Software Ecosystem — JIOSI",
+  title: "Products & Software Ecosystem — SHIVSASTRA",
   description:
-    "Explore JIOSI's software ecosystem: JIOSI Inbox email productivity SaaS, production n8n AI agent toolkits, and system prompt architectures.",
+    "Explore SHIVSASTRA's software ecosystem: JIOSI Inbox email productivity SaaS, production n8n AI agent toolkits, and system prompt architectures.",
   alternates: {
     canonical: absoluteUrl("/products"),
   },
   openGraph: {
-    title: "Products & Software Ecosystem — JIOSI",
+    title: "Products & Software Ecosystem — SHIVSASTRA",
     description:
-      "Explore JIOSI's software ecosystem: JIOSI Inbox email productivity SaaS, production n8n AI agent toolkits, and system prompt architectures.",
+      "Explore SHIVSASTRA's software ecosystem: JIOSI Inbox email productivity SaaS, production n8n AI agent toolkits, and system prompt architectures.",
     url: absoluteUrl("/products"),
     type: "website",
-    siteName: "JIOSI",
+    siteName: "SHIVSASTRA",
     locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "JIOSI Products",
+        alt: "SHIVSASTRA Products",
       },
     ],
   },
@@ -50,7 +49,6 @@ const DIGITAL_PRODUCTS = [
     category: "AI Agent Templates",
     price: "₹3,499",
     status: "Available for Download",
-    badgeVariant: "primary" as const,
     description:
       "Ready-to-deploy n8n workflow template that autonomously engages, qualifies, and enriches incoming leads before routing them to your CRM or inbox.",
     features: [
@@ -60,7 +58,6 @@ const DIGITAL_PRODUCTS = [
       "Rate-limiting and anti-abuse safeguards",
     ],
     slug: "n8n-lead-qualifier-agent-pack",
-    image: "/images/backgrounds/store.webp",
   },
   {
     id: "whatsapp-support-kit",
@@ -68,7 +65,6 @@ const DIGITAL_PRODUCTS = [
     category: "Complete Agent Kits",
     price: "₹3,999",
     status: "Available for Download",
-    badgeVariant: "cyan" as const,
     description:
       "Multi-step customer support agent engineered for WhatsApp Business API with human handoff triggers and automated issue resolution.",
     features: [
@@ -78,7 +74,6 @@ const DIGITAL_PRODUCTS = [
       "Customer interaction audit log format",
     ],
     slug: "whatsapp-support-agent-kit",
-    image: "/images/projects/yojna-setu/evidence-whatsapp-discovery.png",
   },
   {
     id: "sales-followup-pack",
@@ -86,35 +81,31 @@ const DIGITAL_PRODUCTS = [
     category: "AI Agent Templates",
     price: "₹4,499",
     status: "Available for Download",
-    badgeVariant: "primary" as const,
     description:
-      "Intelligent lead nurture and re-engagement agent that detects response sentiment, schedules follow-ups, and keeps pipelines moving.",
+      "Automated multi-channel re-engagement sequence with sentiment-aware response scheduling and CRM status updating.",
     features: [
-      "Multi-day re-engagement scheduling",
-      "Sentiment classification and objection detection",
-      "Google Calendar & CRM meeting sync",
-      "Human approval check before discount offers",
+      "Multi-channel cadence logic (Email + WhatsApp)",
+      "Sentiment classification and intent scoring",
+      "Automated appointment scheduling handoff",
+      "Opt-out and suppression list compliance",
     ],
-    slug: "sales-followup-agent-pack",
-    image: "/images/backgrounds/store.webp",
+    slug: "sales-followup-agent",
   },
   {
     id: "small-business-bundle",
     title: "Small Business Agent Bundle",
-    category: "Complete Agent Kits",
+    category: "Bundle Editions",
     price: "₹9,999",
     status: "Available for Download",
-    badgeVariant: "warning" as const,
     description:
-      "All-in-one automation suite for small businesses. Includes Lead Qualifier, WhatsApp Support, Sales Follow-up, and complete documentation.",
+      "Complete operational suite combining lead qualification, WhatsApp customer support, and CRM sync blueprints.",
     features: [
-      "All 5 production agent templates included",
-      "Comprehensive deployment & environment guide",
-      "Pre-configured webhook security listeners",
-      "Priority email setup assistance",
+      "All 5 individual agent blueprints included",
+      "Comprehensive setup documentation & video guides",
+      "Architecture diagram & data flow blueprints",
+      "Production reliability retry modules",
     ],
     slug: "small-business-agent-bundle",
-    image: "/images/backgrounds/store.webp",
   },
   {
     id: "agent-prompt-library",
@@ -122,7 +113,6 @@ const DIGITAL_PRODUCTS = [
     category: "Prompt & Schema Packs",
     price: "₹2,499",
     status: "Available for Download",
-    badgeVariant: "neutral" as const,
     description:
       "Battle-tested system instructions, guardrails, and structured JSON schemas for building dependable, hallucination-free business agents.",
     features: [
@@ -132,7 +122,6 @@ const DIGITAL_PRODUCTS = [
       "Tone calibration matrices for customer-facing bots",
     ],
     slug: "agent-system-prompt-library",
-    image: "/images/backgrounds/store.webp",
   },
   {
     id: "production-readiness-kit",
@@ -140,7 +129,6 @@ const DIGITAL_PRODUCTS = [
     category: "Developer Toolkits",
     price: "₹1,499",
     status: "Available for Download",
-    badgeVariant: "neutral" as const,
     description:
       "Reliability engineering patterns for n8n and webhook pipelines. Includes automatic retry logic, error notifications, and token compression.",
     features: [
@@ -150,89 +138,80 @@ const DIGITAL_PRODUCTS = [
       "Self-hosted Docker Compose deployment recipe",
     ],
     slug: "n8n-production-reliability-kit",
-    image: "/images/backgrounds/store.webp",
   },
 ];
 
 export default function ProductsPage() {
   return (
-    <div className="flex flex-col w-full bg-slate-50 text-slate-900">
-      {/* =======================================================
-          1. DARK NAVY HERO BANNER
-          ======================================================= */}
-      <section className="relative w-full bg-[#0B1020] text-white pt-16 md:pt-24 pb-20 md:pb-28 overflow-hidden border-b border-white/10">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] pointer-events-none opacity-30">
-          <div className="w-full h-full bg-gradient-to-b from-indigo-500/20 via-violet-500/10 to-transparent blur-3xl" />
-        </div>
-
+    <div className="flex flex-col w-full bg-[#F5F2ED] text-[#1A1D20]">
+      {/* 1. WARM EDITORIAL HERO BANNER */}
+      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30">
         <SectionContainer className="relative z-10">
           <div className="max-w-3xl space-y-6">
             <div className="flex items-center gap-2">
-              <Link href="/" className="text-xs font-mono text-slate-400 hover:text-white transition-colors">
+              <Link href="/" className="text-xs font-mono text-[#565656] hover:text-[#1A1D20] transition-colors">
                 Home
               </Link>
-              <span className="text-slate-600 text-xs font-mono">/</span>
-              <span className="text-xs font-mono text-cyan-300 font-semibold">Products</span>
+              <span className="text-[#C09F80] text-xs font-mono">/</span>
+              <span className="text-xs font-mono text-[#76323F] font-semibold">Products</span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#1A1D20] leading-[1.08]">
               Software Systems &amp; Digital Toolkits
             </h1>
 
-            <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sans text-base sm:text-lg text-[#565656] leading-relaxed">
               Explore our standalone SaaS productivity applications, production-tested agentic workflow templates, and system prompt architectures.
             </p>
           </div>
         </SectionContainer>
       </section>
 
-      {/* =======================================================
-          2. FLAGSHIP PRODUCT: JIOSI INBOX
-          ======================================================= */}
-      <section className="w-full py-16 md:py-24 bg-white border-b border-slate-200">
+      {/* 2. FLAGSHIP PRODUCT: JIOSI INBOX */}
+      <section className="w-full py-16 md:py-24 bg-[#FFFFFF] border-b border-[#C09F80]/30">
         <SectionContainer>
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <span className="font-mono text-xs uppercase tracking-wider font-bold text-indigo-600">
+              <span className="font-mono text-xs uppercase tracking-wider font-bold text-[#76323F]">
                 01 / Flagship SaaS Application
               </span>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-950 via-[#111A2E] to-[#0B1020] text-white p-8 md:p-12 overflow-hidden shadow-2xl">
+            <div className="border border-[#C09F80] bg-[#FAF8F5] p-8 md:p-12 shadow-[4px_4px_0px_0px_#D7CEC7]">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 <div className="lg:col-span-6 space-y-6">
                   <div className="flex items-center gap-2">
-                    <Badge variant="cyan" dot size="md">
-                      Production Preview
+                    <Badge variant="primary" dot size="md">
+                      Production Platform
                     </Badge>
-                    <span className="text-xs font-mono text-slate-400">
-                      v0.1.0 · Active Beta
+                    <span className="text-xs font-mono text-[#565656]">
+                      SaaS Client
                     </span>
                   </div>
 
-                  <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+                  <h2 className="font-display text-3xl sm:text-4xl font-normal tracking-tight text-[#1A1D20]">
                     JIOSI Inbox
                   </h2>
 
-                  <p className="font-sans text-base text-slate-300 leading-relaxed">
+                  <p className="font-sans text-base text-[#565656] leading-relaxed">
                     A distraction-free, keyboard-first email productivity platform engineered with Spring Boot 3.3.5 and React 18. Built for founders, developers, and high-output teams.
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-200">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-[#1A1D20]">
                     <div className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-cyan-400 shrink-0" />
+                      <Check className="w-4 h-4 text-[#76323F] shrink-0" />
                       <span>Instant AI thread summaries</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-cyan-400 shrink-0" />
+                      <Check className="w-4 h-4 text-[#76323F] shrink-0" />
                       <span>Keyboard-first triage (⌘K, E, S)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-cyan-400 shrink-0" />
+                      <Check className="w-4 h-4 text-[#76323F] shrink-0" />
                       <span>Gmail &amp; Google Workspace sync</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-cyan-400 shrink-0" />
+                      <Check className="w-4 h-4 text-[#76323F] shrink-0" />
                       <span>Neon Serverless PostgreSQL</span>
                     </div>
                   </div>
@@ -243,7 +222,6 @@ export default function ProductsPage() {
                       className={buttonStyles({
                         variant: "primary",
                         size: "md",
-                        className: "font-semibold shadow-md shadow-indigo-600/30",
                       })}
                     >
                       <span>Read Product Overview</span>
@@ -255,19 +233,18 @@ export default function ProductsPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={buttonStyles({
-                        variant: "glass",
+                        variant: "secondary",
                         size: "md",
-                        className: "text-slate-200 hover:text-white",
                       })}
                     >
                       <span>Launch App</span>
-                      <ArrowUpRight className="w-4 h-4 text-cyan-300" />
+                      <ArrowUpRight className="w-4 h-4 text-[#76323F]" />
                     </a>
                   </div>
                 </div>
 
                 <div className="lg:col-span-6">
-                  <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-white/15 shadow-2xl group">
+                  <div className="relative aspect-[16/10] overflow-hidden border border-[#C09F80]/40 shadow-[2px_2px_0px_0px_#D7CEC7] group">
                     <Image
                       src="/images/products/inbox/inbox-desktop-overview.png"
                       alt="JIOSI Inbox SaaS Platform Interface"
@@ -283,95 +260,90 @@ export default function ProductsPage() {
         </SectionContainer>
       </section>
 
-      {/* =======================================================
-          3. DIGITAL AGENT TEMPLATES & TOOLKITS
-          ======================================================= */}
-      <section className="w-full py-20 md:py-28 bg-slate-50 border-b border-slate-200">
+      {/* 3. DIGITAL AGENT TEMPLATES & TOOLKITS */}
+      <section className="w-full py-20 md:py-28 bg-[#F5F2ED] border-b border-[#C09F80]/30">
         <SectionContainer>
           <div className="space-y-14">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
+            <div className="flex items-center justify-between pb-6 border-b border-[#C09F80]/30">
               <SectionHeader
                 badge="Agent Toolkits"
                 badgeVariant="primary"
-                title="Production AI Agent Kits & Blueprints"
+                title="Production AI Agent Kits &amp; Blueprints"
                 description="Battle-tested n8n workflows, prompt packages, and automation templates ready for deployment on your own infrastructure."
               />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {DIGITAL_PRODUCTS.map((product) => (
-                <Card
+                <div
                   key={product.id}
-                  className="p-6 md:p-8 space-y-6 flex flex-col justify-between"
+                  className="p-6 md:p-8 space-y-6 flex flex-col justify-between bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs uppercase tracking-wider text-indigo-600 font-semibold">
+                      <span className="font-mono text-xs uppercase tracking-wider text-[#76323F] font-semibold">
                         {product.category}
                       </span>
-                      <span className="font-mono text-base font-extrabold text-slate-900">
+                      <span className="font-mono text-base font-bold text-[#1A1D20]">
                         {product.price}
                       </span>
                     </div>
 
-                    <h3 className="font-display text-xl font-bold text-slate-900 leading-snug">
+                    <h3 className="font-display text-xl font-normal text-[#1A1D20] leading-snug">
                       <Link
                         href={`/store/${product.slug}`}
-                        className="hover:text-indigo-600 transition-colors"
+                        className="hover:text-[#76323F] transition-colors"
                       >
                         {product.title}
                       </Link>
                     </h3>
 
-                    <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                    <p className="font-sans text-sm text-[#565656] leading-relaxed">
                       {product.description}
                     </p>
 
-                    <ul className="space-y-2 text-xs font-mono text-slate-600 pt-3 border-t border-slate-100">
+                    <ul className="space-y-2 text-xs font-mono text-[#565656] pt-3 border-t border-[#C09F80]/20">
                       {product.features.map((feat, idx) => (
                         <li key={idx} className="flex items-center gap-1.5">
-                          <Check className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0" />
                           <span className="truncate">{feat}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <div className="flex items-center gap-1.5 font-mono text-xs text-slate-700">
-                      <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                  <div className="pt-4 border-t border-[#C09F80]/20 flex items-center justify-between">
+                    <div className="flex items-center gap-1.5 font-mono text-xs text-[#565656]">
+                      <ShieldCheck className="w-4 h-4 text-[#76323F]" />
                       <span>Zero vendor lock-in</span>
                     </div>
 
                     <Link
                       href={`/store/${product.slug}`}
                       className={buttonStyles({
-                        variant: "secondary",
+                        variant: "primary",
                         size: "sm",
-                        className: "font-semibold text-xs",
                       })}
                     >
                       <span>Details &amp; Checkout</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
-                </Card>
+                </div>
               ))}
             </div>
           </div>
         </SectionContainer>
       </section>
 
-      {/* =======================================================
-          4. CUSTOM ENGINEERING CTA
-          ======================================================= */}
-      <section className="w-full bg-[#0B1020] text-white py-20 border-t border-white/10">
+      {/* 4. CUSTOM ENGINEERING CTA (Grounded Contrast) */}
+      <section className="w-full bg-[#1A1D20] text-[#F5F2ED] py-20 border-t border-[#C09F80]/30">
         <SectionContainer>
           <div className="max-w-2xl mx-auto text-center space-y-6">
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+            <h2 className="font-display text-3xl sm:text-4xl font-normal tracking-tight text-[#F5F2ED]">
               Need a tailored system engineered for your operations?
             </h2>
-            <p className="font-sans text-base text-slate-300 leading-relaxed">
+            <p className="font-sans text-base text-[#D7CEC7] leading-relaxed">
               We design, build, and deploy custom multi-agent workflows, API integrations, and internal tools with guaranteed data privacy.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -380,7 +352,6 @@ export default function ProductsPage() {
                 className={buttonStyles({
                   variant: "primary",
                   size: "lg",
-                  className: "font-semibold shadow-xl shadow-indigo-600/30",
                 })}
               >
                 <span>View Service Packages</span>
@@ -389,9 +360,8 @@ export default function ProductsPage() {
               <Link
                 href="/contact"
                 className={buttonStyles({
-                  variant: "glass",
+                  variant: "dark-inverse",
                   size: "lg",
-                  className: "text-slate-200 hover:text-white border-white/20",
                 })}
               >
                 <span>Request Custom Architecture</span>

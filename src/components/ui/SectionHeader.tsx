@@ -38,14 +38,14 @@ export function SectionHeader({
         <div>
           <span
             className={cn(
-              "inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-mono text-xs font-semibold uppercase tracking-wider",
-              badgeVariant === "primary" && "bg-indigo-50 text-indigo-700 border border-indigo-200/80",
-              badgeVariant === "cyan" && "bg-cyan-50 text-cyan-700 border border-cyan-200/80",
-              badgeVariant === "glass" && "bg-white/10 text-cyan-300 border border-white/15 backdrop-blur-md",
-              badgeVariant === "success" && "bg-emerald-50 text-emerald-700 border border-emerald-200/80"
+              "inline-flex items-center gap-1.5 px-3 py-1 rounded-none font-mono text-xs font-semibold uppercase tracking-wider",
+              badgeVariant === "primary" && "bg-[#76323F]/10 text-[#76323F] border border-[#76323F]/30",
+              badgeVariant === "cyan" && "bg-[#FAF8F5] text-[#1A1D20] border border-[#C09F80]/60",
+              badgeVariant === "glass" && "bg-[#FAF8F5]/10 text-[#F5F2ED] border border-[#C09F80]/40",
+              badgeVariant === "success" && "bg-[#FAF8F5] text-[#565656] border border-[#C09F80]/60"
             )}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-current" aria-hidden="true" />
+            <span className="w-1.5 h-1.5 rounded-none bg-current shrink-0" aria-hidden="true" />
             {badge}
           </span>
         </div>
@@ -53,8 +53,8 @@ export function SectionHeader({
 
       <h2
         className={cn(
-          "font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.12]",
-          isDark ? "text-white" : "text-slate-900"
+          "font-display text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight leading-[1.12]",
+          isDark ? "text-[#F5F2ED]" : "text-[#1A1D20]"
         )}
       >
         {title}
@@ -64,7 +64,7 @@ export function SectionHeader({
         <p
           className={cn(
             "font-sans text-base sm:text-lg leading-relaxed",
-            isDark ? "text-slate-300" : "text-slate-600"
+            isDark ? "text-[#D7CEC7]" : "text-[#565656]"
           )}
         >
           {descContent}

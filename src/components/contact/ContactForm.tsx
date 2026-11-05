@@ -175,7 +175,7 @@ export function ContactForm({
           <button
             type="button"
             onClick={() => window.location.reload()}
-            className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#76323F] hover:text-[#1A1D20] transition-colors cursor-pointer"
           >
             <span>Send Another Inquiry</span>
             <span>→</span>
@@ -236,13 +236,9 @@ export function ContactForm({
         <div className="space-y-1.5">
           <label
             htmlFor="contact-name"
-            className={
-              isDark
-                ? "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-300"
-                : "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-700"
-            }
+            className="block font-sans text-xs font-semibold uppercase tracking-wider text-[#1A1D20]"
           >
-            <span className="inline-flex items-center gap-1.5"><User className="w-3.5 h-3.5 text-indigo-500" /><span>{labels.name}</span></span>
+            <span className="inline-flex items-center gap-1.5"><User className="w-3.5 h-3.5 text-[#76323F]" /><span>{labels.name}</span></span>
           </label>
           <input
             id="contact-name"
@@ -253,14 +249,10 @@ export function ContactForm({
             placeholder="Your Name"
             aria-invalid={!!state.errors?.name}
             aria-describedby={state.errors?.name ? "name-error" : undefined}
-            className={
-              isDark
-                ? "w-full px-4 py-3 bg-[#111A2E]/90 border border-white/15 text-white placeholder-slate-500 text-sm rounded-xl focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 disabled:opacity-50 transition-all"
-                : "w-full px-4 py-3 bg-white border border-slate-200 text-slate-900 placeholder-slate-400 text-sm rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/15 disabled:opacity-50 transition-all shadow-sm"
-            }
+            className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#C09F80] text-[#1A1D20] placeholder-[#565656]/70 text-sm rounded-none focus:outline-none focus:border-[#76323F] focus:ring-1 focus:ring-[#76323F] disabled:opacity-50 transition-all"
           />
           {state.errors?.name && (
-            <p id="name-error" role="alert" className="font-mono text-xs text-rose-600 pt-1">
+            <p id="name-error" role="alert" className="font-mono text-xs text-[#76323F] pt-1">
               {state.errors.name[0]}
             </p>
           )}
@@ -270,13 +262,9 @@ export function ContactForm({
         <div className="space-y-1.5">
           <label
             htmlFor="contact-email"
-            className={
-              isDark
-                ? "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-300"
-                : "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-700"
-            }
+            className="block font-sans text-xs font-semibold uppercase tracking-wider text-[#1A1D20]"
           >
-            <span className="inline-flex items-center gap-1.5"><Mail className="w-3.5 h-3.5 text-indigo-500" /><span>{labels.email}</span></span>
+            <span className="inline-flex items-center gap-1.5"><Mail className="w-3.5 h-3.5 text-[#76323F]" /><span>{labels.email}</span></span>
           </label>
           <input
             id="contact-email"
@@ -287,14 +275,10 @@ export function ContactForm({
             placeholder="your.email@company.com"
             aria-invalid={!!state.errors?.email}
             aria-describedby={state.errors?.email ? "email-error" : undefined}
-            className={
-              isDark
-                ? "w-full px-4 py-3 bg-[#111A2E]/90 border border-white/15 text-white placeholder-slate-500 text-sm rounded-xl focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 disabled:opacity-50 transition-all"
-                : "w-full px-4 py-3 bg-white border border-slate-200 text-slate-900 placeholder-slate-400 text-sm rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/15 disabled:opacity-50 transition-all shadow-sm"
-            }
+            className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#C09F80] text-[#1A1D20] placeholder-[#565656]/70 text-sm rounded-none focus:outline-none focus:border-[#76323F] focus:ring-1 focus:ring-[#76323F] disabled:opacity-50 transition-all"
           />
           {state.errors?.email && (
-            <p id="email-error" role="alert" className="font-mono text-xs text-rose-600 pt-1">
+            <p id="email-error" role="alert" className="font-mono text-xs text-[#76323F] pt-1">
               {state.errors.email[0]}
             </p>
           )}
@@ -305,13 +289,9 @@ export function ContactForm({
       <div className="space-y-1.5">
         <label
           htmlFor="contact-brief"
-          className={
-            isDark
-              ? "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-300"
-              : "block font-sans text-xs font-semibold uppercase tracking-wider text-slate-700"
-          }
+          className="block font-sans text-xs font-semibold uppercase tracking-wider text-[#1A1D20]"
         >
-          <span className="inline-flex items-center gap-1.5"><MessageSquare className="w-3.5 h-3.5 text-indigo-500" /><span>{labels.brief}</span></span>
+          <span className="inline-flex items-center gap-1.5"><MessageSquare className="w-3.5 h-3.5 text-[#76323F]" /><span>{labels.brief}</span></span>
         </label>
         <textarea
           id="contact-brief"
@@ -322,14 +302,10 @@ export function ContactForm({
           placeholder="Briefly describe your workflow automation needs, timeline, or product inquiry..."
           aria-invalid={!!state.errors?.brief}
           aria-describedby={state.errors?.brief ? "brief-error" : undefined}
-          className={
-            isDark
-              ? "w-full px-4 py-3 bg-[#111A2E]/90 border border-white/15 text-white placeholder-slate-500 text-sm rounded-xl focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 disabled:opacity-50 resize-y transition-all"
-              : "w-full px-4 py-3 bg-white border border-slate-200 text-slate-900 placeholder-slate-400 text-sm rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/15 disabled:opacity-50 resize-y transition-all shadow-sm"
-          }
+          className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#C09F80] text-[#1A1D20] placeholder-[#565656]/70 text-sm rounded-none focus:outline-none focus:border-[#76323F] focus:ring-1 focus:ring-[#76323F] disabled:opacity-50 resize-y transition-all"
         />
         {state.errors?.brief && (
-          <p id="brief-error" role="alert" className="font-mono text-xs text-rose-600 pt-1">
+          <p id="brief-error" role="alert" className="font-mono text-xs text-[#76323F] pt-1">
             {state.errors.brief[0]}
           </p>
         )}
@@ -351,13 +327,13 @@ export function ContactForm({
             />
             <input type="hidden" name="cf-turnstile-response" value={turnstileToken} />
             {state.errors?.turnstile && (
-              <p role="alert" className="font-mono text-xs text-rose-600 pt-1">
+              <p role="alert" className="font-mono text-xs text-[#76323F] pt-1">
                 {state.errors.turnstile[0]}
               </p>
             )}
           </>
         ) : (
-          <p className="font-mono text-xs text-slate-400">
+          <p className="font-mono text-xs text-[#565656]">
             [Dev mode: Turnstile key not configured]
           </p>
         )}
@@ -368,11 +344,7 @@ export function ContactForm({
         <button
           type="submit"
           disabled={isPending || (Boolean(siteKey) && !turnstileToken)}
-          className={
-            isDark
-              ? "w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-indigo-600/30 transition-all cursor-pointer flex items-center justify-center gap-2"
-              : "w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-indigo-600/20 transition-all cursor-pointer flex items-center justify-center gap-2"
-          }
+          className="w-full sm:w-auto px-8 py-3.5 rounded-none font-mono text-xs uppercase tracking-wider font-semibold text-[#FFFFFF] bg-[#76323F] hover:bg-[#5A1C29] border border-[#76323F] hover:border-[#C09F80] disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer flex items-center justify-center gap-2 shadow-none"
         >
           {isPending ? (
             <>
@@ -387,9 +359,9 @@ export function ContactForm({
           )}
         </button>
 
-        <p className="text-xs font-sans text-slate-500 leading-relaxed">
+        <p className="text-xs font-sans text-[#565656] leading-relaxed">
           By submitting this form, you agree to our{" "}
-          <Link href="/privacy" className="text-indigo-600 underline hover:text-indigo-800">
+          <Link href="/privacy" className="text-[#76323F] underline hover:text-[#1A1D20]">
             Privacy Policy
           </Link>
           . No customer data is shared with third parties or stored on intermediary servers.

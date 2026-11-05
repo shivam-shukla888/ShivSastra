@@ -3,31 +3,29 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SectionContainer } from "@/components/layout/SectionContainer";
 import { InnerPageEntrance } from "@/components/layout/InnerPageEntrance";
-import { Badge } from "@/components/ui/Badge";
 import { buttonStyles } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { absoluteUrl, serializeJsonLd } from "@/lib/site";
 import {
   ShieldCheck,
-  CheckCircle2,
   ArrowRight,
+  Check,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pricing & Plans — Transparent Agentic AI & Software | JIOSI",
+  title: "Pricing & Plans — Transparent Agentic AI & Software | SHIVSASTRA",
   description:
-    "Transparent pricing for JIOSI Agentic AI systems, workflow automation packages, and digital developer toolkits. Built with human-in-the-loop safeguards and 7-day evaluations.",
+    "Transparent pricing for SHIVSASTRA Agentic AI systems, workflow automation packages, and digital developer toolkits. Built with human-in-the-loop safeguards and 7-day evaluations.",
   alternates: {
     canonical: absoluteUrl("/pricing"),
   },
   openGraph: {
-    title: "Pricing & Plans — JIOSI",
+    title: "Pricing & Plans — SHIVSASTRA",
     description:
-      "Transparent pricing for JIOSI Agentic AI systems, workflow automation packages, and digital developer toolkits.",
+      "Transparent pricing for SHIVSASTRA Agentic AI systems, workflow automation packages, and digital developer toolkits.",
     url: absoluteUrl("/pricing"),
     type: "website",
-    siteName: "JIOSI",
+    siteName: "SHIVSASTRA",
   },
 };
 
@@ -80,36 +78,33 @@ export default function PricingPage() {
   const pricingJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Pricing & Plans — JIOSI",
-    description: "Transparent pricing for JIOSI Agentic AI systems and software.",
+    name: "Pricing & Plans — SHIVSASTRA",
+    description: "Transparent pricing for SHIVSASTRA Agentic AI systems and software.",
     url: absoluteUrl("/pricing"),
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-white text-slate-900">
+    <div className="relative w-full overflow-hidden bg-[#F5F2ED] text-[#1A1D20]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(pricingJsonLd) }}
       />
 
-      {/* 1. DARK HERO SECTION */}
-      <section className="relative w-full bg-[#0B1020] text-white pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-96 bg-radial from-indigo-500/20 via-violet-600/10 to-transparent blur-3xl pointer-events-none" />
-
+      {/* 1. WARM EDITORIAL HERO SECTION */}
+      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30">
         <SectionContainer className="relative z-10">
           <InnerPageEntrance delayIndex={0}>
             <div className="text-center max-w-3xl mx-auto space-y-6">
-              <div className="inline-flex items-center gap-2">
-                <Badge variant="cyan" dot size="sm">
-                  SIMPLE &amp; TRANSPARENT
-                </Badge>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium">
+                <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
+                <span>SIMPLE &amp; TRANSPARENT</span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#1A1D20] leading-[1.08]">
                 Predictable Pricing. Zero Speculation.
               </h1>
 
-              <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed">
+              <p className="font-sans text-base sm:text-lg text-[#565656] leading-relaxed">
                 Whether you need a fully managed Agentic AI implementation or instant-access production workflow templates, our pricing is scoped, transparent, and bound by clear deliverables.
               </p>
 
@@ -119,7 +114,6 @@ export default function PricingPage() {
                   className={buttonStyles({
                     variant: "primary",
                     size: "md",
-                    className: "shadow-lg shadow-indigo-500/20",
                   })}
                 >
                   Custom AI Agent Packages ↓
@@ -127,9 +121,8 @@ export default function PricingPage() {
                 <a
                   href="#products"
                   className={buttonStyles({
-                    variant: "glass",
+                    variant: "secondary",
                     size: "md",
-                    className: "text-white border-white/20 hover:bg-white/10",
                   })}
                 >
                   Digital Product Licenses ↓
@@ -140,30 +133,30 @@ export default function PricingPage() {
         </SectionContainer>
       </section>
 
-      {/* 2. SECURITY & GUARANTEE BANNER */}
-      <section className="relative z-20 -mt-8">
+      {/* 2. SECURITY & GUARANTEE BANNER (Grounded Contrast) */}
+      <section className="relative z-20 -mt-6">
         <SectionContainer>
-          <div className="bg-gradient-to-r from-[#111A2E] to-[#1E293B] border border-indigo-500/30 rounded-2xl p-6 md:p-8 text-white shadow-xl shadow-slate-900/10">
+          <div className="bg-[#1A1D20] border border-[#C09F80]/40 p-6 md:p-8 text-[#F5F2ED] shadow-[4px_4px_0px_0px_#565656]">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="space-y-1.5 max-w-2xl">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-400" />
-                  <span className="font-display font-bold text-lg text-white">
-                    We Prioritize Security
+                  <ShieldCheck className="w-5 h-5 text-[#C09F80]" />
+                  <span className="font-display text-lg text-[#F5F2ED]">
+                    Client-Owned Infrastructure &amp; Rigorous Privacy
                   </span>
-                  <Badge variant="success" size="sm">
+                  <span className="font-mono text-[9px] uppercase px-1.5 py-0.2 bg-[#FAF8F5]/10 text-[#C09F80] border border-[#C09F80]/40">
                     Client Sovereignty
-                  </Badge>
+                  </span>
                 </div>
-                <p className="font-sans text-sm text-slate-300">
-                  Data stays in your control • Human approval points included • No customer data stored on our servers • Enterprise-grade isolation by design
+                <p className="font-sans text-sm text-[#D7CEC7]">
+                  Data stays in your control • Human approval points included • Zero customer data stored on intermediary servers • Enterprise-grade isolation by design
                 </p>
               </div>
 
               <div className="flex items-center gap-2 shrink-0">
-                <Badge variant="cyan" dot size="md">
+                <span className="font-mono text-xs uppercase px-2.5 py-1 bg-[#FAF8F5]/10 text-[#C09F80] border border-[#C09F80]/40">
                   7-Day Evaluation Included
-                </Badge>
+                </span>
               </div>
             </div>
           </div>
@@ -171,7 +164,7 @@ export default function PricingPage() {
       </section>
 
       {/* 3. CUSTOM AGENTIC AI SERVICES */}
-      <section id="services" className="py-20 md:py-28 bg-slate-50 scroll-mt-16">
+      <section id="services" className="py-20 md:py-28 bg-[#FFFFFF] border-b border-[#C09F80]/30 scroll-mt-16">
         <SectionContainer>
           <div className="space-y-16">
             <div className="max-w-3xl">
@@ -184,57 +177,57 @@ export default function PricingPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Package 1: Starter */}
-              <Card variant="standard" className="p-8 flex flex-col justify-between space-y-6">
+              <div className="p-8 flex flex-col justify-between space-y-6 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
                 <div className="space-y-6">
-                  <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                    <span className="font-mono text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">
+                  <div className="flex items-center justify-between pb-4 border-b border-[#C09F80]/20">
+                    <span className="font-mono text-xs font-bold text-[#76323F] bg-[#FAF8F5] border border-[#C09F80]/40 px-2.5 py-1">
                       AGT-01
                     </span>
-                    <span className="text-xs text-slate-500 font-mono">5–8 Days</span>
+                    <span className="text-xs text-[#565656] font-mono">5–8 Days</span>
                   </div>
 
                   <div className="space-y-2">
-                    <h2 className="font-display text-2xl font-bold text-slate-900">
+                    <h2 className="font-display text-2xl font-normal text-[#1A1D20]">
                       Starter Agent Setup
                     </h2>
-                    <div className="font-display text-3xl font-extrabold text-slate-900">
+                    <div className="font-display text-3xl font-normal text-[#1A1D20]">
                       ₹22,000 – ₹35,000
                     </div>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-[#565656]">
                       Single milestone, evaluated in staging before final payment.
                     </p>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-950 space-y-1">
-                    <span className="font-sans text-xs font-bold text-indigo-900 block">
+                  <div className="p-3.5 bg-[#FAF8F5] border border-[#C09F80]/50 space-y-1">
+                    <span className="font-sans text-xs font-bold text-[#1A1D20] block">
                       7-Day Free Trial for Small Organisations
                     </span>
-                    <p className="font-sans text-[11px] text-indigo-700">
+                    <p className="font-sans text-[11px] text-[#565656]">
                       Evaluate with real customer inquiries in staging/pilot before final settlement.
                     </p>
                   </div>
 
-                  <ul className="space-y-2.5 text-xs text-slate-600">
+                  <ul className="space-y-2.5 text-xs text-[#565656]">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
                       <span>1 focused production agent (Lead Qualifier or Support)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
                       <span>WhatsApp or Webchat interface connection</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
                       <span>Google Sheets / CRM webhook integration</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
                       <span>Rate limiting &amp; anomaly protection</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="pt-6 border-t border-slate-100">
+                <div className="pt-6 border-t border-[#C09F80]/20">
                   <Link
                     href="/contact?subject=Starter%20Agent%20Setup%20(7-Day%20Trial)#quote"
                     className={buttonStyles({
@@ -247,60 +240,57 @@ export default function PricingPage() {
                     <ArrowRight className="w-4 h-4 ml-1.5" />
                   </Link>
                 </div>
-              </Card>
+              </div>
 
               {/* Package 2: Business */}
-              <Card
-                variant="elevated"
-                className="p-8 flex flex-col justify-between space-y-6 ring-2 ring-indigo-500 shadow-xl relative"
-              >
+              <div className="p-8 flex flex-col justify-between space-y-6 bg-[#FAF8F5] border border-[#76323F] shadow-[4px_4px_0px_0px_#76323F] relative">
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <Badge variant="primary" size="sm" className="shadow-md">
+                  <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-0.5 bg-[#76323F] text-[#FFFFFF] border border-[#76323F]">
                     RECOMMENDED FOR GROWING BUSINESSES
-                  </Badge>
+                  </span>
                 </div>
 
                 <div className="space-y-6">
-                  <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                    <span className="font-mono text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">
+                  <div className="flex items-center justify-between pb-4 border-b border-[#C09F80]/20">
+                    <span className="font-mono text-xs font-bold text-[#76323F] bg-[#FAF8F5] border border-[#C09F80]/40 px-2.5 py-1">
                       AGT-02
                     </span>
-                    <span className="text-xs text-slate-500 font-mono">10–15 Days</span>
+                    <span className="text-xs text-[#565656] font-mono">10–15 Days</span>
                   </div>
 
                   <div className="space-y-2">
-                    <h2 className="font-display text-2xl font-bold text-slate-900">
+                    <h2 className="font-display text-2xl font-normal text-[#1A1D20]">
                       Business Agent Package
                     </h2>
-                    <div className="font-display text-3xl font-extrabold text-slate-900">
+                    <div className="font-display text-3xl font-normal text-[#1A1D20]">
                       ₹55,000 – ₹90,000
                     </div>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-[#565656]">
                       50% deposit upon kickoff, balance upon verified staging sign-off.
                     </p>
                   </div>
 
-                  <ul className="space-y-2.5 text-xs text-slate-600">
+                  <ul className="space-y-2.5 text-xs text-[#565656]">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
                       <span>1–2 multi-step production agents (Qualifier + Support/Follow-up)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
                       <span>External API tool-calling &amp; database sync</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
                       <span>Human approval checkpoints for sensitive actions</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
                       <span>14 days post-deployment monitoring &amp; adjustments</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="pt-6 border-t border-slate-100">
+                <div className="pt-6 border-t border-[#C09F80]/20">
                   <Link
                     href="/contact?subject=Business%20Agent%20Package%20Inquiry#quote"
                     className={buttonStyles({
@@ -313,51 +303,51 @@ export default function PricingPage() {
                     <ArrowRight className="w-4 h-4 ml-1.5" />
                   </Link>
                 </div>
-              </Card>
+              </div>
 
               {/* Package 3: Full */}
-              <Card variant="standard" className="p-8 flex flex-col justify-between space-y-6">
+              <div className="p-8 flex flex-col justify-between space-y-6 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
                 <div className="space-y-6">
-                  <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                    <span className="font-mono text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">
+                  <div className="flex items-center justify-between pb-4 border-b border-[#C09F80]/20">
+                    <span className="font-mono text-xs font-bold text-[#76323F] bg-[#FAF8F5] border border-[#C09F80]/40 px-2.5 py-1">
                       AGT-03
                     </span>
-                    <span className="text-xs text-slate-500 font-mono">3–5 Weeks</span>
+                    <span className="text-xs text-[#565656] font-mono">3–5 Weeks</span>
                   </div>
 
                   <div className="space-y-2">
-                    <h2 className="font-display text-2xl font-bold text-slate-900">
+                    <h2 className="font-display text-2xl font-normal text-[#1A1D20]">
                       Full Agentic System
                     </h2>
-                    <div className="font-display text-3xl font-extrabold text-slate-900">
+                    <div className="font-display text-3xl font-normal text-[#1A1D20]">
                       ₹1,10,000 – ₹1,80,000
                     </div>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-[#565656]">
                       Structured milestone deliverables with dedicated architecture sprint.
                     </p>
                   </div>
 
-                  <ul className="space-y-2.5 text-xs text-slate-600">
+                  <ul className="space-y-2.5 text-xs text-[#565656]">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
                       <span>Complete multi-agent workflow orchestration</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
                       <span>Supervisor agent coordinating specialized sub-agents</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
                       <span>Full audit logging &amp; failover mechanisms</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
                       <span>30 days dedicated warranty &amp; prompt retraining</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="pt-6 border-t border-slate-100">
+                <div className="pt-6 border-t border-[#C09F80]/20">
                   <Link
                     href="/contact?subject=Full%20Agentic%20System%20Consultation#quote"
                     className={buttonStyles({
@@ -370,14 +360,14 @@ export default function PricingPage() {
                     <ArrowRight className="w-4 h-4 ml-1.5" />
                   </Link>
                 </div>
-              </Card>
+              </div>
             </div>
           </div>
         </SectionContainer>
       </section>
 
       {/* 4. DIGITAL PRODUCT LICENSES */}
-      <section id="products" className="py-20 md:py-28 bg-white border-t border-slate-200 scroll-mt-16">
+      <section id="products" className="py-20 md:py-28 bg-[#F5F2ED] border-b border-[#C09F80]/30 scroll-mt-16">
         <SectionContainer>
           <div className="space-y-16">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -392,13 +382,13 @@ export default function PricingPage() {
               <Link
                 href="/store"
                 className={buttonStyles({
-                  variant: "outline",
+                  variant: "secondary",
                   size: "md",
                   className: "shrink-0",
                 })}
               >
                 <span>Browse Full Store Catalog</span>
-                <ArrowRight className="w-4 h-4 ml-1" />
+                <ArrowRight className="w-4 h-4 ml-1 text-[#76323F]" />
               </Link>
             </div>
 
@@ -406,34 +396,34 @@ export default function PricingPage() {
               {DIGITAL_PRODUCTS.map((product) => (
                 <div
                   key={product.slug}
-                  className="bg-slate-50 border border-slate-200 rounded-xl p-6 flex flex-col justify-between space-y-4 hover:border-slate-300 transition-colors"
+                  className="bg-[#FAF8F5] border border-[#C09F80]/60 p-6 flex flex-col justify-between space-y-4 shadow-[2px_2px_0px_0px_#D7CEC7]"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-[11px] font-mono text-indigo-600 font-semibold uppercase tracking-wider">
+                      <span className="text-[11px] font-mono text-[#76323F] font-semibold uppercase tracking-wider">
                         {product.tag}
                       </span>
-                      <span className="font-display font-extrabold text-lg text-slate-900">
+                      <span className="font-mono font-bold text-base text-[#1A1D20]">
                         {product.price}
                       </span>
                     </div>
 
-                    <h3 className="font-display text-lg font-bold text-slate-900">
+                    <h3 className="font-display text-lg font-normal text-[#1A1D20]">
                       {product.title}
                     </h3>
 
-                    <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                    <p className="text-xs text-[#565656] leading-relaxed font-sans">
                       {product.desc}
                     </p>
 
-                    <div className="flex items-center gap-1.5 text-xs text-emerald-700 font-medium font-mono pt-1">
-                      <ShieldCheck className="w-3.5 h-3.5" />
-                      <span>We prioritize security</span>
+                    <div className="flex items-center gap-1.5 text-xs text-[#565656] font-mono pt-1">
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#76323F]" />
+                      <span>Client-owned deployment</span>
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
-                    <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                  <div className="pt-4 border-t border-[#C09F80]/20 flex items-center justify-between">
+                    <span className="text-[10px] font-mono text-[#565656] uppercase tracking-wider">
                       Instant Access
                     </span>
                     <Link
@@ -441,7 +431,6 @@ export default function PricingPage() {
                       className={buttonStyles({
                         variant: "primary",
                         size: "sm",
-                        className: "text-xs font-semibold",
                       })}
                     >
                       <span>Buy License</span>
@@ -455,48 +444,49 @@ export default function PricingPage() {
         </SectionContainer>
       </section>
 
-      {/* 5. JIOSI INBOX SAAS PRICING PREVIEW */}
-      <section className="py-20 md:py-28 bg-slate-900 text-white border-t border-slate-800">
+      {/* 5. JIOSI INBOX SAAS PRICING PREVIEW (Grounded Contrast) */}
+      <section className="py-20 md:py-28 bg-[#1A1D20] text-[#F5F2ED] border-b border-[#C09F80]/30">
         <SectionContainer>
           <div className="space-y-12 max-w-4xl mx-auto">
             <div className="text-center space-y-3">
-              <Badge variant="cyan" dot size="sm">
-                FLAGSHIP PRODUCT
-              </Badge>
-              <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-white">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5]/10 text-[#C09F80] border border-[#C09F80]/40 text-xs font-mono font-medium">
+                <span className="w-1.5 h-1.5 rounded-none bg-[#C09F80]" />
+                <span>FLAGSHIP PRODUCT</span>
+              </div>
+              <h2 className="font-display text-3xl sm:text-4xl font-normal text-[#F5F2ED]">
                 JIOSI Inbox Cloud &amp; Community Edition
               </h2>
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+              <p className="text-[#D7CEC7] text-sm md:text-base leading-relaxed">
                 The high-performance keyboard-first email client for power users and founders.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
               {/* Community */}
-              <div className="bg-slate-800/60 border border-slate-700 rounded-2xl p-8 space-y-6">
+              <div className="bg-[#FAF8F5]/5 border border-[#C09F80]/30 p-8 space-y-6">
                 <div className="space-y-2">
-                  <span className="font-mono text-xs text-cyan-300 font-bold uppercase tracking-wider">
+                  <span className="font-mono text-xs text-[#C09F80] font-bold uppercase tracking-wider">
                     Community Edition
                   </span>
-                  <div className="font-display text-3xl font-extrabold text-white">
+                  <div className="font-display text-3xl font-normal text-[#F5F2ED]">
                     Free / Open Source
                   </div>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-[#D7CEC7]">
                     Self-host on your own infrastructure with Spring Boot &amp; PostgreSQL.
                   </p>
                 </div>
 
-                <ul className="space-y-2.5 text-xs text-slate-300">
+                <ul className="space-y-2.5 text-xs text-[#D7CEC7]">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <Check className="w-4 h-4 text-[#C09F80]" />
                     <span>Sub-50ms thread triage &amp; navigation</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <Check className="w-4 h-4 text-[#C09F80]" />
                     <span>Command palette (⌘K) &amp; single-key hotkeys</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <Check className="w-4 h-4 text-[#C09F80]" />
                     <span>Local encryption &amp; private credential storage</span>
                   </li>
                 </ul>
@@ -506,46 +496,46 @@ export default function PricingPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={buttonStyles({
-                    variant: "glass",
+                    variant: "dark-inverse",
                     size: "md",
-                    className: "w-full justify-center text-white border-white/20 hover:bg-white/10",
+                    className: "w-full justify-center",
                   })}
                 >
                   <span>Launch Web Client</span>
-                  <ArrowRight className="w-4 h-4 ml-1.5" />
+                  <ArrowRight className="w-4 h-4 ml-1.5 text-[#76323F]" />
                 </a>
               </div>
 
               {/* Cloud Pro */}
-              <div className="bg-gradient-to-br from-indigo-950/80 to-slate-900 border border-indigo-500/40 rounded-2xl p-8 space-y-6 relative">
+              <div className="bg-[#FAF8F5]/5 border border-[#C09F80]/50 p-8 space-y-6 relative">
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs text-indigo-400 font-bold uppercase tracking-wider">
+                    <span className="font-mono text-xs text-[#C09F80] font-bold uppercase tracking-wider">
                       Managed Cloud Pro
                     </span>
-                    <Badge variant="primary" size="sm">
-                      Coming Soon
-                    </Badge>
+                    <span className="font-mono text-[9px] uppercase px-1.5 py-0.2 bg-[#FAF8F5]/10 text-[#C09F80] border border-[#C09F80]/40">
+                      Early Access
+                    </span>
                   </div>
-                  <div className="font-display text-3xl font-extrabold text-white">
-                    Early Access
+                  <div className="font-display text-3xl font-normal text-[#F5F2ED]">
+                    Priority Preview
                   </div>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-[#D7CEC7]">
                     Zero-maintenance managed infrastructure with AI thread summarization.
                   </p>
                 </div>
 
-                <ul className="space-y-2.5 text-xs text-slate-300">
+                <ul className="space-y-2.5 text-xs text-[#D7CEC7]">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <Check className="w-4 h-4 text-[#C09F80]" />
                     <span>Deterministic priority triage &amp; VIP filters</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <Check className="w-4 h-4 text-[#C09F80]" />
                     <span>Real-time webhook sync &amp; multi-account switching</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <Check className="w-4 h-4 text-[#C09F80]" />
                     <span>AI auto-drafting with human review gates</span>
                   </li>
                 </ul>
@@ -555,7 +545,7 @@ export default function PricingPage() {
                   className={buttonStyles({
                     variant: "primary",
                     size: "md",
-                    className: "w-full justify-center shadow-lg shadow-indigo-500/20",
+                    className: "w-full justify-center",
                   })}
                 >
                   <span>Read Product Overview</span>
@@ -568,7 +558,7 @@ export default function PricingPage() {
       </section>
 
       {/* 6. FAQ & CONSULTATION CTA */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-20 md:py-28 bg-[#FFFFFF]">
         <SectionContainer>
           <div className="max-w-3xl mx-auto space-y-12">
             <SectionHeader
@@ -577,30 +567,30 @@ export default function PricingPage() {
               subtitle="Clear guidelines on billing milestones, intellectual property, and revisions."
             />
 
-            <div className="space-y-6 divide-y divide-slate-100">
+            <div className="space-y-6 divide-y divide-[#C09F80]/30 border-y border-[#C09F80]/30">
               <div className="pt-6 space-y-2">
-                <h4 className="font-display font-bold text-base text-slate-900">
+                <h4 className="font-display font-normal text-base sm:text-lg text-[#1A1D20]">
                   How does the 7-Day Free Trial on Starter Agent Setup work?
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-[#565656] leading-relaxed font-sans">
                   We deploy your scoped lead qualifier or support agent to your staging/pilot channel. You and your team evaluate its live responses and data capture for 7 full calendar days. If it meets your criteria, we finalize settlement and hand over all workflow credentials. If you decide not to proceed, you pay nothing.
                 </p>
               </div>
 
               <div className="pt-6 space-y-2">
-                <h4 className="font-display font-bold text-base text-slate-900">
+                <h4 className="font-display font-normal text-base sm:text-lg text-[#1A1D20]">
                   Who owns the intellectual property and code?
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-[#565656] leading-relaxed font-sans">
                   You do. Upon project completion and payment settlement, 100% of custom workflow JSONs, system prompts, API integrations, and documentation belong exclusively to your organization.
                 </p>
               </div>
 
               <div className="pt-6 space-y-2">
-                <h4 className="font-display font-bold text-base text-slate-900">
+                <h4 className="font-display font-normal text-base sm:text-lg text-[#1A1D20]">
                   What ongoing costs are required to run the agents?
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-[#565656] leading-relaxed font-sans">
                   Our systems are engineered for operational frugality. If you self-host n8n on a $5/mo VPS, your only operational costs are nominal model inference tokens (e.g. Groq, OpenAI, or Anthropic API fees, typically $5–$25/month for moderate business volumes).
                 </p>
               </div>
@@ -612,7 +602,6 @@ export default function PricingPage() {
                 className={buttonStyles({
                   variant: "primary",
                   size: "lg",
-                  className: "shadow-lg shadow-indigo-500/20",
                 })}
               >
                 <span>Request Custom Pricing Quote</span>

@@ -7,8 +7,7 @@ export interface GlassPanelProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function GlassPanel({
-  variant = "dark",
-  glow = false,
+  variant = "light",
   className,
   children,
   ...props
@@ -16,11 +15,10 @@ export function GlassPanel({
   return (
     <div
       className={cn(
-        "relative rounded-2xl overflow-hidden transition-all duration-300",
+        "relative rounded-none overflow-hidden transition-all duration-200",
         variant === "dark"
-          ? "bg-[#111A2E]/70 backdrop-blur-xl border border-white/10 text-white"
-          : "bg-white/80 backdrop-blur-xl border border-slate-200/80 text-slate-900 shadow-sm",
-        glow && "before:absolute before:inset-0 before:-z-10 before:rounded-2xl before:bg-gradient-to-r before:from-indigo-500/20 before:to-violet-500/20 before:blur-xl",
+          ? "bg-[#1A1D20] border border-[#C09F80]/40 text-[#F5F2ED]"
+          : "bg-[#FAF8F5] border border-[#C09F80]/60 text-[#1A1D20] shadow-[2px_2px_0px_0px_#D7CEC7]",
         className
       )}
       {...props}

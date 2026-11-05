@@ -3,9 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { SectionContainer } from "@/components/layout/SectionContainer";
-import { Card } from "@/components/ui/Card";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 import { buttonStyles } from "@/components/ui/Button";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { absoluteUrl } from "@/lib/site";
 import {
   ArrowUpRight,
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
       "JIOSI Inbox is an opinionated, keyboard-first email client built with Spring Boot 3.3.5 and React 18. AI thread summaries, instant search, and zero distraction.",
     url: absoluteUrl("/products/inbox"),
     type: "website",
-    siteName: "JIOSI",
+    siteName: "SHIVSASTRA",
     locale: "en_US",
     images: [
       {
@@ -47,35 +46,29 @@ export const metadata: Metadata = {
 
 export default function JiosiInboxProductPage() {
   return (
-    <div className="flex flex-col w-full bg-slate-50 text-slate-900">
-      {/* =======================================================
-          1. DARK NAVY HERO WITH LIVE APPLICATION CTA
-          ======================================================= */}
-      <section className="relative w-full bg-[#0B1020] text-white pt-16 md:pt-24 pb-20 md:pb-28 overflow-hidden border-b border-white/10">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[550px] pointer-events-none opacity-40">
-          <div className="w-full h-full bg-gradient-to-b from-indigo-500/30 via-cyan-500/10 to-transparent blur-3xl" />
-        </div>
-
+    <div className="flex flex-col w-full bg-[#F5F2ED] text-[#1A1D20]">
+      {/* 1. WARM EDITORIAL HERO BANNER */}
+      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30">
         <SectionContainer className="relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex items-center justify-center gap-2">
-              <Link href="/products" className="text-xs font-mono text-slate-400 hover:text-white transition-colors">
+              <Link href="/products" className="text-xs font-mono text-[#565656] hover:text-[#1A1D20] transition-colors">
                 Products
               </Link>
-              <span className="text-slate-600 text-xs font-mono">/</span>
-              <span className="text-xs font-mono text-cyan-300 font-semibold">JIOSI Inbox</span>
+              <span className="text-[#C09F80] text-xs font-mono">/</span>
+              <span className="text-xs font-mono text-[#76323F] font-semibold">JIOSI Inbox</span>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-cyan-300 border border-white/15 text-xs font-mono font-medium backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-              <span>Production Preview v0.1 · Active Deployment</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium">
+              <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
+              <span>Production Platform · Active Deployment</span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#1A1D20] leading-[1.08]">
               Your inbox, intelligently managed.
             </h1>
 
-            <p className="font-sans text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sans text-lg sm:text-xl text-[#565656] leading-relaxed max-w-2xl mx-auto">
               Read less. Understand faster. Respond smarter. An opinionated, keyboard-first email productivity client inspired by Superhuman and Linear.
             </p>
 
@@ -87,33 +80,31 @@ export default function JiosiInboxProductPage() {
                 className={buttonStyles({
                   variant: "primary",
                   size: "lg",
-                  className: "font-semibold shadow-xl shadow-indigo-600/30",
                 })}
               >
                 <span>Launch JIOSI Inbox Web App</span>
-                <ArrowUpRight className="w-4 h-4 text-cyan-300" />
+                <ArrowUpRight className="w-4 h-4 ml-1" />
               </a>
 
               <a
                 href="#features"
                 className={buttonStyles({
-                  variant: "glass",
+                  variant: "secondary",
                   size: "lg",
-                  className: "text-slate-200 hover:text-white border-white/20",
                 })}
               >
                 <span>Explore Architecture &amp; Features ↓</span>
               </a>
             </div>
 
-            <p className="font-mono text-xs text-slate-400 pt-2">
-              Hosted at <span className="text-slate-200">inbox.jiosi.online</span> · Multi-tenant HMAC security · Neon PostgreSQL
+            <p className="font-mono text-xs text-[#565656] pt-2">
+              Hosted at <span className="text-[#1A1D20] font-medium">inbox.jiosi.online</span> · Multi-tenant HMAC security · Neon PostgreSQL
             </p>
           </div>
 
           {/* Large Hero Product Visual */}
-          <div className="mt-14 max-w-5xl mx-auto rounded-2xl p-2.5 bg-gradient-to-b from-white/20 via-white/5 to-white/5 border border-white/15 shadow-2xl backdrop-blur-xl">
-            <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden border border-white/10 bg-slate-950">
+          <div className="mt-14 max-w-5xl mx-auto border border-[#C09F80] bg-[#FAF8F5] p-3 sm:p-4 shadow-[4px_4px_0px_0px_#D7CEC7]">
+            <div className="relative aspect-[16/10] w-full overflow-hidden border border-[#C09F80]/40 bg-[#FAF8F5]">
               <Image
                 src="/images/products/inbox/inbox-desktop-overview.png"
                 alt="JIOSI Inbox Full Desktop Interface"
@@ -127,10 +118,8 @@ export default function JiosiInboxProductPage() {
         </SectionContainer>
       </section>
 
-      {/* =======================================================
-          2. CORE FEATURES BREAKDOWN
-          ======================================================= */}
-      <section id="features" className="w-full py-20 md:py-28 bg-white border-b border-slate-200">
+      {/* 2. CORE FEATURES BREAKDOWN */}
+      <section id="features" className="w-full py-20 md:py-28 bg-[#FFFFFF] border-b border-[#C09F80]/30">
         <SectionContainer>
           <div className="space-y-16">
             <SectionHeader
@@ -141,77 +130,77 @@ export default function JiosiInboxProductPage() {
             />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="p-8 space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
-                  <Sparkles className="w-6 h-6" />
+              <div className="p-8 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+                <div className="w-10 h-10 bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/40 flex items-center justify-center">
+                  <Sparkles className="w-5 h-5" />
                 </div>
-                <h3 className="font-display text-xl font-bold text-slate-900">
+                <h3 className="font-display text-xl font-normal text-[#1A1D20]">
                   Instant AI Summaries
                 </h3>
-                <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                <p className="font-sans text-sm text-[#565656] leading-relaxed">
                   Long email threads are synthesized into bulleted executive summaries, extracting action items, deadlines, and key decisions instantly.
                 </p>
-              </Card>
+              </div>
 
-              <Card className="p-8 space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-600">
-                  <Keyboard className="w-6 h-6" />
+              <div className="p-8 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+                <div className="w-10 h-10 bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/40 flex items-center justify-center">
+                  <Keyboard className="w-5 h-5" />
                 </div>
-                <h3 className="font-display text-xl font-bold text-slate-900">
+                <h3 className="font-display text-xl font-normal text-[#1A1D20]">
                   Keyboard-First Triage
                 </h3>
-                <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                <p className="font-sans text-sm text-[#565656] leading-relaxed">
                   Navigate, star, archive, snooze, and reply at the speed of thought. Built with frictionless shortcuts (`⌘K`, `E`, `S`, `J`/`K`) so hands never leave the keys.
                 </p>
-              </Card>
+              </div>
 
-              <Card className="p-8 space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600">
-                  <Mail className="w-6 h-6" />
+              <div className="p-8 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+                <div className="w-10 h-10 bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/40 flex items-center justify-center">
+                  <Mail className="w-5 h-5" />
                 </div>
-                <h3 className="font-display text-xl font-bold text-slate-900">
+                <h3 className="font-display text-xl font-normal text-[#1A1D20]">
                   Google Workspace Sync
                 </h3>
-                <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                <p className="font-sans text-sm text-[#565656] leading-relaxed">
                   Seamless synchronization with Gmail and Google Workspace accounts via OAuth 2.0 PKCE with granular scope permissions.
                 </p>
-              </Card>
+              </div>
             </div>
 
             {/* Additional Secondary Features */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
-              <div className="p-6 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
-                <h4 className="font-display text-base font-bold text-slate-900">
+              <div className="p-6 bg-[#FAF8F5] border border-[#C09F80]/40 space-y-2">
+                <h4 className="font-display text-base font-normal text-[#1A1D20]">
                   Honest Empty States
                 </h4>
-                <p className="font-sans text-xs text-slate-600 leading-relaxed">
+                <p className="font-sans text-xs text-[#565656] leading-relaxed">
                   True &ldquo;Inbox Zero&rdquo; recognition without disguising stale demo data as real customer messages.
                 </p>
               </div>
 
-              <div className="p-6 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
-                <h4 className="font-display text-base font-bold text-slate-900">
+              <div className="p-6 bg-[#FAF8F5] border border-[#C09F80]/40 space-y-2">
+                <h4 className="font-display text-base font-normal text-[#1A1D20]">
                   Multi-Tenant Isolation
                 </h4>
-                <p className="font-sans text-xs text-slate-600 leading-relaxed">
+                <p className="font-sans text-xs text-[#565656] leading-relaxed">
                   Strict workspace-level authorization interceptors ensure zero cross-tenant data leakage.
                 </p>
               </div>
 
-              <div className="p-6 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
-                <h4 className="font-display text-base font-bold text-slate-900">
+              <div className="p-6 bg-[#FAF8F5] border border-[#C09F80]/40 space-y-2">
+                <h4 className="font-display text-base font-normal text-[#1A1D20]">
                   Sub-Second Search
                 </h4>
-                <p className="font-sans text-xs text-slate-600 leading-relaxed">
+                <p className="font-sans text-xs text-[#565656] leading-relaxed">
                   Instant Omni-search across all senders, subject lines, labels, and thread bodies.
                 </p>
               </div>
 
-              <div className="p-6 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
-                <h4 className="font-display text-base font-bold text-slate-900">
+              <div className="p-6 bg-[#FAF8F5] border border-[#C09F80]/40 space-y-2">
+                <h4 className="font-display text-base font-normal text-[#1A1D20]">
                   Offline Detection
                 </h4>
-                <p className="font-sans text-xs text-slate-600 leading-relaxed">
+                <p className="font-sans text-xs text-[#565656] leading-relaxed">
                   Graceful network degradation with visual alerts and offline action queuing.
                 </p>
               </div>
@@ -220,10 +209,8 @@ export default function JiosiInboxProductPage() {
         </SectionContainer>
       </section>
 
-      {/* =======================================================
-          3. PRODUCTION BACKEND ARCHITECTURE
-          ======================================================= */}
-      <section className="w-full py-20 md:py-28 bg-slate-50 border-b border-slate-200">
+      {/* 3. PRODUCTION BACKEND ARCHITECTURE */}
+      <section className="w-full py-20 md:py-28 bg-[#F5F2ED] border-b border-[#C09F80]/30">
         <SectionContainer>
           <div className="space-y-16">
             <SectionHeader
@@ -235,65 +222,65 @@ export default function JiosiInboxProductPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               <div className="lg:col-span-6 space-y-4">
-                <Card className="p-6 space-y-3">
+                <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
                   <div className="flex items-center gap-2">
-                    <Server className="w-5 h-5 text-indigo-600" />
-                    <h4 className="font-display text-lg font-bold text-slate-900">
+                    <Server className="w-5 h-5 text-[#76323F]" />
+                    <h4 className="font-display text-lg font-normal text-[#1A1D20]">
                       Spring Boot 3.3.5 Backend (Java 21 LTS)
                     </h4>
                   </div>
-                  <p className="font-sans text-sm text-slate-600 leading-relaxed">
-                    Stateless RESTful microservice with Spring Security, HMAC-SHA256 bearer tokens, and strict `SecurityInterceptor` workspace boundary validation.
+                  <p className="font-sans text-sm text-[#565656] leading-relaxed">
+                    Stateless RESTful microservice with Spring Security, HMAC-SHA256 bearer tokens, and strict workspace boundary validation.
                   </p>
-                </Card>
+                </div>
 
-                <Card className="p-6 space-y-3">
+                <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
                   <div className="flex items-center gap-2">
-                    <Database className="w-5 h-5 text-indigo-600" />
-                    <h4 className="font-display text-lg font-bold text-slate-900">
+                    <Database className="w-5 h-5 text-[#76323F]" />
+                    <h4 className="font-display text-lg font-normal text-[#1A1D20]">
                       Neon Serverless PostgreSQL 16
                     </h4>
                   </div>
-                  <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sans text-sm text-[#565656] leading-relaxed">
                     Uses PgBouncer connection pooling for runtime traffic and direct unpooled connections for Flyway schema migrations with advisory lock safety.
                   </p>
-                </Card>
+                </div>
 
-                <Card className="p-6 space-y-3">
+                <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
                   <div className="flex items-center gap-2">
-                    <Layers className="w-5 h-5 text-indigo-600" />
-                    <h4 className="font-display text-lg font-bold text-slate-900">
+                    <Layers className="w-5 h-5 text-[#76323F]" />
+                    <h4 className="font-display text-lg font-normal text-[#1A1D20]">
                       React 18 + TypeScript Client
                     </h4>
                   </div>
-                  <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sans text-sm text-[#565656] leading-relaxed">
                     Optimistic mutations with immediate visual feedback, responsive single-panel mobile flow, and 3-panel collapsible desktop layout.
                   </p>
-                </Card>
+                </div>
               </div>
 
               <div className="lg:col-span-6">
-                <div className="p-6 rounded-2xl bg-[#0B1020] text-slate-300 font-mono text-xs border border-white/10 space-y-4 shadow-xl">
-                  <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                    <span className="text-white font-semibold">Architecture Topology</span>
-                    <span className="text-cyan-400">Target: inbox.jiosi.online</span>
+                <div className="p-6 bg-[#1A1D20] text-[#D7CEC7] font-mono text-xs border border-[#C09F80]/40 space-y-4 shadow-[4px_4px_0px_0px_#565656]">
+                  <div className="flex items-center justify-between pb-3 border-b border-[#C09F80]/20">
+                    <span className="text-[#F5F2ED] font-semibold">Architecture Topology</span>
+                    <span className="text-[#C09F80]">Target: inbox.jiosi.online</span>
                   </div>
 
-                  <div className="space-y-1 text-slate-400">
-                    <p className="text-white">Client: React 18 + TypeScript (Port 3000 / 5173)</p>
+                  <div className="space-y-1 text-[#D7CEC7]">
+                    <p className="text-[#F5F2ED]">Client: React 18 + TypeScript</p>
                     <p className="pl-4">├── Authorization: Bearer &lt;HMAC-SHA256 Token&gt;</p>
                     <p className="pl-4">├── X-Workspace-Id: &lt;UUID&gt;</p>
-                    <p className="pl-4">└── Centralized API Client (Axios)</p>
-                    <p className="text-white pt-2">Backend: Spring Boot 3.3.5 (Port 8080)</p>
+                    <p className="pl-4">└── Centralized API Client</p>
+                    <p className="text-[#F5F2ED] pt-2">Backend: Spring Boot 3.3.5 (Java 21)</p>
                     <p className="pl-4">├── SecurityInterceptor (401 / 403 Guards)</p>
                     <p className="pl-4">├── REST Controllers: Threads, Drafts, Workspaces</p>
-                    <p className="pl-4">└── Flyway DDL Migrations (V1, V2, V3)</p>
-                    <p className="text-white pt-2">Database: Neon PostgreSQL 16</p>
-                    <p className="pl-4">└── PgBouncer Pooler (prepareThreshold=0)</p>
+                    <p className="pl-4">└── Flyway DDL Migrations</p>
+                    <p className="text-[#F5F2ED] pt-2">Database: Neon PostgreSQL 16</p>
+                    <p className="pl-4">└── PgBouncer Pooler</p>
                   </div>
 
-                  <div className="pt-2 text-[11px] text-emerald-400 border-t border-white/10">
-                    ✓ 0 Cross-Tenant Data Leaks · All automated tests passing
+                  <div className="pt-2 text-[11px] text-[#C09F80] border-t border-[#C09F80]/20">
+                    ✓ Verified Architecture · Shipped Platform
                   </div>
                 </div>
               </div>
@@ -302,22 +289,20 @@ export default function JiosiInboxProductPage() {
         </SectionContainer>
       </section>
 
-      {/* =======================================================
-          4. SCREENSHOTS GALLERY
-          ======================================================= */}
-      <section className="w-full py-20 md:py-28 bg-white border-b border-slate-200">
+      {/* 4. SCREENSHOTS GALLERY */}
+      <section className="w-full py-20 md:py-28 bg-[#FFFFFF] border-b border-[#C09F80]/30">
         <SectionContainer>
           <div className="space-y-14">
             <SectionHeader
               badge="Interface Tour"
-              badgeVariant="cyan"
+              badgeVariant="primary"
               title="Designed for Deep Work"
               description="Take a closer look at the actual views and workflows within JIOSI Inbox."
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-3">
-                <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-200 shadow-md bg-slate-900">
+                <div className="relative aspect-[16/10] overflow-hidden border border-[#C09F80]/50 shadow-[2px_2px_0px_0px_#D7CEC7] bg-[#FAF8F5]">
                   <Image
                     src="/images/products/inbox/inbox-threads-view.png"
                     alt="JIOSI Inbox Thread List and Triage View"
@@ -327,17 +312,17 @@ export default function JiosiInboxProductPage() {
                   />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="font-display text-base font-bold text-slate-900">
+                  <h4 className="font-display text-base font-normal text-[#1A1D20]">
                     Thread List &amp; Quick Actions
                   </h4>
-                  <p className="font-sans text-xs text-slate-600">
+                  <p className="font-sans text-xs text-[#565656]">
                     Dense, high-contrast message listing with immediate star, snooze, and archive triggers.
                   </p>
                 </div>
               </div>
 
               <div className="space-y-3">
-                <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-200 shadow-md bg-slate-900">
+                <div className="relative aspect-[16/10] overflow-hidden border border-[#C09F80]/50 shadow-[2px_2px_0px_0px_#D7CEC7] bg-[#FAF8F5]">
                   <Image
                     src="/images/products/inbox/inbox-detail-view.png"
                     alt="JIOSI Inbox Message Inspector View"
@@ -347,10 +332,10 @@ export default function JiosiInboxProductPage() {
                   />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="font-display text-base font-bold text-slate-900">
+                  <h4 className="font-display text-base font-normal text-[#1A1D20]">
                     Contextual Message Inspector
                   </h4>
-                  <p className="font-sans text-xs text-slate-600">
+                  <p className="font-sans text-xs text-[#565656]">
                     Clean reading pane with inline markdown support, quick reply composer, and attachment preview.
                   </p>
                 </div>
@@ -360,22 +345,20 @@ export default function JiosiInboxProductPage() {
         </SectionContainer>
       </section>
 
-      {/* =======================================================
-          5. CTA TO ACTUAL APPLICATION
-          ======================================================= */}
-      <section className="w-full bg-[#0B1020] text-white py-20 border-t border-white/10">
+      {/* 5. CTA TO ACTUAL APPLICATION (Grounded Contrast) */}
+      <section className="w-full bg-[#1A1D20] text-[#F5F2ED] py-20 border-t border-[#C09F80]/30">
         <SectionContainer>
           <div className="max-w-2xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-cyan-400/10 text-cyan-300 border border-cyan-400/20">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FAF8F5]/10 text-[#C09F80] border border-[#C09F80]/40 text-xs font-mono">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Ready for Immediate Use</span>
             </div>
 
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+            <h2 className="font-display text-3xl sm:text-4xl font-normal tracking-tight text-[#F5F2ED]">
               Experience JIOSI Inbox Today
             </h2>
 
-            <p className="font-sans text-base text-slate-300 leading-relaxed">
+            <p className="font-sans text-base text-[#D7CEC7] leading-relaxed">
               Step into high-velocity email management. Open the web app or request an enterprise workspace deployment.
             </p>
 
@@ -387,19 +370,17 @@ export default function JiosiInboxProductPage() {
                 className={buttonStyles({
                   variant: "primary",
                   size: "lg",
-                  className: "font-semibold shadow-xl shadow-indigo-600/30",
                 })}
               >
                 <span>Launch App (inbox.jiosi.online)</span>
-                <ArrowUpRight className="w-4 h-4 text-cyan-300" />
+                <ArrowUpRight className="w-4 h-4 ml-1" />
               </a>
 
               <Link
                 href="/contact?subject=JIOSI%20Inbox%20Enterprise%20Inquiry"
                 className={buttonStyles({
-                  variant: "glass",
+                  variant: "dark-inverse",
                   size: "lg",
-                  className: "text-slate-200 hover:text-white border-white/20",
                 })}
               >
                 <span>Inquire About Enterprise Deployment</span>

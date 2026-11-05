@@ -595,7 +595,7 @@ export function ProductCheckoutAction({
           className="p-5 sm:p-6 border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] space-y-3"
         >
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse" />
+            <span className="w-2 h-2 rounded-none bg-[var(--color-accent)] animate-pulse" />
             <span className="font-mono text-[11px] uppercase tracking-wider text-[var(--color-accent)] font-semibold">
               PAYMENT IN PROGRESS
             </span>
@@ -869,7 +869,7 @@ export function ProductCheckoutAction({
           className="p-5 sm:p-6 border border-amber-500 bg-[var(--color-canvas-secondary)] space-y-3"
         >
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-none bg-amber-500 animate-pulse" />
             <span className="font-mono text-[11px] uppercase tracking-wider text-amber-700 dark:text-amber-400 font-semibold">
               CONFIRMING STATUS
             </span>

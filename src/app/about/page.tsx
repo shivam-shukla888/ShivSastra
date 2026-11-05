@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { SectionContainer } from "@/components/layout/SectionContainer";
-import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { buttonStyles } from "@/components/ui/Button";
 import { getProfileSettings } from "@/lib/profile";
@@ -20,26 +19,26 @@ import {
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "About JIOSI — Mission, Engineering Values & Architecture",
+  title: "About SHIVSASTRA — Mission, Engineering Values & Architecture",
   description:
-    "Learn about JIOSI's mission, engineering approach, and standards. Building high-velocity productivity software and secure Agentic AI systems.",
+    "Learn about SHIVSASTRA's mission, engineering approach, and standards. Building high-velocity productivity software and secure Agentic AI systems.",
   alternates: {
     canonical: absoluteUrl("/about"),
   },
   openGraph: {
-    title: "About JIOSI — Mission, Engineering Values & Architecture",
+    title: "About SHIVSASTRA — Mission, Engineering Values & Architecture",
     description:
-      "Learn about JIOSI's mission, engineering approach, and standards. Building high-velocity productivity software and secure Agentic AI systems.",
+      "Learn about SHIVSASTRA's mission, engineering approach, and standards. Building high-velocity productivity software and secure Agentic AI systems.",
     url: absoluteUrl("/about"),
     type: "website",
-    siteName: "JIOSI",
+    siteName: "SHIVSASTRA",
     locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "About JIOSI",
+        alt: "About SHIVSASTRA",
       },
     ],
   },
@@ -49,73 +48,63 @@ export default async function AboutPage() {
   const profile = await getProfileSettings();
 
   return (
-    <div className="flex flex-col w-full bg-[#F5F2ED] text-slate-900">
-      {/* =======================================================
-          1. DARK NAVY HERO BANNER
-          ======================================================= */}
-      <section className="relative w-full bg-[#0B1020] text-white pt-16 md:pt-24 pb-20 md:pb-28 overflow-hidden border-b border-white/10">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] pointer-events-none opacity-30">
-          <div className="w-full h-full bg-gradient-to-b from-indigo-500/20 via-violet-500/10 to-transparent blur-3xl" />
-        </div>
-
+    <div className="flex flex-col w-full bg-[#F5F2ED] text-[#1A1D20]">
+      {/* 1. WARM EDITORIAL HERO BANNER */}
+      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30">
         <SectionContainer className="relative z-10">
           <div className="max-w-3xl space-y-6">
             <div className="flex items-center gap-2">
-              <Link href="/" className="text-xs font-mono text-slate-400 hover:text-white transition-colors">
+              <Link href="/" className="text-xs font-mono text-[#565656] hover:text-[#1A1D20] transition-colors">
                 Home
               </Link>
-              <span className="text-slate-600 text-xs font-mono">/</span>
-              <span className="text-xs font-mono text-cyan-300 font-semibold">About JIOSI</span>
+              <span className="text-[#C09F80] text-xs font-mono">/</span>
+              <span className="text-xs font-mono text-[#76323F] font-semibold">About SHIVSASTRA</span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#1A1D20] leading-[1.08]">
               Engineering clarity into modern digital systems.
             </h1>
 
-            <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed">
-              JIOSI is an independent technology company dedicated to creating focused productivity platforms and reliable Agentic AI systems that eliminate operational drag.
+            <p className="font-sans text-base sm:text-lg text-[#565656] leading-relaxed">
+              SHIVSASTRA is an independent technology company dedicated to creating focused productivity platforms and reliable Agentic AI systems that eliminate operational drag.
             </p>
           </div>
         </SectionContainer>
       </section>
 
-      {/* =======================================================
-          2. MISSION & VISION
-          ======================================================= */}
-      <section className="w-full py-20 md:py-28 bg-white border-b border-slate-200">
+      {/* 2. MISSION & VISION */}
+      <section className="w-full py-20 md:py-28 bg-[#FFFFFF] border-b border-[#C09F80]/30">
         <SectionContainer>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <Card className="p-8 md:p-10 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
-                <Target className="w-6 h-6" />
+            <div className="p-8 md:p-10 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+              <div className="w-10 h-10 bg-[#FAF8F5] border border-[#C09F80]/40 flex items-center justify-center text-[#76323F]">
+                <Target className="w-5 h-5" />
               </div>
-              <h2 className="font-display text-2xl font-bold text-slate-900">
+              <h2 className="font-display text-2xl font-normal text-[#1A1D20]">
                 Our Mission
               </h2>
-              <p className="font-sans text-base text-slate-600 leading-relaxed">
+              <p className="font-sans text-base text-[#565656] leading-relaxed">
                 To build high-velocity software tools and automated AI systems that free knowledge workers and growing businesses from repetitive communication overload — with zero compromise on privacy or system transparency.
               </p>
-            </Card>
+            </div>
 
-            <Card className="p-8 md:p-10 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-violet-50 border border-violet-100 flex items-center justify-center text-violet-600">
-                <Compass className="w-6 h-6" />
+            <div className="p-8 md:p-10 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+              <div className="w-10 h-10 bg-[#FAF8F5] border border-[#C09F80]/40 flex items-center justify-center text-[#76323F]">
+                <Compass className="w-5 h-5" />
               </div>
-              <h2 className="font-display text-2xl font-bold text-slate-900">
+              <h2 className="font-display text-2xl font-normal text-[#1A1D20]">
                 Our Vision
               </h2>
-              <p className="font-sans text-base text-slate-600 leading-relaxed">
+              <p className="font-sans text-base text-[#565656] leading-relaxed">
                 A software ecosystem where applications are distraction-free, keyboard-first, and respect user autonomy. We believe AI should quietly augment human workflow rather than creating chaotic hallucinations.
               </p>
-            </Card>
+            </div>
           </div>
         </SectionContainer>
       </section>
 
-      {/* =======================================================
-          3. ENGINEERING VALUES & THE JIOSI ETHOS
-          ======================================================= */}
-      <section className="w-full py-20 md:py-28 bg-[#F5F2ED] border-b border-[#E2E8F0]">
+      {/* 3. ENGINEERING VALUES */}
+      <section className="w-full py-20 md:py-28 bg-[#F5F2ED] border-b border-[#C09F80]/30">
         <SectionContainer>
           <div className="space-y-16">
             <SectionHeader
@@ -126,62 +115,60 @@ export default async function AboutPage() {
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="p-6 md:p-8 space-y-4">
-                <span className="font-mono text-xs font-bold text-indigo-600 uppercase tracking-wider block">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+                <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Principle 01
                 </span>
-                <h3 className="font-display text-xl font-bold text-slate-900">
+                <h3 className="font-display text-xl font-normal text-[#1A1D20]">
                   AI Extracts. Code Decides.
                 </h3>
-                <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                <p className="font-sans text-sm text-[#565656] leading-relaxed">
                   Probabilistic models extract user intent and parameters; deterministic backend logic executes business rules, financial math, and database mutations.
                 </p>
-              </Card>
+              </div>
 
-              <Card className="p-6 md:p-8 space-y-4">
-                <span className="font-mono text-xs font-bold text-indigo-600 uppercase tracking-wider block">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+                <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Principle 02
                 </span>
-                <h3 className="font-display text-xl font-bold text-slate-900">
+                <h3 className="font-display text-xl font-normal text-[#1A1D20]">
                   Total Data Sovereignty
                 </h3>
-                <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                <p className="font-sans text-sm text-[#565656] leading-relaxed">
                   Client customer records belong to the client. Workflows run in client-owned infrastructure (isolated PostgreSQL, self-hosted n8n). No intermediary storage.
                 </p>
-              </Card>
+              </div>
 
-              <Card className="p-6 md:p-8 space-y-4">
-                <span className="font-mono text-xs font-bold text-indigo-600 uppercase tracking-wider block">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+                <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Principle 03
                 </span>
-                <h3 className="font-display text-xl font-bold text-slate-900">
+                <h3 className="font-display text-xl font-normal text-[#1A1D20]">
                   Keyboard-First Velocity
                 </h3>
-                <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                <p className="font-sans text-sm text-[#565656] leading-relaxed">
                   Inspired by Superhuman and Linear, our interfaces prioritize rapid keyboard navigation, sub-second latency, and zero unnecessary visual clutter.
                 </p>
-              </Card>
+              </div>
 
-              <Card className="p-6 md:p-8 space-y-4">
-                <span className="font-mono text-xs font-bold text-indigo-600 uppercase tracking-wider block">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+                <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Principle 04
                 </span>
-                <h3 className="font-display text-xl font-bold text-slate-900">
+                <h3 className="font-display text-xl font-normal text-[#1A1D20]">
                   Truthful Architecture
                 </h3>
-                <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                <p className="font-sans text-sm text-[#565656] leading-relaxed">
                   Zero fake counters, honest empty states (&ldquo;Inbox Zero&rdquo;), and transparent offline modes. We build software that respects user trust.
                 </p>
-              </Card>
+              </div>
             </div>
           </div>
         </SectionContainer>
       </section>
 
-      {/* =======================================================
-          4. LEADERSHIP & VERIFIED CREDENTIALS
-          ======================================================= */}
-      <section className="w-full py-20 md:py-28 bg-white border-b border-slate-200">
+      {/* 4. LEADERSHIP & VERIFIED CREDENTIALS */}
+      <section className="w-full py-20 md:py-28 bg-[#FFFFFF] border-b border-[#C09F80]/30">
         <SectionContainer>
           <div className="space-y-16">
             <SectionHeader
@@ -194,11 +181,11 @@ export default async function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               {/* Founder Profile Card */}
               <div className="lg:col-span-5">
-                <Card className="p-6 sm:p-8 space-y-6">
-                  <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-slate-200 bg-slate-100">
+                <div className="p-6 sm:p-8 space-y-6 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[4px_4px_0px_0px_#D7CEC7]">
+                  <div className="relative aspect-[4/5] overflow-hidden border border-[#C09F80]/40 bg-[#FAF8F5]">
                     <Image
                       src="/images/shivam-shukla.jpg"
-                      alt="Shivam Shukla — Founder & AI Systems Architect at JIOSI"
+                      alt="Shivam Shukla — Founder & AI Systems Architect at SHIVSASTRA"
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 400px"
@@ -207,15 +194,15 @@ export default async function AboutPage() {
                   </div>
 
                   <div className="space-y-1">
-                    <h3 className="font-display text-2xl font-bold text-slate-900">
+                    <h3 className="font-display text-2xl font-normal text-[#1A1D20]">
                       Shivam Shukla
                     </h3>
-                    <p className="font-mono text-xs text-indigo-600 uppercase tracking-wider font-semibold">
+                    <p className="font-mono text-xs text-[#76323F] uppercase tracking-wider font-semibold">
                       Founder &amp; Principal AI Systems Engineer
                     </p>
                   </div>
 
-                  <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sans text-sm text-[#565656] leading-relaxed">
                     Background spanning Spring Boot enterprise backends, PostgreSQL concurrency tuning, real-time WebSockets, and production LLM orchestration.
                   </p>
 
@@ -240,7 +227,7 @@ export default async function AboutPage() {
                         className={buttonStyles({
                           variant: "ghost",
                           size: "sm",
-                          className: "font-mono text-xs",
+                          className: "font-mono text-xs text-[#565656] hover:text-[#1A1D20]",
                         })}
                       >
                         <span>GitHub</span>
@@ -248,76 +235,76 @@ export default async function AboutPage() {
                       </a>
                     )}
                   </div>
-                </Card>
+                </div>
               </div>
 
               {/* Verified Education & Experience Timeline */}
               <div className="lg:col-span-7 space-y-8">
                 <div className="space-y-4">
-                  <h3 className="font-display text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <Briefcase className="w-5 h-5 text-indigo-600" />
+                  <h3 className="font-display text-xl font-normal text-[#1A1D20] flex items-center gap-2">
+                    <Briefcase className="w-5 h-5 text-[#76323F]" />
                     <span>Verified Industry Experience</span>
                   </h3>
 
                   <div className="space-y-4">
-                    <Card className="p-6 space-y-2">
+                    <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
                       <div className="flex items-center justify-between">
-                        <span className="font-display text-base font-bold text-slate-900">
+                        <span className="font-display text-base font-normal text-[#1A1D20]">
                           AI/ML Intern
                         </span>
-                        <span className="font-mono text-xs text-slate-500">
+                        <span className="font-mono text-xs text-[#565656]">
                           Oct 2026 – Present
                         </span>
                       </div>
-                      <p className="font-mono text-xs text-indigo-600 font-medium">
+                      <p className="font-mono text-xs text-[#76323F] font-medium">
                         Nexvia Technologies · Remote
                       </p>
-                      <p className="font-sans text-sm text-slate-600 leading-relaxed pt-1">
+                      <p className="font-sans text-sm text-[#565656] leading-relaxed pt-1">
                         Production AI/ML pipelines, agent orchestration, and automated enterprise software workflows.
                       </p>
-                    </Card>
+                    </div>
 
-                    <Card className="p-6 space-y-2">
+                    <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
                       <div className="flex items-center justify-between">
-                        <span className="font-display text-base font-bold text-slate-900">
+                        <span className="font-display text-base font-normal text-[#1A1D20]">
                           Software Engineer Intern
                         </span>
-                        <span className="font-mono text-xs text-slate-500">
+                        <span className="font-mono text-xs text-[#565656]">
                           Jul 2025 – Sep 2025
                         </span>
                       </div>
-                      <p className="font-mono text-xs text-indigo-600 font-medium">
+                      <p className="font-mono text-xs text-[#76323F] font-medium">
                         Soft Pro · Noida, India
                       </p>
-                      <p className="font-sans text-sm text-slate-600 leading-relaxed pt-1">
+                      <p className="font-sans text-sm text-[#565656] leading-relaxed pt-1">
                         Engineered stateless RESTful backend services with Java 17, Spring Boot 3, and MySQL. Decreased API response times by ~20% through indexed query optimizations and connection pool tuning.
                       </p>
-                    </Card>
+                    </div>
                   </div>
                 </div>
 
-                <div className="space-y-4 pt-4 border-t border-slate-200">
-                  <h3 className="font-display text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <GraduationCap className="w-5 h-5 text-indigo-600" />
+                <div className="space-y-4 pt-4 border-t border-[#C09F80]/30">
+                  <h3 className="font-display text-xl font-normal text-[#1A1D20] flex items-center gap-2">
+                    <GraduationCap className="w-5 h-5 text-[#76323F]" />
                     <span>Education &amp; Academic Honors</span>
                   </h3>
 
-                  <Card className="p-6 space-y-2">
+                  <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
                     <div className="flex items-center justify-between">
-                      <span className="font-display text-base font-bold text-slate-900">
+                      <span className="font-display text-base font-normal text-[#1A1D20]">
                         B.Tech in Computer Science and Engineering
                       </span>
-                      <span className="font-mono text-xs text-slate-500">
+                      <span className="font-mono text-xs text-[#565656]">
                         2022 – 2026
                       </span>
                     </div>
-                    <p className="font-mono text-xs text-indigo-600 font-medium">
+                    <p className="font-mono text-xs text-[#76323F] font-medium">
                       SRMS CETR (Dr. A.P.J. Abdul Kalam Technical University)
                     </p>
-                    <p className="font-sans text-sm text-slate-600 leading-relaxed pt-1">
+                    <p className="font-sans text-sm text-[#565656] leading-relaxed pt-1">
                       Focused on backend architectures, distributed computing, database management, and application security.
                     </p>
-                  </Card>
+                  </div>
                 </div>
               </div>
             </div>
@@ -325,16 +312,14 @@ export default async function AboutPage() {
         </SectionContainer>
       </section>
 
-      {/* =======================================================
-          5. CTA BANNER
-          ======================================================= */}
-      <section className="w-full bg-[#0B1020] text-white py-20 border-t border-white/10">
+      {/* 5. CTA BANNER (Grounded Contrast) */}
+      <section className="w-full bg-[#1A1D20] text-[#F5F2ED] py-20 border-t border-[#C09F80]/30">
         <SectionContainer>
           <div className="max-w-2xl mx-auto text-center space-y-6">
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-              Interested in collaborating with JIOSI?
+            <h2 className="font-display text-3xl sm:text-4xl font-normal tracking-tight text-[#F5F2ED]">
+              Interested in collaborating with SHIVSASTRA?
             </h2>
-            <p className="font-sans text-base text-slate-300 leading-relaxed">
+            <p className="font-sans text-base text-[#D7CEC7] leading-relaxed">
               Whether you need a custom agent system, an architecture audit, or want to explore our enterprise product licenses, we’d love to connect.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -343,7 +328,6 @@ export default async function AboutPage() {
                 className={buttonStyles({
                   variant: "primary",
                   size: "lg",
-                  className: "font-semibold shadow-xl shadow-indigo-600/30",
                 })}
               >
                 <span>Initiate a Conversation</span>
@@ -352,9 +336,8 @@ export default async function AboutPage() {
               <Link
                 href="/projects"
                 className={buttonStyles({
-                  variant: "glass",
+                  variant: "dark-inverse",
                   size: "lg",
-                  className: "text-slate-200 hover:text-white border-white/20",
                 })}
               >
                 <span>View Case Studies</span>

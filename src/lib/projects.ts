@@ -241,7 +241,7 @@ ShivSastra is the production digital platform and personal engineering HQ operat
 - **Database & Auth**: Supabase, PostgreSQL, Row-Level Security (RLS)
 - **Payment & Orders**: Razorpay API, HMAC webhook verification
 - **AI Integration**: Groq API (Llama 3), custom safety & validation layers`,
-  coverImageUrl: "/images/hero-visual.webp",
+  coverImageUrl: "/images/projects/shivsastra/shivsastra-desktop-overview.png",
   category: "Full-Stack · Systems Architecture",
   techStack: [
     "Next.js",

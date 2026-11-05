@@ -6,7 +6,6 @@ import { SectionContainer } from "@/components/layout/SectionContainer";
 import { InnerPageEntrance } from "@/components/layout/InnerPageEntrance";
 import { Badge } from "@/components/ui/Badge";
 import { buttonStyles } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
 import { getPublishedProjects } from "@/lib/projects";
 import { absoluteUrl } from "@/lib/site";
 import { ArrowRight, ExternalLink, ShieldCheck, Cpu } from "lucide-react";
@@ -14,34 +13,34 @@ import { ArrowRight, ExternalLink, ShieldCheck, Cpu } from "lucide-react";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Engineering Portfolio & Case Studies — JIOSI",
+  title: "Engineering Portfolio & Case Studies — SHIVSASTRA",
   description:
-    "Verified software systems, Agentic AI architectures, and production case studies by JIOSI. Featuring JIOSI Inbox, Shivsastra, Yojna Setu, and QuickEats.",
+    "Verified software systems, Agentic AI architectures, and production case studies by SHIVSASTRA. Featuring JIOSI Inbox, Yojna Setu, and QuickEats.",
   alternates: {
     canonical: absoluteUrl("/projects"),
   },
   openGraph: {
-    title: "Engineering Portfolio & Case Studies — JIOSI",
+    title: "Engineering Portfolio & Case Studies — SHIVSASTRA",
     description:
-      "Verified software systems, Agentic AI architectures, and production case studies by JIOSI.",
+      "Verified software systems, Agentic AI architectures, and production case studies by SHIVSASTRA.",
     url: absoluteUrl("/projects"),
     type: "website",
-    siteName: "JIOSI",
+    siteName: "SHIVSASTRA",
     locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Selected Work & Engineering Projects — JIOSI",
+        alt: "Selected Work & Engineering Projects — SHIVSASTRA",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Engineering Portfolio & Case Studies — JIOSI",
+    title: "Engineering Portfolio & Case Studies — SHIVSASTRA",
     description:
-      "Verified software systems, Agentic AI architectures, and production case studies by JIOSI.",
+      "Verified software systems, Agentic AI architectures, and production case studies by SHIVSASTRA.",
     images: ["/og-image.png"],
   },
 };
@@ -55,43 +54,42 @@ export default async function ProjectsPage() {
     .sort((a, b) => clientProjectSlugs.indexOf(a.slug) - clientProjectSlugs.indexOf(b.slug));
 
   return (
-    <div className="relative w-full overflow-hidden bg-[var(--color-canvas-primary)] text-[var(--color-ink-primary)]">
-      {/* 1. DARK HERO SECTION */}
-      <section className="relative w-full bg-[#1A1D20] text-[#F5F2ED] pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden border-b border-[#C09F80]/30">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-96 bg-radial from-indigo-500/20 via-violet-600/10 to-transparent blur-3xl pointer-events-none" />
-
+    <div className="relative w-full overflow-hidden bg-[#F5F2ED] text-[#1A1D20]">
+      {/* 1. WARM EDITORIAL HERO SECTION */}
+      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30">
         <SectionContainer className="relative z-10">
           <InnerPageEntrance delayIndex={0}>
             <div className="space-y-6 max-w-3xl">
               <div className="flex flex-wrap items-center gap-3">
-                <Badge variant="cyan" dot size="sm">
-                  CASE STUDIES &amp; PORTFOLIO
-                </Badge>
-                <span className="text-slate-400 text-xs font-mono">
-                  VERIFIED PRODUCTION ARCHITECTURES
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium">
+                  <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
+                  <span>CASE STUDIES &amp; ARCHITECTURES</span>
+                </div>
+                <span className="text-[#565656] text-xs font-mono">
+                  VERIFIED PRODUCTION BUILDS
                 </span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#1A1D20] leading-[1.08]">
                 Proven Engineering &amp; System Case Studies
               </h1>
 
-              <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed">
+              <p className="font-sans text-base sm:text-lg text-[#565656] leading-relaxed">
                 Explore our full technical case studies across multi-agent welfare discovery, high-concurrency order processing, full-stack digital publishing, and keyboard-first productivity software.
               </p>
 
-              <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono text-slate-400">
+              <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono text-[#565656]">
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  <span>0 Fluff Benchmarks</span>
+                  <ShieldCheck className="w-4 h-4 text-[#76323F]" />
+                  <span>Client-Owned Deployments</span>
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1.5">
-                  <Cpu className="w-4 h-4 text-cyan-400" />
+                  <Cpu className="w-4 h-4 text-[#76323F]" />
                   <span>Deterministic Backends</span>
                 </span>
                 <span>•</span>
-                <span>Full Architectural Monograms</span>
+                <span>Architectural Monographs</span>
               </div>
             </div>
           </InnerPageEntrance>
@@ -99,22 +97,21 @@ export default async function ProjectsPage() {
       </section>
 
       {/* 2. CASE STUDY CARDS LIST */}
-      <section className="py-20 md:py-28 bg-[#F5F2ED] border-b border-[#E2E8F0]">
+      <section className="py-20 md:py-28 bg-[#FFFFFF] border-b border-[#C09F80]/30">
         <SectionContainer>
           <div className="space-y-16">
             <div className="space-y-12">
               {projects.length > 0 ? (
                 projects.map((project) => (
-                  <Card
+                  <div
                     key={project.id}
-                    variant="standard"
-                    className="p-6 md:p-10 overflow-hidden hover:shadow-xl transition-shadow"
+                    className="p-6 md:p-10 overflow-hidden bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[4px_4px_0px_0px_#D7CEC7]"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                       {/* Image Thumbnail */}
                       <div className="lg:col-span-5">
                         {project.coverImageUrl ? (
-                          <div className="w-full aspect-[16/10] rounded-xl overflow-hidden border border-slate-200 relative bg-slate-100 shadow-xs">
+                          <div className="w-full aspect-[16/10] overflow-hidden border border-[#C09F80]/40 relative bg-[#FAF8F5]">
                             <Image
                               src={project.coverImageUrl}
                               alt={project.title}
@@ -125,8 +122,8 @@ export default async function ProjectsPage() {
                             />
                           </div>
                         ) : (
-                          <div className="w-full aspect-[16/10] rounded-xl border border-dashed border-slate-300 bg-slate-100 flex items-center justify-center p-6">
-                            <span className="font-mono text-xs text-slate-400">
+                          <div className="w-full aspect-[16/10] border border-dashed border-[#C09F80]/50 bg-[#FAF8F5] flex items-center justify-center p-6">
+                            <span className="font-mono text-xs text-[#565656]">
                               System Architecture Diagram
                             </span>
                           </div>
@@ -142,22 +139,22 @@ export default async function ProjectsPage() {
                             </Badge>
                           )}
                           {project.projectYear && (
-                            <span className="text-xs font-mono text-slate-400">
+                            <span className="text-xs font-mono text-[#565656]">
                               {project.projectYear}
                             </span>
                           )}
                           {project.category && (
-                            <span className="text-xs font-sans text-slate-500 font-medium">
+                            <span className="text-xs font-sans text-[#565656] font-medium">
                               • {project.category}
                             </span>
                           )}
                         </div>
 
-                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
+                        <h2 className="font-display text-2xl sm:text-3xl font-normal text-[#1A1D20] leading-tight">
                           {project.title}
                         </h2>
 
-                        <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed">
+                        <p className="font-sans text-sm sm:text-base text-[#565656] leading-relaxed">
                           {project.summary}
                         </p>
 
@@ -167,7 +164,7 @@ export default async function ProjectsPage() {
                             {project.techStack.map((tech) => (
                               <span
                                 key={tech}
-                                className="font-mono text-[11px] px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200/60 font-medium"
+                                className="font-mono text-[11px] px-2.5 py-1 bg-[#FAF8F5] text-[#565656] border border-[#C09F80]/40 font-medium"
                               >
                                 {tech}
                               </span>
@@ -182,7 +179,6 @@ export default async function ProjectsPage() {
                             className={buttonStyles({
                               variant: "primary",
                               size: "md",
-                              className: "text-xs font-bold uppercase tracking-wider",
                             })}
                           >
                             <span>
@@ -197,39 +193,39 @@ export default async function ProjectsPage() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className={buttonStyles({
-                                variant: "outline",
+                                variant: "secondary",
                                 size: "md",
-                                className: "text-xs font-medium text-slate-700",
                               })}
                             >
                               <span>Inspect Live Deploy</span>
-                              <ExternalLink className="w-3.5 h-3.5 ml-1.5 text-slate-400" />
+                              <ExternalLink className="w-3.5 h-3.5 ml-1.5 text-[#76323F]" />
                             </a>
                           )}
                         </div>
                       </div>
                     </div>
-                  </Card>
+                  </div>
                 ))
               ) : (
                 <div className="py-20 text-center">
-                  <p className="text-slate-500 font-mono text-sm">
+                  <p className="text-[#565656] font-mono text-sm">
                     No public case studies found.
                   </p>
                 </div>
               )}
             </div>
 
-            {/* Bottom CTA to Services */}
-            <div className="p-8 sm:p-12 rounded-2xl bg-gradient-to-r from-[#0B1020] to-[#1E293B] text-white flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl">
+            {/* Bottom CTA to Services (Grounded Contrast) */}
+            <div className="p-8 sm:p-12 border border-[#C09F80]/40 bg-[#1A1D20] text-[#F5F2ED] flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-[4px_4px_0px_0px_#565656]">
               <div className="space-y-2 max-w-xl">
-                <Badge variant="cyan" dot size="sm">
-                  WORK WITH US
-                </Badge>
-                <h3 className="font-display text-2xl font-bold text-white">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5]/10 text-[#C09F80] border border-[#C09F80]/40 text-xs font-mono font-medium">
+                  <span className="w-1.5 h-1.5 rounded-none bg-[#C09F80]" />
+                  <span>WORK WITH US</span>
+                </div>
+                <h3 className="font-display text-2xl sm:text-3xl font-normal text-[#F5F2ED]">
                   Want an equivalent system built for your company?
                 </h3>
-                <p className="text-slate-300 text-sm">
+                <p className="text-[#D7CEC7] text-sm">
                   We engineer production-grade Agentic AI and backend systems on client-owned infrastructure.
                 </p>
               </div>
@@ -237,13 +233,13 @@ export default async function ProjectsPage() {
               <Link
                 href="/services"
                 className={buttonStyles({
-                  variant: "primary",
+                  variant: "dark-inverse",
                   size: "lg",
-                  className: "shrink-0 shadow-lg shadow-indigo-500/20",
+                  className: "shrink-0",
                 })}
               >
                 <span>View Service Packages &amp; Pricing</span>
-                <ArrowRight className="w-4 h-4 ml-1.5" />
+                <ArrowRight className="w-4 h-4 ml-1.5 text-[#76323F]" />
               </Link>
             </div>
           </div>

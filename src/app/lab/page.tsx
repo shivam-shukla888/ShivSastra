@@ -56,7 +56,7 @@ export default async function LabPage() {
           <InnerPageEntrance delayIndex={0}>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-white/10 flex items-center justify-center text-indigo-600 dark:text-cyan-400 border border-indigo-200/50 dark:border-white/10">
+                <div className="w-10 h-10 rounded-none bg-[#FAF8F5] flex items-center justify-center text-[#76323F] border border-[#C09F80]/40">
                   <FlaskConical className="w-5 h-5" />
                 </div>
                 <h1 className="font-display text-4xl sm:text-5xl font-normal tracking-tight text-[var(--color-ink-primary)]">

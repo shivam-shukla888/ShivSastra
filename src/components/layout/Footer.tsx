@@ -12,62 +12,54 @@ export function Footer() {
           <div className="lg:col-span-4 space-y-4">
             <Link
               href="/"
-              className="inline-flex items-center gap-2.5 font-display text-2xl font-normal tracking-tight text-[#F5F2ED] group"
+              className="inline-flex items-center gap-2 font-display text-2xl font-normal tracking-[0.06em] text-[#F5F2ED] hover:text-[#C09F80] transition-colors uppercase"
             >
-              <div className="w-7 h-7 rounded-none bg-[#76323F] border border-[#C09F80] flex items-center justify-center text-[#F5F2ED] font-display text-xs font-bold">
-                ⚡
-              </div>
-              <span className="tracking-[0.06em] font-normal text-[#F5F2ED]">SHIVSASTRA</span>
+              <span>SHIVSASTRA</span>
             </Link>
 
             <p className="text-sm text-[#D7CEC7] leading-relaxed max-w-sm font-sans">
               Intelligent software systems, email productivity platforms, and production-grade Agentic AI for forward-thinking businesses.
             </p>
 
-            <div className="flex flex-col gap-1 pt-2 font-mono text-[11px] text-[#C09F80]">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-none bg-[#FAF8F5]/5 border border-[#C09F80]/40 w-fit">
-                [ SPEC // v2.4.0 • PRODUCTION ATELIER ]
-              </span>
-              <span className="text-[#565656] text-[10px] pt-1">
-                Bengaluru (12.9716° N, 77.5946° E) · San Francisco
-              </span>
+            <div className="flex flex-col gap-1 pt-2 font-mono text-xs text-[#C09F80]">
+              <span>Warm Editorial Luxury + Modern Technology Studio</span>
             </div>
           </div>
 
           {/* Column 1: Products */}
           <div className="lg:col-span-2 space-y-3">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-white font-semibold">
+            <h3 className="font-mono text-xs uppercase tracking-wider text-[#F5F2ED] font-semibold">
               Products
             </h3>
-            <ul className="space-y-2 text-sm font-sans text-slate-400">
+            <ul className="space-y-2 text-sm font-sans text-[#D7CEC7]">
               <li>
                 <Link
                   href="/products/inbox"
-                  className="hover:text-white transition-colors inline-flex items-center gap-1.5 font-medium text-slate-200"
+                  className="hover:text-[#F5F2ED] transition-colors inline-flex items-center gap-1.5 font-medium text-[#F5F2ED]"
                 >
                   <span>JIOSI Inbox</span>
-                  <span className="font-mono text-[9px] uppercase px-1.5 py-0.2 rounded bg-indigo-500/20 text-cyan-300 border border-indigo-400/30">
+                  <span className="font-mono text-[9px] uppercase px-1.5 py-0.2 rounded-none bg-[#FAF8F5]/10 text-[#C09F80] border border-[#C09F80]/40">
                     SaaS
                   </span>
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-white transition-colors">
+                <Link href="/products" className="hover:text-[#F5F2ED] transition-colors">
                   Product Directory
                 </Link>
               </li>
               <li>
-                <Link href="/store/agent-templates" className="hover:text-white transition-colors">
+                <Link href="/store/agent-templates" className="hover:text-[#F5F2ED] transition-colors">
                   Agent Templates
                 </Link>
               </li>
               <li>
-                <Link href="/store/agent-kits" className="hover:text-white transition-colors">
+                <Link href="/store/agent-kits" className="hover:text-[#F5F2ED] transition-colors">
                   Complete Agent Kits
                 </Link>
               </li>
               <li>
-                <Link href="/store/prompt-packs" className="hover:text-white transition-colors">
+                <Link href="/store/prompt-packs" className="hover:text-[#F5F2ED] transition-colors">
                   Prompt Libraries
                 </Link>
               </li>
@@ -76,37 +68,37 @@ export function Footer() {
 
           {/* Column 2: Solutions & Services */}
           <div className="lg:col-span-2 space-y-3">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-white font-semibold">
+            <h3 className="font-mono text-xs uppercase tracking-wider text-[#F5F2ED] font-semibold">
               Solutions
             </h3>
-            <ul className="space-y-2 text-sm font-sans text-slate-400">
+            <ul className="space-y-2 text-sm font-sans text-[#D7CEC7]">
               <li>
-                <Link href="/services#starter-agent-setup" className="hover:text-white transition-colors">
+                <Link href="/services#starter-agent-setup" className="hover:text-[#F5F2ED] transition-colors">
                   Starter Agent Setup
                 </Link>
               </li>
               <li>
-                <Link href="/services#business-agent-package" className="hover:text-white transition-colors">
+                <Link href="/services#business-agent-package" className="hover:text-[#F5F2ED] transition-colors">
                   Business Agent Package
                 </Link>
               </li>
               <li>
-                <Link href="/services#full-agentic-system" className="hover:text-white transition-colors">
+                <Link href="/services#full-agentic-system" className="hover:text-[#F5F2ED] transition-colors">
                   Full Agentic System
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="hover:text-white transition-colors">
+                <Link href="/pricing" className="hover:text-[#F5F2ED] transition-colors">
                   Pricing &amp; Plans
                 </Link>
               </li>
               <li>
-                <Link href="/services#quote" className="hover:text-white transition-colors">
+                <Link href="/services#quote" className="hover:text-[#F5F2ED] transition-colors">
                   Request a Quote
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link href="/services" className="hover:text-[#F5F2ED] transition-colors">
                   All Services
                 </Link>
               </li>
@@ -115,32 +107,32 @@ export function Footer() {
 
           {/* Column 3: Company */}
           <div className="lg:col-span-2 space-y-3">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-white font-semibold">
+            <h3 className="font-mono text-xs uppercase tracking-wider text-[#F5F2ED] font-semibold">
               Company
             </h3>
-            <ul className="space-y-2 text-sm font-sans text-slate-400">
+            <ul className="space-y-2 text-sm font-sans text-[#D7CEC7]">
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
+                <Link href="/about" className="hover:text-[#F5F2ED] transition-colors">
                   About JIOSI
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="hover:text-white transition-colors">
+                <Link href="/projects" className="hover:text-[#F5F2ED] transition-colors">
                   Verified Case Studies
                 </Link>
               </li>
               <li>
-                <Link href="/lab" className="hover:text-white transition-colors">
+                <Link href="/lab" className="hover:text-[#F5F2ED] transition-colors">
                   Architecture Lab
                 </Link>
               </li>
               <li>
-                <Link href="/resume" className="hover:text-white transition-colors">
+                <Link href="/resume" className="hover:text-[#F5F2ED] transition-colors">
                   Credentials &amp; Resume
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-[#F5F2ED] transition-colors">
                   Contact
                 </Link>
               </li>
@@ -149,15 +141,15 @@ export function Footer() {
 
           {/* Column 4: Trust & Verification */}
           <div className="lg:col-span-2 space-y-3">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-white font-semibold">
+            <h3 className="font-mono text-xs uppercase tracking-wider text-[#F5F2ED] font-semibold">
               Security
             </h3>
-            <ul className="space-y-2 text-sm font-sans text-slate-400">
-              <li className="flex items-center gap-1.5 text-xs text-slate-300">
-                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>100% Data Sovereignty</span>
+            <ul className="space-y-2 text-sm font-sans text-[#D7CEC7]">
+              <li className="flex items-center gap-1.5 text-xs text-[#F5F2ED]">
+                <ShieldCheck className="w-4 h-4 text-[#C09F80] shrink-0" />
+                <span>Client-Owned Deployments</span>
               </li>
-              <li className="text-xs text-slate-400">
+              <li className="text-xs text-[#D7CEC7]/80">
                 Zero client customer data stored on intermediary servers.
               </li>
               <li className="pt-2">
@@ -166,7 +158,7 @@ export function Footer() {
                     href="https://github.com/shivam-shukla888"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-colors"
+                    className="w-8 h-8 rounded-none bg-[#FAF8F5]/5 hover:bg-[#FAF8F5]/15 border border-[#C09F80]/30 flex items-center justify-center text-[#D7CEC7] hover:text-[#F5F2ED] transition-colors"
                     aria-label="GitHub"
                   >
                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
@@ -177,7 +169,7 @@ export function Footer() {
                     href="https://www.linkedin.com/in/shivam-shukla-186276374/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-colors"
+                    className="w-8 h-8 rounded-none bg-[#FAF8F5]/5 hover:bg-[#FAF8F5]/15 border border-[#C09F80]/30 flex items-center justify-center text-[#D7CEC7] hover:text-[#F5F2ED] transition-colors"
                     aria-label="LinkedIn"
                   >
                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">

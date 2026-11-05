@@ -205,20 +205,14 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-[#1A1D20]/95 backdrop-blur-md border-b border-[#C09F80]/30 transition-colors">
+      <header className="sticky top-0 z-50 w-full bg-[#F5F2ED]/95 backdrop-blur-md border-b border-[#C09F80]/40 text-[#1A1D20] transition-colors">
         <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 h-16 sm:h-18 flex items-center justify-between">
           {/* Brand Anchor */}
           <Link
             href="/"
-            className="flex items-center gap-3 font-display text-xl font-normal tracking-tight text-[#F5F2ED] hover:text-[#C09F80] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F] py-1 shrink-0"
+            className="flex items-center gap-2 font-display text-xl font-normal tracking-[0.06em] text-[#1A1D20] hover:text-[#76323F] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F] py-1 shrink-0 uppercase"
           >
-            <div className="w-8 h-8 rounded-none bg-[#76323F] border border-[#C09F80] flex items-center justify-center text-[#F5F2ED] shrink-0 font-display text-sm font-bold">
-              ⚡
-            </div>
-            <span className="tracking-[0.06em] font-normal text-[#F5F2ED] uppercase text-lg">SHIVSASTRA</span>
-            <span className="hidden sm:inline-block font-mono text-[9px] tracking-wider uppercase px-2 py-0.5 rounded-none bg-[#FAF8F5]/10 text-[#C09F80] border border-[#C09F80]/40">
-              SPEC // v2.4.0
-            </span>
+            <span>SHIVSASTRA</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -235,13 +229,13 @@ export function Navbar() {
                   className={cn(
                     "px-3 py-1.5 rounded-none font-sans text-xs xl:text-sm transition-all duration-150 flex items-center gap-1.5",
                     isActive
-                      ? "text-[#F5F2ED] bg-[#FAF8F5]/10 border-b border-[#76323F]"
-                      : "text-[#D7CEC7] hover:text-[#F5F2ED] hover:bg-[#FAF8F5]/5"
+                      ? "text-[#76323F] font-semibold bg-[#FAF8F5] border-b-2 border-[#76323F]"
+                      : "text-[#565656] hover:text-[#1A1D20] hover:bg-[#FAF8F5]"
                   )}
                 >
                   <span>{item.label}</span>
                   {item.badge && (
-                    <span className="font-mono text-[9px] uppercase font-medium tracking-wider px-1.5 py-0.2 rounded-none bg-[#76323F]/30 text-[#F5F2ED] border border-[#76323F]/50">
+                    <span className="font-mono text-[9px] uppercase font-medium tracking-wider px-1.5 py-0.2 rounded-none bg-[#76323F]/10 text-[#76323F] border border-[#76323F]/30">
                       {item.badge}
                     </span>
                   )}
@@ -256,17 +250,17 @@ export function Navbar() {
               href="https://inbox.jiosi.online"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono rounded-none text-[#F5F2ED] bg-transparent hover:bg-[#FAF8F5]/5 border border-[#C09F80]/60 hover:border-[#C09F80] transition-all duration-150"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono rounded-none text-[#1A1D20] bg-transparent hover:bg-[#FAF8F5] border border-[#C09F80] hover:border-[#76323F] transition-all duration-150"
             >
               <span>Launch Inbox</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#C09F80]" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#76323F]" />
             </a>
 
             <Link
               href="/contact"
               className={cn(
-                "inline-flex items-center justify-center px-4 py-1.5 text-xs font-mono uppercase tracking-wider font-semibold rounded-none text-[#F5F2ED]",
-                "bg-[#76323F] hover:bg-[#5A1C29] border border-[#76323F] hover:border-[#C09F80] transition-all duration-150"
+                "inline-flex items-center justify-center px-4 py-1.5 text-xs font-mono uppercase tracking-wider font-semibold rounded-none text-[#FFFFFF]",
+                "bg-[#76323F] hover:bg-[#5A1C29] border border-[#76323F] hover:border-[#C09F80] transition-all duration-150 shadow-none"
               )}
             >
               Book Consult
@@ -280,9 +274,9 @@ export function Navbar() {
               type="button"
               onClick={handleOpenSearch}
               aria-label="Search catalog and case studies"
-              className="w-11 h-11 flex items-center justify-center rounded-lg text-slate-300 hover:text-white hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 transition-colors"
+              className="w-10 h-10 flex items-center justify-center rounded-none text-[#565656] hover:text-[#1A1D20] hover:bg-[#FAF8F5] border border-[#C09F80]/40 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F] transition-colors"
             >
-              <Search className="w-5 h-5" />
+              <Search className="w-4 h-4" />
             </button>
 
             {/* Quick Store Button */}
@@ -290,13 +284,13 @@ export function Navbar() {
               href="/store"
               aria-label="Browse digital store releases"
               className={cn(
-                "w-11 h-11 flex items-center justify-center rounded-lg transition-colors relative",
+                "w-10 h-10 flex items-center justify-center rounded-none border border-[#C09F80]/40 transition-colors relative",
                 pathname.startsWith("/store")
-                  ? "text-cyan-400 bg-white/10"
-                  : "text-slate-300 hover:text-white hover:bg-white/5"
+                  ? "text-[#76323F] bg-[#FAF8F5]"
+                  : "text-[#565656] hover:text-[#1A1D20] hover:bg-[#FAF8F5]"
               )}
             >
-              <ShoppingBag className="w-5 h-5" />
+              <ShoppingBag className="w-4 h-4" />
               <span className="sr-only">Store</span>
             </Link>
 
@@ -305,9 +299,9 @@ export function Navbar() {
               type="button"
               onClick={handleOpenAssistant}
               aria-label="Ask ShivSastra AI Assistant"
-              className="w-11 h-11 flex items-center justify-center rounded-lg text-cyan-300 hover:text-white hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 transition-colors"
+              className="w-10 h-10 flex items-center justify-center rounded-none border border-[#C09F80]/40 text-[#565656] hover:text-[#76323F] hover:bg-[#FAF8F5] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F] transition-colors"
             >
-              <Sparkles className="w-5 h-5 text-cyan-400" />
+              <Sparkles className="w-4 h-4 text-[#76323F]" />
             </button>
 
             {/* Mobile Hamburger Toggle Button */}
@@ -318,9 +312,9 @@ export function Navbar() {
               aria-expanded={isOpen}
               aria-controls="mobile-navigation-drawer"
               aria-label={isOpen ? "Close main navigation menu" : "Open main navigation menu"}
-              className="w-11 h-11 flex items-center justify-center rounded-lg border border-white/10 text-slate-200 hover:text-white hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 transition-colors"
+              className="w-10 h-10 flex items-center justify-center rounded-none border border-[#C09F80]/50 text-[#1A1D20] hover:bg-[#FAF8F5] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F] transition-colors"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
         </div>
@@ -332,12 +326,12 @@ export function Navbar() {
             role="dialog"
             aria-modal="true"
             aria-label="Mobile Navigation"
-            className="lg:hidden fixed inset-x-0 top-16 bottom-0 bg-[#0B1020]/98 backdrop-blur-2xl border-t border-white/10 z-50 flex flex-col justify-between overflow-y-auto"
+            className="lg:hidden fixed inset-x-0 top-16 bottom-0 bg-[#F5F2ED] border-t border-[#C09F80]/40 z-50 flex flex-col justify-between overflow-y-auto"
           >
             <div className="p-5 sm:p-6 space-y-6 max-w-xl mx-auto w-full">
               {/* Search Field inside Drawer */}
               <form onSubmit={handleSearchSubmit} className="relative">
-                <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <Search className="w-4 h-4 text-[#565656] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
                   ref={searchInputRef}
                   type="text"
@@ -345,25 +339,25 @@ export function Navbar() {
                   onChange={(e) => setMobileSearchQuery(e.target.value)}
                   placeholder="Search products, services, case studies..."
                   aria-label="Search within navigation"
-                  className="w-full pl-10 pr-10 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 transition-colors min-h-[44px]"
+                  className="w-full pl-10 pr-10 py-3 rounded-none bg-[#FAF8F5] border border-[#C09F80] text-[#1A1D20] placeholder-[#565656]/70 text-sm focus:outline-none focus:border-[#76323F] focus:ring-1 focus:ring-[#76323F] transition-colors min-h-[44px]"
                 />
                 {mobileSearchQuery && (
                   <button
                     type="button"
                     onClick={() => setMobileSearchQuery("")}
                     aria-label="Clear search"
-                    className="w-10 h-10 flex items-center justify-center absolute right-1 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white"
+                    className="w-10 h-10 flex items-center justify-center absolute right-1 top-1/2 -translate-y-1/2 text-[#565656] hover:text-[#1A1D20]"
                   >
                     <X className="w-4 h-4" />
                   </button>
                 )}
               </form>
 
-              {/* Categorized Nav Lists with Verified Lucide Icons */}
+              {/* Categorized Nav Lists */}
               <div className="space-y-6">
                 {filteredCategories.map((group) => (
                   <div key={group.category} className="space-y-2">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400 font-semibold px-2 block">
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-[#565656] font-semibold px-2 block">
                       {group.category}
                     </span>
                     <nav className="space-y-1" aria-label={group.category}>
@@ -380,36 +374,36 @@ export function Navbar() {
                             href={item.href}
                             onClick={() => setIsOpen(false)}
                             className={cn(
-                              "px-3.5 py-3 rounded-xl transition-all duration-150 flex items-center justify-between min-h-[48px] group",
+                              "px-3.5 py-3 rounded-none transition-all duration-150 flex items-center justify-between min-h-[48px] group border border-transparent",
                               isActive
-                                ? "bg-indigo-600/20 text-white border border-indigo-500/30"
-                                : "text-slate-200 hover:bg-white/5 hover:text-white"
+                                ? "bg-[#FAF8F5] text-[#76323F] border-[#C09F80]"
+                                : "text-[#565656] hover:bg-[#FAF8F5] hover:text-[#1A1D20] hover:border-[#C09F80]/40"
                             )}
                           >
                             <div className="flex items-center gap-3">
                               <div
                                 className={cn(
-                                  "w-9 h-9 rounded-lg flex items-center justify-center shrink-0 border transition-colors",
+                                  "w-9 h-9 rounded-none flex items-center justify-center shrink-0 border transition-colors",
                                   isActive
-                                    ? "bg-indigo-600 text-white border-indigo-400/40"
-                                    : "bg-white/5 text-slate-300 border-white/10 group-hover:text-white group-hover:bg-white/10"
+                                    ? "bg-[#76323F] text-[#FFFFFF] border-[#76323F]"
+                                    : "bg-[#FAF8F5] text-[#565656] border-[#C09F80]/40 group-hover:text-[#1A1D20] group-hover:border-[#C09F80]"
                                 )}
                               >
                                 <Icon className="w-4 h-4" />
                               </div>
                               <div className="text-left">
                                 <div className="flex items-center gap-2">
-                                  <span className="font-sans text-sm font-semibold text-white">
+                                  <span className="font-sans text-sm font-semibold text-[#1A1D20]">
                                     {item.label}
                                   </span>
                                   {item.badge && (
-                                    <span className="font-mono text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-cyan-400/20 text-cyan-300 border border-cyan-400/30">
+                                    <span className="font-mono text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-none bg-[#76323F]/10 text-[#76323F] border border-[#76323F]/30">
                                       {item.badge}
                                     </span>
                                   )}
                                 </div>
                                 {item.description && (
-                                  <p className="font-sans text-xs text-slate-400 line-clamp-1">
+                                  <p className="font-sans text-xs text-[#565656] line-clamp-1">
                                     {item.description}
                                   </p>
                                 )}
@@ -418,7 +412,7 @@ export function Navbar() {
                             <ChevronRight
                               className={cn(
                                 "w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5",
-                                isActive ? "text-cyan-300" : "text-slate-500"
+                                isActive ? "text-[#76323F]" : "text-[#C09F80]"
                               )}
                             />
                           </Link>
@@ -430,22 +424,22 @@ export function Navbar() {
               </div>
 
               {/* Direct Actions Strip */}
-              <div className="pt-4 border-t border-white/10 space-y-3">
+              <div className="pt-4 border-t border-[#C09F80]/30 space-y-3">
                 <a
                   href="https://inbox.jiosi.online"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold text-white bg-white/10 hover:bg-white/15 border border-white/15 transition-all min-h-[48px]"
+                  className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-none text-sm font-semibold text-[#1A1D20] bg-[#FAF8F5] hover:bg-[#F5F2ED] border border-[#C09F80] transition-all min-h-[48px]"
                 >
-                  <Inbox className="w-4 h-4 text-cyan-400" />
+                  <Inbox className="w-4 h-4 text-[#76323F]" />
                   <span>Launch JIOSI Inbox Platform</span>
-                  <ArrowUpRight className="w-4 h-4 text-cyan-400" />
+                  <ArrowUpRight className="w-4 h-4 text-[#76323F]" />
                 </a>
 
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-indigo-500 shadow-md shadow-indigo-600/25 min-h-[48px]"
+                  className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-none text-sm font-semibold text-[#FFFFFF] bg-[#76323F] hover:bg-[#5A1C29] border border-[#76323F] transition-all min-h-[48px]"
                 >
                   <span>Discuss an Engineering System</span>
                   <ArrowRight className="w-4 h-4" />
@@ -454,11 +448,11 @@ export function Navbar() {
 
               {/* Mobile Drawer Footer Info */}
               <div className="pt-6 pb-8 text-center space-y-1">
-                <p className="font-mono text-xs text-slate-400">
-                  JIOSI · Intelligent Software & Agentic AI
+                <p className="font-mono text-xs text-[#1A1D20] font-medium">
+                  SHIVSASTRA · Intelligent Software &amp; Agentic AI
                 </p>
-                <p className="font-mono text-[11px] text-slate-500">
-                  Bareilly, UP, India · 100% Data Sovereignty
+                <p className="font-mono text-[11px] text-[#565656]">
+                  Client-Owned Deployments · Zero Intermediary Data Retention
                 </p>
               </div>
             </div>
@@ -468,11 +462,10 @@ export function Navbar() {
 
       {/* =======================================================
           MOBILE BOTTOM APPLICATION BAR (sm:hidden, fixed bottom)
-          Provides authentic mobile application UX with quick icon navigation
           ======================================================= */}
       <nav
         aria-label="Mobile quick navigation bar"
-        className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-[#0B1020]/95 backdrop-blur-xl border-t border-white/10 px-2 py-1.5 flex items-center justify-around shadow-2xl"
+        className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-[#F5F2ED]/95 backdrop-blur-xl border-t border-[#C09F80]/40 px-2 py-1.5 flex items-center justify-around shadow-sm"
         style={{ paddingBottom: "max(0.375rem, env(safe-area-inset-bottom))" }}
       >
         {/* Tab 1: Home */}
@@ -480,10 +473,10 @@ export function Navbar() {
           href="/"
           onClick={() => setIsOpen(false)}
           className={cn(
-            "flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-2 py-1 rounded-lg transition-colors",
+            "flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-2 py-1 rounded-none transition-colors",
             pathname === "/" && !isOpen
-              ? "text-cyan-300 font-semibold"
-              : "text-slate-400 hover:text-white"
+              ? "text-[#76323F] font-semibold"
+              : "text-[#565656] hover:text-[#1A1D20]"
           )}
         >
           <Home className="w-5 h-5 mb-0.5" />
@@ -495,10 +488,10 @@ export function Navbar() {
           href="/products"
           onClick={() => setIsOpen(false)}
           className={cn(
-            "flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-2 py-1 rounded-lg transition-colors",
+            "flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-2 py-1 rounded-none transition-colors",
             (pathname === "/products" || pathname.startsWith("/products/")) && !isOpen
-              ? "text-cyan-300 font-semibold"
-              : "text-slate-400 hover:text-white"
+              ? "text-[#76323F] font-semibold"
+              : "text-[#565656] hover:text-[#1A1D20]"
           )}
         >
           <Layers className="w-5 h-5 mb-0.5" />
@@ -510,10 +503,10 @@ export function Navbar() {
           href="/store"
           onClick={() => setIsOpen(false)}
           className={cn(
-            "flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-2 py-1 rounded-lg transition-colors",
+            "flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-2 py-1 rounded-none transition-colors",
             pathname.startsWith("/store") && !isOpen
-              ? "text-cyan-300 font-semibold"
-              : "text-slate-400 hover:text-white"
+              ? "text-[#76323F] font-semibold"
+              : "text-[#565656] hover:text-[#1A1D20]"
           )}
         >
           <ShoppingBag className="w-5 h-5 mb-0.5" />
@@ -525,10 +518,10 @@ export function Navbar() {
           href="/services"
           onClick={() => setIsOpen(false)}
           className={cn(
-            "flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-2 py-1 rounded-lg transition-colors",
+            "flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-2 py-1 rounded-none transition-colors",
             pathname.startsWith("/services") && !isOpen
-              ? "text-cyan-300 font-semibold"
-              : "text-slate-400 hover:text-white"
+              ? "text-[#76323F] font-semibold"
+              : "text-[#565656] hover:text-[#1A1D20]"
           )}
         >
           <Cpu className="w-5 h-5 mb-0.5" />
@@ -542,8 +535,8 @@ export function Navbar() {
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close navigation menu" : "Open full navigation menu"}
           className={cn(
-            "flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-2 py-1 rounded-lg transition-colors",
-            isOpen ? "text-cyan-300 font-semibold" : "text-slate-400 hover:text-white"
+            "flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-2 py-1 rounded-none transition-colors",
+            isOpen ? "text-[#76323F] font-semibold" : "text-[#565656] hover:text-[#1A1D20]"
           )}
         >
           {isOpen ? <X className="w-5 h-5 mb-0.5" /> : <Menu className="w-5 h-5 mb-0.5" />}
