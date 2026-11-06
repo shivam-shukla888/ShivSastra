@@ -14,6 +14,7 @@ ShivSastra is a full-stack platform that combines a personal portfolio, a digita
 |---|---|
 | `/` | Hero landing with work highlights, featured projects, and store showcase |
 | `/about` | Background, philosophy, and professional profile |
+| `/profile` | Recruiter-focused founder profile, selected engineering work, and professional links |
 | `/projects` | Portfolio of engineering work (dynamic pages per project) |
 | `/services` | Advisory and consulting offerings (backend, AI agents, AI security) |
 | `/store` | Digital product storefront with categories, reviews, and Razorpay checkout |
