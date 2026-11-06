@@ -41,10 +41,10 @@ ShivSastra is a full-stack platform that combines a personal portfolio, a digita
 
 ### Typography & Design
 
-- **Display Serif:** Newsreader
-- **Body Sans:** Inter
+- **Display Serif:** Playfair Display
+- **Body Sans:** Plus Jakarta Sans
 - **Metadata Mono:** JetBrains Mono
-- **Palette:** 80%+ warm ivory canvas (`#FAF9F6`), carbon ink (`#111112`), terracotta ember accent (`#D45A2A`), sharp 0px geometry
+- **Palette:** Warm ivory (`#F5F2ED`), charcoal (`#1A1D20`), oxblood (`#76323F`), grain (`#D7CEC7`) and tan (`#C09F80`), with sharp 0px geometry
 
 ## Architecture
 
@@ -105,8 +105,8 @@ supabase/
 
 1. **Clone & install:**
    ```bash
-   git clone https://github.com/shivam-shukla888/Shivam-Portfolio.git
-   cd Shivam-Portfolio
+   git clone https://github.com/shivam-shukla888/ShivSastra.git
+   cd ShivSastra
    npm install
    ```
 
