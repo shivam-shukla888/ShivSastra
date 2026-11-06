@@ -7,7 +7,7 @@ import { buttonStyles } from "@/components/ui/Button";
 import { getProfileSettings } from "@/lib/profile";
 import { getPublishedProjects } from "@/lib/projects";
 import { absoluteUrl } from "@/lib/site";
-import { ArrowUpRight, Github, Linkedin, FileText, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Code2, Link as LinkIcon, FileText, ExternalLink } from "lucide-react";
 
 export const revalidate = 60;
 
@@ -35,10 +35,10 @@ export default async function ProfilePage() {
     .sort((a, b) => allowedSlugs.indexOf(a.slug) - allowedSlugs.indexOf(b.slug));
 
   const links = [
-    { label: "GitHub", href: profile.githubUrl, icon: Github },
-    { label: "LinkedIn", href: profile.linkedinUrl, icon: Linkedin },
+    { label: "GitHub", href: profile.githubUrl, icon: Code2 },
+    { label: "LinkedIn", href: profile.linkedinUrl, icon: LinkIcon },
     { label: "Contra", href: profile.contraUrl, icon: ExternalLink },
-  ].filter((item): item is { label: string; href: string; icon: typeof Github } => Boolean(item.href));
+  ].filter((item): item is { label: string; href: string; icon: typeof Code2 | typeof LinkIcon | typeof ExternalLink } => Boolean(item.href));
 
   return (
     <div className="w-full bg-[#F5F2ED] text-[#1A1D20]">
