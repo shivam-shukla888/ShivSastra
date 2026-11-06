@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
   Menu,
@@ -19,7 +19,6 @@ import {
   Send,
   FileText,
   ShieldCheck,
-  Search,
   ArrowUpRight,
   ArrowRight,
   Sparkles,
@@ -43,6 +42,7 @@ const DESKTOP_NAV_ITEMS: NavItem[] = [
   { label: "Projects", href: "/projects", icon: FolderGit2 },
   { label: "Store", href: "/store", icon: ShoppingBag },
   { label: "Lab", href: "/lab", icon: FlaskConical },
+  { label: "Profile", href: "/profile", icon: FileText },
   { label: "About", href: "/about", icon: Compass },
   { label: "Contact", href: "/contact", icon: Send },
 ];
@@ -109,6 +109,12 @@ const MOBILE_CATEGORIES: {
         description: "Technical experiments & research notes",
       },
       {
+        label: "Profile & Portfolio",
+        href: "/profile",
+        icon: FileText,
+        description: "Founder profile, selected work and engineering background",
+      },
+      {
         label: "About JIOSI",
         href: "/about",
         icon: Compass,
@@ -138,11 +144,8 @@ const MOBILE_CATEGORIES: {
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [mobileSearchQuery, setMobileSearchQuery] = useState("");
   const pathname = usePathname();
-  const router = useRouter();
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
-  const searchInputRef = useRef<HTMLInputElement>(null);
 
   // Close mobile drawer on escape and prevent background scrolling
   useEffect(() => {
@@ -164,42 +167,10 @@ export function Navbar() {
     }
   }, [isOpen]);
 
-  // Open drawer with search focus
-  const handleOpenSearch = () => {
-    setIsOpen(true);
-    setTimeout(() => {
-      searchInputRef.current?.focus();
-    }, 150);
-  };
-
   // Trigger floating AI assistant
   const handleOpenAssistant = () => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(new CustomEvent("open-ai-assistant"));
-    }
-  };
-
-  // Filter mobile menu items by search query
-  const filteredCategories = useMemo(() => {
-    if (!mobileSearchQuery.trim()) {
-      return MOBILE_CATEGORIES;
-    }
-    const q = mobileSearchQuery.toLowerCase().trim();
-    return MOBILE_CATEGORIES.map((cat) => ({
-      ...cat,
-      items: cat.items.filter(
-        (item) =>
-          item.label.toLowerCase().includes(q) ||
-          item.description?.toLowerCase().includes(q)
-      ),
-    })).filter((cat) => cat.items.length > 0);
-  }, [mobileSearchQuery]);
-
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (mobileSearchQuery.trim()) {
-      setIsOpen(false);
-      router.push(`/store?search=${encodeURIComponent(mobileSearchQuery.trim())}`);
     }
   };
 
@@ -269,16 +240,6 @@ export function Navbar() {
 
           {/* Mobile Right Action Bar: Search + Store + AI + Menu */}
           <div className="flex lg:hidden items-center gap-1 sm:gap-2">
-            {/* Quick Search Button */}
-            <button
-              type="button"
-              onClick={handleOpenSearch}
-              aria-label="Search catalog and case studies"
-              className="w-10 h-10 flex items-center justify-center rounded-none text-[#565656] hover:text-[#1A1D20] hover:bg-[#FAF8F5] border border-[#C09F80]/40 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F] transition-colors"
-            >
-              <Search className="w-4 h-4" />
-            </button>
-
             {/* Quick Store Button */}
             <Link
               href="/store"
@@ -329,33 +290,9 @@ export function Navbar() {
             className="lg:hidden fixed inset-x-0 top-16 bottom-0 bg-[#F5F2ED] border-t border-[#C09F80]/40 z-50 flex flex-col justify-between overflow-y-auto"
           >
             <div className="p-5 sm:p-6 space-y-6 max-w-xl mx-auto w-full">
-              {/* Search Field inside Drawer */}
-              <form onSubmit={handleSearchSubmit} className="relative">
-                <Search className="w-4 h-4 text-[#565656] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-                <input
-                  ref={searchInputRef}
-                  type="text"
-                  value={mobileSearchQuery}
-                  onChange={(e) => setMobileSearchQuery(e.target.value)}
-                  placeholder="Search products, services, case studies..."
-                  aria-label="Search within navigation"
-                  className="w-full pl-10 pr-10 py-3 rounded-none bg-[#FAF8F5] border border-[#C09F80] text-[#1A1D20] placeholder-[#565656]/70 text-sm focus:outline-none focus:border-[#76323F] focus:ring-1 focus:ring-[#76323F] transition-colors min-h-[44px]"
-                />
-                {mobileSearchQuery && (
-                  <button
-                    type="button"
-                    onClick={() => setMobileSearchQuery("")}
-                    aria-label="Clear search"
-                    className="w-10 h-10 flex items-center justify-center absolute right-1 top-1/2 -translate-y-1/2 text-[#565656] hover:text-[#1A1D20]"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                )}
-              </form>
-
               {/* Categorized Nav Lists */}
               <div className="space-y-6">
-                {filteredCategories.map((group) => (
+                {MOBILE_CATEGORIES.map((group) => (
                   <div key={group.category} className="space-y-2">
                     <span className="font-mono text-[10px] uppercase tracking-wider text-[#565656] font-semibold px-2 block">
                       {group.category}
