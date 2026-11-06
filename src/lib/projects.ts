@@ -253,7 +253,7 @@ ShivSastra is the production digital platform and personal engineering HQ operat
   ],
   projectYear: 2026,
   liveUrl: "https://jiosi.online",
-  githubUrl: "https://github.com/shivam-shukla888/Shivam-Portfolio",
+  githubUrl: "https://github.com/shivam-shukla888/ShivSastra",
   isFeatured: true,
   sortOrder: 2,
   publishedAt: "2026-02-15T12:00:00Z",
@@ -313,12 +313,7 @@ export async function getPublishedProjects(options?: {
     }
   }
 
-  // Strictly exclude RealGuard from all public project listings
-  projects = projects.filter(
-    (p) => p.slug !== "realguard" && p.id !== "realguard"
-  );
-
-  // Strictly exclude RealGuard from all public project listings
+  // Keep explicitly excluded projects out of public listings.
   projects = projects.filter(
     (p) => p.slug !== "realguard" && p.id !== "realguard"
   );
@@ -347,12 +342,7 @@ export async function getPublishedProjectBySlug(
 
   const normalizedSlug = slug.trim().toLowerCase();
 
-  // RealGuard is strictly removed from public website
-  if (normalizedSlug === "realguard") {
-    return null;
-  }
-
-  // RealGuard is strictly removed from public website
+  // RealGuard is intentionally excluded from the public website.
   if (normalizedSlug === "realguard") {
     return null;
   }

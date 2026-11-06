@@ -37,11 +37,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | JIOSI",
-    default: "JIOSI — Intelligent Software Systems & AI Innovation",
+    template: "%s | SHIVSASTRA",
+    default: "SHIVSASTRA — Shivam Shukla | AI & Backend Engineering",
   },
   description:
-    "JIOSI builds intelligent software systems, email productivity platforms including JIOSI Inbox, and production agentic AI automation for modern teams.",
+    "Shivam Shukla is an AI Engineer and Backend Developer building AI-powered products, agentic workflows, and reliable backend systems through SHIVSASTRA.",
   keywords: [
     "JIOSI",
     "JIOSI Inbox",
@@ -52,17 +52,17 @@ export const metadata: Metadata = {
     "Next.js",
     "Spring Boot",
   ],
-  authors: [{ name: "JIOSI" }],
-  creator: "JIOSI",
+  authors: [{ name: "Shivam Shukla" }],
+  creator: "Shivam Shukla",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
     locale: "en_US",
     url: SITE_URL,
-    siteName: "JIOSI",
-    title: "JIOSI — Intelligent Software Systems & AI Innovation",
+    siteName: "SHIVSASTRA",
+    title: "SHIVSASTRA — Shivam Shukla | AI & Backend Engineering",
     description:
-      "JIOSI builds intelligent software systems, email productivity platforms including JIOSI Inbox, and production agentic AI automation for modern teams.",
+      "Shivam Shukla is an AI Engineer and Backend Developer building AI-powered products, agentic workflows, and reliable backend systems through SHIVSASTRA.",
     images: [
       {
         url: "/og-image.png",
@@ -74,9 +74,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JIOSI — Intelligent Software Systems & AI Innovation",
+    title: "SHIVSASTRA — Shivam Shukla | AI & Backend Engineering",
     description:
-      "JIOSI builds intelligent software systems, email productivity platforms including JIOSI Inbox, and production agentic AI automation for modern teams.",
+      "Shivam Shukla is an AI Engineer and Backend Developer building AI-powered products, agentic workflows, and reliable backend systems through SHIVSASTRA.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -91,8 +91,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0B1020",
-  colorScheme: "dark light",
+  themeColor: "#F5F2ED",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
 };

@@ -18,7 +18,6 @@ import {
   Compass,
   Send,
   FileText,
-  ShieldCheck,
   ArrowUpRight,
   ArrowRight,
   Sparkles,
@@ -35,13 +34,9 @@ interface NavItem {
 }
 
 const DESKTOP_NAV_ITEMS: NavItem[] = [
+  { label: "Work", href: "/projects", icon: FolderGit2 },
   { label: "Products", href: "/products", icon: Layers },
-  { label: "JIOSI Inbox", href: "/products/inbox", icon: Inbox, badge: "Live" },
   { label: "Services", href: "/services", icon: Cpu },
-  { label: "Pricing", href: "/pricing", icon: CreditCard },
-  { label: "Projects", href: "/projects", icon: FolderGit2 },
-  { label: "Store", href: "/store", icon: ShoppingBag },
-  { label: "Lab", href: "/lab", icon: FlaskConical },
   { label: "Profile", href: "/profile", icon: FileText },
   { label: "About", href: "/about", icon: Compass },
   { label: "Contact", href: "/contact", icon: Send },
@@ -131,12 +126,6 @@ const MOBILE_CATEGORIES: {
         href: "/resume",
         icon: FileText,
         description: "Verified engineering background",
-      },
-      {
-        label: "Admin Console",
-        href: "/admin",
-        icon: ShieldCheck,
-        description: "System management portal",
       },
     ],
   },
