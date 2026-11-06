@@ -29,16 +29,16 @@ import {
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "SHIVSASTRA — Intelligent Software Systems & AI Innovation",
+  title: "Shivam Shukla — AI Engineer & Backend Developer",
   description:
-    "SHIVSASTRA builds intelligent software systems, email productivity platforms including JIOSI Inbox, and production agentic AI automation for modern teams.",
+    "Explore Shivam Shukla’s AI engineering and backend work, including JIOSI Inbox, Yojna Setu, and QuickEats. View technical case studies, architecture, and project demos.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "SHIVSASTRA — Intelligent Software Systems & AI Innovation",
+    title: "Shivam Shukla — AI Engineer & Backend Developer",
     description:
-      "SHIVSASTRA builds intelligent software systems, email productivity platforms including JIOSI Inbox, and production agentic AI automation for modern teams.",
+      "Explore Shivam Shukla’s AI engineering and backend work, including JIOSI Inbox, Yojna Setu, and QuickEats. View technical case studies, architecture, and project demos.",
     url: SITE_URL,
     type: "website",
     siteName: "SHIVSASTRA",
