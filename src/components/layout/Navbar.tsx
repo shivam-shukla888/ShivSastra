@@ -5,24 +5,26 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
-  Menu,
+  List as Menu,
   X,
-  Home,
-  Layers,
-  Inbox,
+  House as Home,
+  Stack as Layers,
+  Tray as Inbox,
   Cpu,
   CreditCard,
-  FolderGit2,
+  Code as FolderGit2,
   ShoppingBag,
-  FlaskConical,
+  Flask as FlaskConical,
   Compass,
-  Send,
+  PaperPlaneTilt as Send,
   FileText,
+  ShieldCheck,
+  MagnifyingGlass as Search,
   ArrowUpRight,
   ArrowRight,
-  Sparkles,
-  ChevronRight,
-} from "lucide-react";
+  Sparkle as Sparkles,
+  CaretRight as ChevronRight,
+} from "@phosphor-icons/react";
 
 interface NavItem {
   label: string;
@@ -110,7 +112,7 @@ const MOBILE_CATEGORIES: {
         description: "Founder profile, selected work and engineering background",
       },
       {
-        label: "About JIOSI",
+        label: "About SHIVSASTRA",
         href: "/about",
         icon: Compass,
         description: "Mission, engineering principles & founder",

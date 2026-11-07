@@ -18,7 +18,7 @@ import { BackToTop } from "@/components/ui/BackToTop";
 import { ProductFaqAccordion } from "@/components/store/ProductFaqAccordion";
 import { ProductCheckoutAction } from "@/components/store/ProductCheckoutAction";
 import { isLivePaymentTestProduct, isTestCheckoutProduct } from "@/lib/payments/test-checkout";
-import { ArrowLeft, ArrowRight, Lock } from "lucide-react";
+import { ArrowLeft, ArrowRight, Lock } from "@phosphor-icons/react/dist/ssr";
 
 export const revalidate = 60;
 

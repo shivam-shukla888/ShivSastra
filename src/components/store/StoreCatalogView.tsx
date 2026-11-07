@@ -10,15 +10,15 @@ import type {
 } from "@/lib/products";
 import { buttonStyles } from "@/components/ui/Button";
 import {
-  Search,
+  MagnifyingGlass as Search,
   X,
   SlidersHorizontal,
-  ArrowUpDown,
+  ArrowsDownUp as ArrowUpDown,
   Lock,
   Check,
   ShoppingBag,
   ArrowRight,
-} from "lucide-react";
+} from "@phosphor-icons/react";
 
 interface StoreCatalogViewProps {
   initialProducts: ProductDisplayData[];

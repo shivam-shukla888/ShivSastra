@@ -10,31 +10,31 @@ import { BackToTop } from "@/components/ui/BackToTop";
 import { absoluteUrl, CANONICAL_ORIGIN } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Privacy policy and security practices for JIOSI, operated by Shivam Shukla.",
+  title: "Privacy Policy — SHIVSASTRA",
+  description: "Privacy policy and security practices for SHIVSASTRA, operated by Shivam Shukla.",
   alternates: {
     canonical: absoluteUrl("/privacy"),
   },
   openGraph: {
-    title: "Privacy Policy — Shivam Shukla",
-    description: "Privacy policy and security practices for JIOSI, operated by Shivam Shukla.",
+    title: "Privacy Policy — SHIVSASTRA",
+    description: "Privacy policy and security practices for SHIVSASTRA, operated by Shivam Shukla.",
     url: absoluteUrl("/privacy"),
     type: "website",
-    siteName: "JIOSI",
+    siteName: "SHIVSASTRA",
     locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Privacy Policy — JIOSI",
+        alt: "Privacy Policy — SHIVSASTRA",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy — Shivam Shukla",
-    description: "Privacy policy and security practices for JIOSI, operated by Shivam Shukla.",
+    title: "Privacy Policy — SHIVSASTRA",
+    description: "Privacy policy and security practices for SHIVSASTRA, operated by Shivam Shukla.",
     images: ["/og-image.png"],
   },
 };

@@ -4,7 +4,11 @@ import { SectionContainer } from "@/components/layout/SectionContainer";
 import { PageBackground } from "@/components/ui/PageBackground";
 import { InnerPageEntrance } from "@/components/layout/InnerPageEntrance";
 import { getPublishedLabEntries } from "@/lib/lab";
-import { FlaskConical, ArrowRight, ArrowLeft } from "lucide-react";
+import {
+  Flask as FlaskConical,
+  ArrowRight,
+  ArrowLeft,
+} from "@phosphor-icons/react/dist/ssr";
 
 import { absoluteUrl } from "@/lib/site";
 

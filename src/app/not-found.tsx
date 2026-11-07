@@ -1,37 +1,43 @@
 import React from "react";
 import Link from "next/link";
 import { SectionContainer } from "@/components/layout/SectionContainer";
-import { Badge } from "@/components/ui/Badge";
 import { buttonStyles } from "@/components/ui/Button";
-import { ArrowRight, Home, Layers, Sparkles, Inbox } from "lucide-react";
+import {
+  House,
+  Stack,
+  Sparkle,
+  Tray,
+  ArrowRight,
+} from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = {
-  title: "404 — Page Not Found | JIOSI",
+  title: "404 — Page Not Found | SHIVSASTRA",
   description: "The requested route does not exist or has been relocated.",
 };
 
 export default function NotFound() {
   return (
-    <div className="w-full min-h-[80vh] flex items-center py-24 md:py-36 bg-slate-50">
+    <div className="w-full min-h-[80vh] flex items-center py-24 md:py-36 bg-[#F5F2ED] text-[#1A1D20]">
       <SectionContainer>
-        <div className="max-w-2xl mx-auto space-y-8 text-center sm:text-left bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-xl shadow-slate-900/5">
+        <div className="max-w-2xl mx-auto space-y-8 text-center sm:text-left bg-[#FAF8F5] border border-[#C09F80]/60 p-8 sm:p-12 shadow-[4px_4px_0px_0px_#D7CEC7]">
           {/* Status Flag */}
           <div className="flex items-center justify-center sm:justify-start gap-2.5">
-            <Badge variant="cyan" dot size="sm">
-              404 STATUS
-            </Badge>
-            <span className="font-mono text-xs text-slate-400">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium">
+              <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
+              <span>404 STATUS</span>
+            </div>
+            <span className="font-mono text-xs text-[#565656]">
               ROUTE_NOT_LOCATED
             </span>
           </div>
 
           {/* Heading */}
           <div className="space-y-3">
-            <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            <h1 className="font-display text-4xl sm:text-5xl font-normal tracking-tight text-[#1A1D20] leading-tight">
               Page not found.
             </h1>
-            <p className="font-sans text-base text-slate-600 leading-relaxed">
-              The page you requested doesn&apos;t exist, has been moved, or has been updated under the new JIOSI platform.
+            <p className="font-sans text-base text-[#565656] leading-relaxed">
+              The page you requested doesn&apos;t exist, has been moved, or has been relocated within the SHIVSASTRA digital platform.
             </p>
           </div>
 
@@ -42,10 +48,9 @@ export default function NotFound() {
               className={buttonStyles({
                 variant: "primary",
                 size: "md",
-                className: "shadow-md shadow-indigo-500/15",
               })}
             >
-              <Home className="w-4 h-4 mr-1.5" />
+              <House className="w-4 h-4 mr-1.5" />
               <span>Back Home</span>
             </Link>
 
@@ -56,7 +61,7 @@ export default function NotFound() {
                 size: "md",
               })}
             >
-              <Layers className="w-4 h-4 mr-1.5" />
+              <Stack className="w-4 h-4 mr-1.5" />
               <span>Products &amp; Toolkits</span>
             </Link>
 
@@ -67,7 +72,7 @@ export default function NotFound() {
                 size: "md",
               })}
             >
-              <Sparkles className="w-4 h-4 mr-1.5" />
+              <Sparkle className="w-4 h-4 mr-1.5" />
               <span>Services</span>
             </Link>
 
@@ -80,19 +85,19 @@ export default function NotFound() {
                 size: "md",
               })}
             >
-              <Inbox className="w-4 h-4 mr-1.5 text-indigo-500" />
+              <Tray className="w-4 h-4 mr-1.5 text-[#76323F]" />
               <span>Launch JIOSI Inbox</span>
             </a>
           </div>
 
           {/* Colophon Note */}
-          <div className="pt-8 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-500">
-            <span>JIOSI Cloud Network</span>
+          <div className="pt-8 border-t border-[#C09F80]/20 flex items-center justify-between text-xs font-mono text-[#565656]">
+            <span>SHIVSASTRA Studio</span>
             <Link
               href="/contact"
-              className="text-indigo-600 hover:text-indigo-700 font-semibold inline-flex items-center gap-1"
+              className="text-[#76323F] hover:text-[#1A1D20] font-semibold inline-flex items-center gap-1"
             >
-              <span>Need help? Contact support</span>
+              <span>Need help? Contact our studio</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>

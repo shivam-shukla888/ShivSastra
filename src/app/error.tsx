@@ -3,9 +3,8 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { SectionContainer } from "@/components/layout/SectionContainer";
-import { Badge } from "@/components/ui/Badge";
 import { Button, buttonStyles } from "@/components/ui/Button";
-import { RefreshCw, Home, Mail } from "lucide-react";
+import { ArrowsClockwise, House, EnvelopeSimple } from "@phosphor-icons/react";
 
 interface ErrorProps {
   error: Error & { digest?: string };
@@ -20,25 +19,26 @@ export default function ErrorBoundary({ error, reset }: ErrorProps) {
   }, [error]);
 
   return (
-    <div className="w-full min-h-[80vh] flex items-center py-24 md:py-36 bg-slate-50">
+    <div className="w-full min-h-[80vh] flex items-center py-24 md:py-36 bg-[#F5F2ED] text-[#1A1D20]">
       <SectionContainer>
-        <div className="max-w-2xl mx-auto space-y-8 text-center sm:text-left bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-xl shadow-slate-900/5">
+        <div className="max-w-2xl mx-auto space-y-8 text-center sm:text-left bg-[#FAF8F5] border border-[#C09F80]/60 p-8 sm:p-12 shadow-[4px_4px_0px_0px_#D7CEC7]">
           {/* Status Flag */}
           <div className="flex items-center justify-center sm:justify-start gap-2.5">
-            <Badge variant="warning" dot size="sm">
-              500 ERROR
-            </Badge>
-            <span className="font-mono text-xs text-slate-400">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium">
+              <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
+              <span>500 ERROR</span>
+            </div>
+            <span className="font-mono text-xs text-[#565656]">
               RUNTIME_FAULT_RECOVERABLE
             </span>
           </div>
 
           {/* Heading */}
           <div className="space-y-3">
-            <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            <h1 className="font-display text-4xl sm:text-5xl font-normal tracking-tight text-[#1A1D20] leading-tight">
               An unexpected error occurred.
             </h1>
-            <p className="font-sans text-base text-slate-600 leading-relaxed">
+            <p className="font-sans text-base text-[#565656] leading-relaxed">
               Our defensive error boundary caught a runtime fault. No customer data or sensitive records were compromised.
             </p>
           </div>
@@ -49,9 +49,8 @@ export default function ErrorBoundary({ error, reset }: ErrorProps) {
               variant="primary"
               size="md"
               onClick={() => reset()}
-              className="shadow-md shadow-indigo-500/15"
             >
-              <RefreshCw className="w-4 h-4 mr-1.5" />
+              <ArrowsClockwise className="w-4 h-4 mr-1.5" />
               <span>Retry Request</span>
             </Button>
 
@@ -62,7 +61,7 @@ export default function ErrorBoundary({ error, reset }: ErrorProps) {
                 size: "md",
               })}
             >
-              <Home className="w-4 h-4 mr-1.5" />
+              <House className="w-4 h-4 mr-1.5" />
               <span>Back Home</span>
             </Link>
 
@@ -73,18 +72,18 @@ export default function ErrorBoundary({ error, reset }: ErrorProps) {
                 size: "md",
               })}
             >
-              <Mail className="w-4 h-4 mr-1.5" />
+              <EnvelopeSimple className="w-4 h-4 mr-1.5" />
               <span>Report Issue</span>
             </Link>
           </div>
 
           {/* Reference Colophon */}
-          <div className="pt-8 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-500">
+          <div className="pt-8 border-t border-[#C09F80]/20 flex items-center justify-between text-xs font-mono text-[#565656]">
             <span>
               Status: 500
               {error.digest ? ` • Ref: ${error.digest.slice(0, 8)}` : ""}
             </span>
-            <span className="text-slate-400">JIOSI Platform Resilience</span>
+            <span>SHIVSASTRA Platform Resilience</span>
           </div>
         </div>
       </SectionContainer>

@@ -5,7 +5,15 @@ import Script from "next/script";
 import Link from "next/link";
 import { submitContactInquiry } from "@/app/actions/contact";
 import { initialContactState } from "@/lib/validations/contact";
-import { CheckCircle2, Send, AlertCircle, RefreshCw, User, Mail, MessageSquare } from "lucide-react";
+import {
+  CheckCircle as CheckCircle2,
+  PaperPlaneRight as Send,
+  WarningCircle as AlertCircle,
+  ArrowsClockwise as RefreshCw,
+  User,
+  EnvelopeSimple as Mail,
+  ChatTeardropText as MessageSquare,
+} from "@phosphor-icons/react";
 
 declare global {
   interface Window {

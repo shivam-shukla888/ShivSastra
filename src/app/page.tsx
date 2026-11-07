@@ -14,17 +14,17 @@ import {
   ArrowRight,
   ArrowUpRight,
   ShieldCheck,
-  Inbox,
+  Tray as Inbox,
   Lock,
-  Zap,
-  CheckCircle2,
-  ExternalLink,
+  Lightning as Zap,
+  CheckCircle as CheckCircle2,
+  ArrowSquareOut as ExternalLink,
   Check,
-  ChevronRight,
+  CaretRight as ChevronRight,
   GraduationCap,
   Briefcase,
-  Code2,
-} from "lucide-react";
+  Code as Code2,
+} from "@phosphor-icons/react/dist/ssr";
 
 export const revalidate = 60;
 

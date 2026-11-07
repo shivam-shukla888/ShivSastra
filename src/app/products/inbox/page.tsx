@@ -8,13 +8,13 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { absoluteUrl } from "@/lib/site";
 import {
   ArrowUpRight,
-  Layers,
+  Stack as Layers,
   Database,
-  Server,
-  Mail,
+  HardDrives as Server,
+  EnvelopeSimple as Mail,
   Keyboard,
-  Sparkles,
-} from "lucide-react";
+  Sparkle as Sparkles,
+} from "@phosphor-icons/react/dist/ssr";
 
 export const revalidate = 60;
 

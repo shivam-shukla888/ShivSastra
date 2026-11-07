@@ -7,11 +7,11 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { getProfileSettings } from "@/lib/profile";
 import { absoluteUrl } from "@/lib/site";
 import {
-  Mail,
+  EnvelopeSimple as Mail,
   Clock,
   ShieldCheck,
-  ExternalLink,
-} from "lucide-react";
+  ArrowSquareOut as ExternalLink,
+} from "@phosphor-icons/react/dist/ssr";
 
 export const revalidate = 60;
 

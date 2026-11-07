@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   ArrowRight,
   Check,
-} from "lucide-react";
+} from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
   title: "Pricing & Plans — Transparent Agentic AI & Software | SHIVSASTRA",

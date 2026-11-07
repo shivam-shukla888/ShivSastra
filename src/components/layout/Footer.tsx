@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { SectionContainer } from "./SectionContainer";
-import { ArrowUpRight, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, ShieldCheck } from "@phosphor-icons/react/dist/ssr";
 
 export function Footer() {
   return (

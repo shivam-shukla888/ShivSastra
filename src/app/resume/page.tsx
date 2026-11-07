@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     canonical: absoluteUrl("/resume"),
   },
   openGraph: {
-    title: "Resume — Shivam Shukla",
+    title: "Resume — Shivam Shukla | SHIVSASTRA",
     description:
       "Resume of Shivam Shukla — AI Engineer and Backend Developer specializing in AI agents, LLM workflows, RAG, Machine Learning, and backend systems.",
     url: absoluteUrl("/resume"),
     type: "profile",
-    siteName: "ShivSastra",
+    siteName: "SHIVSASTRA",
     locale: "en_US",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Shivam Shukla — Resume" }],
   },

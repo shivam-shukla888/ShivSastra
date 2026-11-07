@@ -12,31 +12,31 @@ import { absoluteUrl } from "@/lib/site";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Refund Policy",
-  description: "Refund and cancellation policy for digital products and custom engineering engagements on JIOSI.",
+  title: "Refund Policy — SHIVSASTRA",
+  description: "Refund and cancellation policy for digital products and custom engineering engagements on SHIVSASTRA.",
   alternates: {
     canonical: absoluteUrl("/refunds"),
   },
   openGraph: {
-    title: "Refund Policy — Shivam Shukla",
-    description: "Refund and cancellation policy for digital products and custom engineering engagements on JIOSI.",
+    title: "Refund Policy — SHIVSASTRA",
+    description: "Refund and cancellation policy for digital products and custom engineering engagements on SHIVSASTRA.",
     url: absoluteUrl("/refunds"),
     type: "website",
-    siteName: "JIOSI",
+    siteName: "SHIVSASTRA",
     locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Refund Policy — JIOSI",
+        alt: "Refund Policy — SHIVSASTRA",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Refund Policy — Shivam Shukla",
-    description: "Refund and cancellation policy for digital products and custom engineering engagements on JIOSI.",
+    title: "Refund Policy — SHIVSASTRA",
+    description: "Refund and cancellation policy for digital products and custom engineering engagements on SHIVSASTRA.",
     images: ["/og-image.png"],
   },
 };

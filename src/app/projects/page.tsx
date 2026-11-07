@@ -8,7 +8,12 @@ import { Badge } from "@/components/ui/Badge";
 import { buttonStyles } from "@/components/ui/Button";
 import { getPublishedProjects } from "@/lib/projects";
 import { absoluteUrl } from "@/lib/site";
-import { ArrowRight, ExternalLink, ShieldCheck, Cpu } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowSquareOut as ExternalLink,
+  ShieldCheck,
+  Cpu,
+} from "@phosphor-icons/react/dist/ssr";
 
 export const revalidate = 60;
 

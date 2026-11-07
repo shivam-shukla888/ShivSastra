@@ -18,16 +18,16 @@ import {
 } from "@/lib/site";
 import {
   ShieldCheck,
-  CheckCircle2,
+  CheckCircle as CheckCircle2,
   Clock,
   ArrowRight,
-  Sparkles,
+  Sparkle as Sparkles,
   Cpu,
   Database,
   Lock,
-  Workflow,
+  FlowArrow as Workflow,
   Check,
-} from "lucide-react";
+} from "@phosphor-icons/react/dist/ssr";
 
 export const revalidate = 60;
 

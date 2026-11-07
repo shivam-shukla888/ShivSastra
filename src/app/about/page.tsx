@@ -11,10 +11,10 @@ import {
   Target,
   Compass,
   ArrowRight,
-  ExternalLink,
+  ArrowSquareOut as ExternalLink,
   GraduationCap,
   Briefcase,
-} from "lucide-react";
+} from "@phosphor-icons/react/dist/ssr";
 
 export const revalidate = 60;
 

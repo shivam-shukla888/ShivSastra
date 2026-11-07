@@ -12,31 +12,31 @@ import { absoluteUrl } from "@/lib/site";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "Terms of service, digital licensing, and usage conditions for JIOSI by Shivam Shukla.",
+  title: "Terms of Service — SHIVSASTRA",
+  description: "Terms of service, digital licensing, and usage conditions for SHIVSASTRA by Shivam Shukla.",
   alternates: {
     canonical: absoluteUrl("/terms"),
   },
   openGraph: {
-    title: "Terms of Service — Shivam Shukla",
-    description: "Terms of service, digital licensing, and usage conditions for JIOSI by Shivam Shukla.",
+    title: "Terms of Service — SHIVSASTRA",
+    description: "Terms of service, digital licensing, and usage conditions for SHIVSASTRA by Shivam Shukla.",
     url: absoluteUrl("/terms"),
     type: "website",
-    siteName: "JIOSI",
+    siteName: "SHIVSASTRA",
     locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Terms of Service — JIOSI",
+        alt: "Terms of Service — SHIVSASTRA",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms of Service — Shivam Shukla",
-    description: "Terms of service, digital licensing, and usage conditions for JIOSI by Shivam Shukla.",
+    title: "Terms of Service — SHIVSASTRA",
+    description: "Terms of service, digital licensing, and usage conditions for SHIVSASTRA by Shivam Shukla.",
     images: ["/og-image.png"],
   },
 };
