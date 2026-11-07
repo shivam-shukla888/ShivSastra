@@ -928,7 +928,7 @@ export default async function HomePage() {
                   href="/lab"
                   className="font-mono text-xs uppercase tracking-wider font-semibold text-[#1A1D20] hover:text-[#76323F] inline-flex items-center gap-1 pt-2 border-t border-[#C09F80]/20"
                 >
-                  <span>Read Note</span>
+                  <span>View Lab Status</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -950,7 +950,7 @@ export default async function HomePage() {
                   href="/lab"
                   className="font-mono text-xs uppercase tracking-wider font-semibold text-[#1A1D20] hover:text-[#76323F] inline-flex items-center gap-1 pt-2 border-t border-[#C09F80]/20"
                 >
-                  <span>Read Note</span>
+                  <span>View Lab Status</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -972,7 +972,7 @@ export default async function HomePage() {
                   href="/lab"
                   className="font-mono text-xs uppercase tracking-wider font-semibold text-[#1A1D20] hover:text-[#76323F] inline-flex items-center gap-1 pt-2 border-t border-[#C09F80]/20"
                 >
-                  <span>Read Note</span>
+                  <span>View Lab Status</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

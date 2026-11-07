@@ -144,6 +144,28 @@ body {
   border: 1px solid #C09F80;
 }
 
+/* Precision Glass & Atmospheric Surfaces */
+.glass-surface-ivory {
+  background: rgba(245, 242, 237, 0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(192, 159, 128, 0.45);
+}
+
+.glass-surface-overlay {
+  background: rgba(250, 248, 245, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(192, 159, 128, 0.55);
+}
+
+.glass-surface-dark {
+  background: rgba(26, 29, 32, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(192, 159, 128, 0.3);
+}
+
 .paper-card {
   background-color: #FAF8F5;
   border: 1px solid #C09F80;

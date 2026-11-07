@@ -98,7 +98,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-[#F5F2ED]/95 backdrop-blur-md border-b border-[#C09F80]/40 text-[#1A1D20] transition-colors">
+      <header className="sticky top-0 z-50 w-full bg-[#F5F2ED]/90 backdrop-blur-xl border-b border-[#C09F80]/35 text-[#1A1D20] transition-colors shadow-[0_4px_20px_-4px_rgba(26,29,32,0.03)]">
         <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 h-16 sm:h-18 flex items-center justify-between">
           {/* Brand Anchor: Accessible Logo */}
           <Link

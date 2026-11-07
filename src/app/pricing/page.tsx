@@ -33,7 +33,7 @@ const DIGITAL_PRODUCTS = [
   {
     title: "n8n Lead Qualifier Agent Pack",
     price: "₹3,499",
-    slug: "n8n-lead-qualifier-agent",
+    slug: "n8n-lead-qualifier-agent-pack",
     tag: "Workflow Pack",
     desc: "Autonomous conversational qualifier with structured CRM payload routing and anti-loop safeguards.",
   },
@@ -47,7 +47,7 @@ const DIGITAL_PRODUCTS = [
   {
     title: "Sales Follow-up Agent Pack",
     price: "₹4,499",
-    slug: "sales-followup-agent",
+    slug: "sales-followup-agent-pack",
     tag: "Revenue Ops",
     desc: "Automated multi-channel re-engagement sequence with sentiment-aware response scheduling.",
   },
@@ -63,7 +63,7 @@ const DIGITAL_PRODUCTS = [
     price: "₹2,499",
     slug: "agent-system-prompt-library",
     tag: "Prompts & Rules",
-    desc: "40+ production-tested system prompts with strict JSON schema outputs and hallucination defenses.",
+    desc: "50+ battle-tested system instructions, guardrails, and structured JSON schemas for production agents.",
   },
   {
     title: "n8n Production Reliability Kit",
@@ -291,7 +291,7 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
-                      <span>14 days post-deployment monitoring &amp; adjustments</span>
+                      <span>30 days post-deployment monitoring &amp; adjustments</span>
                     </li>
                   </ul>
                 </div>
@@ -348,7 +348,7 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0 mt-0.5" />
-                      <span>30 days dedicated warranty &amp; prompt retraining</span>
+                      <span>60 days dedicated warranty &amp; prompt retraining</span>
                     </li>
                   </ul>
                 </div>

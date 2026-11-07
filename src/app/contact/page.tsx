@@ -108,7 +108,7 @@ export default async function ContactPage() {
                     <span>Strict Data Sovereignty</span>
                   </div>
                   <p className="font-sans text-sm text-[#565656] leading-relaxed">
-                    Inquiries are transmitted directly over encrypted TLS. We never sell, share, or disclose client contact data.
+                    Inquiries are transmitted over encrypted TLS and stored securely in our private Supabase database solely to answer your brief. We never sell, monetize, or disclose client contact data.
                   </p>
                 </div>
 

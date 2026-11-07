@@ -241,12 +241,12 @@ export function ShivSastraAssistant() {
               "pointer-events-auto flex flex-col mb-3",
               "w-[calc(100vw-2rem)] sm:w-[420px] max-w-[440px]",
               "h-[520px] max-h-[calc(100dvh-9rem)] sm:max-h-[min(560px,calc(100dvh-6rem))]",
-              "bg-[#FAF8F5] border border-[#C09F80]",
-              "shadow-[4px_4px_0px_0px_#565656]"
+              "bg-[#FAF8F5]/96 backdrop-blur-xl border border-[#C09F80]",
+              "shadow-[6px_6px_0px_0px_#C09F80,0_16px_40px_rgba(26,29,32,0.14)]"
             )}
           >
             {/* Panel Header */}
-            <header className="px-4 py-3 border-b border-[#C09F80]/50 bg-[#F5F2ED] flex items-center justify-between shrink-0">
+            <header className="px-4 py-3 border-b border-[#C09F80]/50 bg-[#F5F2ED]/90 backdrop-blur-md flex items-center justify-between shrink-0">
               <div className="flex items-center gap-3">
                 <HamsterMascot size={28} />
                 <div>
@@ -398,7 +398,7 @@ export function ShivSastraAssistant() {
             </div>
 
             {/* Panel Input Area */}
-            <footer className="p-3 border-t border-[#C09F80]/50 bg-[#F5F2ED] shrink-0">
+            <footer className="p-3 border-t border-[#C09F80]/50 bg-[#F5F2ED]/90 backdrop-blur-md shrink-0">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -465,9 +465,9 @@ export function ShivSastraAssistant() {
             aria-label={isOpen ? "Close Ask ShivSastra Assistant" : "Ask ShivSastra"}
             className={cn(
               "group relative flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-none",
-              "bg-[#1A1D20] text-[#F5F2ED] border border-[#C09F80]/60",
+              "bg-[#1A1D20] text-[#F5F2ED] border border-[#C09F80]/70",
               "hover:border-[#76323F] hover:bg-[#25282B] transition-all duration-150",
-              "shadow-[3px_3px_0px_0px_#565656] cursor-pointer select-none",
+              "shadow-[3px_3px_0px_0px_#C09F80,0_8px_24px_rgba(26,29,32,0.12)] cursor-pointer select-none",
               "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F]"
             )}
           >
