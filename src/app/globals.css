@@ -62,8 +62,10 @@ html {
   background-color: var(--color-canvas-primary);
   color: var(--color-ink-primary);
   font-family: var(--font-body);
-  scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  overflow-x: clip;
+  overscroll-behavior: none;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -71,7 +73,8 @@ body {
   background-color: var(--color-canvas-primary);
   color: var(--color-ink-primary);
   font-family: var(--font-body);
-  overflow-x: hidden;
+  overflow-x: clip;
+  overscroll-behavior: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -107,12 +110,12 @@ body {
   background-color: #FAF8F5;
   border: 1px solid rgba(192, 159, 128, 0.6);
   box-shadow: 3px 3px 0px 0px #D7CEC7;
-  transition: all 200ms ease-out;
+  transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
 }
 
 .card-editorial:hover {
   border-color: #76323F;
-  box-shadow: 4px 4px 0px 0px #C09F80;
+  box-shadow: 3px 3px 0px 0px #C09F80;
 }
 
 .card-editorial-featured {

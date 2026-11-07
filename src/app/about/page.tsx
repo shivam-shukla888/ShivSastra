@@ -80,7 +80,7 @@ export default async function AboutPage() {
       <section className="w-full py-20 md:py-28 bg-[#FFFFFF] border-b border-[#C09F80]/30">
         <SectionContainer>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="p-8 md:p-10 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+            <div className="p-8 md:p-10 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[2px_2px_0px_0px_#C09F80] transition-colors duration-200 group">
               <div className="w-10 h-10 bg-[#FAF8F5] border border-[#D7CEC7] group-hover:border-[#76323F] shadow-[1px_1px_0px_0px_#C09F80] flex items-center justify-center text-[#76323F] transition-colors">
                 <Target className="w-5 h-5" />
               </div>
@@ -92,7 +92,7 @@ export default async function AboutPage() {
               </p>
             </div>
 
-            <div className="p-8 md:p-10 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+            <div className="p-8 md:p-10 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[2px_2px_0px_0px_#C09F80] transition-colors duration-200 group">
               <div className="w-10 h-10 bg-[#FAF8F5] border border-[#D7CEC7] group-hover:border-[#76323F] shadow-[1px_1px_0px_0px_#C09F80] flex items-center justify-center text-[#76323F] transition-colors">
                 <Compass className="w-5 h-5" />
               </div>
@@ -119,7 +119,7 @@ export default async function AboutPage() {
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[2px_2px_0px_0px_#C09F80] transition-colors duration-200 group">
                 <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Principle 01
                 </span>
@@ -131,7 +131,7 @@ export default async function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[2px_2px_0px_0px_#C09F80] transition-colors duration-200 group">
                 <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Principle 02
                 </span>
@@ -143,7 +143,7 @@ export default async function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[2px_2px_0px_0px_#C09F80] transition-colors duration-200 group">
                 <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Principle 03
                 </span>
@@ -155,7 +155,7 @@ export default async function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[2px_2px_0px_0px_#C09F80] transition-colors duration-200 group">
                 <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Principle 04
                 </span>

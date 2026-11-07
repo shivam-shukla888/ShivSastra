@@ -120,7 +120,7 @@ export function YojnaSetuShowcase() {
               className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] font-mono text-[11px] uppercase tracking-wider hover:bg-[var(--color-accent)] transition-colors duration-150 group"
             >
               <span>View Case Study</span>
-              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none">
+              <span className="inline-block">
                 →
               </span>
             </Link>

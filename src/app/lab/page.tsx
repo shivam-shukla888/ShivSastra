@@ -173,7 +173,7 @@ export default async function LabPage() {
                           className="inline-flex items-center gap-1.5 font-sans font-medium text-xs text-[#1A1D20] group-hover:text-[#76323F] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F]"
                         >
                           <span>Read Entry</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-1" />
+                          <ArrowRight className="w-3.5 h-3.5" />
                         </Link>
                       </div>
                     </article>

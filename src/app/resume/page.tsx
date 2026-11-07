@@ -90,7 +90,7 @@ export default function ResumePage() {
                     })}
                   >
                     <span>View in New Tab</span>
-                    <span className="inline-block transition-transform duration-150 group-hover:translate-x-0.5 ml-1">
+                    <span className="inline-block ml-1">
                       ↗
                     </span>
                   </a>

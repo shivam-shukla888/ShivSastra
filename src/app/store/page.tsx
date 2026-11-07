@@ -134,7 +134,7 @@ export default async function StorePage() {
               {/* 1. AI Agent Templates */}
               <Link
                 href="/store/agent-templates"
-                className="border border-[#C09F80]/60 bg-[#FAF8F5] p-6 md:p-8 space-y-4 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] shadow-[3px_3px_0px_0px_#D7CEC7] transition-all duration-200 group flex flex-col justify-between"
+                className="border border-[#C09F80]/60 bg-[#FAF8F5] p-6 md:p-8 space-y-4 hover:border-[#76323F] shadow-[3px_3px_0px_0px_#D7CEC7] hover:shadow-[3px_3px_0px_0px_#C09F80] transition-colors duration-200 group flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs font-mono text-[#565656]">
@@ -154,14 +154,14 @@ export default async function StorePage() {
                 </div>
                 <div className="pt-4 border-t border-[#C09F80]/30 flex items-center justify-between font-mono text-xs text-[#1A1D20] group-hover:text-[#76323F]">
                   <span>Browse Templates</span>
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  <span>→</span>
                 </div>
               </Link>
 
               {/* 2. Complete Agent Kits */}
               <Link
                 href="/store/agent-kits"
-                className="border border-[#C09F80]/60 bg-[#FAF8F5] p-6 md:p-8 space-y-4 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] shadow-[3px_3px_0px_0px_#D7CEC7] transition-all duration-200 group flex flex-col justify-between"
+                className="border border-[#C09F80]/60 bg-[#FAF8F5] p-6 md:p-8 space-y-4 hover:border-[#76323F] shadow-[3px_3px_0px_0px_#D7CEC7] hover:shadow-[3px_3px_0px_0px_#C09F80] transition-colors duration-200 group flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs font-mono text-[#565656]">
@@ -181,14 +181,14 @@ export default async function StorePage() {
                 </div>
                 <div className="pt-4 border-t border-[#C09F80]/30 flex items-center justify-between font-mono text-xs text-[#1A1D20] group-hover:text-[#76323F]">
                   <span>Browse Kits</span>
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  <span>→</span>
                 </div>
               </Link>
 
               {/* 3. Prompt + System Instruction Packs */}
               <Link
                 href="/store/prompt-packs"
-                className="border border-[#C09F80]/60 bg-[#FAF8F5] p-6 md:p-8 space-y-4 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] shadow-[3px_3px_0px_0px_#D7CEC7] transition-all duration-200 group flex flex-col justify-between"
+                className="border border-[#C09F80]/60 bg-[#FAF8F5] p-6 md:p-8 space-y-4 hover:border-[#76323F] shadow-[3px_3px_0px_0px_#D7CEC7] hover:shadow-[3px_3px_0px_0px_#C09F80] transition-colors duration-200 group flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs font-mono text-[#565656]">
@@ -208,7 +208,7 @@ export default async function StorePage() {
                 </div>
                 <div className="pt-4 border-t border-[#C09F80]/30 flex items-center justify-between font-mono text-xs text-[#1A1D20] group-hover:text-[#76323F]">
                   <span>Browse Prompt Packs</span>
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  <span>→</span>
                 </div>
               </Link>
             </div>

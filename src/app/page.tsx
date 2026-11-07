@@ -146,7 +146,7 @@ export default async function HomePage() {
                   })}
                 >
                   <span>Explore Store &amp; Kits</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
 
                 <Link
@@ -200,7 +200,7 @@ export default async function HomePage() {
 
             {/* Right Column: Featured Product Spotlight Card (JIOSI Inbox) */}
             <div className="lg:col-span-5">
-              <div className="border border-[#C09F80] bg-[#FAF8F5] p-3.5 sm:p-4 shadow-[5px_5px_0px_0px_#D7CEC7] hover:shadow-[6px_6px_0px_0px_#C09F80] hover:border-[#76323F] transition-all duration-300 group">
+              <div className="border border-[#C09F80] bg-[#FAF8F5] p-3.5 sm:p-4 shadow-[5px_5px_0px_0px_#D7CEC7] hover:shadow-[5px_5px_0px_0px_#C09F80] hover:border-[#76323F] transition-colors duration-200 group">
                 <div className="p-3 bg-[#F5F2ED] border border-[#C09F80]/40 mb-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-none bg-[#76323F]" />
@@ -263,7 +263,7 @@ export default async function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
+            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[2px_2px_0px_0px_#C09F80] transition-colors duration-200">
               <div className="w-10 h-10 rounded-none bg-[#FAF8F5] border border-[#C09F80]/60 flex items-center justify-center text-[#76323F]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
@@ -275,7 +275,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
+            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[2px_2px_0px_0px_#C09F80] transition-colors duration-200">
               <div className="w-10 h-10 rounded-none bg-[#FAF8F5] border border-[#C09F80]/60 flex items-center justify-center text-[#76323F]">
                 <Lock className="w-5 h-5" />
               </div>
@@ -287,7 +287,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
+            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[2px_2px_0px_0px_#C09F80] transition-colors duration-200">
               <div className="w-10 h-10 rounded-none bg-[#FAF8F5] border border-[#C09F80]/60 flex items-center justify-center text-[#76323F]">
                 <Zap className="w-5 h-5" />
               </div>
@@ -299,7 +299,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
+            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[2px_2px_0px_0px_#C09F80] transition-colors duration-200">
               <div className="w-10 h-10 rounded-none bg-[#FAF8F5] border border-[#C09F80]/60 flex items-center justify-center text-[#76323F]">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
@@ -599,7 +599,7 @@ export default async function HomePage() {
                       className="font-mono text-xs uppercase tracking-wider font-semibold text-[#1A1D20] group-hover:text-[#76323F] transition-colors inline-flex items-center gap-1.5"
                     >
                       <span>Read Monograph</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
 
                     {project.githubUrl && (
@@ -673,10 +673,10 @@ export default async function HomePage() {
                   <div
                     key={item.id}
                     className={cn(
-                      "p-6 md:p-8 space-y-6 flex flex-col justify-between relative bg-[#FAF8F5] border transition-all duration-200",
+                      "p-6 md:p-8 space-y-6 flex flex-col justify-between relative bg-[#FAF8F5] border transition-colors duration-200",
                       isFeatured
-                        ? "border-[#C09F80] border-t-2 border-t-[#76323F] shadow-[4px_4px_0px_0px_#C09F80] hover:shadow-[5px_5px_0px_0px_#76323F]"
-                        : "border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[3px_3px_0px_0px_#C09F80]"
+                        ? "border-[#C09F80] border-t-2 border-t-[#76323F] shadow-[4px_4px_0px_0px_#C09F80] hover:shadow-[4px_4px_0px_0px_#76323F]"
+                        : "border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[2px_2px_0px_0px_#C09F80]"
                     )}
                   >
                     <div className="space-y-4">
@@ -787,7 +787,7 @@ export default async function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               {/* Left Column: Authentic Founder Photograph */}
               <div className="lg:col-span-5">
-                <div className="border border-[#C09F80] bg-[#FAF8F5] p-3 shadow-[5px_5px_0px_0px_#D7CEC7] hover:shadow-[6px_6px_0px_0px_#C09F80] hover:border-[#76323F] transition-all duration-300 group">
+                <div className="border border-[#C09F80] bg-[#FAF8F5] p-3 shadow-[5px_5px_0px_0px_#D7CEC7] hover:shadow-[5px_5px_0px_0px_#C09F80] hover:border-[#76323F] transition-colors duration-200 group">
                   <div className="relative aspect-[4/5] w-full overflow-hidden border border-[#C09F80]/40 bg-[#FAF8F5]">
                     <Image
                       src="/images/shivam-shukla.jpg"

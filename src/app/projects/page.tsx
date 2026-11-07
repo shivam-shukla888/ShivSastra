@@ -114,7 +114,7 @@ export default async function ProjectsPage() {
                 projects.map((project) => (
                   <div
                     key={project.id}
-                    className="p-6 md:p-10 overflow-hidden bg-[#FAF8F5] border border-[#D7CEC7] shadow-[4px_4px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[6px_6px_0px_0px_#C09F80] transition-all duration-300 group"
+                    className="p-6 md:p-10 overflow-hidden bg-[#FAF8F5] border border-[#D7CEC7] shadow-[4px_4px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-colors duration-200 group"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                       {/* Image Thumbnail with Double Frame */}

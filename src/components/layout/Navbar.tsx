@@ -274,7 +274,7 @@ export function Navbar() {
                         </div>
                         <ChevronRight
                           className={cn(
-                            "w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5",
+                            "w-4 h-4 shrink-0",
                             isActive ? "text-[#76323F]" : "text-[#C09F80]"
                           )}
                         />
@@ -330,7 +330,7 @@ export function Navbar() {
                         </div>
                         <ChevronRight
                           className={cn(
-                            "w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5",
+                            "w-4 h-4 shrink-0",
                             isActive ? "text-[#76323F]" : "text-[#C09F80]"
                           )}
                         />

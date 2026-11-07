@@ -98,7 +98,6 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-scroll-behavior="smooth"
       className={`${playfair.variable} ${plusJakarta.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-[var(--color-canvas-primary)] text-[var(--color-ink-primary)] font-body">

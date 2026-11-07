@@ -42,17 +42,10 @@ export function HamsterMascot({
           93% { transform: rotate(-4deg); }
           96% { transform: rotate(3deg); }
         }
-        @keyframes hamster-breath {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.02) translateY(-0.5px); }
-        }
         .hamster-mascot-svg {
           transform-origin: center bottom;
         }
         @media (prefers-reduced-motion: no-preference) {
-          .hamster-mascot-svg:hover {
-            animation: hamster-breath 2s ease-in-out infinite;
-          }
           .hamster-mascot-svg:hover .hamster-left-ear {
             animation: hamster-ear-twitch 3s ease-in-out infinite;
             transform-origin: 18px 20px;
