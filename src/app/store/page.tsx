@@ -134,7 +134,7 @@ export default async function StorePage() {
               {/* 1. AI Agent Templates */}
               <Link
                 href="/store/agent-templates"
-                className="border border-[#C09F80]/60 bg-[#FAF8F5] p-6 md:p-8 space-y-4 hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] shadow-[3px_3px_0px_0px_#D7CEC7] transition-all duration-200 group flex flex-col justify-between"
+                className="border border-[#C09F80]/60 bg-[#FAF8F5] p-6 md:p-8 space-y-4 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] shadow-[3px_3px_0px_0px_#D7CEC7] transition-all duration-200 group flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs font-mono text-[#565656]">
@@ -161,7 +161,7 @@ export default async function StorePage() {
               {/* 2. Complete Agent Kits */}
               <Link
                 href="/store/agent-kits"
-                className="border border-[#C09F80]/60 bg-[#FAF8F5] p-6 md:p-8 space-y-4 hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] shadow-[3px_3px_0px_0px_#D7CEC7] transition-all duration-200 group flex flex-col justify-between"
+                className="border border-[#C09F80]/60 bg-[#FAF8F5] p-6 md:p-8 space-y-4 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] shadow-[3px_3px_0px_0px_#D7CEC7] transition-all duration-200 group flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs font-mono text-[#565656]">
@@ -188,7 +188,7 @@ export default async function StorePage() {
               {/* 3. Prompt + System Instruction Packs */}
               <Link
                 href="/store/prompt-packs"
-                className="border border-[#C09F80]/60 bg-[#FAF8F5] p-6 md:p-8 space-y-4 hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] shadow-[3px_3px_0px_0px_#D7CEC7] transition-all duration-200 group flex flex-col justify-between"
+                className="border border-[#C09F80]/60 bg-[#FAF8F5] p-6 md:p-8 space-y-4 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] shadow-[3px_3px_0px_0px_#D7CEC7] transition-all duration-200 group flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs font-mono text-[#565656]">

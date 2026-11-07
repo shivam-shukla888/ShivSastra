@@ -75,7 +75,7 @@ export default function ResumePage() {
                     })}
                   >
                     <span>Download PDF</span>
-                    <span className="inline-block transition-transform duration-150 group-hover:translate-y-0.5 ml-1">
+                    <span className="inline-block ml-1">
                       ↓
                     </span>
                   </a>

@@ -76,7 +76,7 @@ export function Navbar() {
       const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === "Escape") {
           setIsOpen(false);
-          toggleButtonRef.current?.focus();
+          toggleButtonRef.current?.focus({ preventScroll: true });
         }
       };
       window.addEventListener("keydown", handleKeyDown);

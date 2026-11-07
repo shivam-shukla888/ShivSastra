@@ -116,7 +116,7 @@ export default function JiosiInboxProductPage() {
                 alt="JIOSI Inbox Full Desktop Interface"
                 fill
                 priority
-                className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500 ease-out"
+                className="object-cover object-top"
                 sizes="(max-width: 1200px) 100vw, 1100px"
               />
             </div>

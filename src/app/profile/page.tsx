@@ -158,7 +158,7 @@ export default async function ProfilePage() {
                     fill
                     priority
                     sizes="(max-width: 1024px) 90vw, 400px"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                    className="object-cover"
                   />
                 </div>
               </div>
@@ -267,7 +267,7 @@ export default async function ProfilePage() {
                 return (
                   <div
                     key={category.title}
-                    className="p-6 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group space-y-4"
+                    className="p-6 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group space-y-4"
                   >
                     <div className="flex items-center gap-3 pb-3 border-b border-[#D7CEC7]">
                       <div className="w-8 h-8 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#D7CEC7] group-hover:border-[#76323F] shadow-[1px_1px_0px_0px_#C09F80] flex items-center justify-center shrink-0 transition-colors">
@@ -314,7 +314,7 @@ export default async function ProfilePage() {
                 {VERIFIED_EXPERIENCE.map((item) => (
                   <div
                     key={`${item.company}-${item.role}`}
-                    className="p-6 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group space-y-3"
+                    className="p-6 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group space-y-3"
                   >
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
                       <div>
@@ -416,7 +416,7 @@ export default async function ProfilePage() {
             {projects.map((project) => (
               <article
                 key={project.id}
-                className="bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#C09F80] transition-all duration-200 group flex flex-col justify-between"
+                className="bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[6px_6px_0px_0px_#C09F80] transition-all duration-200 group flex flex-col justify-between"
               >
                 <div>
                   {project.coverImageUrl && (
@@ -427,7 +427,7 @@ export default async function ProfilePage() {
                           alt={project.title}
                           fill
                           sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                          className="object-cover"
                         />
                       </div>
                     </div>

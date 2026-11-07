@@ -256,7 +256,7 @@ export default function ProductsPage() {
                         src="/images/products/inbox/inbox-desktop-overview.png"
                         alt="JIOSI Inbox SaaS Platform Interface"
                         fill
-                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+                        className="object-cover object-top"
                         sizes="(max-width: 1024px) 100vw, 550px"
                       />
                     </div>
@@ -285,7 +285,7 @@ export default function ProductsPage() {
               {DIGITAL_PRODUCTS.map((product) => (
                 <div
                   key={product.id}
-                  className="p-6 md:p-8 space-y-6 flex flex-col justify-between bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group"
+                  className="p-6 md:p-8 space-y-6 flex flex-col justify-between bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">

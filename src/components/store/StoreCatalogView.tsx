@@ -247,7 +247,7 @@ export function StoreCatalogView({
             return (
               <article
                 key={product.id}
-                className="border border-[#D7CEC7] bg-[#FAF8F5] p-6 md:p-8 flex flex-col justify-between hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 ease-out group motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none"
+                className="border border-[#D7CEC7] bg-[#FAF8F5] p-6 md:p-8 flex flex-col justify-between hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 ease-out group motion-reduce:hover:shadow-none"
               >
                 <div className="space-y-4">
                   {/* Preview Image with Luxury Double Hairline Frame */}
@@ -262,7 +262,7 @@ export function StoreCatalogView({
                           alt={product.title}
                           fill
                           unoptimized
-                          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out motion-reduce:group-hover:scale-100"
+                          className="object-cover transition-opacity duration-300"
                           sizes="(max-width: 1024px) 100vw, 33vw"
                         />
                       </Link>

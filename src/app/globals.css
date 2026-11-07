@@ -112,7 +112,6 @@ body {
 
 .card-editorial:hover {
   border-color: #76323F;
-  transform: translateY(-2px);
   box-shadow: 4px 4px 0px 0px #C09F80;
 }
 

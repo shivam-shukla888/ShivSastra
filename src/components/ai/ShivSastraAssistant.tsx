@@ -88,7 +88,7 @@ export function ShivSastraAssistant() {
     if (isOpen) {
       wasOpenRef.current = true;
       const timer = setTimeout(() => {
-        inputRef.current?.focus();
+        inputRef.current?.focus({ preventScroll: true });
       }, 50);
 
       const handleKeyDown = (e: KeyboardEvent) => {
@@ -127,7 +127,7 @@ export function ShivSastraAssistant() {
       };
     } else if (wasOpenRef.current) {
       // Return focus to trigger button when closed
-      triggerButtonRef.current?.focus();
+      triggerButtonRef.current?.focus({ preventScroll: true });
     }
   }, [isOpen]);
 
@@ -213,7 +213,7 @@ export function ShivSastraAssistant() {
     setMessages([]);
     setStatus("idle");
     setErrorMessage(null);
-    inputRef.current?.focus();
+    inputRef.current?.focus({ preventScroll: true });
   };
 
   return (

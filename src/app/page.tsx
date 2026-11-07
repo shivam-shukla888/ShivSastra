@@ -222,7 +222,7 @@ export default async function HomePage() {
                     alt="JIOSI Inbox SaaS Platform Interface"
                     fill
                     priority
-                    className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                    className="object-cover object-top"
                     sizes="(max-width: 1024px) 100vw, 500px"
                   />
                 </div>
@@ -263,7 +263,7 @@ export default async function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:-translate-y-1 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
+            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
               <div className="w-10 h-10 rounded-none bg-[#FAF8F5] border border-[#C09F80]/60 flex items-center justify-center text-[#76323F]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
@@ -275,7 +275,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:-translate-y-1 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
+            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
               <div className="w-10 h-10 rounded-none bg-[#FAF8F5] border border-[#C09F80]/60 flex items-center justify-center text-[#76323F]">
                 <Lock className="w-5 h-5" />
               </div>
@@ -287,7 +287,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:-translate-y-1 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
+            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
               <div className="w-10 h-10 rounded-none bg-[#FAF8F5] border border-[#C09F80]/60 flex items-center justify-center text-[#76323F]">
                 <Zap className="w-5 h-5" />
               </div>
@@ -299,7 +299,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:-translate-y-1 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
+            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
               <div className="w-10 h-10 rounded-none bg-[#FAF8F5] border border-[#C09F80]/60 flex items-center justify-center text-[#76323F]">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
@@ -396,7 +396,7 @@ export default async function HomePage() {
                       src="/images/products/inbox/inbox-desktop-overview.png"
                       alt="JIOSI Inbox Application Preview"
                       fill
-                      className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                      className="object-cover object-top"
                       sizes="(max-width: 1024px) 100vw, 550px"
                     />
                   </div>
@@ -556,7 +556,7 @@ export default async function HomePage() {
                           src={project.coverImageUrl}
                           alt={`${project.title} — Preview`}
                           fill
-                          className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                          className="object-cover"
                           sizes="(max-width: 768px) 100vw, 33vw"
                         />
                       </div>
@@ -673,7 +673,7 @@ export default async function HomePage() {
                   <div
                     key={item.id}
                     className={cn(
-                      "p-6 md:p-8 space-y-6 flex flex-col justify-between relative bg-[#FAF8F5] border transition-all duration-200 hover:-translate-y-1",
+                      "p-6 md:p-8 space-y-6 flex flex-col justify-between relative bg-[#FAF8F5] border transition-all duration-200",
                       isFeatured
                         ? "border-[#C09F80] border-t-2 border-t-[#76323F] shadow-[4px_4px_0px_0px_#C09F80] hover:shadow-[5px_5px_0px_0px_#76323F]"
                         : "border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[3px_3px_0px_0px_#C09F80]"
@@ -793,7 +793,7 @@ export default async function HomePage() {
                       src="/images/shivam-shukla.jpg"
                       alt="Shivam Shukla — Founder & AI Systems Architect at SHIVSASTRA"
                       fill
-                      className="object-cover object-top group-hover:scale-[1.01] transition-transform duration-500"
+                      className="object-cover object-top"
                       sizes="(max-width: 1024px) 100vw, 450px"
                     />
                   </div>

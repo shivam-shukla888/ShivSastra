@@ -22,8 +22,8 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
 
     const hoverClasses = hoverEffect
       ? variant === "dark"
-        ? "hover:border-[#C09F80] hover:-translate-y-0.5"
-        : "hover:border-[#76323F] hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_#C09F80]"
+        ? "hover:border-[#C09F80]"
+        : "hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80]"
       : "";
 
     return (

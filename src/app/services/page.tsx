@@ -329,10 +329,10 @@ export default function ServicesPage() {
                 return (
                   <div
                     key={pkg.id}
-                    className={`flex flex-col justify-between relative p-6 md:p-8 bg-[#FAF8F5] transition-all duration-200 ease-out group motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none ${
+                    className={`flex flex-col justify-between relative p-6 md:p-8 bg-[#FAF8F5] transition-all duration-200 ease-out group motion-reduce:hover:shadow-none ${
                       isBusiness
-                        ? "border-t-2 border-t-[#76323F] border-x border-b border-[#76323F] shadow-[6px_6px_0px_0px_#C09F80] hover:-translate-y-1"
-                        : "border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80]"
+                        ? "border-t-2 border-t-[#76323F] border-x border-b border-[#76323F] shadow-[6px_6px_0px_0px_#C09F80]"
+                        : "border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80]"
                     }`}
                   >
                     {isBusiness && (
@@ -452,7 +452,7 @@ export default function ServicesPage() {
               {SERVICE_PROCESS_STEPS.map((step, idx) => (
                 <div
                   key={idx}
-                  className="p-6 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 flex flex-col justify-between group"
+                  className="p-6 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 flex flex-col justify-between group"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between pb-3 border-b border-[#D7CEC7]">
@@ -501,7 +501,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
                 <div className="w-10 h-10 bg-[#FAF8F5] text-[#76323F] border border-[#D7CEC7] group-hover:border-[#76323F] flex items-center justify-center transition-colors shadow-[1px_1px_0px_0px_#C09F80]">
                   <Workflow className="w-5 h-5" />
                 </div>
@@ -513,7 +513,7 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
                 <div className="w-10 h-10 bg-[#FAF8F5] text-[#76323F] border border-[#D7CEC7] group-hover:border-[#76323F] flex items-center justify-center transition-colors shadow-[1px_1px_0px_0px_#C09F80]">
                   <Lock className="w-5 h-5" />
                 </div>
@@ -525,7 +525,7 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
                 <div className="w-10 h-10 bg-[#FAF8F5] text-[#76323F] border border-[#D7CEC7] group-hover:border-[#76323F] flex items-center justify-center transition-colors shadow-[1px_1px_0px_0px_#C09F80]">
                   <Database className="w-5 h-5" />
                 </div>

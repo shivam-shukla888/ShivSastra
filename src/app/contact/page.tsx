@@ -92,7 +92,7 @@ export default async function ContactPage() {
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#C09F80] transition-all">
+                <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[3px_3px_0px_0px_#C09F80] transition-all">
                   <div className="flex items-center gap-2.5 text-[#76323F] font-mono text-xs uppercase tracking-wider font-semibold">
                     <Clock className="w-4 h-4" />
                     <span>Response Time Guarantee</span>
@@ -102,7 +102,7 @@ export default async function ContactPage() {
                   </p>
                 </div>
 
-                <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#C09F80] transition-all">
+                <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[3px_3px_0px_0px_#C09F80] transition-all">
                   <div className="flex items-center gap-2.5 text-[#76323F] font-mono text-xs uppercase tracking-wider font-semibold">
                     <ShieldCheck className="w-4 h-4" />
                     <span>Strict Data Sovereignty</span>
@@ -113,7 +113,7 @@ export default async function ContactPage() {
                 </div>
 
                 {profile.email && (
-                  <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#C09F80] transition-all">
+                  <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[3px_3px_0px_0px_#C09F80] transition-all">
                     <div className="flex items-center gap-2.5 text-[#76323F] font-mono text-xs uppercase tracking-wider font-semibold">
                       <Mail className="w-4 h-4" />
                       <span>Direct Email</span>

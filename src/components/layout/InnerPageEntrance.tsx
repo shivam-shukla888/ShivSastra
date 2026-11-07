@@ -49,7 +49,7 @@ export function InnerPageEntrance({
   className = "",
   delayIndex = 0,
   delay,
-  y = 12,
+  y = 0,
   duration = 0.52,
   as = "div",
 }: InnerPageEntranceProps) {
