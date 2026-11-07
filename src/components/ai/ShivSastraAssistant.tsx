@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { SafeMarkdown } from "./SafeMarkdown";
-import { ShivSastraMascot } from "./ShivSastraMascot";
+import { Sparkle, X } from "@phosphor-icons/react";
 
 export interface Message {
   id: string;
@@ -188,8 +188,8 @@ export function ShivSastraAssistant() {
 
   return (
     <>
-      {/* Global "Ask SHIVSASTRA" Companion Trigger */}
-      {/* Desktop Mascot Trigger: Subtle bounded wander near bottom-right */}
+      {/* Global "Ask SHIVSASTRA" Studio AI Trigger */}
+      {/* Desktop Trigger: Refined editorial button anchored bottom-right */}
       <div className="fixed bottom-6 right-6 z-40 hidden lg:block">
         <button
           ref={triggerButtonRef}
@@ -197,62 +197,41 @@ export function ShivSastraAssistant() {
           onClick={() => setIsOpen((prev) => !prev)}
           aria-expanded={isOpen}
           aria-controls="shivsastra-ai-dialog"
-          aria-label={isOpen ? "Close SHIVSASTRA Assistant" : "Ask SHIVSASTRA"}
+          aria-label={isOpen ? "Close Studio AI Assistant" : "Ask Studio AI"}
           className={cn(
-            "group relative flex flex-col items-end gap-1.5 focus-visible:outline-none",
-            "animate-mascot-wander cursor-pointer select-none"
+            "group relative flex items-center gap-2.5 px-4 py-2.5 rounded-none",
+            "bg-[#1A1D20] text-[#F5F2ED] border border-[#C09F80]/60",
+            "hover:border-[#76323F] hover:bg-[#25282B] transition-all duration-200",
+            "shadow-[3px_3px_0px_0px_#565656] cursor-pointer select-none",
+            "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F]"
           )}
         >
-          {/* Subtle Speech Pill / Indicator */}
-          <div
-            className={cn(
-              "px-2.5 py-1 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)]",
-              "group-hover:border-[var(--color-ink-primary)] shadow-sm",
-              "flex items-center gap-1.5 transition-all duration-200",
-              "text-[var(--color-ink-primary)] font-mono text-[10px] uppercase tracking-wider",
-              isOpen && "border-[var(--color-accent)] text-[var(--color-accent)]"
-            )}
-          >
-            <span
-              className={cn(
-                "w-1.5 h-1.5 bg-[var(--color-accent)] inline-block transition-transform duration-200",
-                isOpen ? "rotate-45" : "rotate-0"
-              )}
-              aria-hidden="true"
-            />
-            <span>{isOpen ? "Close" : "Ask SHIVSASTRA"}</span>
-          </div>
-
-          {/* Original SHIVSASTRA mascot, created specifically for the portfolio. */}
-          <div
-            className={cn(
-              "relative transition-transform duration-200 group-hover:scale-105 group-active:scale-95",
-              isOpen && "opacity-90"
-            )}
-          >
-            <ShivSastraMascot isOpen={isOpen} size="md" />
-          </div>
+          <Sparkle className="w-4 h-4 text-[#C09F80] group-hover:text-[#F5F2ED] transition-colors" />
+          <span className="font-mono text-xs uppercase tracking-wider font-semibold">
+            {isOpen ? "Close Assistant" : "Ask Studio AI"}
+          </span>
+          <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
         </button>
       </div>
 
-      {/* Mobile Mascot Trigger: Compact, unobtrusive floating pill */}
+      {/* Mobile Trigger: Compact, unobtrusive floating pill */}
       <div className="fixed bottom-20 right-4 z-40 lg:hidden">
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
           aria-expanded={isOpen}
           aria-controls="shivsastra-ai-dialog"
-          aria-label={isOpen ? "Close SHIVSASTRA Assistant" : "Ask SHIVSASTRA"}
+          aria-label={isOpen ? "Close Studio AI Assistant" : "Ask Studio AI"}
           className={cn(
-            "h-10 px-3 flex items-center gap-2",
-            "bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)]",
-            "text-[var(--color-ink-primary)] font-mono text-[10px] tracking-wider uppercase",
-            "active:scale-95 shadow-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]",
-            isOpen && "border-[var(--color-accent)]"
+            "h-10 px-3.5 flex items-center gap-2 rounded-none",
+            "bg-[#1A1D20] text-[#F5F2ED] border border-[#C09F80]/60",
+            "font-mono text-[11px] tracking-wider uppercase font-semibold",
+            "shadow-[2px_2px_0px_0px_#565656] active:scale-95 transition-all duration-150",
+            "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F]"
           )}
         >
-          <ShivSastraMascot isOpen={isOpen} size="sm" />
-          <span>{isOpen ? "Close" : "Ask SHIVSASTRA"}</span>
+          <Sparkle className="w-3.5 h-3.5 text-[#C09F80]" />
+          <span>{isOpen ? "Close" : "Studio AI"}</span>
         </button>
       </div>
 
@@ -310,7 +289,7 @@ export function ShivSastraAssistant() {
                 aria-label="Close Assistant"
                 className="w-8 h-8 flex items-center justify-center border border-[var(--color-hairline)] text-[var(--color-ink-secondary)] hover:border-[var(--color-ink-primary)] hover:text-[var(--color-ink-primary)] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-ink-primary)]"
               >
-                <span className="text-sm leading-none font-mono">✕</span>
+                <X className="w-3.5 h-3.5" />
               </button>
             </div>
           </header>

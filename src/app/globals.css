@@ -184,7 +184,7 @@ body {
   clip: auto;
   white-space: normal;
   z-index: 100;
-  background: #6366F1;
+  background: #76323F;
   color: #FFFFFF;
 }
 
@@ -197,36 +197,6 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-}
-
-/* Interactive Mascot Subtle Idle Physics */
-@keyframes mascot-idle-wander {
-  0%, 100% {
-    transform: translate(0px, 0px);
-  }
-  20% {
-    transform: translate(4px, -3px);
-  }
-  40% {
-    transform: translate(2px, 1px);
-  }
-  60% {
-    transform: translate(-5px, -2px);
-  }
-  80% {
-    transform: translate(-5px, 0px);
-  }
-}
-
-.animate-mascot-wander {
-  animation: mascot-idle-wander 16s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-mascot-wander {
-    animation: none !important;
-    transform: none !important;
   }
 }
 

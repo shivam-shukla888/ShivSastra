@@ -52,8 +52,8 @@ export const metadata: Metadata = {
 
 export default async function ProjectsPage() {
   const allProjects = await getPublishedProjects();
-  // Strictly showcase exactly three client projects: JIOSI Inbox, Yojna Setu, and QuickEats
-  const clientProjectSlugs = ["inbox", "yojna-setu", "quickeats"];
+  // Featured canonical projects: JIOSI Inbox, ShivSastra Digital HQ, Yojna Setu, and QuickEats
+  const clientProjectSlugs = ["inbox", "shivsastra", "yojna-setu", "quickeats"];
   const projects = allProjects
     .filter((p) => clientProjectSlugs.includes(p.slug))
     .sort((a, b) => clientProjectSlugs.indexOf(a.slug) - clientProjectSlugs.indexOf(b.slug));

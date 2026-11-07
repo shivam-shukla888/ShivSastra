@@ -22,7 +22,7 @@ export function Footer() {
             </p>
 
             <div className="flex flex-col gap-1 pt-2 font-mono text-xs text-[#C09F80]">
-              <span>Warm Editorial Luxury + Modern Technology Studio</span>
+              <span>Software Engineering &amp; Agentic AI Systems Studio</span>
             </div>
           </div>
 
@@ -113,7 +113,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm font-sans text-[#D7CEC7]">
               <li>
                 <Link href="/about" className="hover:text-[#F5F2ED] transition-colors">
-                  About JIOSI
+                  About SHIVSASTRA
                 </Link>
               </li>
               <li>

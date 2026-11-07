@@ -29,16 +29,16 @@ import {
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Shivam Shukla — AI Engineer & Backend Developer",
+  title: "SHIVSASTRA — Software Engineering & AI Systems Studio | Shivam Shukla",
   description:
-    "Explore Shivam Shukla’s AI engineering and backend work, including JIOSI Inbox, Yojna Setu, and QuickEats. View technical case studies, architecture, and project demos.",
+    "Explore Shivam Shukla’s AI systems engineering and backend platforms, including JIOSI Inbox, Yojna Setu, and QuickEats. View technical case studies, architecture, and project demos.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "Shivam Shukla — AI Engineer & Backend Developer",
+    title: "SHIVSASTRA — Software Engineering & AI Systems Studio",
     description:
-      "Explore Shivam Shukla’s AI engineering and backend work, including JIOSI Inbox, Yojna Setu, and QuickEats. View technical case studies, architecture, and project demos.",
+      "Explore Shivam Shukla’s AI systems engineering and backend platforms, including JIOSI Inbox, Yojna Setu, and QuickEats. View technical case studies, architecture, and project demos.",
     url: SITE_URL,
     type: "website",
     siteName: "SHIVSASTRA",
@@ -67,8 +67,8 @@ export default async function HomePage() {
     getPublishedProjects(),
   ]);
 
-  // Client project showcase: strictly showcase exactly 3 projects (JIOSI Inbox, Yojna Setu, QuickEats)
-  const clientProjectSlugs = ["inbox", "yojna-setu", "quickeats"];
+  // Canonical project showcase: JIOSI Inbox, ShivSastra Digital HQ, Yojna Setu, QuickEats
+  const clientProjectSlugs = ["inbox", "shivsastra", "yojna-setu", "quickeats"];
   const selectedProjects = allProjects
     .filter((p) => clientProjectSlugs.includes(p.slug))
     .sort((a, b) => clientProjectSlugs.indexOf(a.slug) - clientProjectSlugs.indexOf(b.slug));
@@ -559,7 +559,7 @@ export default async function HomePage() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {selectedProjects.map((project) => (
                 <div
                   key={project.id}

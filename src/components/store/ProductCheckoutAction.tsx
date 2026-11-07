@@ -659,11 +659,11 @@ export function ProductCheckoutAction({
         <div
           role="region"
           aria-label="Payment Verified"
-          className="p-5 sm:p-6 border-2 border-emerald-600 bg-[var(--color-canvas-secondary)] space-y-4"
+          className="p-5 sm:p-6 border border-[#2E6B4D] bg-[var(--color-canvas-secondary)] space-y-4"
         >
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-600" />
-            <span className="font-mono text-xs uppercase tracking-wider text-emerald-700 dark:text-emerald-400 font-semibold">
+            <span className="w-2 h-2 rounded-none bg-[#2E6B4D]" />
+            <span className="font-mono text-xs uppercase tracking-wider text-[#2E6B4D] font-semibold">
               PAYMENT SUCCESSFUL
             </span>
           </div>
@@ -744,11 +744,11 @@ export function ProductCheckoutAction({
         <div
           role="region"
           aria-label="Payment Verified With Delivery Notice"
-          className="p-5 sm:p-6 border-2 border-amber-600 bg-[var(--color-canvas-secondary)] space-y-4"
+          className="p-5 sm:p-6 border border-[#9E6B24] bg-[var(--color-canvas-secondary)] space-y-4"
         >
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-600" />
-            <span className="font-mono text-xs uppercase tracking-wider text-emerald-700 dark:text-emerald-400 font-semibold">
+            <span className="w-2 h-2 rounded-none bg-[#2E6B4D]" />
+            <span className="font-mono text-xs uppercase tracking-wider text-[#2E6B4D] font-semibold">
               PAYMENT SUCCESSFUL
             </span>
           </div>

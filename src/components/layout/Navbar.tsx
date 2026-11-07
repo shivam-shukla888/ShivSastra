@@ -18,8 +18,6 @@ import {
   Compass,
   PaperPlaneTilt as Send,
   FileText,
-  ShieldCheck,
-  MagnifyingGlass as Search,
   ArrowUpRight,
   ArrowRight,
   Sparkle as Sparkles,
@@ -36,10 +34,12 @@ interface NavItem {
 }
 
 const DESKTOP_NAV_ITEMS: NavItem[] = [
-  { label: "Work", href: "/projects", icon: FolderGit2 },
   { label: "Products", href: "/products", icon: Layers },
   { label: "Services", href: "/services", icon: Cpu },
-  { label: "Profile", href: "/profile", icon: FileText },
+  { label: "Pricing", href: "/pricing", icon: CreditCard },
+  { label: "Projects", href: "/projects", icon: FolderGit2 },
+  { label: "Store", href: "/store", icon: ShoppingBag },
+  { label: "Lab", href: "/lab", icon: FlaskConical },
   { label: "About", href: "/about", icon: Compass },
   { label: "Contact", href: "/contact", icon: Send },
 ];
@@ -68,7 +68,6 @@ const MOBILE_CATEGORIES: {
         href: "/products/inbox",
         icon: Inbox,
         description: "Keyboard-first email productivity client",
-        badge: "Live",
       },
       {
         label: "Services",

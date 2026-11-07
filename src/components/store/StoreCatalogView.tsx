@@ -285,19 +285,19 @@ export function StoreCatalogView({
                       {categoryLabel}
                     </Link>
                     {isCaseStudy ? (
-                      <span className="font-mono text-xs text-[var(--color-ink-secondary)] font-medium">
+                      <span className="font-mono text-xs text-[#565656] font-medium">
                         Open Case Study
                       </span>
                     ) : isDiscontinued ? (
-                      <span className="font-mono text-xs text-rose-600 dark:text-rose-400 font-semibold uppercase tracking-wider">
+                      <span className="font-mono text-xs text-[#9E2A2B] font-semibold uppercase tracking-wider">
                         Discontinued
                       </span>
                     ) : isUpcoming ? (
-                      <span className="font-mono text-xs text-amber-700 dark:text-amber-400 font-medium">
+                      <span className="font-mono text-xs text-[#9E6B24] font-medium">
                         In Development
                       </span>
                     ) : (
-                      <span className="text-[var(--color-accent)] font-semibold text-sm">
+                      <span className="text-[#76323F] font-semibold text-sm">
                         {product.formattedPrice}
                       </span>
                     )}
@@ -307,19 +307,19 @@ export function StoreCatalogView({
                   <div className="space-y-1.5">
                     <div>
                       {isCaseStudy ? (
-                        <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] text-[var(--color-ink-secondary)]">
+                        <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-[#C09F80]/50 bg-[#FAF8F5] text-[#565656]">
                           Architecture Case Study
                         </span>
                       ) : isDiscontinued ? (
-                        <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-rose-600/30 bg-rose-500/10 text-rose-700 dark:text-rose-400 font-semibold">
+                        <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-[#9E2A2B]/30 bg-[#9E2A2B]/10 text-[#9E2A2B] font-semibold">
                           Discontinued
                         </span>
                       ) : isUpcoming ? (
-                        <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-amber-600/30 bg-amber-500/10 text-amber-800 dark:text-amber-300">
+                        <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-[#9E6B24]/30 bg-[#9E6B24]/10 text-[#9E6B24]">
                           Upcoming Release
                         </span>
                       ) : (
-                        <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-emerald-600/30 bg-emerald-500/10 text-emerald-800 dark:text-emerald-300">
+                        <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-[#2E6B4D]/30 bg-[#2E6B4D]/10 text-[#2E6B4D] font-medium">
                           Available for Download
                         </span>
                       )}
@@ -339,7 +339,7 @@ export function StoreCatalogView({
                   {/* Required Digital Product Value Points */}
                   <div className="pt-2.5 pb-1 space-y-1 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-primary)]">
                     <div className="flex items-center gap-2">
-                      <Lock className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                      <Lock className="w-3.5 h-3.5 text-[#76323F] shrink-0" />
                       <span className="font-medium">We prioritize security</span>
                     </div>
                   </div>

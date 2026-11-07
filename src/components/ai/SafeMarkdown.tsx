@@ -264,7 +264,7 @@ export function SafeMarkdown({ content, validRoutes }: SafeMarkdownProps) {
                   {renderInlineContent(preLines.join(" "), validRoutes)}
                 </p>
               )}
-              <div className="overflow-x-auto rounded-lg border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] max-w-full shadow-xs">
+              <div className="overflow-x-auto rounded-none border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] max-w-full shadow-xs">
                 <table className="w-full text-left border-collapse text-xs">
                 <thead>
                   <tr className="border-b border-[var(--color-hairline)] bg-[var(--color-canvas-primary)]">

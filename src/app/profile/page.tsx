@@ -7,7 +7,13 @@ import { buttonStyles } from "@/components/ui/Button";
 import { getProfileSettings } from "@/lib/profile";
 import { getPublishedProjects } from "@/lib/projects";
 import { absoluteUrl } from "@/lib/site";
-import { ArrowUpRight, Code2, Link as LinkIcon, FileText, ExternalLink } from "lucide-react";
+import {
+  ArrowUpRight,
+  Code as Code2,
+  LinkSimple as LinkIcon,
+  FileText,
+  ArrowSquareOut as ExternalLink,
+} from "@phosphor-icons/react/dist/ssr";
 
 export const revalidate = 60;
 
