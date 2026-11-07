@@ -141,24 +141,31 @@ export default async function ProfilePage() {
   return (
     <div className="w-full bg-[#F5F2ED] text-[#1A1D20]">
       {/* 1. HERO PROFILE INTRODUCTION */}
-      <section className="border-b border-[#C09F80]/40 py-16 sm:py-20 md:py-24">
-        <SectionContainer>
+      <section className="relative border-b border-[#C09F80]/40 py-16 sm:py-20 md:py-24 overflow-hidden">
+        {/* Warm atmospheric light wash */}
+        <div className="hero-glow-warm pointer-events-none" />
+        <div className="hero-glow-right pointer-events-none" />
+
+        <SectionContainer className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div className="lg:col-span-4 max-w-sm mx-auto lg:mx-0 w-full">
-              <div className="relative aspect-[4/5] border border-[#C09F80] bg-[#FAF8F5] shadow-[4px_4px_0px_0px_#D7CEC7] overflow-hidden">
-                <Image
-                  src="/images/shivam-shukla.jpg"
-                  alt="Shivam Shukla"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 90vw, 400px"
-                  className="object-cover"
-                />
+              {/* Double Hairline Luxury Portrait Frame */}
+              <div className="p-1.5 border border-[#D7CEC7] bg-[#FAF8F5] shadow-[6px_6px_0px_0px_#C09F80] group">
+                <div className="relative aspect-[4/5] border border-[#D7CEC7] bg-[#1A1D20] overflow-hidden">
+                  <Image
+                    src="/images/shivam-shukla.jpg"
+                    alt="Shivam Shukla"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 90vw, 400px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                </div>
               </div>
             </div>
 
             <div className="lg:col-span-8 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-semibold">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-semibold shadow-[1px_1px_0px_0px_#C09F80]">
                 <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
                 <span>AI Systems &amp; Backend Software Engineer</span>
               </div>
@@ -180,7 +187,11 @@ export default async function ProfilePage() {
                 <a
                   href="/resume.pdf"
                   download="Shivam_Shukla_Resume.pdf"
-                  className={buttonStyles({ variant: "primary", size: "lg" })}
+                  className={buttonStyles({
+                    variant: "primary",
+                    size: "lg",
+                    className: "bg-[#76323F] hover:bg-[#5a2530] text-[#FAF8F5] border-none shadow-[2px_2px_0px_0px_#C09F80]",
+                  })}
                 >
                   <FileText className="w-4 h-4 mr-1.5" />
                   <span>Download Resume (PDF)</span>
@@ -188,7 +199,11 @@ export default async function ProfilePage() {
 
                 <Link
                   href="/resume"
-                  className={buttonStyles({ variant: "secondary", size: "lg" })}
+                  className={buttonStyles({
+                    variant: "secondary",
+                    size: "lg",
+                    className: "border-[#D7CEC7] bg-[#FAF8F5] text-[#1A1D20] hover:border-[#76323F]",
+                  })}
                 >
                   <span>View Resume</span>
                   <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 text-[#76323F]" />
@@ -196,7 +211,11 @@ export default async function ProfilePage() {
 
                 <Link
                   href="/contact"
-                  className={buttonStyles({ variant: "secondary", size: "lg" })}
+                  className={buttonStyles({
+                    variant: "secondary",
+                    size: "lg",
+                    className: "border-[#D7CEC7] bg-[#FAF8F5] text-[#1A1D20] hover:border-[#76323F]",
+                  })}
                 >
                   <EnvelopeSimple className="w-4 h-4 mr-1.5" />
                   <span>Contact</span>
@@ -248,13 +267,13 @@ export default async function ProfilePage() {
                 return (
                   <div
                     key={category.title}
-                    className="p-6 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] space-y-4"
+                    className="p-6 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group space-y-4"
                   >
-                    <div className="flex items-center gap-3 pb-3 border-b border-[#C09F80]/30">
-                      <div className="w-8 h-8 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 flex items-center justify-center shrink-0">
+                    <div className="flex items-center gap-3 pb-3 border-b border-[#D7CEC7]">
+                      <div className="w-8 h-8 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#D7CEC7] group-hover:border-[#76323F] shadow-[1px_1px_0px_0px_#C09F80] flex items-center justify-center shrink-0 transition-colors">
                         <Icon className="w-4 h-4" />
                       </div>
-                      <h3 className="font-display text-lg font-normal text-[#1A1D20]">
+                      <h3 className="font-display text-lg font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                         {category.title}
                       </h3>
                     </div>
@@ -282,7 +301,7 @@ export default async function ProfilePage() {
             {/* Left: Production Experience */}
             <div className="lg:col-span-7 space-y-8">
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-semibold">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-semibold shadow-[1px_1px_0px_0px_#C09F80]">
                   <Briefcase className="w-3.5 h-3.5" />
                   <span>Work Experience</span>
                 </div>
@@ -295,11 +314,11 @@ export default async function ProfilePage() {
                 {VERIFIED_EXPERIENCE.map((item) => (
                   <div
                     key={`${item.company}-${item.role}`}
-                    className="p-6 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] space-y-3"
+                    className="p-6 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group space-y-3"
                   >
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
                       <div>
-                        <h3 className="font-display text-xl font-normal text-[#1A1D20]">
+                        <h3 className="font-display text-xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                           {item.role}
                         </h3>
                         <p className="font-sans text-sm font-semibold text-[#76323F]">
@@ -312,7 +331,7 @@ export default async function ProfilePage() {
                       </div>
                     </div>
 
-                    <ul className="space-y-1.5 pt-2 border-t border-[#C09F80]/30 text-xs font-sans text-[#565656]">
+                    <ul className="space-y-1.5 pt-2 border-t border-[#D7CEC7] text-xs font-sans text-[#565656]">
                       {item.highlights.map((h, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <span className="text-[#76323F] font-bold mt-0.5">•</span>
@@ -328,7 +347,7 @@ export default async function ProfilePage() {
             {/* Right: Education & Philosophy */}
             <div className="lg:col-span-5 space-y-8">
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-semibold">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-semibold shadow-[1px_1px_0px_0px_#C09F80]">
                   <GraduationCap className="w-3.5 h-3.5" />
                   <span>Academic Credentials</span>
                 </div>
@@ -337,7 +356,7 @@ export default async function ProfilePage() {
                 </h2>
               </div>
 
-              <div className="p-6 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] space-y-3">
+              <div className="p-6 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] transition-colors space-y-3">
                 <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Bachelor of Technology
                 </span>
@@ -350,12 +369,12 @@ export default async function ProfilePage() {
                 <div className="font-mono text-xs text-[#565656] pt-1">
                   Duration: 2022 – 2026
                 </div>
-                <p className="font-sans text-xs text-[#565656] leading-relaxed pt-2 border-t border-[#C09F80]/30">
+                <p className="font-sans text-xs text-[#565656] leading-relaxed pt-2 border-t border-[#D7CEC7]">
                   Rigorous focus on data structures, relational database architecture, distributed systems, operating systems, and computer networks.
                 </p>
               </div>
 
-              <div className="p-6 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] space-y-3">
+              <div className="p-6 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] transition-colors space-y-3">
                 <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Core Engineering Ethos
                 </span>
@@ -376,7 +395,7 @@ export default async function ProfilePage() {
         <SectionContainer>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-semibold">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-semibold shadow-[1px_1px_0px_0px_#C09F80]">
                 <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
                 <span>Featured Systems</span>
               </div>
@@ -397,18 +416,20 @@ export default async function ProfilePage() {
             {projects.map((project) => (
               <article
                 key={project.id}
-                className="bg-[#FAF8F5] border border-[#C09F80]/70 shadow-[2px_2px_0px_0px_#D7CEC7] flex flex-col justify-between"
+                className="bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#C09F80] transition-all duration-200 group flex flex-col justify-between"
               >
                 <div>
                   {project.coverImageUrl && (
-                    <div className="relative aspect-[16/10] border-b border-[#C09F80]/50 bg-[#F5F2ED] overflow-hidden">
-                      <Image
-                        src={project.coverImageUrl}
-                        alt={project.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover"
-                      />
+                    <div className="p-1 border-b border-[#D7CEC7] bg-[#F5F2ED]">
+                      <div className="relative aspect-[16/10] overflow-hidden bg-[#1A1D20]">
+                        <Image
+                          src={project.coverImageUrl}
+                          alt={project.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                        />
+                      </div>
                     </div>
                   )}
                   <div className="p-6 space-y-4">
@@ -416,7 +437,7 @@ export default async function ProfilePage() {
                       <p className="font-mono text-[10px] uppercase tracking-wider text-[#76323F] font-semibold">
                         {project.category || "Engineering Project"}
                       </p>
-                      <h3 className="font-display text-2xl mt-1 text-[#1A1D20]">
+                      <h3 className="font-display text-2xl mt-1 text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                         {project.title}
                       </h3>
                     </div>
@@ -429,7 +450,7 @@ export default async function ProfilePage() {
                       {project.techStack.slice(0, 4).map((tech) => (
                         <span
                           key={tech}
-                          className="font-mono text-[10px] px-2 py-0.5 border border-[#C09F80]/40 bg-[#FAF8F5] text-[#565656]"
+                          className="font-mono text-[10px] px-2 py-0.5 border border-[#D7CEC7] bg-[#FAF8F5] text-[#565656]"
                         >
                           {tech}
                         </span>
@@ -438,7 +459,7 @@ export default async function ProfilePage() {
                   </div>
                 </div>
 
-                <div className="p-6 pt-0 border-t border-[#C09F80]/20 mt-4 flex items-center justify-between text-xs font-mono">
+                <div className="p-6 pt-0 border-t border-[#D7CEC7] mt-4 flex items-center justify-between text-xs font-mono">
                   <Link
                     href={`/projects/${project.slug}`}
                     className="font-semibold text-[#76323F] hover:text-[#5A1C29] inline-flex items-center gap-1"

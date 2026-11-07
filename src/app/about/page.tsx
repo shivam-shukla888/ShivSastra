@@ -50,7 +50,11 @@ export default async function AboutPage() {
   return (
     <div className="flex flex-col w-full bg-[#F5F2ED] text-[#1A1D20]">
       {/* 1. WARM EDITORIAL HERO BANNER */}
-      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30">
+      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30 overflow-hidden">
+        {/* Warm atmospheric light wash */}
+        <div className="hero-glow-warm pointer-events-none" />
+        <div className="hero-glow-right pointer-events-none" />
+
         <SectionContainer className="relative z-10">
           <div className="max-w-3xl space-y-6">
             <div className="flex items-center gap-2">
@@ -76,11 +80,11 @@ export default async function AboutPage() {
       <section className="w-full py-20 md:py-28 bg-[#FFFFFF] border-b border-[#C09F80]/30">
         <SectionContainer>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="p-8 md:p-10 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
-              <div className="w-10 h-10 bg-[#FAF8F5] border border-[#C09F80]/40 flex items-center justify-center text-[#76323F]">
+            <div className="p-8 md:p-10 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+              <div className="w-10 h-10 bg-[#FAF8F5] border border-[#D7CEC7] group-hover:border-[#76323F] shadow-[1px_1px_0px_0px_#C09F80] flex items-center justify-center text-[#76323F] transition-colors">
                 <Target className="w-5 h-5" />
               </div>
-              <h2 className="font-display text-2xl font-normal text-[#1A1D20]">
+              <h2 className="font-display text-2xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                 Our Mission
               </h2>
               <p className="font-sans text-base text-[#565656] leading-relaxed">
@@ -88,11 +92,11 @@ export default async function AboutPage() {
               </p>
             </div>
 
-            <div className="p-8 md:p-10 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
-              <div className="w-10 h-10 bg-[#FAF8F5] border border-[#C09F80]/40 flex items-center justify-center text-[#76323F]">
+            <div className="p-8 md:p-10 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+              <div className="w-10 h-10 bg-[#FAF8F5] border border-[#D7CEC7] group-hover:border-[#76323F] shadow-[1px_1px_0px_0px_#C09F80] flex items-center justify-center text-[#76323F] transition-colors">
                 <Compass className="w-5 h-5" />
               </div>
-              <h2 className="font-display text-2xl font-normal text-[#1A1D20]">
+              <h2 className="font-display text-2xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                 Our Vision
               </h2>
               <p className="font-sans text-base text-[#565656] leading-relaxed">
@@ -115,11 +119,11 @@ export default async function AboutPage() {
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
                 <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Principle 01
                 </span>
-                <h3 className="font-display text-xl font-normal text-[#1A1D20]">
+                <h3 className="font-display text-xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                   AI Extracts. Code Decides.
                 </h3>
                 <p className="font-sans text-sm text-[#565656] leading-relaxed">
@@ -127,11 +131,11 @@ export default async function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
                 <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Principle 02
                 </span>
-                <h3 className="font-display text-xl font-normal text-[#1A1D20]">
+                <h3 className="font-display text-xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                   Total Data Sovereignty
                 </h3>
                 <p className="font-sans text-sm text-[#565656] leading-relaxed">
@@ -139,11 +143,11 @@ export default async function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
                 <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Principle 03
                 </span>
-                <h3 className="font-display text-xl font-normal text-[#1A1D20]">
+                <h3 className="font-display text-xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                   High-Performance Velocity
                 </h3>
                 <p className="font-sans text-sm text-[#565656] leading-relaxed">
@@ -151,11 +155,11 @@ export default async function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
                 <span className="font-mono text-xs font-bold text-[#76323F] uppercase tracking-wider block">
                   Principle 04
                 </span>
-                <h3 className="font-display text-xl font-normal text-[#1A1D20]">
+                <h3 className="font-display text-xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                   Truthful Architecture
                 </h3>
                 <p className="font-sans text-sm text-[#565656] leading-relaxed">
@@ -181,16 +185,18 @@ export default async function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               {/* Founder Profile Card */}
               <div className="lg:col-span-5">
-                <div className="p-6 sm:p-8 space-y-6 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[4px_4px_0px_0px_#D7CEC7]">
-                  <div className="relative aspect-[4/5] overflow-hidden border border-[#C09F80]/40 bg-[#FAF8F5]">
-                    <Image
-                      src="/images/shivam-shukla.jpg"
-                      alt="Shivam Shukla — Founder & AI Systems Architect at SHIVSASTRA"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 400px"
-                      priority
-                    />
+                <div className="p-6 sm:p-8 space-y-6 bg-[#FAF8F5] border-t-2 border-t-[#76323F] border-x border-b border-[#D7CEC7] shadow-[6px_6px_0px_0px_#C09F80] group">
+                  <div className="p-1 border border-[#D7CEC7] bg-[#F5F2ED]">
+                    <div className="relative aspect-[4/5] overflow-hidden bg-[#1A1D20]">
+                      <Image
+                        src="/images/shivam-shukla.jpg"
+                        alt="Shivam Shukla — Founder & AI Systems Architect at SHIVSASTRA"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                        sizes="(max-width: 1024px) 100vw, 400px"
+                        priority
+                      />
+                    </div>
                   </div>
 
                   <div className="space-y-1">
@@ -210,13 +216,13 @@ export default async function AboutPage() {
                     <Link
                       href="/resume"
                       className={buttonStyles({
-                        variant: "secondary",
+                        variant: "primary",
                         size: "sm",
-                        className: "font-mono text-xs",
+                        className: "font-mono text-xs bg-[#76323F] hover:bg-[#5a2530] text-[#FAF8F5] border-none shadow-[2px_2px_0px_0px_#C09F80]",
                       })}
                     >
                       <span>View Verified Resume</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight className="w-3.5 h-3.5 ml-1" />
                     </Link>
 
                     {profile.githubUrl && (
@@ -225,13 +231,13 @@ export default async function AboutPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={buttonStyles({
-                          variant: "ghost",
+                          variant: "secondary",
                           size: "sm",
-                          className: "font-mono text-xs text-[#565656] hover:text-[#1A1D20]",
+                          className: "font-mono text-xs border-[#D7CEC7] bg-[#FAF8F5] text-[#1A1D20] hover:border-[#76323F]",
                         })}
                       >
                         <span>GitHub</span>
-                        <ExternalLink className="w-3 h-3" />
+                        <ExternalLink className="w-3 h-3 ml-1 text-[#76323F]" />
                       </a>
                     )}
                   </div>

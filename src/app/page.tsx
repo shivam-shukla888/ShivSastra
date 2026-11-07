@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { cn } from "@/lib/utils";
 import { SectionContainer } from "@/components/layout/SectionContainer";
 import { Badge } from "@/components/ui/Badge";
 import { buttonStyles } from "@/components/ui/Button";
@@ -113,11 +114,15 @@ export default async function HomePage() {
           SECTION 2: WARM EDITORIAL HERO (Warm Ivory Substrate)
           ======================================================= */}
       <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-16 sm:pt-20 md:pt-24 pb-20 md:pb-28 border-b border-[#C09F80]/30 overflow-hidden">
+        {/* Subtle Warm Atmospheric Light */}
+        <div className="hero-glow-warm absolute inset-0 pointer-events-none select-none z-0 opacity-75" aria-hidden="true" />
+        <div className="hero-glow-right absolute inset-0 pointer-events-none select-none z-0 opacity-50" aria-hidden="true" />
+
         <SectionContainer className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             {/* Left Column: Value Proposition & CTAs */}
             <div className="lg:col-span-7 space-y-6 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium shadow-[1px_1px_0px_0px_#D7CEC7]">
                 <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
                 <span>SHIVSASTRA · AI Systems &amp; Software Engineering Studio</span>
               </div>
@@ -137,7 +142,7 @@ export default async function HomePage() {
                   className={buttonStyles({
                     variant: "primary",
                     size: "lg",
-                    className: "group font-semibold",
+                    className: "group font-semibold shadow-[2px_2px_0px_0px_#565656]",
                   })}
                 >
                   <span>Explore Store &amp; Kits</span>
@@ -149,7 +154,7 @@ export default async function HomePage() {
                   className={buttonStyles({
                     variant: "secondary",
                     size: "lg",
-                    className: "font-semibold",
+                    className: "font-semibold shadow-[2px_2px_0px_0px_#D7CEC7]",
                   })}
                 >
                   <span>Engineering Services</span>
@@ -195,14 +200,14 @@ export default async function HomePage() {
 
             {/* Right Column: Featured Product Spotlight Card (JIOSI Inbox) */}
             <div className="lg:col-span-5">
-              <div className="border border-[#C09F80] bg-[#FAF8F5] p-4 sm:p-5 shadow-[4px_4px_0px_0px_#D7CEC7] group">
+              <div className="border border-[#C09F80] bg-[#FAF8F5] p-3.5 sm:p-4 shadow-[5px_5px_0px_0px_#D7CEC7] hover:shadow-[6px_6px_0px_0px_#C09F80] hover:border-[#76323F] transition-all duration-300 group">
                 <div className="p-3 bg-[#F5F2ED] border border-[#C09F80]/40 mb-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-none bg-[#76323F]" />
                     <span className="font-mono text-xs font-bold text-[#1A1D20] tracking-wider uppercase">
                       JIOSI INBOX
                     </span>
-                    <span className="font-mono text-[9px] uppercase px-1.5 py-0.2 rounded-none bg-[#76323F]/10 text-[#76323F] border border-[#76323F]/30">
+                    <span className="font-mono text-[9px] uppercase px-1.5 py-0.2 rounded-none bg-[#76323F]/10 text-[#76323F] border border-[#76323F]/30 font-semibold">
                       SaaS
                     </span>
                   </div>
@@ -222,7 +227,7 @@ export default async function HomePage() {
                   />
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-[#C09F80]/30 flex items-center justify-between">
+                <div className="mt-3.5 pt-3 border-t border-[#C09F80]/30 flex items-center justify-between">
                   <span className="font-mono text-xs text-[#565656]">
                     Spring Boot 3.3.5 · React 18 · Neon Postgres
                   </span>
@@ -258,7 +263,7 @@ export default async function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:-translate-y-1 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
               <div className="w-10 h-10 rounded-none bg-[#FAF8F5] border border-[#C09F80]/60 flex items-center justify-center text-[#76323F]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
@@ -270,7 +275,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:-translate-y-1 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
               <div className="w-10 h-10 rounded-none bg-[#FAF8F5] border border-[#C09F80]/60 flex items-center justify-center text-[#76323F]">
                 <Lock className="w-5 h-5" />
               </div>
@@ -282,7 +287,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:-translate-y-1 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
               <div className="w-10 h-10 rounded-none bg-[#FAF8F5] border border-[#C09F80]/60 flex items-center justify-center text-[#76323F]">
                 <Zap className="w-5 h-5" />
               </div>
@@ -294,7 +299,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+            <div className="p-6 space-y-3 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:-translate-y-1 hover:border-[#76323F] hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200">
               <div className="w-10 h-10 rounded-none bg-[#FAF8F5] border border-[#C09F80]/60 flex items-center justify-center text-[#76323F]">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
@@ -662,60 +667,78 @@ export default async function HomePage() {
 
             {/* 3 Packages Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {HOMEPAGE_SERVICES_PREVIEW.map((item) => (
-                <div
-                  key={item.id}
-                  className="p-6 md:p-8 space-y-6 flex flex-col justify-between relative bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]"
-                >
-                  <div className="space-y-4">
-                    <div className="font-mono text-xs uppercase tracking-wider font-semibold text-[#76323F]">
-                      {item.id === "starter-agent-setup" && "Entry Workflow"}
-                      {item.id === "business-agent-package" && "Most Popular"}
-                      {item.id === "full-agentic-system" && "Enterprise Grade"}
-                    </div>
-
-                    <h3 className="font-display text-2xl font-normal text-[#1A1D20] leading-snug">
-                      {item.title}
-                    </h3>
-
-                    <div className="font-display text-3xl font-normal text-[#1A1D20]">
-                      {item.startingPrice}
-                    </div>
-
-                    {item.id === "starter-agent-setup" && (
-                      <div className="p-3 bg-[#FAF8F5] border border-[#C09F80]/50 text-xs text-[#565656] font-sans leading-relaxed">
-                        <strong className="font-semibold block font-mono text-[10px] uppercase tracking-wider text-[#76323F]">
-                          Evaluation Trial
-                        </strong>
-                        7-day evaluation period available for qualified small organisations.
-                      </div>
+              {HOMEPAGE_SERVICES_PREVIEW.map((item) => {
+                const isFeatured = item.id === "business-agent-package";
+                return (
+                  <div
+                    key={item.id}
+                    className={cn(
+                      "p-6 md:p-8 space-y-6 flex flex-col justify-between relative bg-[#FAF8F5] border transition-all duration-200 hover:-translate-y-1",
+                      isFeatured
+                        ? "border-[#C09F80] border-t-2 border-t-[#76323F] shadow-[4px_4px_0px_0px_#C09F80] hover:shadow-[5px_5px_0px_0px_#76323F]"
+                        : "border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:shadow-[3px_3px_0px_0px_#C09F80]"
                     )}
+                  >
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <span className={cn(
+                          "font-mono text-xs uppercase tracking-wider font-semibold",
+                          isFeatured ? "text-[#76323F]" : "text-[#565656]"
+                        )}>
+                          {item.id === "starter-agent-setup" && "Entry Workflow"}
+                          {item.id === "business-agent-package" && "Most Popular"}
+                          {item.id === "full-agentic-system" && "Enterprise Grade"}
+                        </span>
+                        {isFeatured && (
+                          <span className="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded-none bg-[#76323F] text-[#FAF8F5] font-bold">
+                            Recommended
+                          </span>
+                        )}
+                      </div>
 
-                    <p className="font-sans text-sm text-[#565656] leading-relaxed">
-                      {item.customerOutcome}
-                    </p>
+                      <h3 className="font-display text-2xl font-normal text-[#1A1D20] leading-snug">
+                        {item.title}
+                      </h3>
 
-                    <div className="pt-2 flex items-center gap-1.5 font-mono text-xs text-[#565656]">
-                      <ShieldCheck className="w-4 h-4 text-[#76323F]" />
-                      <span className="font-medium">Data stays in your control</span>
+                      <div className="font-display text-3xl font-normal text-[#1A1D20]">
+                        {item.startingPrice}
+                      </div>
+
+                      {item.id === "starter-agent-setup" && (
+                        <div className="p-3 bg-[#FAF8F5] border border-[#C09F80]/50 text-xs text-[#565656] font-sans leading-relaxed">
+                          <strong className="font-semibold block font-mono text-[10px] uppercase tracking-wider text-[#76323F]">
+                            Evaluation Trial
+                          </strong>
+                          7-day evaluation period available for qualified small organisations.
+                        </div>
+                      )}
+
+                      <p className="font-sans text-sm text-[#565656] leading-relaxed">
+                        {item.customerOutcome}
+                      </p>
+
+                      <div className="pt-2 flex items-center gap-1.5 font-mono text-xs text-[#565656]">
+                        <ShieldCheck className="w-4 h-4 text-[#76323F]" />
+                        <span className="font-medium">Data stays in your control</span>
+                      </div>
+                    </div>
+
+                    <div className="pt-4 border-t border-[#C09F80]/20 space-y-3">
+                      <Link
+                        href={item.targetHref}
+                        className={buttonStyles({
+                          variant: isFeatured ? "primary" : "secondary",
+                          size: "md",
+                          className: "w-full justify-between font-semibold",
+                        })}
+                      >
+                        <span>View Scope &amp; Specs</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </div>
-
-                  <div className="pt-4 border-t border-[#C09F80]/20 space-y-3">
-                    <Link
-                      href={item.targetHref}
-                      className={buttonStyles({
-                        variant: item.id === "business-agent-package" ? "primary" : "secondary",
-                        size: "md",
-                        className: "w-full justify-between font-semibold",
-                      })}
-                    >
-                      <span>View Scope &amp; Specs</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Main Security Banner (Grounded Contrast) */}
@@ -764,13 +787,13 @@ export default async function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               {/* Left Column: Authentic Founder Photograph */}
               <div className="lg:col-span-5">
-                <div className="border border-[#C09F80]/60 bg-[#FAF8F5] p-3 shadow-[4px_4px_0px_0px_#D7CEC7]">
+                <div className="border border-[#C09F80] bg-[#FAF8F5] p-3 shadow-[5px_5px_0px_0px_#D7CEC7] hover:shadow-[6px_6px_0px_0px_#C09F80] hover:border-[#76323F] transition-all duration-300 group">
                   <div className="relative aspect-[4/5] w-full overflow-hidden border border-[#C09F80]/40 bg-[#FAF8F5]">
                     <Image
                       src="/images/shivam-shukla.jpg"
                       alt="Shivam Shukla — Founder & AI Systems Architect at SHIVSASTRA"
                       fill
-                      className="object-cover object-top"
+                      className="object-cover object-top group-hover:scale-[1.01] transition-transform duration-500"
                       sizes="(max-width: 1024px) 100vw, 450px"
                     />
                   </div>

@@ -61,12 +61,16 @@ export default async function ProjectsPage() {
   return (
     <div className="relative w-full overflow-hidden bg-[#F5F2ED] text-[#1A1D20]">
       {/* 1. WARM EDITORIAL HERO SECTION */}
-      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30">
+      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30 overflow-hidden">
+        {/* Warm atmospheric lighting wash */}
+        <div className="hero-glow-warm pointer-events-none" />
+        <div className="hero-glow-right pointer-events-none" />
+
         <SectionContainer className="relative z-10">
           <InnerPageEntrance delayIndex={0}>
             <div className="space-y-6 max-w-3xl">
               <div className="flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium shadow-[1px_1px_0px_0px_#C09F80]">
                   <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
                   <span>CASE STUDIES &amp; ARCHITECTURES</span>
                 </div>
@@ -110,21 +114,23 @@ export default async function ProjectsPage() {
                 projects.map((project) => (
                   <div
                     key={project.id}
-                    className="p-6 md:p-10 overflow-hidden bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[4px_4px_0px_0px_#D7CEC7]"
+                    className="p-6 md:p-10 overflow-hidden bg-[#FAF8F5] border border-[#D7CEC7] shadow-[4px_4px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#C09F80] transition-all duration-300 group"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                      {/* Image Thumbnail */}
+                      {/* Image Thumbnail with Double Frame */}
                       <div className="lg:col-span-5">
                         {project.coverImageUrl ? (
-                          <div className="w-full aspect-[16/10] overflow-hidden border border-[#C09F80]/40 relative bg-[#FAF8F5]">
-                            <Image
-                              src={project.coverImageUrl}
-                              alt={project.title}
-                              fill
-                              unoptimized
-                              className="object-cover"
-                              sizes="(max-width: 1024px) 100vw, 40vw"
-                            />
+                          <div className="p-1 border border-[#D7CEC7] bg-[#F5F2ED] group-hover:border-[#C09F80] transition-colors">
+                            <div className="w-full aspect-[16/10] overflow-hidden relative bg-[#1A1D20]">
+                              <Image
+                                src={project.coverImageUrl}
+                                alt={project.title}
+                                fill
+                                unoptimized
+                                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                                sizes="(max-width: 1024px) 100vw, 40vw"
+                              />
+                            </div>
                           </div>
                         ) : (
                           <div className="w-full aspect-[16/10] border border-dashed border-[#C09F80]/50 bg-[#FAF8F5] flex items-center justify-center p-6">
@@ -155,7 +161,7 @@ export default async function ProjectsPage() {
                           )}
                         </div>
 
-                        <h2 className="font-display text-2xl sm:text-3xl font-normal text-[#1A1D20] leading-tight">
+                        <h2 className="font-display text-2xl sm:text-3xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors leading-tight">
                           {project.title}
                         </h2>
 
@@ -169,7 +175,7 @@ export default async function ProjectsPage() {
                             {project.techStack.map((tech) => (
                               <span
                                 key={tech}
-                                className="font-mono text-[11px] px-2.5 py-1 bg-[#FAF8F5] text-[#565656] border border-[#C09F80]/40 font-medium"
+                                className="font-mono text-[11px] px-2.5 py-1 bg-[#FAF8F5] text-[#565656] border border-[#D7CEC7] group-hover:border-[#C09F80]/80 font-medium transition-colors"
                               >
                                 {tech}
                               </span>
@@ -184,6 +190,7 @@ export default async function ProjectsPage() {
                             className={buttonStyles({
                               variant: "primary",
                               size: "md",
+                              className: "bg-[#76323F] hover:bg-[#5a2530] text-[#FAF8F5] border-none shadow-[2px_2px_0px_0px_#C09F80]",
                             })}
                           >
                             <span>
@@ -200,6 +207,7 @@ export default async function ProjectsPage() {
                               className={buttonStyles({
                                 variant: "secondary",
                                 size: "md",
+                                className: "border-[#D7CEC7] bg-[#FAF8F5] text-[#1A1D20] hover:border-[#76323F]",
                               })}
                             >
                               <span>Inspect Live Deploy</span>
@@ -221,8 +229,8 @@ export default async function ProjectsPage() {
             </div>
 
             {/* 3. STUDIO ENGINEERING PLATFORM (Distinguished from client projects) */}
-            <div className="p-8 sm:p-10 border border-[#C09F80] bg-[#FAF8F5] shadow-[4px_4px_0px_0px_#D7CEC7] space-y-6">
-              <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#C09F80]/30">
+            <div className="p-8 sm:p-10 border-t-2 border-t-[#76323F] border-x border-b border-[#D7CEC7] bg-[#FAF8F5] shadow-[6px_6px_0px_0px_#C09F80] space-y-6">
+              <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#D7CEC7]">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
                     <span className="font-mono text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 bg-[#76323F]/10 text-[#76323F] border border-[#76323F]/30">
@@ -237,7 +245,11 @@ export default async function ProjectsPage() {
                 <div className="flex items-center gap-3">
                   <Link
                     href="/projects/shivsastra"
-                    className={buttonStyles({ variant: "primary", size: "md" })}
+                    className={buttonStyles({
+                      variant: "primary",
+                      size: "md",
+                      className: "bg-[#76323F] hover:bg-[#5a2530] text-[#FAF8F5] border-none shadow-[2px_2px_0px_0px_#C09F80]",
+                    })}
                   >
                     <span>Read Platform Case Study</span>
                     <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -246,7 +258,11 @@ export default async function ProjectsPage() {
                     href="https://github.com/shivam-shukla888/ShivSastra"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={buttonStyles({ variant: "secondary", size: "md" })}
+                    className={buttonStyles({
+                      variant: "secondary",
+                      size: "md",
+                      className: "border-[#D7CEC7] bg-[#FAF8F5] text-[#1A1D20] hover:border-[#76323F]",
+                    })}
                   >
                     <span>GitHub Repository</span>
                     <ExternalLink className="w-3.5 h-3.5 ml-1.5 text-[#76323F]" />
@@ -256,14 +272,16 @@ export default async function ProjectsPage() {
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-5">
-                  <div className="relative aspect-[16/10] overflow-hidden border border-[#C09F80]/50 shadow-[2px_2px_0px_0px_#D7CEC7] bg-[#FAF8F5]">
-                    <Image
-                      src="/images/projects/shivsastra/shivsastra-desktop-overview.png"
-                      alt="ShivSastra Digital HQ Platform Architecture"
-                      fill
-                      className="object-cover object-top"
-                      sizes="(max-width: 1024px) 100vw, 500px"
-                    />
+                  <div className="p-1 border border-[#D7CEC7] bg-[#F5F2ED]">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-[#1A1D20]">
+                      <Image
+                        src="/images/projects/shivsastra/shivsastra-desktop-overview.png"
+                        alt="ShivSastra Digital HQ Platform Architecture"
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 1024px) 100vw, 500px"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="lg:col-span-7 space-y-4">
@@ -272,7 +290,7 @@ export default async function ProjectsPage() {
                   </p>
                   <div className="flex flex-wrap gap-2 text-xs font-mono">
                     {["Next.js 16", "TypeScript", "Supabase RLS", "PostgreSQL", "Razorpay HMAC", "Groq Llama 3"].map((t) => (
-                      <span key={t} className="px-2.5 py-1 bg-[#F5F2ED] text-[#1A1D20] border border-[#C09F80]/40">
+                      <span key={t} className="px-2.5 py-1 bg-[#F5F2ED] text-[#1A1D20] border border-[#D7CEC7]">
                         {t}
                       </span>
                     ))}

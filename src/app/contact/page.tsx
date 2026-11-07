@@ -47,7 +47,11 @@ export default async function ContactPage() {
   return (
     <div className="flex flex-col w-full bg-[#F5F2ED] text-[#1A1D20]">
       {/* 1. WARM EDITORIAL HERO BANNER */}
-      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30">
+      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30 overflow-hidden">
+        {/* Warm atmospheric light wash */}
+        <div className="hero-glow-warm pointer-events-none" />
+        <div className="hero-glow-right pointer-events-none" />
+
         <SectionContainer className="relative z-10">
           <div className="max-w-3xl space-y-6">
             <div className="flex items-center gap-2">
@@ -88,7 +92,7 @@ export default async function ContactPage() {
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+                <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#C09F80] transition-all">
                   <div className="flex items-center gap-2.5 text-[#76323F] font-mono text-xs uppercase tracking-wider font-semibold">
                     <Clock className="w-4 h-4" />
                     <span>Response Time Guarantee</span>
@@ -98,7 +102,7 @@ export default async function ContactPage() {
                   </p>
                 </div>
 
-                <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+                <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#C09F80] transition-all">
                   <div className="flex items-center gap-2.5 text-[#76323F] font-mono text-xs uppercase tracking-wider font-semibold">
                     <ShieldCheck className="w-4 h-4" />
                     <span>Strict Data Sovereignty</span>
@@ -109,7 +113,7 @@ export default async function ContactPage() {
                 </div>
 
                 {profile.email && (
-                  <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
+                  <div className="p-6 space-y-2 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#C09F80] transition-all">
                     <div className="flex items-center gap-2.5 text-[#76323F] font-mono text-xs uppercase tracking-wider font-semibold">
                       <Mail className="w-4 h-4" />
                       <span>Direct Email</span>
@@ -125,7 +129,7 @@ export default async function ContactPage() {
               </div>
 
               {/* Verified External Profiles */}
-              <div className="pt-2 border-t border-[#C09F80]/30 space-y-3">
+              <div className="pt-2 border-t border-[#D7CEC7] space-y-3">
                 <span className="font-mono text-xs uppercase tracking-wider text-[#565656] font-semibold block">
                   Verified Engineering Profiles
                 </span>
@@ -169,9 +173,9 @@ export default async function ContactPage() {
 
             {/* Right Column: Interactive Form */}
             <div className="lg:col-span-7">
-              <div className="p-8 sm:p-10 border border-[#C09F80]/60 bg-[#FAF8F5] shadow-[4px_4px_0px_0px_#D7CEC7]">
+              <div className="p-8 sm:p-10 border-t-2 border-t-[#76323F] border-x border-b border-[#D7CEC7] bg-[#FAF8F5] shadow-[6px_6px_0px_0px_#C09F80]">
                 <div className="space-y-6">
-                  <div className="space-y-1 pb-4 border-b border-[#C09F80]/30">
+                  <div className="space-y-1 pb-4 border-b border-[#D7CEC7]">
                     <h3 className="font-display text-2xl font-normal text-[#1A1D20]">
                       Send a Message
                     </h3>

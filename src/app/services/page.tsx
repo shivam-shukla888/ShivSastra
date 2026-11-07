@@ -157,12 +157,16 @@ export default function ServicesPage() {
       />
 
       {/* 1. WARM EDITORIAL HERO SECTION */}
-      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30">
+      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30 overflow-hidden">
+        {/* Warm atmospheric light wash */}
+        <div className="hero-glow-warm pointer-events-none" />
+        <div className="hero-glow-right pointer-events-none" />
+
         <SectionContainer className="relative z-10">
           <InnerPageEntrance delayIndex={0}>
             <div className="space-y-8 max-w-4xl">
               <div className="flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium shadow-[1px_1px_0px_0px_#C09F80]">
                   <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
                   <span>PRODUCTION AGENTIC AI</span>
                 </div>
@@ -182,42 +186,42 @@ export default function ServicesPage() {
 
               {/* 4 Value Pillars */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-[#C09F80]/30">
-                <div className="space-y-1">
+                <div className="space-y-1 p-3 bg-[#FAF8F5]/80 border border-[#D7CEC7]/60 hover:border-[#76323F] transition-colors">
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-[#76323F] font-mono uppercase tracking-wider">
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>7-Day Trial</span>
                   </div>
-                  <p className="text-xs text-[#565656]">
+                  <p className="text-xs text-[#565656] leading-relaxed">
                     Evaluate in your live staging workflow before final settlement.
                   </p>
                 </div>
 
-                <div className="space-y-1">
+                <div className="space-y-1 p-3 bg-[#FAF8F5]/80 border border-[#D7CEC7]/60 hover:border-[#76323F] transition-colors">
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-[#76323F] font-mono uppercase tracking-wider">
                     <Cpu className="w-3.5 h-3.5" />
                     <span>Reliable Ops</span>
                   </div>
-                  <p className="text-xs text-[#565656]">
+                  <p className="text-xs text-[#565656] leading-relaxed">
                     Built-in retry queues, rate limits, and fallback logic.
                   </p>
                 </div>
 
-                <div className="space-y-1">
+                <div className="space-y-1 p-3 bg-[#FAF8F5]/80 border border-[#D7CEC7]/60 hover:border-[#76323F] transition-colors">
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-[#76323F] font-mono uppercase tracking-wider">
                     <Lock className="w-3.5 h-3.5" />
                     <span>Zero Data Leak</span>
                   </div>
-                  <p className="text-xs text-[#565656]">
+                  <p className="text-xs text-[#565656] leading-relaxed">
                     Runs on your infrastructure. Zero customer records on our servers.
                   </p>
                 </div>
 
-                <div className="space-y-1">
+                <div className="space-y-1 p-3 bg-[#FAF8F5]/80 border border-[#D7CEC7]/60 hover:border-[#76323F] transition-colors">
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-[#76323F] font-mono uppercase tracking-wider">
                     <Clock className="w-3.5 h-3.5" />
                     <span>5–8 Day Delivery</span>
                   </div>
-                  <p className="text-xs text-[#565656]">
+                  <p className="text-xs text-[#565656] leading-relaxed">
                     Rapid turnaround with clear blueprints and complete documentation.
                   </p>
                 </div>
@@ -230,6 +234,7 @@ export default function ServicesPage() {
                   className={buttonStyles({
                     variant: "primary",
                     size: "lg",
+                    className: "bg-[#76323F] hover:bg-[#5a2530] text-[#FAF8F5] border-none shadow-[2px_2px_0px_0px_#C09F80]",
                   })}
                 >
                   <span>Explore Service Packages</span>
@@ -240,6 +245,7 @@ export default function ServicesPage() {
                   className={buttonStyles({
                     variant: "secondary",
                     size: "lg",
+                    className: "border-[#D7CEC7] bg-[#FAF8F5] text-[#1A1D20] hover:border-[#76323F]",
                   })}
                 >
                   <span>Discuss Your Requirements</span>
@@ -249,7 +255,7 @@ export default function ServicesPage() {
                   className={buttonStyles({
                     variant: "ghost",
                     size: "lg",
-                    className: "text-[#565656] hover:text-[#1A1D20]",
+                    className: "text-[#565656] hover:text-[#76323F]",
                   })}
                 >
                   <span>Browse Digital Store →</span>
@@ -323,39 +329,39 @@ export default function ServicesPage() {
                 return (
                   <div
                     key={pkg.id}
-                    className={`flex flex-col justify-between relative p-6 md:p-8 bg-[#FAF8F5] border ${
+                    className={`flex flex-col justify-between relative p-6 md:p-8 bg-[#FAF8F5] transition-all duration-200 ease-out group motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none ${
                       isBusiness
-                        ? "border-[#76323F] shadow-[4px_4px_0px_0px_#76323F]"
-                        : "border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]"
+                        ? "border-t-2 border-t-[#76323F] border-x border-b border-[#76323F] shadow-[6px_6px_0px_0px_#C09F80] hover:-translate-y-1"
+                        : "border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80]"
                     }`}
                   >
                     {isBusiness && (
                       <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                        <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-0.5 bg-[#76323F] text-[#FFFFFF] border border-[#76323F]">
-                          MOST POPULAR FOR GROWING TEAMS
+                        <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-0.5 bg-[#76323F] text-[#FAF8F5] border border-[#76323F] shadow-[1px_1px_0px_0px_#C09F80]">
+                          RECOMMENDED FOR GROWING TEAMS
                         </span>
                       </div>
                     )}
 
                     <div className="space-y-6">
                       {/* Header meta */}
-                      <div className="flex items-center justify-between pb-4 border-b border-[#C09F80]/20">
-                        <span className="font-mono text-xs font-bold text-[#76323F] bg-[#FAF8F5] border border-[#C09F80]/40 px-2.5 py-1">
+                      <div className="flex items-center justify-between pb-4 border-b border-[#D7CEC7]">
+                        <span className="font-mono text-xs font-bold text-[#76323F] bg-[#FAF8F5] border border-[#C09F80]/50 px-2.5 py-1">
                           {pkg.code}
                         </span>
                         <div className="flex items-center gap-1.5 text-xs text-[#565656] font-mono">
-                          <Clock className="w-3.5 h-3.5" />
+                          <Clock className="w-3.5 h-3.5 text-[#76323F]" />
                           <span>Est. {pkg.turnaround}</span>
                         </div>
                       </div>
 
                       {/* Title & Price */}
                       <div className="space-y-2">
-                        <h2 className="font-display text-2xl font-normal text-[#1A1D20]">
+                        <h2 className="font-display text-2xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                           {pkg.title}
                         </h2>
                         <div className="flex items-baseline gap-2">
-                          <span className="font-display text-3xl font-normal text-[#1A1D20]">
+                          <span className="font-display text-3xl font-normal text-[#1A1D20] text-[#76323F]">
                             {pkg.startingPrice}
                           </span>
                         </div>
@@ -366,7 +372,7 @@ export default function ServicesPage() {
 
                       {/* 7-DAY FREE TRIAL HIGHLIGHT ON STARTER */}
                       {isStarter && (
-                        <div className="p-3.5 bg-[#FAF8F5] border border-[#C09F80]/50 space-y-1.5">
+                        <div className="p-3.5 bg-[#FAF8F5] border border-[#C09F80]/50 space-y-1.5 shadow-[1px_1px_0px_0px_#D7CEC7]">
                           <div className="flex items-center gap-1.5">
                             <span className="font-mono text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 bg-[#76323F]/10 text-[#76323F] border border-[#76323F]/30">
                               EVALUATION PROGRAM
@@ -382,7 +388,7 @@ export default function ServicesPage() {
                       )}
 
                       {/* Plain English Outcome */}
-                      <div className="p-4 bg-[#F5F2ED] border border-[#C09F80]/30 space-y-1">
+                      <div className="p-4 bg-[#F5F2ED] border border-[#D7CEC7] space-y-1">
                         <span className="text-[11px] font-mono uppercase tracking-wider text-[#565656] font-semibold block">
                           Core Business Outcome
                         </span>
@@ -407,13 +413,15 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    <div className="pt-6 border-t border-[#C09F80]/20 mt-6">
+                    <div className="pt-6 border-t border-[#D7CEC7] mt-6">
                       <Link
                         href={`/contact?subject=${encodeURIComponent(pkg.title)}`}
                         className={buttonStyles({
                           variant: isBusiness ? "primary" : "secondary",
                           size: "md",
-                          className: "w-full justify-between font-semibold",
+                          className: isBusiness
+                            ? "w-full justify-between font-semibold bg-[#76323F] hover:bg-[#5a2530] text-[#FAF8F5] border-none shadow-[2px_2px_0px_0px_#C09F80]"
+                            : "w-full justify-between font-semibold border-[#D7CEC7] bg-[#FAF8F5] text-[#1A1D20] hover:border-[#76323F]",
                         })}
                       >
                         <span>Select Package</span>
@@ -444,10 +452,10 @@ export default function ServicesPage() {
               {SERVICE_PROCESS_STEPS.map((step, idx) => (
                 <div
                   key={idx}
-                  className="p-6 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] flex flex-col justify-between"
+                  className="p-6 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 flex flex-col justify-between group"
                 >
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between pb-3 border-b border-[#C09F80]/20">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#D7CEC7]">
                       <span className="font-mono text-xs font-bold text-[#76323F]">
                         {step.step}
                       </span>
@@ -456,7 +464,7 @@ export default function ServicesPage() {
                       </span>
                     </div>
 
-                    <h4 className="font-display text-lg font-normal text-[#1A1D20] leading-snug">
+                    <h4 className="font-display text-lg font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors leading-snug">
                       {step.title}
                     </h4>
 
@@ -465,7 +473,7 @@ export default function ServicesPage() {
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-[#C09F80]/20">
+                  <div className="pt-3 border-t border-[#D7CEC7]">
                     <span className="text-[10px] font-mono uppercase tracking-wider text-[#565656] block mb-1">
                       Deliverable
                     </span>
@@ -493,38 +501,38 @@ export default function ServicesPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-6 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
-                <div className="w-10 h-10 bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/40 flex items-center justify-center">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+                <div className="w-10 h-10 bg-[#FAF8F5] text-[#76323F] border border-[#D7CEC7] group-hover:border-[#76323F] flex items-center justify-center transition-colors shadow-[1px_1px_0px_0px_#C09F80]">
                   <Workflow className="w-5 h-5" />
                 </div>
-                <h4 className="font-display text-lg font-normal text-[#1A1D20]">
+                <h4 className="font-display text-xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                   Deterministic Logic Engines
                 </h4>
-                <p className="text-xs text-[#565656] leading-relaxed">
+                <p className="text-xs text-[#565656] leading-relaxed font-sans">
                   Natural language is used strictly for intake extraction. Calculations, permissions, and database writes are governed by typed, deterministic business logic.
                 </p>
               </div>
 
-              <div className="p-6 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
-                <div className="w-10 h-10 bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/40 flex items-center justify-center">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+                <div className="w-10 h-10 bg-[#FAF8F5] text-[#76323F] border border-[#D7CEC7] group-hover:border-[#76323F] flex items-center justify-center transition-colors shadow-[1px_1px_0px_0px_#C09F80]">
                   <Lock className="w-5 h-5" />
                 </div>
-                <h4 className="font-display text-lg font-normal text-[#1A1D20]">
+                <h4 className="font-display text-xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                   Human-in-the-Loop Checkpoints
                 </h4>
-                <p className="text-xs text-[#565656] leading-relaxed">
+                <p className="text-xs text-[#565656] leading-relaxed font-sans">
                   High-stakes actions (refunds, contracts, payments, database updates) pause for human team approval via Telegram, WhatsApp, or Slack before execution.
                 </p>
               </div>
 
-              <div className="p-6 space-y-4 bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]">
-                <div className="w-10 h-10 bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/40 flex items-center justify-center">
+              <div className="p-6 md:p-8 space-y-4 bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group">
+                <div className="w-10 h-10 bg-[#FAF8F5] text-[#76323F] border border-[#D7CEC7] group-hover:border-[#76323F] flex items-center justify-center transition-colors shadow-[1px_1px_0px_0px_#C09F80]">
                   <Database className="w-5 h-5" />
                 </div>
-                <h4 className="font-display text-lg font-normal text-[#1A1D20]">
+                <h4 className="font-display text-xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors">
                   Client-Owned Infrastructure
                 </h4>
-                <p className="text-xs text-[#565656] leading-relaxed">
+                <p className="text-xs text-[#565656] leading-relaxed font-sans">
                   Your agents run on your private cloud, self-hosted n8n instance, or designated API accounts. We never store customer logs or credentials on third-party servers.
                 </p>
               </div>
@@ -576,7 +584,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="bg-[#FAF8F5] border border-[#C09F80]/60 p-6 sm:p-10 shadow-[4px_4px_0px_0px_#D7CEC7]">
+            <div className="bg-[#FAF8F5] border-t-2 border-t-[#76323F] border-x border-b border-[#D7CEC7] p-6 sm:p-10 shadow-[6px_6px_0px_0px_#C09F80]">
               <ContactForm defaultSubject="Starter Agent Setup (7-Day Evaluation)" />
             </div>
 

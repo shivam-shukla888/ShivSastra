@@ -90,6 +90,36 @@ body {
 }
 
 /* Warm Editorial Luxury Surface Utilities */
+.hero-glow-warm {
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(192, 159, 128, 0.12), transparent 70%);
+}
+
+.hero-glow-right {
+  background: radial-gradient(ellipse 60% 50% at 85% 25%, rgba(192, 159, 128, 0.10), transparent 65%);
+}
+
+.hero-glow-ambient {
+  background: radial-gradient(circle at 10% 20%, rgba(118, 50, 63, 0.03), transparent 45%),
+              radial-gradient(circle at 90% 80%, rgba(192, 159, 128, 0.08), transparent 50%);
+}
+
+.card-editorial {
+  background-color: #FAF8F5;
+  border: 1px solid rgba(192, 159, 128, 0.6);
+  box-shadow: 3px 3px 0px 0px #D7CEC7;
+  transition: all 200ms ease-out;
+}
+
+.card-editorial:hover {
+  border-color: #76323F;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px 0px #C09F80;
+}
+
+.card-editorial-featured {
+  border-top: 2px solid #76323F;
+}
+
 .glass-nav {
   background: rgba(26, 29, 32, 0.95);
   backdrop-filter: blur(16px);
@@ -98,7 +128,7 @@ body {
 }
 
 .glass-nav-light {
-  background: rgba(245, 242, 237, 0.94);
+  background: rgba(245, 242, 237, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(192, 159, 128, 0.45);

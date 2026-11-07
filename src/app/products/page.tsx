@@ -145,7 +145,11 @@ export default function ProductsPage() {
   return (
     <div className="flex flex-col w-full bg-[#F5F2ED] text-[#1A1D20]">
       {/* 1. WARM EDITORIAL HERO BANNER */}
-      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30">
+      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30 overflow-hidden">
+        {/* Warm atmospheric lighting wash */}
+        <div className="hero-glow-warm pointer-events-none" />
+        <div className="hero-glow-right pointer-events-none" />
+
         <SectionContainer className="relative z-10">
           <div className="max-w-3xl space-y-6">
             <div className="flex items-center gap-2">
@@ -177,7 +181,7 @@ export default function ProductsPage() {
               </span>
             </div>
 
-            <div className="border border-[#C09F80] bg-[#FAF8F5] p-8 md:p-12 shadow-[4px_4px_0px_0px_#D7CEC7]">
+            <div className="border-t-2 border-t-[#76323F] border-x border-b border-[#D7CEC7] bg-[#FAF8F5] p-8 md:p-12 shadow-[6px_6px_0px_0px_#C09F80]">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 <div className="lg:col-span-6 space-y-6">
                   <div className="flex items-center gap-2">
@@ -222,10 +226,11 @@ export default function ProductsPage() {
                       className={buttonStyles({
                         variant: "primary",
                         size: "md",
+                        className: "bg-[#76323F] hover:bg-[#5a2530] text-[#FAF8F5] border-none shadow-[2px_2px_0px_0px_#C09F80]",
                       })}
                     >
                       <span>Read Product Overview</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-4 h-4 ml-1" />
                     </Link>
 
                     <a
@@ -235,6 +240,7 @@ export default function ProductsPage() {
                       className={buttonStyles({
                         variant: "secondary",
                         size: "md",
+                        className: "border-[#D7CEC7] bg-[#FAF8F5] text-[#1A1D20] hover:border-[#76323F]",
                       })}
                     >
                       <span>Launch App</span>
@@ -244,14 +250,16 @@ export default function ProductsPage() {
                 </div>
 
                 <div className="lg:col-span-6">
-                  <div className="relative aspect-[16/10] overflow-hidden border border-[#C09F80]/40 shadow-[2px_2px_0px_0px_#D7CEC7] group">
-                    <Image
-                      src="/images/products/inbox/inbox-desktop-overview.png"
-                      alt="JIOSI Inbox SaaS Platform Interface"
-                      fill
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 1024px) 100vw, 550px"
-                    />
+                  <div className="p-1 border border-[#D7CEC7] bg-[#F5F2ED] shadow-[4px_4px_0px_0px_#D7CEC7] group">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-[#1A1D20]">
+                      <Image
+                        src="/images/products/inbox/inbox-desktop-overview.png"
+                        alt="JIOSI Inbox SaaS Platform Interface"
+                        fill
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+                        sizes="(max-width: 1024px) 100vw, 550px"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -277,19 +285,19 @@ export default function ProductsPage() {
               {DIGITAL_PRODUCTS.map((product) => (
                 <div
                   key={product.id}
-                  className="p-6 md:p-8 space-y-6 flex flex-col justify-between bg-[#FAF8F5] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7]"
+                  className="p-6 md:p-8 space-y-6 flex flex-col justify-between bg-[#FAF8F5] border border-[#D7CEC7] shadow-[2px_2px_0px_0px_#D7CEC7] hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 group"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-xs uppercase tracking-wider text-[#76323F] font-semibold">
                         {product.category}
                       </span>
-                      <span className="font-mono text-base font-bold text-[#1A1D20]">
+                      <span className="font-mono text-base font-bold text-[#76323F]">
                         {product.price}
                       </span>
                     </div>
 
-                    <h3 className="font-display text-xl font-normal text-[#1A1D20] leading-snug">
+                    <h3 className="font-display text-xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors leading-snug">
                       <Link
                         href={`/store/${product.slug}`}
                         className="hover:text-[#76323F] transition-colors"
@@ -302,7 +310,7 @@ export default function ProductsPage() {
                       {product.description}
                     </p>
 
-                    <ul className="space-y-2 text-xs font-mono text-[#565656] pt-3 border-t border-[#C09F80]/20">
+                    <ul className="space-y-2 text-xs font-mono text-[#565656] pt-3 border-t border-[#D7CEC7]">
                       {product.features.map((feat, idx) => (
                         <li key={idx} className="flex items-center gap-1.5">
                           <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0" />
@@ -312,7 +320,7 @@ export default function ProductsPage() {
                     </ul>
                   </div>
 
-                  <div className="pt-4 border-t border-[#C09F80]/20 flex items-center justify-between">
+                  <div className="pt-4 border-t border-[#D7CEC7] flex items-center justify-between">
                     <div className="flex items-center gap-1.5 font-mono text-xs text-[#565656]">
                       <ShieldCheck className="w-4 h-4 text-[#76323F]" />
                       <span>Zero vendor lock-in</span>
@@ -323,10 +331,11 @@ export default function ProductsPage() {
                       className={buttonStyles({
                         variant: "primary",
                         size: "sm",
+                        className: "bg-[#76323F] hover:bg-[#5a2530] text-[#FAF8F5] border-none shadow-[2px_2px_0px_0px_#C09F80]",
                       })}
                     >
                       <span>Details &amp; Checkout</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight className="w-3.5 h-3.5 ml-1" />
                     </Link>
                   </div>
                 </div>

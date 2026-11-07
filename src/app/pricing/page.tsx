@@ -91,11 +91,15 @@ export default function PricingPage() {
       />
 
       {/* 1. WARM EDITORIAL HERO SECTION */}
-      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30">
+      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30 overflow-hidden">
+        {/* Warm atmospheric light wash */}
+        <div className="hero-glow-warm pointer-events-none" />
+        <div className="hero-glow-right pointer-events-none" />
+
         <SectionContainer className="relative z-10">
           <InnerPageEntrance delayIndex={0}>
             <div className="text-center max-w-3xl mx-auto space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium shadow-[1px_1px_0px_0px_#C09F80]">
                 <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
                 <span>SIMPLE &amp; TRANSPARENT</span>
               </div>
@@ -114,6 +118,7 @@ export default function PricingPage() {
                   className={buttonStyles({
                     variant: "primary",
                     size: "md",
+                    className: "bg-[#76323F] hover:bg-[#5a2530] text-[#FAF8F5] border-none shadow-[2px_2px_0px_0px_#C09F80]",
                   })}
                 >
                   Custom AI Agent Packages ↓
@@ -123,6 +128,7 @@ export default function PricingPage() {
                   className={buttonStyles({
                     variant: "secondary",
                     size: "md",
+                    className: "border-[#D7CEC7] bg-[#FAF8F5] text-[#1A1D20] hover:border-[#76323F]",
                   })}
                 >
                   Digital Product Licenses ↓

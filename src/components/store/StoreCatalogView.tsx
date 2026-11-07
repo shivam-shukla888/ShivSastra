@@ -120,10 +120,10 @@ export function StoreCatalogView({
               type="button"
               aria-pressed={selectedCategory === "all"}
               onClick={() => setSelectedCategory("all")}
-              className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors border ${
+              className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-all border ${
                 selectedCategory === "all"
-                  ? "border-[var(--color-ink-primary)] bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] font-semibold"
-                  : "border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] text-[var(--color-ink-secondary)] hover:border-[var(--color-ink-primary)]"
+                  ? "border-[#76323F] bg-[#76323F] text-[#FAF8F5] font-semibold shadow-[2px_2px_0px_0px_#C09F80]"
+                  : "border-[#D7CEC7] bg-[#FAF8F5] text-[#565656] hover:border-[#76323F] hover:text-[#1A1D20]"
               }`}
             >
               <SlidersHorizontal className="w-3 h-3 inline-block mr-1.5 shrink-0" />
@@ -133,10 +133,10 @@ export function StoreCatalogView({
               type="button"
               aria-pressed={selectedCategory === "agent_templates"}
               onClick={() => setSelectedCategory("agent_templates")}
-              className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors border ${
+              className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-all border ${
                 selectedCategory === "agent_templates"
-                  ? "border-[var(--color-ink-primary)] bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] font-semibold"
-                  : "border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] text-[var(--color-ink-secondary)] hover:border-[var(--color-ink-primary)]"
+                  ? "border-[#76323F] bg-[#76323F] text-[#FAF8F5] font-semibold shadow-[2px_2px_0px_0px_#C09F80]"
+                  : "border-[#D7CEC7] bg-[#FAF8F5] text-[#565656] hover:border-[#76323F] hover:text-[#1A1D20]"
               }`}
             >
               AI Agent Templates ({categoryCounts.agent_templates})
@@ -145,10 +145,10 @@ export function StoreCatalogView({
               type="button"
               aria-pressed={selectedCategory === "agent_kits"}
               onClick={() => setSelectedCategory("agent_kits")}
-              className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors border ${
+              className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-all border ${
                 selectedCategory === "agent_kits"
-                  ? "border-[var(--color-ink-primary)] bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] font-semibold"
-                  : "border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] text-[var(--color-ink-secondary)] hover:border-[var(--color-ink-primary)]"
+                  ? "border-[#76323F] bg-[#76323F] text-[#FAF8F5] font-semibold shadow-[2px_2px_0px_0px_#C09F80]"
+                  : "border-[#D7CEC7] bg-[#FAF8F5] text-[#565656] hover:border-[#76323F] hover:text-[#1A1D20]"
               }`}
             >
               Complete Agent Kits ({categoryCounts.agent_kits})
@@ -157,10 +157,10 @@ export function StoreCatalogView({
               type="button"
               aria-pressed={selectedCategory === "prompt_packs"}
               onClick={() => setSelectedCategory("prompt_packs")}
-              className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-colors border ${
+              className={`px-3 py-1.5 font-mono text-xs uppercase tracking-wider transition-all border ${
                 selectedCategory === "prompt_packs"
-                  ? "border-[var(--color-ink-primary)] bg-[var(--color-ink-primary)] text-[var(--color-canvas-primary)] font-semibold"
-                  : "border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] text-[var(--color-ink-secondary)] hover:border-[var(--color-ink-primary)]"
+                  ? "border-[#76323F] bg-[#76323F] text-[#FAF8F5] font-semibold shadow-[2px_2px_0px_0px_#C09F80]"
+                  : "border-[#D7CEC7] bg-[#FAF8F5] text-[#565656] hover:border-[#76323F] hover:text-[#1A1D20]"
               }`}
             >
               Prompt + System Instruction Packs ({categoryCounts.prompt_packs})
@@ -171,21 +171,21 @@ export function StoreCatalogView({
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
           {/* Search Input with Verified Lucide Search Icon */}
           <div className="relative flex-1 sm:min-w-[240px]">
-            <Search className="w-4 h-4 text-[var(--color-ink-secondary)] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-[#565656] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search agent packs, kits..."
               aria-label="Search products"
-              className="w-full pl-10 pr-10 py-2.5 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)] rounded-none font-mono text-xs text-[var(--color-ink-primary)] focus:outline-none focus:border-[var(--color-accent)] focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] placeholder:text-[var(--color-ink-secondary)]/50 min-h-[44px]"
+              className="w-full pl-10 pr-10 py-2.5 bg-[#FAF8F5] border border-[#D7CEC7] rounded-none font-mono text-xs text-[#1A1D20] focus:outline-none focus:border-[#76323F] focus-visible:ring-1 focus-visible:ring-[#76323F] placeholder:text-[#565656]/50 min-h-[44px]"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
                 aria-label="Clear search query"
-                className="w-10 h-10 flex items-center justify-center absolute right-1 top-1/2 -translate-y-1/2 text-[var(--color-ink-secondary)] hover:text-[var(--color-ink-primary)]"
+                className="w-10 h-10 flex items-center justify-center absolute right-1 top-1/2 -translate-y-1/2 text-[#565656] hover:text-[#1A1D20]"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -194,7 +194,7 @@ export function StoreCatalogView({
 
           {/* Sort Selector with Verified Lucide Sort Icon */}
           <div className="relative sm:min-w-[190px]">
-            <ArrowUpDown className="w-3.5 h-3.5 text-[var(--color-ink-secondary)] pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <ArrowUpDown className="w-3.5 h-3.5 text-[#565656] pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2" />
             <select
               value={selectedSort}
               onChange={(e) =>
@@ -203,7 +203,7 @@ export function StoreCatalogView({
                 )
               }
               aria-label="Sort products"
-              className="w-full pl-9 pr-8 py-2.5 bg-[var(--color-canvas-primary)] border border-[var(--color-hairline)] rounded-none font-mono text-xs text-[var(--color-ink-primary)] focus:outline-none focus:border-[var(--color-accent)] focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] min-h-[44px] appearance-none"
+              className="w-full pl-9 pr-8 py-2.5 bg-[#FAF8F5] border border-[#D7CEC7] rounded-none font-mono text-xs text-[#1A1D20] focus:outline-none focus:border-[#76323F] focus-visible:ring-1 focus-visible:ring-[#76323F] min-h-[44px] appearance-none cursor-pointer"
             >
               <option value="newest">Sort: Newest First</option>
               <option value="featured">Sort: Featured Items</option>
@@ -247,40 +247,42 @@ export function StoreCatalogView({
             return (
               <article
                 key={product.id}
-                className="border border-[var(--color-hairline)] bg-[var(--color-canvas-secondary)] p-6 md:p-8 flex flex-col justify-between hover:border-[var(--color-ink-primary)] hover:-translate-y-[2px] transition-[border-color,transform] duration-200 ease-out group motion-reduce:hover:translate-y-0"
+                className="border border-[#D7CEC7] bg-[#FAF8F5] p-6 md:p-8 flex flex-col justify-between hover:border-[#76323F] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#C09F80] transition-all duration-200 ease-out group motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none"
               >
                 <div className="space-y-4">
-                  {/* Preview Image or Graphic Frame */}
+                  {/* Preview Image with Luxury Double Hairline Frame */}
                   {product.previewImageUrl ? (
-                    <Link
-                      href={actionHref}
-                      className="w-full aspect-[16/10] border border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] overflow-hidden relative block"
-                    >
-                      <Image
-                        src={product.previewImageUrl}
-                        alt={product.title}
-                        fill
-                        unoptimized
-                        className="object-cover group-hover:scale-[1.02] transition-transform duration-300 motion-reduce:group-hover:scale-100"
-                        sizes="(max-width: 1024px) 100vw, 33vw"
-                      />
-                    </Link>
+                    <div className="p-1 border border-[#D7CEC7] bg-[#F5F2ED] group-hover:border-[#C09F80] transition-colors">
+                      <Link
+                        href={actionHref}
+                        className="w-full aspect-[16/10] overflow-hidden relative block bg-[#1A1D20]"
+                      >
+                        <Image
+                          src={product.previewImageUrl}
+                          alt={product.title}
+                          fill
+                          unoptimized
+                          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out motion-reduce:group-hover:scale-100"
+                          sizes="(max-width: 1024px) 100vw, 33vw"
+                        />
+                      </Link>
+                    </div>
                   ) : (
-                    <div className="w-full aspect-[16/10] border border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] p-4 flex flex-col justify-between relative">
-                      <span className="font-mono text-[10px] text-[var(--color-ink-secondary)] uppercase tracking-wider">
+                    <div className="w-full aspect-[16/10] border border-[#D7CEC7] bg-[#F5F2ED] p-4 flex flex-col justify-between relative">
+                      <span className="font-mono text-[10px] text-[#565656] uppercase tracking-wider">
                         {product.releaseCode || "EDITION"}
                       </span>
-                      <span className="font-mono text-xs text-[var(--color-accent)] font-medium">
+                      <span className="font-mono text-xs text-[#76323F] font-semibold">
                         {categoryLabel}
                       </span>
                     </div>
                   )}
 
                   {/* Badges / Header Info */}
-                  <div className="flex items-center justify-between text-xs font-mono text-[var(--color-ink-secondary)]">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#565656]">
                     <Link
                       href={categoryHref}
-                      className="hover:text-[var(--color-accent)] transition-colors uppercase tracking-wider text-[11px]"
+                      className="hover:text-[#76323F] transition-colors uppercase tracking-wider text-[11px] font-medium"
                     >
                       {categoryLabel}
                     </Link>
@@ -297,7 +299,7 @@ export function StoreCatalogView({
                         In Development
                       </span>
                     ) : (
-                      <span className="text-[#76323F] font-semibold text-sm">
+                      <span className="text-[#76323F] font-semibold text-base font-display tracking-tight">
                         {product.formattedPrice}
                       </span>
                     )}
@@ -319,25 +321,25 @@ export function StoreCatalogView({
                           Upcoming Release
                         </span>
                       ) : (
-                        <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-[#2E6B4D]/30 bg-[#2E6B4D]/10 text-[#2E6B4D] font-medium">
+                        <span className="inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-[#2E6B4D]/40 bg-[#2E6B4D]/10 text-[#2E6B4D] font-semibold">
                           Available for Download
                         </span>
                       )}
                     </div>
-                    <h2 className="font-display text-2xl font-normal text-[var(--color-ink-primary)] group-hover:text-[var(--color-accent)] transition-colors">
+                    <h2 className="font-display text-2xl font-normal text-[#1A1D20] group-hover:text-[#76323F] transition-colors leading-tight">
                       <Link href={actionHref}>{product.title}</Link>
                     </h2>
                   </div>
 
                   {/* Description */}
-                  <p className="font-sans text-sm text-[var(--color-ink-secondary)] leading-relaxed">
+                  <p className="font-sans text-sm text-[#565656] leading-relaxed">
                     {product.shortDescription ||
                       product.description ||
                       "Digital release by Shivam Shukla."}
                   </p>
 
                   {/* Required Digital Product Value Points */}
-                  <div className="pt-2.5 pb-1 space-y-1 border-t border-[var(--color-hairline)] font-mono text-xs text-[var(--color-ink-primary)]">
+                  <div className="pt-2.5 pb-1 space-y-1 border-t border-[#D7CEC7] font-mono text-xs text-[#1A1D20]">
                     <div className="flex items-center gap-2">
                       <Lock className="w-3.5 h-3.5 text-[#76323F] shrink-0" />
                       <span className="font-medium">We prioritize security</span>
@@ -346,13 +348,13 @@ export function StoreCatalogView({
 
                   {/* Features snippets */}
                   {product.features && product.features.length > 0 && (
-                    <ul className="pt-2 space-y-1 border-t border-[var(--color-hairline)]">
+                    <ul className="pt-2 space-y-1 border-t border-[#D7CEC7]">
                       {product.features.slice(0, 2).map((feat, idx) => (
                         <li
                           key={idx}
-                          className="font-sans text-xs text-[var(--color-ink-secondary)] flex items-center gap-1.5"
+                          className="font-sans text-xs text-[#565656] flex items-center gap-1.5"
                         >
-                          <Check className="w-3.5 h-3.5 text-[var(--color-accent)] shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-[#76323F] shrink-0" />
                           <span className="truncate">{feat}</span>
                         </li>
                       ))}
@@ -361,8 +363,8 @@ export function StoreCatalogView({
                 </div>
 
                 {/* Footer Action */}
-                <div className="pt-6 border-t border-[var(--color-hairline)] mt-6 flex items-center justify-between gap-4">
-                  <span className="font-mono text-[10px] text-[var(--color-ink-secondary)] uppercase tracking-wider">
+                <div className="pt-6 border-t border-[#D7CEC7] mt-6 flex items-center justify-between gap-4">
+                  <span className="font-mono text-[10px] text-[#565656] uppercase tracking-wider">
                     {isCaseStudy
                       ? "Engineering Monograph"
                       : isDiscontinued
@@ -376,7 +378,10 @@ export function StoreCatalogView({
                     className={buttonStyles({
                       variant: isCaseStudy || isDiscontinued ? "secondary" : "primary",
                       size: "sm",
-                      className: "font-mono uppercase tracking-wider text-xs group/btn min-h-[44px] flex items-center gap-1.5",
+                      className:
+                        isCaseStudy || isDiscontinued
+                          ? "font-mono uppercase tracking-wider text-xs group/btn min-h-[44px] flex items-center gap-1.5"
+                          : "font-mono uppercase tracking-wider text-xs group/btn min-h-[44px] flex items-center gap-1.5 bg-[#76323F] hover:bg-[#5a2530] text-[#FAF8F5] border-none shadow-[2px_2px_0px_0px_#C09F80]",
                     })}
                   >
                     {!isCaseStudy && !isDiscontinued && !isUpcoming && (

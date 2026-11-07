@@ -48,7 +48,11 @@ export default function JiosiInboxProductPage() {
   return (
     <div className="flex flex-col w-full bg-[#F5F2ED] text-[#1A1D20]">
       {/* 1. WARM EDITORIAL HERO BANNER */}
-      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30">
+      <section className="relative w-full bg-[#F5F2ED] text-[#1A1D20] pt-20 md:pt-28 pb-16 md:pb-24 border-b border-[#C09F80]/30 overflow-hidden">
+        {/* Warm atmospheric light wash */}
+        <div className="hero-glow-warm pointer-events-none" />
+        <div className="hero-glow-right pointer-events-none" />
+
         <SectionContainer className="relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex items-center justify-center gap-2">
@@ -59,7 +63,7 @@ export default function JiosiInboxProductPage() {
               <span className="text-xs font-mono text-[#76323F] font-semibold">JIOSI Inbox</span>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium shadow-[1px_1px_0px_0px_#C09F80]">
               <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
               <span>Production Platform · Active Deployment</span>
             </div>
@@ -80,6 +84,7 @@ export default function JiosiInboxProductPage() {
                 className={buttonStyles({
                   variant: "primary",
                   size: "lg",
+                  className: "bg-[#76323F] hover:bg-[#5a2530] text-[#FAF8F5] border-none shadow-[2px_2px_0px_0px_#C09F80]",
                 })}
               >
                 <span>Launch JIOSI Inbox Web App</span>
@@ -91,6 +96,7 @@ export default function JiosiInboxProductPage() {
                 className={buttonStyles({
                   variant: "secondary",
                   size: "lg",
+                  className: "border-[#D7CEC7] bg-[#FAF8F5] text-[#1A1D20] hover:border-[#76323F]",
                 })}
               >
                 <span>Explore Architecture &amp; Features ↓</span>
@@ -102,15 +108,15 @@ export default function JiosiInboxProductPage() {
             </p>
           </div>
 
-          {/* Large Hero Product Visual */}
-          <div className="mt-14 max-w-5xl mx-auto border border-[#C09F80] bg-[#FAF8F5] p-3 sm:p-4 shadow-[4px_4px_0px_0px_#D7CEC7]">
-            <div className="relative aspect-[16/10] w-full overflow-hidden border border-[#C09F80]/40 bg-[#FAF8F5]">
+          {/* Large Hero Product Visual with Luxury Double Hairline Frame */}
+          <div className="mt-14 max-w-5xl mx-auto border-t-2 border-t-[#76323F] border-x border-b border-[#D7CEC7] bg-[#FAF8F5] p-3 sm:p-4 shadow-[6px_6px_0px_0px_#C09F80] group">
+            <div className="relative aspect-[16/10] w-full overflow-hidden border border-[#D7CEC7] bg-[#1A1D20]">
               <Image
                 src="/images/products/inbox/inbox-desktop-overview.png"
                 alt="JIOSI Inbox Full Desktop Interface"
                 fill
                 priority
-                className="object-cover object-top"
+                className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                 sizes="(max-width: 1200px) 100vw, 1100px"
               />
             </div>
