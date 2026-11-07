@@ -120,21 +120,21 @@ export const JIOSI_INBOX_PROJECT: Project = {
   title: "JIOSI Inbox",
   editionCode: "JIO-INBOX",
   summary:
-    "Flagship SaaS platform and high-performance, keyboard-first email client engineered for power users and modern teams. Built with Spring Boot 3.3.5, React 18, Neon Serverless PostgreSQL, sub-50ms thread triage, command palette (⌘K), and local credential encryption.",
+    "Flagship SaaS platform and high-performance AI email productivity client engineered for modern teams. Built with Spring Boot 3.3.5, React 18, Neon Serverless PostgreSQL, sub-50ms query latency, command palette (⌘K), and local credential encryption.",
   caseStudyMarkdown: `### Executive Summary
-JIOSI Inbox is a production-grade, keyboard-first email client and productivity platform engineered for founders, operators, and engineers who process high email volumes.
+JIOSI Inbox is a production-grade AI email productivity platform engineered for founders, operators, and engineers who process high email volumes.
 
 ### Project Context & Core Attributes
-- **Problem**: Traditional email clients are sluggish, bloated with non-essential widgets, and force excessive mouse clicks that fragment executive focus.
+- **Problem**: Traditional email clients are sluggish, bloated with non-essential widgets, and force excessive context switching that fragments focus.
 - **Intended User**: Founders, executives, technical leads, and operations teams managing high-stakes communications.
-- **My Role**: Full-stack architect, backend engineer, and frontend systems designer (Spring Boot 3.3.5 backend, React 18 UI, Neon Serverless PostgreSQL persistence, sub-50ms triage pipelines, Playwright test suite).
-- **Solution**: High-performance, keyboard-centric email platform with instant search, multi-tenant isolation, command palette (⌘K), thread grouping, and deterministic privacy safeguards.
+- **My Role**: Full-stack architect, backend engineer, and frontend systems designer (Spring Boot 3.3.5 backend, React 18 UI, Neon Serverless PostgreSQL persistence, sub-50ms query pipelines, Playwright test suite).
+- **Solution**: High-performance email platform with instant search, multi-tenant isolation, command palette (⌘K), thread grouping, and deterministic privacy safeguards.
 - **Verified Status**: Fully functional web client live at https://inbox.jiosi.online with automated Playwright end-to-end verification passing.
 - **Evidence**: Production web deployment at inbox.jiosi.online and tested backend repositories.
 
 ### Key Architecture Highlights
-- **Sub-50ms Thread Triage**: Optimized indexed PostgreSQL queries on Neon Serverless deliver sub-50ms thread retrieval and state updates.
-- **Keyboard-First Velocity**: Complete keyboard accessibility with single-key triage hotkeys (E to archive, S to star, / to search, ⌘K command palette).
+- **Sub-50ms Thread Retrieval**: Optimized indexed PostgreSQL queries on Neon Serverless deliver sub-50ms thread retrieval and state updates.
+- **Rapid Keyboard Navigation**: Full keyboard accessibility with workflow hotkeys (E to archive, S to star, / to search, ⌘K command palette).
 - **Zero-Trust Credential Security**: User credentials and tokens are encrypted with AES-256-GCM. No unauthorized host access or credential storage.
 - **Spring Boot 3.3.5 Core**: High-throughput backend with clean layered domain architecture, JPA/Hibernate mappings, and rate-limited endpoints.
 

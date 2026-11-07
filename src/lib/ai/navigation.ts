@@ -76,7 +76,7 @@ export const PUBLIC_NAVIGATION: Record<string, NavigationDestination> = {
   inbox: {
     label: "JIOSI Inbox",
     href: "/products/inbox",
-    description: "High-performance keyboard-first email client application for power users",
+    description: "High-performance AI email productivity platform for power users",
   },
   pricing: {
     label: "Pricing",

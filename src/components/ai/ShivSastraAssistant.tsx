@@ -3,7 +3,8 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { SafeMarkdown } from "./SafeMarkdown";
-import { Sparkle, X } from "@phosphor-icons/react";
+import { X } from "@phosphor-icons/react";
+import { HamsterMascot } from "./HamsterMascot";
 
 export interface Message {
   id: string;
@@ -12,11 +13,11 @@ export interface Message {
 }
 
 const SUGGESTED_PROMPTS = [
-  "What agentic AI services do you offer?",
-  "How do JIOSI Inbox & Yojna Setu work?",
-  "What is your data security guarantee?",
-  "Which digital agent kits are in the store?",
-  "How do human approval points work?",
+  "What systems & technologies does Shivam build?",
+  "How is JIOSI Inbox architected?",
+  "Tell me about Yojna Setu's multi-agent design.",
+  "How does QuickEats ensure backend security?",
+  "How can I get in touch with Shivam?",
 ];
 
 export function ShivSastraAssistant() {
@@ -188,7 +189,7 @@ export function ShivSastraAssistant() {
 
   return (
     <>
-      {/* Global "Ask SHIVSASTRA" Studio AI Trigger */}
+      {/* Global "Ask SHIVSASTRA" Hamster Mascot Assistant Trigger */}
       {/* Desktop Trigger: Refined editorial button anchored bottom-right */}
       <div className="fixed bottom-6 right-6 z-40 hidden lg:block">
         <button
@@ -197,7 +198,7 @@ export function ShivSastraAssistant() {
           onClick={() => setIsOpen((prev) => !prev)}
           aria-expanded={isOpen}
           aria-controls="shivsastra-ai-dialog"
-          aria-label={isOpen ? "Close Studio AI Assistant" : "Ask Studio AI"}
+          aria-label={isOpen ? "Close Ask ShivSastra Assistant" : "Ask ShivSastra"}
           className={cn(
             "group relative flex items-center gap-2.5 px-4 py-2.5 rounded-none",
             "bg-[#1A1D20] text-[#F5F2ED] border border-[#C09F80]/60",
@@ -206,9 +207,9 @@ export function ShivSastraAssistant() {
             "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F]"
           )}
         >
-          <Sparkle className="w-4 h-4 text-[#C09F80] group-hover:text-[#F5F2ED] transition-colors" />
+          <HamsterMascot size={22} />
           <span className="font-mono text-xs uppercase tracking-wider font-semibold">
-            {isOpen ? "Close Assistant" : "Ask Studio AI"}
+            {isOpen ? "Close Assistant" : "Ask ShivSastra"}
           </span>
           <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
         </button>
@@ -221,7 +222,7 @@ export function ShivSastraAssistant() {
           onClick={() => setIsOpen((prev) => !prev)}
           aria-expanded={isOpen}
           aria-controls="shivsastra-ai-dialog"
-          aria-label={isOpen ? "Close Studio AI Assistant" : "Ask Studio AI"}
+          aria-label={isOpen ? "Close Ask ShivSastra Assistant" : "Ask ShivSastra"}
           className={cn(
             "h-10 px-3.5 flex items-center gap-2 rounded-none",
             "bg-[#1A1D20] text-[#F5F2ED] border border-[#C09F80]/60",
@@ -230,8 +231,8 @@ export function ShivSastraAssistant() {
             "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#76323F]"
           )}
         >
-          <Sparkle className="w-3.5 h-3.5 text-[#C09F80]" />
-          <span>{isOpen ? "Close" : "Studio AI"}</span>
+          <HamsterMascot size={20} />
+          <span>{isOpen ? "Close" : "Ask ShivSastra"}</span>
         </button>
       </div>
 
@@ -253,23 +254,20 @@ export function ShivSastraAssistant() {
           )}
         >
           {/* Panel Header */}
-          <header className="px-5 py-4 border-b border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] flex items-center justify-between">
-            <div>
-              <div className="flex items-center gap-2">
-                <span
-                  className="w-1.5 h-1.5 bg-[var(--color-accent)] inline-block"
-                  aria-hidden="true"
-                />
-                <span className="font-mono text-[10px] text-[var(--color-accent)] tracking-widest uppercase">
-                  AI Assistant
-                </span>
+          <header className="px-5 py-3.5 border-b border-[var(--color-hairline)] bg-[var(--color-canvas-primary)] flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <HamsterMascot size={32} />
+              <div>
+                <h2
+                  id="shivsastra-ai-title"
+                  className="font-display text-base text-[var(--color-ink-primary)] font-semibold tracking-tight"
+                >
+                  Ask ShivSastra
+                </h2>
+                <p className="font-mono text-[10px] text-[#76323F] uppercase tracking-wider">
+                  Portfolio Assistant
+                </p>
               </div>
-              <h2
-                id="shivsastra-ai-title"
-                className="font-display text-base text-[var(--color-ink-primary)] font-normal tracking-tight mt-0.5"
-              >
-                Portfolio Assistant
-              </h2>
             </div>
 
             <div className="flex items-center gap-2">
@@ -304,7 +302,7 @@ export function ShivSastraAssistant() {
                     Ask a Question
                   </span>
                   <p className="font-display text-sm italic text-[var(--color-ink-primary)]">
-                    Ask a question about my work, projects, or services.
+                    Ask a question about my engineering work, projects, or background.
                   </p>
                   <p className="text-xs text-[var(--color-ink-secondary)] leading-relaxed pt-1">
                     Grounded in verified SHIVSASTRA portfolio content, with unknown information explicitly handled instead of invented.

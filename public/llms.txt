@@ -9,7 +9,7 @@ Shivam Shukla is an AI engineer and backend architect specializing in determinis
 - [Home](https://www.jiosi.online/): Overview of JIOSI software systems, JIOSI Inbox flagship SaaS, Agentic AI packages, and engineering proof.
 - [About](https://www.jiosi.online/about): Company mission, engineering principles, data sovereignty ethos, verified background at Nexvia Technologies and Soft Pro, and credentials of Shivam Shukla.
 - [Products](https://www.jiosi.online/products): Complete directory of software products, SaaS platforms, and production agent blueprints.
-- [JIOSI Inbox](https://www.jiosi.online/products/inbox): Flagship keyboard-first email productivity client with AI thread summaries, instant search, and PostgreSQL workspace isolation.
+- [JIOSI Inbox](https://www.jiosi.online/products/inbox): Flagship AI email productivity platform with thread summaries, instant search, and PostgreSQL workspace isolation.
 - [Projects](https://www.jiosi.online/projects): Portfolio of production case studies, engineering builds, and open-source systems.
 - [Services](https://www.jiosi.online/services): Production Agentic AI engineering packages (Starter Agent Setup, Business Agent Package, Full Agentic System) with transparent pricing and data sovereignty guarantees.
 - [Pricing](https://www.jiosi.online/pricing): Transparent pricing for client engineering services, digital toolkits, and software licenses.
@@ -18,7 +18,7 @@ Shivam Shukla is an AI engineer and backend architect specializing in determinis
 
 ## Featured Engineering Projects
 
-- [JIOSI Inbox](https://www.jiosi.online/products/inbox): Opinionated, keyboard-first email client built with Spring Boot 3.3.5 and React 18, featuring AI summaries, instant triage, and multi-tenant workspace isolation.
+- [JIOSI Inbox](https://www.jiosi.online/products/inbox): High-performance AI email platform built with Spring Boot 3.3.5 and React 18, featuring AI summaries, rapid message actions, and multi-tenant workspace isolation.
 - [Shivsastra](https://www.jiosi.online/projects/shivsastra): Full-stack digital platform built with Next.js App Router, Supabase PostgreSQL with Row-Level Security, Razorpay webhook HMAC verification, and a sandboxed AI assistant.
 - [Yojna Setu](https://www.jiosi.online/projects/yojna-setu): Multilingual WhatsApp AI agent + deterministic rules engine evaluating eligibility over 82 welfare schemes.
 - [QuickEats](https://www.jiosi.online/projects/quickeats): Real-time food ordering and delivery system engineered with Spring Boot 3, server-side price recalculation, IDOR defenses, and STOMP WebSockets.

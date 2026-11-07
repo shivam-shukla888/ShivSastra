@@ -457,7 +457,7 @@ export default function PricingPage() {
                 JIOSI Inbox Cloud &amp; Community Edition
               </h2>
               <p className="text-[#D7CEC7] text-sm md:text-base leading-relaxed">
-                The high-performance keyboard-first email client for power users and founders.
+                The high-performance AI email productivity platform for power users and founders.
               </p>
             </div>
 
@@ -479,7 +479,7 @@ export default function PricingPage() {
                 <ul className="space-y-2.5 text-xs text-[#D7CEC7]">
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-[#C09F80]" />
-                    <span>Sub-50ms thread triage &amp; navigation</span>
+                    <span>Sub-50ms thread retrieval &amp; navigation</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-[#C09F80]" />
@@ -528,7 +528,7 @@ export default function PricingPage() {
                 <ul className="space-y-2.5 text-xs text-[#D7CEC7]">
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-[#C09F80]" />
-                    <span>Deterministic priority triage &amp; VIP filters</span>
+                    <span>Deterministic priority routing &amp; VIP filters</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-[#C09F80]" />

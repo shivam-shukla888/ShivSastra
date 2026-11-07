@@ -52,8 +52,8 @@ export const metadata: Metadata = {
 
 export default async function ProjectsPage() {
   const allProjects = await getPublishedProjects();
-  // Featured canonical projects: JIOSI Inbox, ShivSastra Digital HQ, Yojna Setu, and QuickEats
-  const clientProjectSlugs = ["inbox", "shivsastra", "yojna-setu", "quickeats"];
+  // Strictly showcase exactly three client projects: JIOSI Inbox, Yojna Setu, and QuickEats
+  const clientProjectSlugs = ["inbox", "yojna-setu", "quickeats"];
   const projects = allProjects
     .filter((p) => clientProjectSlugs.includes(p.slug))
     .sort((a, b) => clientProjectSlugs.indexOf(a.slug) - clientProjectSlugs.indexOf(b.slug));
@@ -80,7 +80,7 @@ export default async function ProjectsPage() {
               </h1>
 
               <p className="font-sans text-base sm:text-lg text-[#565656] leading-relaxed">
-                Explore our full technical case studies across multi-agent welfare discovery, high-concurrency order processing, full-stack digital publishing, and keyboard-first productivity software.
+                Explore our full technical case studies across multi-agent welfare discovery, high-concurrency order processing, full-stack digital publishing, and intelligent email productivity platforms.
               </p>
 
               <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono text-[#565656]">
@@ -220,30 +220,91 @@ export default async function ProjectsPage() {
               )}
             </div>
 
-            {/* Bottom CTA to Services (Grounded Contrast) */}
+            {/* 3. STUDIO ENGINEERING PLATFORM (Distinguished from client projects) */}
+            <div className="p-8 sm:p-10 border border-[#C09F80] bg-[#FAF8F5] shadow-[4px_4px_0px_0px_#D7CEC7] space-y-6">
+              <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#C09F80]/30">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 bg-[#76323F]/10 text-[#76323F] border border-[#76323F]/30">
+                      Studio Platform
+                    </span>
+                    <span className="font-mono text-xs text-[#565656]">Self-Engineered Infrastructure</span>
+                  </div>
+                  <h3 className="font-display text-2xl sm:text-3xl font-normal text-[#1A1D20]">
+                    ShivSastra — Digital HQ
+                  </h3>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Link
+                    href="/projects/shivsastra"
+                    className={buttonStyles({ variant: "primary", size: "md" })}
+                  >
+                    <span>Read Platform Case Study</span>
+                    <ArrowRight className="w-4 h-4 ml-1.5" />
+                  </Link>
+                  <a
+                    href="https://github.com/shivam-shukla888/ShivSastra"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={buttonStyles({ variant: "secondary", size: "md" })}
+                  >
+                    <span>GitHub Repository</span>
+                    <ExternalLink className="w-3.5 h-3.5 ml-1.5 text-[#76323F]" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-5">
+                  <div className="relative aspect-[16/10] overflow-hidden border border-[#C09F80]/50 shadow-[2px_2px_0px_0px_#D7CEC7] bg-[#FAF8F5]">
+                    <Image
+                      src="/images/projects/shivsastra/shivsastra-desktop-overview.png"
+                      alt="ShivSastra Digital HQ Platform Architecture"
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 1024px) 100vw, 500px"
+                    />
+                  </div>
+                </div>
+                <div className="lg:col-span-7 space-y-4">
+                  <p className="font-sans text-sm sm:text-base text-[#565656] leading-relaxed">
+                    Full-stack engineering HQ and personal digital platform engineered with Next.js 16 App Router, TypeScript, and Supabase. Features server-side rendering, cryptographic HMAC-SHA256 Razorpay payment verification, Row-Level Security (RLS), Cloudflare Turnstile anti-spam, and contextual AI assistant.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-xs font-mono">
+                    {["Next.js 16", "TypeScript", "Supabase RLS", "PostgreSQL", "Razorpay HMAC", "Groq Llama 3"].map((t) => (
+                      <span key={t} className="px-2.5 py-1 bg-[#F5F2ED] text-[#1A1D20] border border-[#C09F80]/40">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom CTA (Engineering Portfolio Focus) */}
             <div className="p-8 sm:p-12 border border-[#C09F80]/40 bg-[#1A1D20] text-[#F5F2ED] flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-[4px_4px_0px_0px_#565656]">
               <div className="space-y-2 max-w-xl">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5]/10 text-[#C09F80] border border-[#C09F80]/40 text-xs font-mono font-medium">
                   <span className="w-1.5 h-1.5 rounded-none bg-[#C09F80]" />
-                  <span>WORK WITH US</span>
+                  <span>LET&apos;S COLLABORATE</span>
                 </div>
                 <h3 className="font-display text-2xl sm:text-3xl font-normal text-[#F5F2ED]">
-                  Want an equivalent system built for your company?
+                  Looking for an AI Systems or Backend Engineer?
                 </h3>
                 <p className="text-[#D7CEC7] text-sm">
-                  We engineer production-grade Agentic AI and backend systems on client-owned infrastructure.
+                  Available for engineering roles, technical architecture consultation, and select client engagements.
                 </p>
               </div>
 
               <Link
-                href="/services"
+                href="/contact"
                 className={buttonStyles({
                   variant: "dark-inverse",
                   size: "lg",
                   className: "shrink-0",
                 })}
               >
-                <span>View Service Packages &amp; Pricing</span>
+                <span>Get in Touch</span>
                 <ArrowRight className="w-4 h-4 ml-1.5 text-[#76323F]" />
               </Link>
             </div>

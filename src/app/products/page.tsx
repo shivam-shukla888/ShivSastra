@@ -194,7 +194,7 @@ export default function ProductsPage() {
                   </h2>
 
                   <p className="font-sans text-base text-[#565656] leading-relaxed">
-                    A distraction-free, keyboard-first email productivity platform engineered with Spring Boot 3.3.5 and React 18. Built for founders, developers, and high-output teams.
+                    A distraction-free, high-performance AI email productivity platform engineered with Spring Boot 3.3.5 and React 18. Built for founders, developers, and high-output teams.
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-[#1A1D20]">
@@ -204,7 +204,7 @@ export default function ProductsPage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Check className="w-4 h-4 text-[#76323F] shrink-0" />
-                      <span>Keyboard-first triage (⌘K, E, S)</span>
+                      <span>Rapid keyboard shortcuts (⌘K, E, S)</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Check className="w-4 h-4 text-[#76323F] shrink-0" />

@@ -21,14 +21,14 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "JIOSI Inbox — High-Velocity AI Email Productivity Platform",
   description:
-    "JIOSI Inbox is an opinionated, keyboard-first email client built with Spring Boot 3.3.5 and React 18. AI thread summaries, instant search, and zero distraction.",
+    "JIOSI Inbox is a high-performance AI email productivity platform built with Spring Boot 3.3.5 and React 18. AI thread summaries, instant search, and zero distraction.",
   alternates: {
     canonical: absoluteUrl("/products/inbox"),
   },
   openGraph: {
     title: "JIOSI Inbox — High-Velocity AI Email Productivity Platform",
     description:
-      "JIOSI Inbox is an opinionated, keyboard-first email client built with Spring Boot 3.3.5 and React 18. AI thread summaries, instant search, and zero distraction.",
+      "JIOSI Inbox is a high-performance AI email productivity platform built with Spring Boot 3.3.5 and React 18. AI thread summaries, instant search, and zero distraction.",
     url: absoluteUrl("/products/inbox"),
     type: "website",
     siteName: "SHIVSASTRA",
@@ -69,7 +69,7 @@ export default function JiosiInboxProductPage() {
             </h1>
 
             <p className="font-sans text-lg sm:text-xl text-[#565656] leading-relaxed max-w-2xl mx-auto">
-              Read less. Understand faster. Respond smarter. An opinionated, keyboard-first email productivity client inspired by Superhuman and Linear.
+              Read less. Understand faster. Respond smarter. An AI-powered email productivity platform engineered for speed, focus, and intelligent assistance.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -126,7 +126,7 @@ export default function JiosiInboxProductPage() {
               badge="Key Capabilities"
               badgeVariant="primary"
               title="Built for High-Output Knowledge Workers"
-              description="Engineered to eliminate cognitive overload, reduce message triage time, and protect mental focus."
+              description="Engineered to eliminate cognitive overload, reduce message processing time, and protect mental focus."
             />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -147,7 +147,7 @@ export default function JiosiInboxProductPage() {
                   <Keyboard className="w-5 h-5" />
                 </div>
                 <h3 className="font-display text-xl font-normal text-[#1A1D20]">
-                  Keyboard-First Triage
+                  Rapid Keyboard Workflows
                 </h3>
                 <p className="font-sans text-sm text-[#565656] leading-relaxed">
                   Navigate, star, archive, snooze, and reply at the speed of thought. Built with frictionless shortcuts (`⌘K`, `E`, `S`, `J`/`K`) so hands never leave the keys.
@@ -305,7 +305,7 @@ export default function JiosiInboxProductPage() {
                 <div className="relative aspect-[16/10] overflow-hidden border border-[#C09F80]/50 shadow-[2px_2px_0px_0px_#D7CEC7] bg-[#FAF8F5]">
                   <Image
                     src="/images/products/inbox/inbox-threads-view.png"
-                    alt="JIOSI Inbox Thread List and Triage View"
+                    alt="JIOSI Inbox Thread List and Action View"
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 50vw"

@@ -70,14 +70,14 @@ export async function generateMetadata({
     return {
       title: "JIOSI Inbox — Flagship Email Platform",
       description:
-        "High-performance, keyboard-first email client application for power users and modern teams.",
+        "High-performance AI email productivity platform for power users and modern teams.",
       alternates: {
         canonical: absoluteUrl("/products/inbox"),
       },
       openGraph: {
         title: "JIOSI Inbox — Flagship Email Platform",
         description:
-          "High-performance, keyboard-first email client application for power users and modern teams.",
+          "High-performance AI email productivity platform for power users and modern teams.",
         url: absoluteUrl("/products/inbox"),
         type: "article",
         siteName: "JIOSI",

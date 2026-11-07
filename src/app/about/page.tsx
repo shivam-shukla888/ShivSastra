@@ -96,7 +96,7 @@ export default async function AboutPage() {
                 Our Vision
               </h2>
               <p className="font-sans text-base text-[#565656] leading-relaxed">
-                A software ecosystem where applications are distraction-free, keyboard-first, and respect user autonomy. We believe AI should quietly augment human workflow rather than creating chaotic hallucinations.
+                A software ecosystem where applications are distraction-free, high-performance, and respect user autonomy. We believe AI should quietly augment human workflow rather than creating chaotic hallucinations.
               </p>
             </div>
           </div>
@@ -144,10 +144,10 @@ export default async function AboutPage() {
                   Principle 03
                 </span>
                 <h3 className="font-display text-xl font-normal text-[#1A1D20]">
-                  Keyboard-First Velocity
+                  High-Performance Velocity
                 </h3>
                 <p className="font-sans text-sm text-[#565656] leading-relaxed">
-                  Inspired by Superhuman and Linear, our interfaces prioritize rapid keyboard navigation, sub-second latency, and zero unnecessary visual clutter.
+                  Inspired by Superhuman and Linear, our interfaces prioritize rapid workflows, sub-second latency, and zero unnecessary visual clutter.
                 </p>
               </div>
 

@@ -14,7 +14,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   ShieldCheck,
-  Tray as Inbox,
   Lock,
   Lightning as Zap,
   CheckCircle as CheckCircle2,
@@ -67,8 +66,8 @@ export default async function HomePage() {
     getPublishedProjects(),
   ]);
 
-  // Canonical project showcase: JIOSI Inbox, ShivSastra Digital HQ, Yojna Setu, QuickEats
-  const clientProjectSlugs = ["inbox", "shivsastra", "yojna-setu", "quickeats"];
+  // Featured client projects: strictly showcase exactly 3 projects (JIOSI Inbox, Yojna Setu, QuickEats)
+  const clientProjectSlugs = ["inbox", "yojna-setu", "quickeats"];
   const selectedProjects = allProjects
     .filter((p) => clientProjectSlugs.includes(p.slug))
     .sort((a, b) => clientProjectSlugs.indexOf(a.slug) - clientProjectSlugs.indexOf(b.slug));
@@ -119,49 +118,48 @@ export default async function HomePage() {
             <div className="lg:col-span-7 space-y-6 text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium">
                 <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
-                <span>Intelligent Software Systems &amp; AI Studio</span>
+                <span>Shivam Shukla · Software Engineer</span>
               </div>
 
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-[#1A1D20] leading-[1.08]">
-                Intelligent software systems for modern teams.
+                Engineering robust AI systems &amp; backend platforms.
               </h1>
 
               <p className="font-sans text-base sm:text-lg text-[#565656] leading-relaxed max-w-2xl">
-                From our flagship email productivity platform <strong className="text-[#1A1D20] font-semibold">JIOSI Inbox</strong> to custom production <strong className="text-[#1A1D20] font-semibold">Agentic AI systems</strong> for growing businesses — engineered with deterministic safeguards, speed, and strict client data sovereignty.
+                Software engineer focused on production Agentic AI workflows, resilient backend architectures, and secure web applications with deterministic safeguards and data sovereignty.
               </p>
 
               {/* Primary CTAs */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Link
-                  href="/products/inbox"
+                  href="/projects"
                   className={buttonStyles({
                     variant: "primary",
                     size: "lg",
                     className: "group",
                   })}
                 >
-                  <Inbox className="w-4 h-4 text-[#F5F2ED]" />
-                  <span>Explore JIOSI Inbox</span>
+                  <span>View Projects</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
 
                 <Link
-                  href="/services"
+                  href="/profile"
                   className={buttonStyles({
                     variant: "secondary",
                     size: "lg",
                   })}
                 >
-                  <span>Our Services</span>
+                  <span>View Profile</span>
                   <ChevronRight className="w-4 h-4 text-[#565656]" />
                 </Link>
 
-                <a
-                  href="#services"
+                <Link
+                  href="/contact"
                   className="font-mono text-xs uppercase tracking-wider text-[#565656] hover:text-[#76323F] transition-colors text-center py-3 px-2 font-medium"
                 >
-                  View Packages ↓
-                </a>
+                  Get in Touch →
+                </Link>
               </div>
 
               {/* Trust Badges */}
@@ -207,7 +205,7 @@ export default async function HomePage() {
                     </span>
                   </div>
                   <span className="font-mono text-xs text-[#565656]">
-                    Keyboard-First Triage
+                    AI Email Platform
                   </span>
                 </div>
 
@@ -361,7 +359,7 @@ export default async function HomePage() {
                   </h3>
 
                   <p className="font-sans text-base text-[#565656] leading-relaxed">
-                    An opinionated, keyboard-first email productivity client built with Spring Boot 3.3.5 and React 18. Read less, understand faster, and respond with contextual AI assistance without message clutter.
+                    A high-performance AI email productivity platform built with Spring Boot 3.3.5 and React 18. Read less, understand faster, and draft responses with contextual AI assistance without message clutter.
                   </p>
 
                   <div className="space-y-2.5 pt-2">
@@ -371,7 +369,7 @@ export default async function HomePage() {
                     </div>
                     <div className="flex items-center gap-2 text-sm text-[#1A1D20]">
                       <Check className="w-4 h-4 text-[#76323F]" />
-                      <span>Keyboard-first triage inspired by Superhuman &amp; Linear</span>
+                      <span>Frictionless email workflows inspired by Superhuman &amp; Linear</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-[#1A1D20]">
                       <Check className="w-4 h-4 text-[#76323F]" />
@@ -506,7 +504,7 @@ export default async function HomePage() {
                       Small Business Agent Bundle
                     </h4>
                     <p className="font-sans text-sm text-[#565656] leading-relaxed">
-                      Complete suite combining lead qualification, WhatsApp triage, automated CRM follow-up, and prompt guardrail libraries.
+                      Complete suite combining lead qualification, WhatsApp customer routing, automated CRM follow-up, and prompt guardrail libraries.
                     </p>
                     <ul className="space-y-2 text-xs font-mono text-[#565656] pt-2 border-t border-[#C09F80]/20">
                       <li className="flex items-center gap-1.5">✓ All 5 agent blueprints included</li>
@@ -559,7 +557,7 @@ export default async function HomePage() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {selectedProjects.map((project) => (
                 <div
                   key={project.id}
@@ -632,6 +630,28 @@ export default async function HomePage() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Studio Engineering Platform Note */}
+            <div className="p-5 sm:p-6 bg-[#FAF8F5] border border-[#C09F80]/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-[2px_2px_0px_0px_#D7CEC7]">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 bg-[#76323F]/10 text-[#76323F] border border-[#76323F]/30">
+                    Studio Platform
+                  </span>
+                  <span className="font-mono text-xs text-[#565656]">Self-Engineered Architecture</span>
+                </div>
+                <p className="font-sans text-sm text-[#1A1D20]">
+                  <strong>ShivSastra Digital HQ</strong> — Production web platform engineered with Next.js 16 App Router, TypeScript, and Supabase RLS.
+                </p>
+              </div>
+              <Link
+                href="/projects/shivsastra"
+                className="font-mono text-xs uppercase tracking-wider font-semibold text-[#76323F] hover:text-[#5A1C29] inline-flex items-center gap-1 shrink-0"
+              >
+                <span>Read Platform Specs</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           </div>
         </SectionContainer>
@@ -839,10 +859,10 @@ export default async function HomePage() {
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                     <Link
-                      href="/about"
+                      href="/profile"
                       className="font-mono text-xs uppercase tracking-wider font-semibold text-[#1A1D20] hover:text-[#76323F] transition-colors inline-flex items-center gap-1"
                     >
-                      <span>Full Bio &amp; Story</span>
+                      <span>Full Profile &amp; Resume</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -861,40 +881,40 @@ export default async function HomePage() {
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5]/10 text-[#C09F80] border border-[#C09F80]/40 text-xs font-mono font-medium">
               <span className="w-1.5 h-1.5 rounded-none bg-[#C09F80]" />
-              <span>Start an Engineering Conversation</span>
+              <span>Let&apos;s Connect</span>
             </div>
 
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#F5F2ED] leading-tight">
-              Let&rsquo;s build your next system.
+              Looking for an AI Systems or Backend Engineer?
             </h2>
 
             <p className="font-sans text-base sm:text-lg text-[#D7CEC7] leading-relaxed">
-              Every client engagement begins with an architecture brief, fixed scope, and guaranteed data sovereignty. Replies delivered within 24 hours.
+              Available for full-time engineering roles, technical architecture consultation, and select client engagements. Replies typically delivered within 24 hours.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
-                href="/contact?subject=Request%20a%20Quote"
+                href="/contact"
                 className={buttonStyles({
                   variant: "primary",
                   size: "lg",
                   className: "text-center",
                 })}
               >
-                <span>Get a Quote</span>
-                <ArrowRight className="w-4 h-4 ml-1" />
+                <span>Contact Shivam</span>
+                <ArrowRight className="w-4 h-4 ml-1.5" />
               </Link>
 
               <Link
-                href="/contact"
+                href="/profile"
                 className={buttonStyles({
                   variant: "dark-inverse",
                   size: "lg",
                   className: "text-center",
                 })}
               >
-                <span>Contact Us</span>
-                <ChevronRight className="w-4 h-4 text-[#565656] ml-1" />
+                <span>View Full Profile</span>
+                <ChevronRight className="w-4 h-4 ml-1.5 text-[#C09F80]" />
               </Link>
             </div>
           </div>

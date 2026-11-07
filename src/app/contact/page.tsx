@@ -63,7 +63,7 @@ export default async function ContactPage() {
             </h1>
 
             <p className="font-sans text-base sm:text-lg text-[#565656] leading-relaxed">
-              Whether you need to automate incoming leads, deploy custom multi-agent reasoning pipelines, or inquire about JIOSI Inbox enterprise licensing — we respond within 24 hours.
+              Whether you are discussing a software engineering role, evaluating an AI systems architecture, or collaborating on a custom backend project — direct replies delivered within 24 hours.
             </p>
           </div>
         </SectionContainer>
