@@ -6,7 +6,6 @@ import { SectionContainer } from "@/components/layout/SectionContainer";
 import { Badge } from "@/components/ui/Badge";
 import { buttonStyles } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Keycap } from "@/components/ui/Keycap";
 import { getProfileSettings } from "@/lib/profile";
 import { getPublishedProjects } from "@/lib/projects";
 import { HOMEPAGE_SERVICES_PREVIEW } from "@/data/services-data";
@@ -223,27 +222,7 @@ export default async function HomePage() {
                   />
                 </div>
 
-                <div className="mt-3 p-2.5 sm:p-3 bg-[#F5F2ED] border border-[#C09F80]/40 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#565656]">
-                  <span className="text-[10px] uppercase tracking-wider text-[#76323F] font-semibold">
-                    In-App Hotkeys:
-                  </span>
-                  <div className="flex flex-wrap items-center gap-3">
-                    <div className="flex items-center gap-1.5">
-                      <Keycap shortcut="mod+k" size="xs" />
-                      <span className="text-[11px]">Omni Search</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <Keycap keys={["E"]} size="xs" />
-                      <span className="text-[11px]">Archive</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <Keycap keys={["S"]} size="xs" />
-                      <span className="text-[11px]">Snooze</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-3 pt-3 border-t border-[#C09F80]/30 flex items-center justify-between">
+                <div className="mt-4 pt-3 border-t border-[#C09F80]/30 flex items-center justify-between">
                   <span className="font-mono text-xs text-[#565656]">
                     Spring Boot 3.3.5 · React 18 · Neon Postgres
                   </span>

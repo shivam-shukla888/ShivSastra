@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import { SafeMarkdown } from "./SafeMarkdown";
 import { X } from "@phosphor-icons/react";
 import { HamsterMascot } from "./HamsterMascot";
-import { Keycap } from "@/components/ui/Keycap";
 
 export interface Message {
   id: string;
@@ -429,13 +428,7 @@ export function ShivSastraAssistant() {
                 </div>
 
                 <div className="flex items-center justify-between text-[10px] font-mono text-[#565656]">
-                  <div className="flex items-center gap-1.5">
-                    <Keycap shortcut="enter" size="xs" />
-                    <span>send</span>
-                    <span className="text-[#C09F80]">·</span>
-                    <Keycap shortcut="shift+enter" size="xs" />
-                    <span>newline</span>
-                  </div>
+                  <span className="text-[10px] text-[#565656]">Grounded in verified portfolio data</span>
                   <button
                     type="submit"
                     disabled={!inputValue.trim() || status === "sending"}
@@ -459,7 +452,7 @@ export function ShivSastraAssistant() {
           Launcher Trigger Button:
           - Always visible and consistently anchored at viewport bottom-right
           - Unified across desktop and mobile
-          - Platform-aware keycap badge (Ctrl+K on Windows, ⌘+K on Mac)
+          - Clean, minimal, premium without keyboard badge clutter
           - Does not cause layout shifts
         */}
         <div className="pointer-events-auto">
@@ -481,12 +474,6 @@ export function ShivSastraAssistant() {
             <HamsterMascot size={20} />
             <span className="font-mono text-[11px] sm:text-xs uppercase tracking-wider font-semibold">
               {isOpen ? "Close Assistant" : "Ask ShivSastra"}
-            </span>
-            <span className="hidden sm:inline-flex ml-0.5">
-              <Keycap
-                shortcut={isOpen ? "esc" : "mod+k"}
-                size="xs"
-              />
             </span>
             <span
               className={cn(
