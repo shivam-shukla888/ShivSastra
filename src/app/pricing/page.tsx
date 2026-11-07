@@ -5,6 +5,7 @@ import { SectionContainer } from "@/components/layout/SectionContainer";
 import { InnerPageEntrance } from "@/components/layout/InnerPageEntrance";
 import { buttonStyles } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Keycap } from "@/components/ui/Keycap";
 import { absoluteUrl, serializeJsonLd } from "@/lib/site";
 import {
   ShieldCheck,
@@ -483,7 +484,9 @@ export default function PricingPage() {
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-[#C09F80]" />
-                    <span>Command palette (⌘K) &amp; single-key hotkeys</span>
+                    <span className="inline-flex items-center gap-1">
+                      Command palette (<Keycap shortcut="mod+k" size="xs" />) &amp; hotkeys
+                    </span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-[#C09F80]" />

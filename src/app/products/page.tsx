@@ -6,6 +6,7 @@ import { SectionContainer } from "@/components/layout/SectionContainer";
 import { Badge } from "@/components/ui/Badge";
 import { buttonStyles } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Keycap } from "@/components/ui/Keycap";
 import { absoluteUrl } from "@/lib/site";
 import {
   ArrowRight,
@@ -204,7 +205,9 @@ export default function ProductsPage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Check className="w-4 h-4 text-[#76323F] shrink-0" />
-                      <span>Rapid keyboard shortcuts (⌘K, E, S)</span>
+                      <span className="inline-flex items-center gap-1">
+                        Rapid keyboard shortcuts (<Keycap shortcut="mod+k" size="xs" />, <Keycap keys={["E"]} size="xs" />, <Keycap keys={["S"]} size="xs" />)
+                      </span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Check className="w-4 h-4 text-[#76323F] shrink-0" />

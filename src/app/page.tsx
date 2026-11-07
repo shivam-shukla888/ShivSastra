@@ -6,6 +6,7 @@ import { SectionContainer } from "@/components/layout/SectionContainer";
 import { Badge } from "@/components/ui/Badge";
 import { buttonStyles } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Keycap } from "@/components/ui/Keycap";
 import { getProfileSettings } from "@/lib/profile";
 import { getPublishedProjects } from "@/lib/projects";
 import { HOMEPAGE_SERVICES_PREVIEW } from "@/data/services-data";
@@ -222,24 +223,23 @@ export default async function HomePage() {
                   />
                 </div>
 
-                <div className="mt-3 p-3 bg-[#F5F2ED] border border-[#C09F80]/40 flex items-center justify-between text-xs font-mono text-[#565656]">
-                  <div className="flex items-center gap-1.5">
-                    <kbd className="px-1.5 py-0.5 bg-[#FAF8F5] text-[#1A1D20] text-[10px] border border-[#C09F80]/40 font-mono">
-                      ⌘K
-                    </kbd>
-                    <span>Omni Search</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <kbd className="px-1.5 py-0.5 bg-[#FAF8F5] text-[#1A1D20] text-[10px] border border-[#C09F80]/40 font-mono">
-                      E
-                    </kbd>
-                    <span>Archive</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <kbd className="px-1.5 py-0.5 bg-[#FAF8F5] text-[#1A1D20] text-[10px] border border-[#C09F80]/40 font-mono">
-                      S
-                    </kbd>
-                    <span>Snooze</span>
+                <div className="mt-3 p-2.5 sm:p-3 bg-[#F5F2ED] border border-[#C09F80]/40 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#565656]">
+                  <span className="text-[10px] uppercase tracking-wider text-[#76323F] font-semibold">
+                    In-App Hotkeys:
+                  </span>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex items-center gap-1.5">
+                      <Keycap shortcut="mod+k" size="xs" />
+                      <span className="text-[11px]">Omni Search</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Keycap keys={["E"]} size="xs" />
+                      <span className="text-[11px]">Archive</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Keycap keys={["S"]} size="xs" />
+                      <span className="text-[11px]">Snooze</span>
+                    </div>
                   </div>
                 </div>
 

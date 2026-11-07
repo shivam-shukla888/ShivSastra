@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { SectionContainer } from "@/components/layout/SectionContainer";
 import { buttonStyles } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Keycap } from "@/components/ui/Keycap";
 import { absoluteUrl } from "@/lib/site";
 import {
   ArrowUpRight,
@@ -150,7 +151,7 @@ export default function JiosiInboxProductPage() {
                   Rapid Keyboard Workflows
                 </h3>
                 <p className="font-sans text-sm text-[#565656] leading-relaxed">
-                  Navigate, star, archive, snooze, and reply at the speed of thought. Built with frictionless shortcuts (`⌘K`, `E`, `S`, `J`/`K`) so hands never leave the keys.
+                  Navigate, star, archive, snooze, and reply at the speed of thought. Built with frictionless shortcuts (<Keycap shortcut="mod+k" size="xs" />, <Keycap keys={["E"]} size="xs" />, <Keycap keys={["S"]} size="xs" />, <Keycap keys={["J"]} size="xs" /> / <Keycap keys={["K"]} size="xs" />) so hands never leave the keys.
                 </p>
               </div>
 

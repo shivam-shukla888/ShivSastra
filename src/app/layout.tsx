@@ -1,18 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MotionProvider } from "@/components/motion";
 import { SITE_URL } from "@/lib/site";
-
-// Dynamically load client-side assistant to preserve lean initial bundle
-const ShivSastraAssistant = dynamic(() =>
-  import("@/components/ai/ShivSastraAssistant").then(
-    (mod) => mod.ShivSastraAssistant
-  )
-);
+import { ShivSastraAssistant } from "@/components/ai/ShivSastraAssistant";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
