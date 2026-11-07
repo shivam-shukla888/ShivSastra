@@ -23,6 +23,7 @@ import {
   GraduationCap,
   Briefcase,
   Code as Code2,
+  Flask,
 } from "@phosphor-icons/react/dist/ssr";
 
 export const revalidate = 60;
@@ -118,47 +119,48 @@ export default async function HomePage() {
             <div className="lg:col-span-7 space-y-6 text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#FAF8F5] text-[#76323F] border border-[#C09F80]/50 text-xs font-mono font-medium">
                 <span className="w-1.5 h-1.5 rounded-none bg-[#76323F]" />
-                <span>Shivam Shukla · Software Engineer</span>
+                <span>SHIVSASTRA · AI Systems &amp; Software Engineering Studio</span>
               </div>
 
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-[#1A1D20] leading-[1.08]">
-                Engineering robust AI systems &amp; backend platforms.
+                Engineering production AI systems, software platforms &amp; agentic workflows.
               </h1>
 
               <p className="font-sans text-base sm:text-lg text-[#565656] leading-relaxed max-w-2xl">
-                Software engineer focused on production Agentic AI workflows, resilient backend architectures, and secure web applications with deterministic safeguards and data sovereignty.
+                ShivSastra builds enterprise-grade software products, client-owned AI automation kits, and resilient backend architectures with strict data sovereignty, deterministic core logic, and founder engineering oversight by Shivam Shukla.
               </p>
 
-              {/* Primary CTAs */}
+              {/* Primary CTAs — Store and Services First! */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Link
-                  href="/projects"
+                  href="/store"
                   className={buttonStyles({
                     variant: "primary",
                     size: "lg",
-                    className: "group",
+                    className: "group font-semibold",
                   })}
                 >
-                  <span>View Projects</span>
+                  <span>Explore Store &amp; Kits</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
 
                 <Link
-                  href="/profile"
+                  href="/services"
                   className={buttonStyles({
                     variant: "secondary",
                     size: "lg",
+                    className: "font-semibold",
                   })}
                 >
-                  <span>View Profile</span>
+                  <span>Engineering Services</span>
                   <ChevronRight className="w-4 h-4 text-[#565656]" />
                 </Link>
 
                 <Link
-                  href="/contact"
+                  href="/profile"
                   className="font-mono text-xs uppercase tracking-wider text-[#565656] hover:text-[#76323F] transition-colors text-center py-3 px-2 font-medium"
                 >
-                  Get in Touch →
+                  Founder Portfolio →
                 </Link>
               </div>
 
@@ -867,6 +869,110 @@ export default async function HomePage() {
                     </Link>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </SectionContainer>
+      </section>
+
+      {/* =======================================================
+          SECTION 8B: ENGINEERING LAB & TECHNICAL NOTES (Third Priority)
+          ======================================================= */}
+      <section id="lab" className="w-full py-20 md:py-24 bg-[#FAF8F5] border-b border-[#C09F80]/30">
+        <SectionContainer>
+          <div className="space-y-12">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#C09F80]/30">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <Flask className="w-4 h-4 text-[#76323F]" />
+                  <span className="font-mono text-xs uppercase tracking-wider font-semibold text-[#76323F]">
+                    Third Priority · Engineering Research
+                  </span>
+                  <span className="font-mono text-[9px] uppercase px-1.5 py-0.2 rounded-none bg-[#76323F]/10 text-[#76323F] border border-[#76323F]/30 font-semibold">
+                    Open Lab
+                  </span>
+                </div>
+                <h2 className="font-display text-3xl sm:text-4xl font-normal text-[#1A1D20]">
+                  Engineering Lab &amp; Technical Notes
+                </h2>
+                <p className="font-sans text-sm sm:text-base text-[#565656] mt-2 max-w-2xl">
+                  Experimental software builds, performance benchmarks, and architectural research monographs from the ShivSastra engineering workshop.
+                </p>
+              </div>
+              <Link
+                href="/lab"
+                className="font-mono text-xs uppercase tracking-wider font-semibold text-[#76323F] hover:text-[#1A1D20] transition-colors inline-flex items-center gap-1.5 self-start md:self-auto shrink-0"
+              >
+                <span>Explore All Lab Notes</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-6 space-y-4 bg-[#FFFFFF] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#565656]">
+                    <span className="text-[#76323F] font-semibold uppercase">BUILD</span>
+                    <span>2026</span>
+                  </div>
+                  <h3 className="font-display text-xl font-normal text-[#1A1D20]">
+                    Deterministic Agent Guardrails
+                  </h3>
+                  <p className="font-sans text-sm text-[#565656] leading-relaxed">
+                    Evaluating schema-constrained structured extraction versus unbounded tool execution in production LLM pipelines.
+                  </p>
+                </div>
+                <Link
+                  href="/lab"
+                  className="font-mono text-xs uppercase tracking-wider font-semibold text-[#1A1D20] hover:text-[#76323F] inline-flex items-center gap-1 pt-2 border-t border-[#C09F80]/20"
+                >
+                  <span>Read Note</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+
+              <div className="p-6 space-y-4 bg-[#FFFFFF] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#565656]">
+                    <span className="text-[#76323F] font-semibold uppercase">STACK</span>
+                    <span>2026</span>
+                  </div>
+                  <h3 className="font-display text-xl font-normal text-[#1A1D20]">
+                    Sub-50ms PostgreSQL Connection Pooling
+                  </h3>
+                  <p className="font-sans text-sm text-[#565656] leading-relaxed">
+                    Benchmarking Neon Serverless connection latency with HikariCP on Spring Boot 3 under high-concurrency workloads.
+                  </p>
+                </div>
+                <Link
+                  href="/lab"
+                  className="font-mono text-xs uppercase tracking-wider font-semibold text-[#1A1D20] hover:text-[#76323F] inline-flex items-center gap-1 pt-2 border-t border-[#C09F80]/20"
+                >
+                  <span>Read Note</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+
+              <div className="p-6 space-y-4 bg-[#FFFFFF] border border-[#C09F80]/60 shadow-[2px_2px_0px_0px_#D7CEC7] flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#565656]">
+                    <span className="text-[#76323F] font-semibold uppercase">IDEA</span>
+                    <span>2026</span>
+                  </div>
+                  <h3 className="font-display text-xl font-normal text-[#1A1D20]">
+                    Stateful Multimodal Agent Protocol
+                  </h3>
+                  <p className="font-sans text-sm text-[#565656] leading-relaxed">
+                    Architectural design for asynchronous message queue processing with zero client data retention and human approval gates.
+                  </p>
+                </div>
+                <Link
+                  href="/lab"
+                  className="font-mono text-xs uppercase tracking-wider font-semibold text-[#1A1D20] hover:text-[#76323F] inline-flex items-center gap-1 pt-2 border-t border-[#C09F80]/20"
+                >
+                  <span>Read Note</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
           </div>

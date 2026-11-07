@@ -18,6 +18,15 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  async redirects() {
+    return [
+      {
+        source: "/portfolio",
+        destination: "/profile",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: supabaseHostname
       ? [
